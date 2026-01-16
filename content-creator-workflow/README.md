@@ -1,117 +1,113 @@
-# Content Creator Workflow
+<div align="center">
 
-Claude Code workflow for bloggers, content creators, and personal brand builders.
+# ✍️ Content Creator Workflow
 
-[中文文档](./README_cn.md)
+### **Turn Your AI into a Professional Content Strategist**
 
-## Target Users
+[← Back to AI Workflow](../README.md)
 
-- Bloggers & Writers
-- Content Creators
-- Podcasters
-- Personal Brand Builders
+[简体中文](./README_cn.md) | English
 
-## Installed Skills (15)
+</div>
 
-### Research & Trend Discovery
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| content-trend-researcher | Hot topic tracking across 10+ platforms | "Find trending topics in AI" |
-| twitter-reader | Fetch Twitter/X content via Jina API | "Get this tweet content" |
-| youtube-transcript | Extract YouTube video transcripts | "Download transcript from this video" |
-| article-extractor | Extract clean article from URLs | "Extract this blog post" |
+---
 
-### Writing & Content Creation
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| blog-post-writer | Transform notes into polished blog posts | "Write a blog post from my notes" |
-| content-research-writer | Research + writing partner with citations | "Help me write an article on [topic]" |
-| content-brief | SEO content planning briefs | "Create a content brief for [topic]" |
-| fact-checker | Verify factual claims with sources | "Fact-check this document" |
+## 🎯 Who Is This For?
 
-### Visual & Design
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| nano-banana | AI image generation (Gemini) | "Generate a blog cover image" |
-| canvas-design | AI visual design, PNG/PDF export | "Design a cover image" |
+- **Bloggers & Writers** - Scale content production
+- **SEO Specialists** - Optimize for search rankings
+- **Content Marketers** - Build brand authority
+- **Personal Brand Builders** - Grow your audience
 
-### Distribution & Export
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| social-repurposer | Cross-platform content conversion | "Convert to Twitter thread" |
-| content-repurposer | Multi-format content rewriting | "Rewrite as Newsletter" |
-| podcast-content-suite | Podcast content creation | "Generate podcast outline" |
-| docx | Word document creation/editing | "Export to Word document" |
-| pdf | PDF processing and generation | "Generate PDF" |
+---
 
-## Quick Start
+## ⚡ Quick Install
 
 ```bash
-cd content-creator-workflow
-# Launch Claude Code - skills activate automatically
+# Install all 15 skills with one command
+npx add-skill nicepkg/ai-workflow/content-creator-workflow
+
+# Or install specific skills
+npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill blog-post-writer
 ```
 
-## Automated Content Workflow
+---
 
-### 1. Trend Discovery & Topic Selection
+## 📦 Skills Included (15)
+
+### Research & Trend Discovery
+| Skill | What It Does |
+|:------|:-------------|
+| `content-trend-researcher` | Track hot topics across 10+ platforms |
+| `twitter-reader` | Fetch Twitter/X content via Jina API |
+| `youtube-transcript` | Extract YouTube video transcripts |
+| `article-extractor` | Extract clean article from URLs |
+
+### Writing & Content Creation
+| Skill | What It Does |
+|:------|:-------------|
+| `blog-post-writer` | Transform notes into polished blog posts |
+| `content-research-writer` | Research + writing partner with citations |
+| `content-brief` | SEO content planning briefs |
+| `fact-checker` | Verify factual claims with sources |
+
+### Visual & Design
+| Skill | What It Does |
+|:------|:-------------|
+| `nano-banana` | AI image generation (Gemini) |
+| `canvas-design` | AI visual design, PNG/PDF export |
+
+### Distribution & Export
+| Skill | What It Does |
+|:------|:-------------|
+| `social-repurposer` | Cross-platform content conversion |
+| `content-repurposer` | Multi-format content rewriting |
+| `podcast-content-suite` | Podcast content creation |
+| `docx` | Word document creation/editing |
+| `pdf` | PDF processing and generation |
+
+---
+
+## 💡 Example Workflows
+
+### Complete Content Pipeline
+```
+1. "Find trending topics in AI this week"
+2. "Extract this article: [URL]"
+3. "Create a content brief for [topic]"
+4. "Write a blog post from my research notes"
+5. "Generate a cover image"
+6. "Convert to Twitter thread and LinkedIn post"
+7. "Export to Word document"
+```
+
+### Quick Commands
 ```
 "Find today's hottest topics in [tech/finance/lifestyle]"
-"What's trending on Twitter about AI?"
-"Analyze content trends for [topic] across platforms"
-```
-
-### 2. Research & Material Collection
-```
-"Extract this article: [URL]"
-"Download transcript from this YouTube video: [URL]"
-"Research [topic] and compile sources"
-```
-
-### 3. Content Creation
-```
-"Create a content brief for [topic] targeting [audience]"
-"Write a blog post from my research notes"
 "Generate 5 viral headline options for this article"
+"Fact-check this document"
+"Convert this article to all social media formats"
 ```
 
-### 4. Visual Assets
-```
-"Generate a blog cover image for [topic]"
-"Design a thumbnail for YouTube"
-```
+---
 
-### 5. Multi-Platform Distribution
-```
-"Convert this article to Twitter thread"
-"Rewrite for LinkedIn (professional tone)"
-"Create Instagram carousel text"
-```
+## 🔗 Publishing Integration
 
-### 6. Export & Publish
-```
-"Export to Word document"
-"Generate PDF version"
-```
+| Platform | Integration |
+|:---------|:------------|
+| Medium | mcp-medium (API token) |
+| WordPress | mcp-wordpress |
+| Notion | mcp-notion |
+| GitHub Pages | gh CLI (built-in) |
 
-## Publishing Integration
+---
 
-For automated publishing to platforms, configure MCP servers:
+## 📄 License
 
-| Platform | MCP Server |
-|----------|------------|
-| Medium | mcp-medium (API token required) |
-| WordPress | mcp-wordpress (site URL + credentials) |
-| Notion | mcp-notion (integration token) |
-| GitHub Pages | gh CLI (already supported) |
+MIT © [nicepkg](https://github.com/nicepkg)
 
-## Multi-AI Tool Support
+<div align="center">
 
-This workflow supports:
-- Claude Code (`.claude/skills/`)
-- Codex (`.codex/skills/`)
-- Cursor (`.cursor/skills/`)
-- OpenCode (`.opencode/skill/`)
+**[⬆ Back to Main Project](../README.md)**
 
-## License
-
-MIT
+</div>

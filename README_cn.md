@@ -1,133 +1,237 @@
-# AI Workflow Collection
+<div align="center">
 
-开箱即用的Claude Code工作流集合，支持多种AI工具。
+# 🚀 AI Workflow
 
-## Workflows
+### **一条命令，让你的 AI 编程助手秒变各领域专家**
 
-| Workflow | 适合人群 | Skills数量 |
-|----------|---------|-----------|
-| [content-creator-workflow](./content-creator-workflow/) | 自媒体博主、内容创作者 | 15 |
-| [marketing-pro-workflow](./marketing-pro-workflow/) | 数字营销、增长营销、PMM | 18 |
-| [video-creator-workflow](./video-creator-workflow/) | YouTuber、TikToker、视频创作者 | 15 |
-| [stock-trader-workflow](./stock-trader-workflow/) | 股票交易者、投资者（美股/A股/港股） | 25 |
+[![GitHub stars](https://img.shields.io/github/stars/nicepkg/ai-workflow?style=social)](https://github.com/nicepkg/ai-workflow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/nicepkg/ai-workflow/pulls)
 
-## 安装
+简体中文 | [English](./README.md)
 
-使用 [add-skill](https://github.com/nicepkg/add-skill) CLI工具安装skills。
+<img src="https://img.shields.io/badge/Claude_Code-已支持-blueviolet?style=for-the-badge&logo=anthropic" />
+<img src="https://img.shields.io/badge/Cursor-已支持-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Codex-已支持-green?style=for-the-badge" />
+<img src="https://img.shields.io/badge/OpenCode-已支持-orange?style=for-the-badge" />
 
-### 一键安装整个Workflow的所有Skills
+---
+
+**别再重复教你的 AI 同样的事情了。**
+
+一条命令，73+ 专业技能，效率直接起飞。
+
+[立即开始](#-快速开始) · [浏览工作流](#-工作流一览) · [创建自定义工作流](#-创建你自己的工作流)
+
+</div>
+
+---
+
+## ✨ 为什么选择 AI Workflow？
+
+| 之前 😫 | 之后 🎉 |
+|---------|---------|
+| "帮我写篇博客..." 然后每次都要解释 SEO、格式、语气 | AI 已经掌握你的内容策略、SEO 规则和品牌调性 |
+| 手动教 AI 各种股票分析的概念 | AI 直接输出专业的技术面和基本面分析 |
+| 反复讲解营销框架和模板 | AI 自动生成带 UTM 追踪的品牌文案 |
+| 从笔记里复制粘贴提示词 | 技能根据项目自动激活 |
+
+**AI Workflow** = 预配置的技能包，让你的 AI 助手秒变各领域专家。
+
+---
+
+## 🎯 工作流一览
+
+| 工作流 | 适合谁 | 技能数 | 一键安装 |
+|:-------|:------|:------:|:---------|
+| **[内容创作者](./content-creator-workflow/README_cn.md)** | 博主、写手、SEO 专家 | 15 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
+| **[营销专家](./marketing-pro-workflow/README_cn.md)** | 数字营销、增长黑客、PMM | 18 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
+| **[视频创作者](./video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 15 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
+| **[股票交易员](./stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股） | 25 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
+
+<details>
+<summary><b>📦 查看全部 73+ 技能</b></summary>
+
+### 内容创作者工作流
+`seo-optimizer` `blog-post-writer` `content-repurposer` `headline-generator` `social-media-scheduler` `keyword-researcher` `content-brief-creator` `meta-description-writer` `internal-linking-advisor` `readability-optimizer` `content-calendar-planner` `competitor-content-analyzer` `featured-snippet-optimizer` `content-gap-finder` `evergreen-content-updater`
+
+### 营销专家工作流
+`ad-copy-generator` `buyer-persona-generator` `utm-builder` `competitive-ads-extractor` `lead-research-assistant` `social-media-analyzer` `marketing-strategy-pmm` `email-campaign-creator` `landing-page-optimizer` `ab-test-designer` `funnel-analyzer` `roi-calculator` `brand-voice-guide` `market-research-assistant` `customer-journey-mapper` `pricing-strategy-advisor` `launch-checklist-generator` `growth-experiment-designer`
+
+### 视频创作者工作流
+`video-script-writer` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `youtube-seo-optimizer` `short-form-converter` `video-analytics-interpreter` `sponsor-pitch-generator` `srt-translator` `youtube-transcript` `content-trend-researcher` `social-repurposer` `canvas-design` `video-comparer` `video-downloader`
+
+### 股票交易员工作流
+`us-stock-analysis` `a-share-analysis` `hk-stock-analysis` `technical-analyst` `china-macro-analyst` `cross-border-flow-tracker` `a-share-screener` `portfolio-manager` `earnings-calendar` `market-news-analyst` `canslim-screener` `value-dividend-screener` `sector-analyst` `options-strategy-advisor` `backtest-expert` `scenario-analyzer` `institutional-flow-tracker` `market-environment-analysis` `breadth-chart-analyst` `pair-trade-screener` `dividend-growth-pullback-screener` `economic-calendar-fetcher` `weekly-trade-strategy` `us-market-bubble-detector` `stanley-druckenmiller-investment`
+
+</details>
+
+---
+
+## ⚡ 快速开始
+
+### 安装整个工作流（推荐）
 
 ```bash
-# 安装 content-creator-workflow 的所有skills（交互式）
+# 选择你的工作流，运行一条命令即可：
 npx add-skill nicepkg/ai-workflow/content-creator-workflow
 
-# 安装 marketing-pro-workflow 的所有skills
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow
-
-# 安装 video-creator-workflow 的所有skills
-npx add-skill nicepkg/ai-workflow/video-creator-workflow
-
-# 安装 stock-trader-workflow 的所有skills
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow
+# 搞定！技能已在你的 AI 助手中激活。
 ```
 
-### 安装单个Skill
+### 安装单个技能
 
 ```bash
-# 按名称安装指定skill
-npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill seo-optimizer
+# 只安装需要的技能
+npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
 
-# 只安装到指定的AI工具
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis -a claude-code
+# 先看看有哪些技能
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --list
 ```
 
-### 安装选项
+### 高级选项
 
 ```bash
-# 列出可用的skills（不安装）
-npx add-skill nicepkg/ai-workflow/content-creator-workflow --list
+# 全局安装（所有项目可用）
+npx add-skill nicepkg/ai-workflow/video-creator-workflow --global
 
-# 安装到全局目录（用户主目录）
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --global
+# 只安装到指定的 AI 工具
+npx add-skill nicepkg/ai-workflow/content-creator-workflow -a claude-code -a cursor
 
-# 非交互模式（适合CI/CD）
-npx add-skill nicepkg/ai-workflow/video-creator-workflow -y
-
-# 安装到多个指定的AI工具
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow -a claude-code -a cursor -a opencode
+# 非交互模式（适合 CI/CD）
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow -y
 ```
 
-### 支持的AI工具
+---
 
-| 工具 | 项目级路径 | 全局路径 |
-|-----|-----------|---------|
-| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
-| Cursor | `.cursor/skills/` | `~/.cursor/skills/` |
-| Codex | `.codex/skills/` | `~/.codex/skills/` |
-| OpenCode | `.opencode/skill/` | `~/.config/opencode/skill/` |
-| GitHub Copilot | `.github/skills/` | `~/.copilot/skills/` |
-| Amp | `.agents/skills/` | `~/.config/agents/skills/` |
-| Roo Code | `.roo/skills/` | `~/.roo/skills/` |
-| Kilo Code | `.kilocode/skills/` | `~/.kilocode/skills/` |
+## 🤖 支持的 AI 工具
 
-## 备选：克隆仓库直接使用
+开箱即支持 **8+ AI 编程助手**：
+
+| AI 工具 | 项目级路径 | 全局路径 |
+|:--------|:-----------|:---------|
+| **Claude Code** | `.claude/skills/` | `~/.claude/skills/` |
+| **Cursor** | `.cursor/skills/` | `~/.cursor/skills/` |
+| **GitHub Copilot** | `.github/skills/` | `~/.copilot/skills/` |
+| **Codex** | `.codex/skills/` | `~/.codex/skills/` |
+| **OpenCode** | `.opencode/skill/` | `~/.config/opencode/skill/` |
+| **Amp** | `.agents/skills/` | `~/.config/agents/skills/` |
+| **Roo Code** | `.roo/skills/` | `~/.roo/skills/` |
+| **Kilo Code** | `.kilocode/skills/` | `~/.kilocode/skills/` |
+
+---
+
+## 🛠 创建你自己的工作流
+
+### 第一步：克隆本仓库
 
 ```bash
-# 1. 克隆仓库
 git clone https://github.com/nicepkg/ai-workflow.git
-
-# 2. 进入想要的workflow
-cd ai-workflow/content-creator-workflow
-
-# 3. 启动Claude Code，skills自动激活
+cd ai-workflow
 ```
 
-## 创建新Workflow
+### 第二步：用 AI 编程助手打开项目
 
-在本项目根目录启动Claude Code，直接说：
+用任意支持 skills 的 AI 工具打开项目：
+- **Claude Code**: 终端运行 `claude`
+- **Cursor**: 用 Cursor 打开文件夹
+- **Codex**: 终端运行 `codex`
+- **OpenCode**: 终端运行 `opencode`
 
-```
-"创建一个开发者工作流"
-"Create a researcher workflow"
-```
-
-## 多AI工具支持
-
-每个workflow都支持：
-
-| 工具 | 路径 |
-|-----|------|
-| Claude Code | `.claude/skills/` |
-| Codex | `.codex/skills/` |
-| Cursor | `.cursor/skills/` |
-| OpenCode | `.opencode/skill/` |
-
-## 项目结构
+### 第三步：让 AI 创建你的工作流
 
 ```
-ai-workflow/
-├── .claude/skills/           # 项目级skills（workflow-creator等）
-├── content-creator-workflow/ # 内容创作者
-├── marketing-pro-workflow/   # 营销专业人员
-├── video-creator-workflow/   # 视频创作者
-├── stock-trader-workflow/    # 股票交易者
-└── <your-workflow>/          # 你的新workflow
+"创建一个学术研究工作流，用于论文写作"
+"创建一个 DevOps 工作流，用于 Kubernetes 管理"
+"创建一个数据科学工作流，用于机器学习项目"
 ```
 
-## Skills来源
+AI 会自动：
+1. 创建工作流目录结构
+2. 查找并下载相关技能
+3. 按需创建自定义技能
+4. 生成文档
 
-- [Anthropic官方](https://github.com/anthropics/skills)
-- [gked2121/claude-skills](https://github.com/gked2121/claude-skills)
+### 手动创建
+
+```
+my-workflow/
+└── .claude/skills/
+    └── my-skill/
+        └── SKILL.md       # 技能定义文件
+```
+
+**SKILL.md 格式：**
+```markdown
+---
+name: my-skill
+description: 这个技能做什么，AI 什么时候应该使用它
+---
+
+# 我的技能
+
+给 AI 的指令...
+```
+
+---
+
+## 🌟 Star 趋势
+
+<a href="https://star-history.com/#nicepkg/ai-workflow&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=nicepkg/ai-workflow&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=nicepkg/ai-workflow&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=nicepkg/ai-workflow&type=Date" />
+ </picture>
+</a>
+
+---
+
+## 🤝 参与贡献
+
+欢迎贡献！你可以这样参与：
+
+- ⭐ **给项目点 Star** - 帮助更多人发现这个项目
+- 🐛 **报告 Bug** - 发现问题请提 Issue
+- 💡 **建议新技能** - 告诉我们你需要什么工作流
+- 🔧 **提交 PR** - 添加新技能或改进现有技能
+
+查看 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解贡献指南。
+
+### 贡献者
+
+<a href="https://github.com/nicepkg/ai-workflow/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nicepkg/ai-workflow" />
+</a>
+
+---
+
+## 📚 技能来源 & 致谢
+
+站在巨人的肩膀上：
+
+- [Anthropic 官方技能](https://github.com/anthropics/skills)
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
-- [kkoppenhaver/cc-nano-banana](https://github.com/kkoppenhaver/cc-nano-banana)
-- [MadAppGang/claude-code](https://github.com/MadAppGang/claude-code) - SEO/内容skills
-- [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles) - 博客写作skills
-- [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) - Twitter、事实核查
-- [alirezarezvani/claude-code-skill-factory](https://github.com/alirezarezvani/claude-code-skill-factory) - 趋势研究
-- [michalparkola/tapestry-skills](https://github.com/michalparkola/tapestry-skills-for-claude-code) - YouTube、文章提取
-- [skillhub.club](https://www.skillhub.club) - 1000+ skills集合
-- [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills) - 股票交易skills
+- [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills)
+- [skillhub.club](https://www.skillhub.club) - 1000+ 技能集合
 
-## License
+---
 
-MIT
+## 📄 开源协议
+
+MIT © [nicepkg](https://github.com/nicepkg)
+
+---
+
+<div align="center">
+
+**如果这个项目对你有帮助，请给它一个 ⭐**
+
+<a href="https://github.com/nicepkg/ai-workflow">
+  <img src="https://img.shields.io/github/stars/nicepkg/ai-workflow?style=for-the-badge&logo=github&color=yellow" alt="GitHub stars" />
+</a>
+
+用 ❤️ 由开源社区打造
+
+</div>

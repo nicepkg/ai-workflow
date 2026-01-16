@@ -1,135 +1,237 @@
-# AI Workflow Collection
+<div align="center">
 
-Ready-to-use Claude Code workflow collections with multi-AI tool support.
+# 🚀 AI Workflow
 
-[中文文档](./README_cn.md)
+### **Supercharge Your AI Coding Assistant with Pre-built Skill Collections**
 
-## Workflows
+[![GitHub stars](https://img.shields.io/github/stars/nicepkg/ai-workflow?style=social)](https://github.com/nicepkg/ai-workflow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/nicepkg/ai-workflow/pulls)
 
-| Workflow | Target Users | Skills |
-|----------|-------------|--------|
-| [content-creator-workflow](./content-creator-workflow/) | Bloggers, Content Creators | 15 |
-| [marketing-pro-workflow](./marketing-pro-workflow/) | Digital Marketers, Growth Marketers, PMMs | 18 |
-| [video-creator-workflow](./video-creator-workflow/) | YouTubers, TikTokers, Video Creators | 15 |
-| [stock-trader-workflow](./stock-trader-workflow/) | Stock Traders, Investors (US/A-share/HK) | 25 |
+[简体中文](./README_cn.md) | English
 
-## Installation
+<img src="https://img.shields.io/badge/Claude_Code-Supported-blueviolet?style=for-the-badge&logo=anthropic" />
+<img src="https://img.shields.io/badge/Cursor-Supported-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Codex-Supported-green?style=for-the-badge" />
+<img src="https://img.shields.io/badge/OpenCode-Supported-orange?style=for-the-badge" />
 
-Install skills using [add-skill](https://github.com/nicepkg/add-skill) CLI tool.
+---
 
-### Install All Skills from a Workflow
+**Stop teaching your AI assistant the same things over and over.**
+
+One command. 73+ professional skills. Instant productivity boost.
+
+[Get Started](#-quick-start) · [Browse Workflows](#-workflows) · [Create Your Own](#-create-your-own-workflow)
+
+</div>
+
+---
+
+## ✨ Why AI Workflow?
+
+| Before 😫 | After 🎉 |
+|-----------|----------|
+| "Write me a blog post..." then explain SEO, formatting, tone every time | AI already knows your content strategy, SEO rules, and brand voice |
+| Manually teaching AI about stock analysis concepts | AI performs professional technical & fundamental analysis instantly |
+| Repeating marketing frameworks and templates | AI generates on-brand copy with proper UTM tracking |
+| Copy-pasting prompts from notes | Skills auto-activate based on your project |
+
+**AI Workflow** = Pre-configured skill sets that make your AI assistant an expert in specific domains.
+
+---
+
+## 🎯 Workflows
+
+| Workflow | For Who | Skills | Install |
+|:---------|:--------|:------:|:--------|
+| **[Content Creator](./content-creator-workflow/)** | Bloggers, Writers, SEO Specialists | 15 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
+| **[Marketing Pro](./marketing-pro-workflow/)** | Digital Marketers, Growth Hackers, PMMs | 18 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
+| **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 15 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
+| **[Stock Trader](./stock-trader-workflow/)** | Traders, Investors (US/CN/HK Markets) | 25 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
+
+<details>
+<summary><b>📦 View All 73+ Skills</b></summary>
+
+### Content Creator Workflow
+`seo-optimizer` `blog-post-writer` `content-repurposer` `headline-generator` `social-media-scheduler` `keyword-researcher` `content-brief-creator` `meta-description-writer` `internal-linking-advisor` `readability-optimizer` `content-calendar-planner` `competitor-content-analyzer` `featured-snippet-optimizer` `content-gap-finder` `evergreen-content-updater`
+
+### Marketing Pro Workflow
+`ad-copy-generator` `buyer-persona-generator` `utm-builder` `competitive-ads-extractor` `lead-research-assistant` `social-media-analyzer` `marketing-strategy-pmm` `email-campaign-creator` `landing-page-optimizer` `ab-test-designer` `funnel-analyzer` `roi-calculator` `brand-voice-guide` `market-research-assistant` `customer-journey-mapper` `pricing-strategy-advisor` `launch-checklist-generator` `growth-experiment-designer`
+
+### Video Creator Workflow
+`video-script-writer` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `youtube-seo-optimizer` `short-form-converter` `video-analytics-interpreter` `sponsor-pitch-generator` `srt-translator` `youtube-transcript` `content-trend-researcher` `social-repurposer` `canvas-design` `video-comparer` `video-downloader`
+
+### Stock Trader Workflow
+`us-stock-analysis` `a-share-analysis` `hk-stock-analysis` `technical-analyst` `china-macro-analyst` `cross-border-flow-tracker` `a-share-screener` `portfolio-manager` `earnings-calendar` `market-news-analyst` `canslim-screener` `value-dividend-screener` `sector-analyst` `options-strategy-advisor` `backtest-expert` `scenario-analyzer` `institutional-flow-tracker` `market-environment-analysis` `breadth-chart-analyst` `pair-trade-screener` `dividend-growth-pullback-screener` `economic-calendar-fetcher` `weekly-trade-strategy` `us-market-bubble-detector` `stanley-druckenmiller-investment`
+
+</details>
+
+---
+
+## ⚡ Quick Start
+
+### Install a Complete Workflow (Recommended)
 
 ```bash
-# Install all skills from content-creator-workflow (interactive)
+# Pick your workflow and run ONE command:
 npx add-skill nicepkg/ai-workflow/content-creator-workflow
 
-# Install all skills from marketing-pro-workflow
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow
-
-# Install all skills from video-creator-workflow
-npx add-skill nicepkg/ai-workflow/video-creator-workflow
-
-# Install all skills from stock-trader-workflow
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow
+# That's it! Skills are now active in your AI assistant.
 ```
 
-### Install a Single Skill
+### Install Individual Skills
 
 ```bash
-# Install specific skill by name
-npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill seo-optimizer
+# Install just what you need
+npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
 
-# Install to specific agent only
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis -a claude-code
+# List available skills first
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --list
 ```
 
-### Installation Options
+### Advanced Options
 
 ```bash
-# List available skills without installing
-npx add-skill nicepkg/ai-workflow/content-creator-workflow --list
+# Install globally (available in all projects)
+npx add-skill nicepkg/ai-workflow/video-creator-workflow --global
 
-# Install to global scope (user home directory)
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --global
+# Install to specific AI tools only
+npx add-skill nicepkg/ai-workflow/content-creator-workflow -a claude-code -a cursor
 
-# Non-interactive mode (CI/CD friendly)
-npx add-skill nicepkg/ai-workflow/video-creator-workflow -y
-
-# Install to multiple specific agents
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow -a claude-code -a cursor -a opencode
+# Non-interactive mode (for CI/CD)
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow -y
 ```
 
-### Supported Agents
+---
 
-| Agent | Project Path | Global Path |
-|-------|--------------|-------------|
-| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
-| Cursor | `.cursor/skills/` | `~/.cursor/skills/` |
-| Codex | `.codex/skills/` | `~/.codex/skills/` |
-| OpenCode | `.opencode/skill/` | `~/.config/opencode/skill/` |
-| GitHub Copilot | `.github/skills/` | `~/.copilot/skills/` |
-| Amp | `.agents/skills/` | `~/.config/agents/skills/` |
-| Roo Code | `.roo/skills/` | `~/.roo/skills/` |
-| Kilo Code | `.kilocode/skills/` | `~/.kilocode/skills/` |
+## 🤖 Supported AI Tools
 
-## Alternative: Clone and Use Directly
+Works with **8+ AI coding assistants** out of the box:
+
+| AI Tool | Project Path | Global Path |
+|:--------|:-------------|:------------|
+| **Claude Code** | `.claude/skills/` | `~/.claude/skills/` |
+| **Cursor** | `.cursor/skills/` | `~/.cursor/skills/` |
+| **GitHub Copilot** | `.github/skills/` | `~/.copilot/skills/` |
+| **Codex** | `.codex/skills/` | `~/.codex/skills/` |
+| **OpenCode** | `.opencode/skill/` | `~/.config/opencode/skill/` |
+| **Amp** | `.agents/skills/` | `~/.config/agents/skills/` |
+| **Roo Code** | `.roo/skills/` | `~/.roo/skills/` |
+| **Kilo Code** | `.kilocode/skills/` | `~/.kilocode/skills/` |
+
+---
+
+## 🛠 Create Your Own Workflow
+
+### Step 1: Clone This Repository
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/nicepkg/ai-workflow.git
-
-# 2. Navigate to desired workflow
-cd ai-workflow/content-creator-workflow
-
-# 3. Launch Claude Code - skills activate automatically
+cd ai-workflow
 ```
 
-## Create New Workflow
+### Step 2: Open with AI Coding Assistant
 
-Launch Claude Code in the project root and say:
+Open the project with any AI tool that supports skills:
+- **Claude Code**: `claude` in terminal
+- **Cursor**: Open folder in Cursor
+- **Codex**: `codex` in terminal
+- **OpenCode**: `opencode` in terminal
 
-```
-"Create a developer workflow"
-"Create a researcher workflow"
-```
-
-## Multi-AI Tool Support
-
-Each workflow supports:
-
-| Tool | Path |
-|------|------|
-| Claude Code | `.claude/skills/` |
-| Codex | `.codex/skills/` |
-| Cursor | `.cursor/skills/` |
-| OpenCode | `.opencode/skill/` |
-
-## Project Structure
+### Step 3: Ask AI to Create Your Workflow
 
 ```
-ai-workflow/
-├── .claude/skills/           # Project-level skills (workflow-creator, etc.)
-├── content-creator-workflow/ # Content creators
-├── marketing-pro-workflow/   # Marketing professionals
-├── video-creator-workflow/   # Video creators
-├── stock-trader-workflow/    # Stock traders
-└── <your-workflow>/          # Your new workflows
+"Create a researcher workflow for academic paper writing"
+"Create a devops workflow for kubernetes management"
+"Create a data-scientist workflow for ML projects"
 ```
 
-## Skill Sources
+The AI will automatically:
+1. Create the workflow directory structure
+2. Find and download relevant skills
+3. Create custom skills as needed
+4. Generate documentation
 
-- [Anthropic Official](https://github.com/anthropics/skills)
-- [gked2121/claude-skills](https://github.com/gked2121/claude-skills)
+### Manual Creation
+
+```
+my-workflow/
+└── .claude/skills/
+    └── my-skill/
+        └── SKILL.md       # Skill definition
+```
+
+**SKILL.md format:**
+```markdown
+---
+name: my-skill
+description: What this skill does and when AI should use it
+---
+
+# My Skill
+
+Instructions for the AI to follow...
+```
+
+---
+
+## 🌟 Star History
+
+<a href="https://star-history.com/#nicepkg/ai-workflow&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=nicepkg/ai-workflow&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=nicepkg/ai-workflow&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=nicepkg/ai-workflow&type=Date" />
+ </picture>
+</a>
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+- ⭐ **Star this repo** - It helps others discover this project
+- 🐛 **Report bugs** - Open an issue if something isn't working
+- 💡 **Suggest skills** - What workflows would help you?
+- 🔧 **Submit PRs** - Add new skills or improve existing ones
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+
+### Contributors
+
+<a href="https://github.com/nicepkg/ai-workflow/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nicepkg/ai-workflow" />
+</a>
+
+---
+
+## 📚 Skill Sources & Credits
+
+Built on the shoulders of giants:
+
+- [Anthropic Official Skills](https://github.com/anthropics/skills)
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
-- [kkoppenhaver/cc-nano-banana](https://github.com/kkoppenhaver/cc-nano-banana)
-- [MadAppGang/claude-code](https://github.com/MadAppGang/claude-code) - SEO/content skills
-- [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles) - Blog writing skills
-- [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) - Twitter, fact-checker
-- [alirezarezvani/claude-code-skill-factory](https://github.com/alirezarezvani/claude-code-skill-factory) - Trend research
-- [michalparkola/tapestry-skills](https://github.com/michalparkola/tapestry-skills-for-claude-code) - YouTube, article extraction
+- [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills)
 - [skillhub.club](https://www.skillhub.club) - 1000+ skills collection
-- [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills) - Stock trading skills
 
-## License
+---
 
-MIT
+## 📄 License
+
+MIT © [nicepkg](https://github.com/nicepkg)
+
+---
+
+<div align="center">
+
+**If this project helped you, please consider giving it a ⭐**
+
+<a href="https://github.com/nicepkg/ai-workflow">
+  <img src="https://img.shields.io/github/stars/nicepkg/ai-workflow?style=for-the-badge&logo=github&color=yellow" alt="GitHub stars" />
+</a>
+
+Made with ❤️ by the open source community
+
+</div>

@@ -1,0 +1,94 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate SKILL.md files
+        run: |
+          echo "Validating SKILL.md files..."
+
+          # Find all SKILL.md files
+          SKILL_FILES=$(find . -name "SKILL.md" -type f)
+
+          if [ -z "$SKILL_FILES" ]; then
+            echo "No SKILL.md files found"
+            exit 0
+          fi
+
+          ERRORS=0
+
+          for file in $SKILL_FILES; do
+            echo "Checking: $file"
+
+            # Check if file has frontmatter
+            if ! head -1 "$file" | grep -q "^---$"; then
+              echo "  ❌ Missing frontmatter"
+              ERRORS=$((ERRORS + 1))
+              continue
+            fi
+
+            # Check for name field
+            if ! grep -q "^name:" "$file"; then
+              echo "  ❌ Missing 'name' field"
+              ERRORS=$((ERRORS + 1))
+            fi
+
+            # Check for description field
+            if ! grep -q "^description:" "$file"; then
+              echo "  ❌ Missing 'description' field"
+              ERRORS=$((ERRORS + 1))
+            fi
+
+            echo "  ✅ Valid"
+          done
+
+          echo ""
+          echo "Found $(echo "$SKILL_FILES" | wc -l | tr -d ' ') SKILL.md files"
+
+          if [ $ERRORS -gt 0 ]; then
+            echo "❌ $ERRORS errors found"
+            exit 1
+          fi
+
+          echo "✅ All files valid"
+
+      - name: Check workflow structure
+        run: |
+          echo "Checking workflow structures..."
+
+          for dir in *-workflow; do
+            if [ -d "$dir" ]; then
+              echo "Checking: $dir"
+
+              # Check for README.md
+              if [ ! -f "$dir/README.md" ]; then
+                echo "  ⚠️ Missing README.md"
+              fi
+
+              # Check for skills directory
+              if [ ! -d "$dir/.claude/skills" ]; then
+                echo "  ⚠️ Missing .claude/skills directory"
+              else
+                SKILL_COUNT=$(find "$dir/.claude/skills" -name "SKILL.md" | wc -l | tr -d ' ')
+                echo "  📦 Skills: $SKILL_COUNT"
+              fi
+            fi
+          done
+
+          echo "✅ Structure check complete"

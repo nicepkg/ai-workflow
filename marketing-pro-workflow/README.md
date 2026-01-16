@@ -1,68 +1,79 @@
-# Marketing Pro Workflow
+<div align="center">
 
-Claude Code workflow for digital marketers, growth hackers, and marketing teams.
+# 📈 Marketing Pro Workflow
 
-[中文文档](./README_cn.md)
+### **Your AI-Powered Marketing Team**
 
-## Target Users
+[← Back to AI Workflow](../README.md)
 
-- Digital Marketers
-- Growth Marketers & Demand Gen
-- Product Marketing Managers (PMM)
-- Social Media Managers
-- SEO Specialists
-- Paid Media Specialists
+[简体中文](./README_cn.md) | English
 
-## Installed Skills (18)
+</div>
 
-### Strategy & Research
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| marketing-strategy-pmm | Product marketing, positioning, GTM, ICP definition, competitive battlecards | "Create positioning for [product]" |
-| marketing-demand-acquisition | Multi-channel demand gen, paid media optimization, SEO strategy, CAC calculator | "Plan demand gen campaign" |
-| buyer-persona-generator | Create detailed buyer personas and ICP | "Create buyer persona for [role]" |
-| competitive-ads-extractor | Extract and analyze competitor ads from ad libraries | "Analyze competitor ads for [company]" |
-| lead-research-assistant | Identify and qualify leads for your product | "Find 10 leads for [product]" |
+---
 
-### SEO & Content
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| seo-optimizer | SEO content optimization | "Optimize this article for SEO" |
-| content-optimizer | On-page SEO, keyword density, meta tags | "Check keyword density" |
-| serp-analysis | SERP analysis and competitor intelligence | "Analyze SERP for [keyword]" |
-| keyword-cluster-builder | Keyword expansion and clustering | "Build keyword cluster for [topic]" |
-| content-brief | SEO content planning briefs | "Create a content brief" |
+## 🎯 Who Is This For?
 
-### Advertising & Campaigns
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| ad-copy-generator | Generate ad copy for Google, Meta, LinkedIn, TikTok | "Create 5 Google Ads variations" |
-| landing-page-copywriter | Landing page copy with AIDA framework | "Write landing page copy" |
-| email-template-generator | Email marketing templates and sequences | "Generate email sequence" |
-| utm-builder | Generate UTM-tagged URLs for campaign tracking | "Create UTM links for campaign" |
+- **Digital Marketers** - Multi-channel campaigns
+- **Growth Hackers** - Conversion optimization
+- **Product Marketing Managers** - GTM & positioning
+- **Demand Gen Specialists** - Pipeline building
 
-### Social Media
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| linkedin-post-optimizer | LinkedIn post optimization | "Optimize LinkedIn post" |
-| social-repurposer | Cross-platform content conversion | "Convert to all platform formats" |
-| social-media-analyzer | Analyze campaign performance, engagement, ROI | "Analyze this campaign data" |
+---
 
-### Analytics
-| Skill | Function | Trigger Example |
-|-------|----------|-----------------|
-| analytics-interpretation | GA4/GSC data interpretation | "Interpret this analytics data" |
-
-## Quick Start
+## ⚡ Quick Install
 
 ```bash
-cd marketing-pro-workflow
-# Launch Claude Code - skills activate automatically
+# Install all 18 skills with one command
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow
+
+# Or install specific skills
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generator
 ```
 
-## Automated Marketing Workflows
+---
 
-### 1. Complete GTM Strategy
+## 📦 Skills Included (18)
+
+### Strategy & Research
+| Skill | What It Does |
+|:------|:-------------|
+| `marketing-strategy-pmm` | Product marketing, positioning, GTM, competitive battlecards |
+| `marketing-demand-acquisition` | Multi-channel demand gen, paid media, CAC calculator |
+| `buyer-persona-generator` | Create detailed buyer personas and ICP |
+| `competitive-ads-extractor` | Extract and analyze competitor ads |
+| `lead-research-assistant` | Identify and qualify leads |
+
+### SEO & Content
+| Skill | What It Does |
+|:------|:-------------|
+| `seo-optimizer` | SEO content optimization |
+| `content-optimizer` | On-page SEO, keyword density, meta tags |
+| `serp-analysis` | SERP analysis and competitor intelligence |
+| `keyword-cluster-builder` | Keyword expansion and clustering |
+| `content-brief` | SEO content planning briefs |
+
+### Advertising & Campaigns
+| Skill | What It Does |
+|:------|:-------------|
+| `ad-copy-generator` | Ad copy for Google, Meta, LinkedIn, TikTok |
+| `landing-page-copywriter` | Landing page copy with AIDA framework |
+| `email-template-generator` | Email marketing templates and sequences |
+| `utm-builder` | Generate UTM-tagged URLs for tracking |
+
+### Social Media & Analytics
+| Skill | What It Does |
+|:------|:-------------|
+| `linkedin-post-optimizer` | LinkedIn post optimization |
+| `social-repurposer` | Cross-platform content conversion |
+| `social-media-analyzer` | Campaign performance & ROI analysis |
+| `analytics-interpretation` | GA4/GSC data interpretation |
+
+---
+
+## 💡 Example Workflows
+
+### Complete GTM Strategy
 ```
 1. "Create ICP and 3 buyer personas for [product]"
 2. "Develop positioning using April Dunford method"
@@ -70,72 +81,42 @@ cd marketing-pro-workflow
 4. "Plan 90-day GTM launch"
 ```
 
-### 2. Full-Funnel Campaign
+### Full-Funnel Campaign
 ```
 1. "Plan demand gen campaign for [product]"
 2. "Generate ad copy for Google and LinkedIn"
 3. "Create UTM links for all channels"
-4. "Write email nurture sequence (5 emails)"
+4. "Write 5-email nurture sequence"
 5. "Create landing page copy"
 ```
 
-### 3. SEO Content Strategy
+### SEO Content Strategy
 ```
 1. "Build keyword cluster for [topic]"
-2. "Analyze SERP for [primary keyword]"
-3. "Create content brief based on analysis"
-4. "Use content-optimizer to check SEO requirements"
+2. "Analyze SERP for [keyword]"
+3. "Create content brief"
+4. "Optimize for SEO"
 ```
 
-### 4. Competitive Intelligence
-```
-1. "Analyze competitor ads for [company]"
-2. "Create competitive battlecard"
-3. "Identify gaps in competitor messaging"
-4. "Generate differentiated ad copy"
-```
+---
 
-### 5. Lead Generation Campaign
-```
-1. "Find 20 qualified leads matching our ICP"
-2. "Create personalized outreach messages"
-3. "Generate LinkedIn ad campaign targeting this segment"
-4. "Create UTM tracking for all touchpoints"
-```
+## 🔗 Skill Combinations
 
-### 6. Performance Analysis
-```
-1. "Analyze this GA4 campaign data"
-2. "Calculate CAC by channel"
-3. "Interpret social media engagement metrics"
-4. "Provide optimization recommendations"
-```
+| Goal | Skill Chain |
+|:-----|:------------|
+| **Product Launch** | buyer-persona → marketing-strategy-pmm → ad-copy → landing-page → email |
+| **ABM Campaign** | lead-research → buyer-persona → ad-copy → linkedin-optimizer |
+| **SEO Campaign** | keyword-cluster → serp-analysis → content-brief → content-optimizer |
+| **Paid Media** | competitive-ads → ad-copy → utm-builder → analytics |
 
-## Skill Combinations
+---
 
-- **Product Launch**: buyer-persona-generator → marketing-strategy-pmm → ad-copy-generator → landing-page-copywriter → email-template-generator
-- **ABM Campaign**: lead-research-assistant → buyer-persona-generator → ad-copy-generator → linkedin-post-optimizer
-- **SEO Campaign**: keyword-cluster-builder → serp-analysis → content-brief → content-optimizer
-- **Paid Media Optimization**: competitive-ads-extractor → ad-copy-generator → utm-builder → analytics-interpretation
-- **Brand Awareness**: marketing-strategy-pmm → ad-copy-generator → social-repurposer → social-media-analyzer
+## 📄 License
 
-## Output Standards
+MIT © [nicepkg](https://github.com/nicepkg)
 
-- **Positioning**: April Dunford framework, competitive alternatives mapped
-- **Personas**: Full demographic, psychographic, and behavioral profiles
-- **Ad Copy**: Platform-specific formats with character count validation
-- **Email Sequences**: 3-5 emails, progressive engagement model
-- **UTM Links**: Consistent naming convention, documented in spreadsheet
-- **Reports**: Actionable insights with specific recommendations
+<div align="center">
 
-## Multi-AI Tool Support
+**[⬆ Back to Main Project](../README.md)**
 
-This workflow supports:
-- Claude Code (`.claude/skills/`)
-- Codex (`.codex/skills/`)
-- Cursor (`.cursor/skills/`)
-- OpenCode (`.opencode/skill/`)
-
-## License
-
-MIT
+</div>
