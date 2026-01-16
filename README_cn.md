@@ -11,11 +11,70 @@
 | [video-creator-workflow](./video-creator-workflow/) | YouTuber、TikToker、视频创作者 | 15 |
 | [stock-trader-workflow](./stock-trader-workflow/) | 股票交易者、投资者（美股/A股/港股） | 25 |
 
-## 快速使用
+## 安装
+
+使用 [add-skill](https://github.com/nicepkg/add-skill) CLI工具安装skills。
+
+### 一键安装整个Workflow的所有Skills
+
+```bash
+# 安装 content-creator-workflow 的所有skills（交互式）
+npx add-skill nicepkg/ai-workflow/content-creator-workflow
+
+# 安装 marketing-pro-workflow 的所有skills
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow
+
+# 安装 video-creator-workflow 的所有skills
+npx add-skill nicepkg/ai-workflow/video-creator-workflow
+
+# 安装 stock-trader-workflow 的所有skills
+npx add-skill nicepkg/ai-workflow/stock-trader-workflow
+```
+
+### 安装单个Skill
+
+```bash
+# 按名称安装指定skill
+npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill seo-optimizer
+
+# 只安装到指定的AI工具
+npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis -a claude-code
+```
+
+### 安装选项
+
+```bash
+# 列出可用的skills（不安装）
+npx add-skill nicepkg/ai-workflow/content-creator-workflow --list
+
+# 安装到全局目录（用户主目录）
+npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --global
+
+# 非交互模式（适合CI/CD）
+npx add-skill nicepkg/ai-workflow/video-creator-workflow -y
+
+# 安装到多个指定的AI工具
+npx add-skill nicepkg/ai-workflow/stock-trader-workflow -a claude-code -a cursor -a opencode
+```
+
+### 支持的AI工具
+
+| 工具 | 项目级路径 | 全局路径 |
+|-----|-----------|---------|
+| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
+| Cursor | `.cursor/skills/` | `~/.cursor/skills/` |
+| Codex | `.codex/skills/` | `~/.codex/skills/` |
+| OpenCode | `.opencode/skill/` | `~/.config/opencode/skill/` |
+| GitHub Copilot | `.github/skills/` | `~/.copilot/skills/` |
+| Amp | `.agents/skills/` | `~/.config/agents/skills/` |
+| Roo Code | `.roo/skills/` | `~/.roo/skills/` |
+| Kilo Code | `.kilocode/skills/` | `~/.kilocode/skills/` |
+
+## 备选：克隆仓库直接使用
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/xxx/ai-workflow.git
+git clone https://github.com/nicepkg/ai-workflow.git
 
 # 2. 进入想要的workflow
 cd ai-workflow/content-creator-workflow
