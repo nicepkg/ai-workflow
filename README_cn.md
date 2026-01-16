@@ -6,7 +6,7 @@
 
 | Workflow | 适合人群 | Skills数量 |
 |----------|---------|-----------|
-| [content-creator-workflow](./content-creator-workflow/) | 自媒体博主、内容创作者 | 9 |
+| [content-creator-workflow](./content-creator-workflow/) | 自媒体博主、内容创作者 | 15 |
 | [marketing-pro-workflow](./marketing-pro-workflow/) | 数字营销、社交媒体经理 | 10 |
 
 ## 快速使用
@@ -59,6 +59,9 @@ ai-workflow/
 - [kkoppenhaver/cc-nano-banana](https://github.com/kkoppenhaver/cc-nano-banana)
 - [MadAppGang/claude-code](https://github.com/MadAppGang/claude-code) - SEO/内容skills
 - [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles) - 博客写作skills
+- [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) - Twitter、事实核查
+- [alirezarezvani/claude-code-skill-factory](https://github.com/alirezarezvani/claude-code-skill-factory) - 趋势研究
+- [michalparkola/tapestry-skills](https://github.com/michalparkola/tapestry-skills-for-claude-code) - YouTube、文章提取
 - [skillhub.club](https://www.skillhub.club) - 1000+ skills集合
 
 ## License
