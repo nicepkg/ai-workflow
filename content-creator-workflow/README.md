@@ -17,6 +17,8 @@ Claude Code workflow for bloggers, content creators, and personal brand builders
 |-------|----------|-----------------|
 | nano-banana | AI image generation (Gemini) | "Generate a blog cover image" |
 | canvas-design | AI visual design, PNG/PDF export | "Design a cover image" |
+| blog-post-writer | Transform notes into blog posts | "Write a blog post from my notes" |
+| content-brief | SEO content planning briefs | "Create a content brief for [topic]" |
 | docx | Word document creation/editing | "Export to Word document" |
 | pdf | PDF processing and generation | "Generate PDF" |
 | social-repurposer | Cross-platform content conversion | "Convert to Twitter thread" |
@@ -38,10 +40,11 @@ cd content-creator-workflow
 
 ```
 1. "Research the latest trends on [topic]"
-2. "Write an in-depth article based on the research"
-3. "Use nano-banana to generate a blog cover image"
-4. "Use social-repurposer to convert to Twitter thread and LinkedIn post"
-5. "Export to Word document"
+2. "Create a content brief for [topic]"
+3. "Write a blog post from my research notes"
+4. "Use nano-banana to generate a blog cover image"
+5. "Use social-repurposer to convert to Twitter thread and LinkedIn post"
+6. "Export to Word document"
 ```
 
 ### Podcast Creation

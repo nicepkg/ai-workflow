@@ -15,6 +15,8 @@
 |-------|------|---------|
 | nano-banana | AI图片生成 (Gemini) | "生成一张博客封面图" |
 | canvas-design | AI视觉设计，生成PNG/PDF | "设计一张封面图" |
+| blog-post-writer | 将笔记转化为博客文章 | "根据我的笔记写一篇博客" |
+| content-brief | SEO内容规划简报 | "为[主题]创建内容规划" |
 | docx | Word文档创建和编辑 | "导出为Word文档" |
 | pdf | PDF处理和生成 | "生成PDF" |
 | social-repurposer | 跨平台内容转换 | "转换为Twitter thread" |
@@ -36,10 +38,11 @@ cd content-creator-workflow
 
 ```
 1. "帮我研究一下 [话题] 的最新趋势"
-2. "根据研究写一篇深度文章"
-3. "用 nano-banana 生成一张博客封面图"
-4. "用 social-repurposer 转换为 Twitter thread 和 LinkedIn post"
-5. "导出为 Word 文档"
+2. "为 [话题] 创建内容规划简报"
+3. "根据我的研究笔记写一篇博客文章"
+4. "用 nano-banana 生成一张博客封面图"
+5. "用 social-repurposer 转换为 Twitter thread 和 LinkedIn post"
+6. "导出为 Word 文档"
 ```
 
 ### 播客创作

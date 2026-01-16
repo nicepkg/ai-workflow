@@ -6,14 +6,19 @@
 
 - 数字营销人员
 - 社交媒体经理
-- 企业营销团队
-- 品牌运营专员
+- SEO专家
+- 营销团队
 
 ## 已安装Skills
 
 | Skill | 功能 | 触发示例 |
 |-------|------|---------|
 | seo-optimizer | SEO内容优化 | "优化这篇文章的SEO" |
+| content-optimizer | 页面SEO、关键词密度、meta标签 | "检查关键词密度" |
+| serp-analysis | SERP分析和竞争情报 | "分析[关键词]的搜索结果" |
+| keyword-cluster-builder | 关键词扩展和聚类 | "为[主题]构建关键词聚类" |
+| analytics-interpretation | GA4/GSC数据解读 | "解读这份分析数据" |
+| content-brief | SEO内容规划简报 | "创建内容规划简报" |
 | linkedin-post-optimizer | LinkedIn帖子优化 | "优化LinkedIn帖子" |
 | social-repurposer | 跨平台内容转换 | "转换为各平台格式" |
 | landing-page-copywriter | 落地页文案 | "写落地页文案" |
@@ -30,6 +35,16 @@ cd marketing-pro-workflow
 
 ## 使用示例
 
+### SEO内容策略
+
+```
+1. "为[主题]构建关键词聚类"
+2. "分析[主要关键词]的搜索结果"
+3. "根据分析创建内容规划简报"
+4. "撰写内容"
+5. "使用content-optimizer检查SEO要求"
+```
+
 ### 营销活动流程
 
 ```
@@ -40,10 +55,10 @@ cd marketing-pro-workflow
 5. "优化LinkedIn版本"
 ```
 
-### SEO内容优化
+### 数据分析
 
 ```
-"用 seo-optimizer 优化这篇文章，目标关键词是 [keywords]"
+"解读这份GA4报告并提供可执行的建议"
 ```
 
 ## 多AI工具支持

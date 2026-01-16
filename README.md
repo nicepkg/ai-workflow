@@ -8,8 +8,8 @@ Ready-to-use Claude Code workflow collections with multi-AI tool support.
 
 | Workflow | Target Users | Skills |
 |----------|-------------|--------|
-| [content-creator-workflow](./content-creator-workflow/) | Bloggers, Content Creators | 7 |
-| [marketing-pro-workflow](./marketing-pro-workflow/) | Digital Marketers, Social Media Managers | 5 |
+| [content-creator-workflow](./content-creator-workflow/) | Bloggers, Content Creators | 9 |
+| [marketing-pro-workflow](./marketing-pro-workflow/) | Digital Marketers, Social Media Managers | 10 |
 
 ## Quick Start
 
@@ -59,6 +59,8 @@ ai-workflow/
 - [gked2121/claude-skills](https://github.com/gked2121/claude-skills)
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 - [kkoppenhaver/cc-nano-banana](https://github.com/kkoppenhaver/cc-nano-banana)
+- [MadAppGang/claude-code](https://github.com/MadAppGang/claude-code) - SEO/content skills
+- [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles) - Blog writing skills
 - [skillhub.club](https://www.skillhub.club) - 1000+ skills collection
 
 ## License

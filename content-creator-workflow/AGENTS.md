@@ -8,6 +8,8 @@ AI execution guide for content creator workflow.
 |-------|---------|
 | nano-banana | generate image, AI image, cover image, thumbnail, illustration |
 | canvas-design | design, image, cover, visual |
+| blog-post-writer | blog post, write article, transform notes |
+| content-brief | content brief, content plan, SEO brief |
 | docx | Word, document, export docx |
 | pdf | PDF, export pdf |
 | social-repurposer | Twitter thread, LinkedIn, social media conversion |
@@ -19,10 +21,11 @@ AI execution guide for content creator workflow.
 ### Content Creation Flow
 
 1. **Research Phase** - Gather materials and information
-2. **Writing Phase** - Create long-form content
-3. **Design Phase** - Use nano-banana or canvas-design for visuals
-4. **Conversion Phase** - Use social-repurposer for multi-platform versions
-5. **Export Phase** - Use docx/pdf for document export
+2. **Planning Phase** - Use content-brief to create SEO-optimized content plan
+3. **Writing Phase** - Use blog-post-writer to transform notes into polished articles
+4. **Design Phase** - Use nano-banana or canvas-design for visuals
+5. **Conversion Phase** - Use social-repurposer for multi-platform versions
+6. **Export Phase** - Use docx/pdf for document export
 
 ### Podcast Flow
 
@@ -32,7 +35,7 @@ AI execution guide for content creator workflow.
 
 ## Skill Combinations
 
-- **Long-form + Multi-platform**: Writing → nano-banana (cover) → social-repurposer → multi-platform content
+- **Blog + Multi-platform**: content-brief → blog-post-writer → nano-banana (cover) → social-repurposer
 - **Podcast + Article**: podcast-content-suite → content-repurposer → blog article
 - **Visual Content**: nano-banana (AI generation) or canvas-design (design editing) → cover/illustration
 
@@ -42,3 +45,4 @@ AI execution guide for content creator workflow.
 - Twitter thread: 8-12 tweets, <280 characters each
 - LinkedIn: Professional tone, under 1300 characters
 - Podcast outline: Clear segments, timestamp suggestions
+- Content brief: SEO requirements, competitor analysis, E-E-A-T guidelines
