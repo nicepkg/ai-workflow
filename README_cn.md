@@ -8,6 +8,7 @@
 |----------|---------|-----------|
 | [content-creator-workflow](./content-creator-workflow/) | 自媒体博主、内容创作者 | 15 |
 | [marketing-pro-workflow](./marketing-pro-workflow/) | 数字营销、增长营销、PMM | 18 |
+| [video-creator-workflow](./video-creator-workflow/) | YouTuber、TikToker、视频创作者 | 15 |
 
 ## 快速使用
 
