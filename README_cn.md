@@ -7,7 +7,7 @@
 | Workflow | 适合人群 | Skills数量 |
 |----------|---------|-----------|
 | [content-creator-workflow](./content-creator-workflow/) | 自媒体博主、内容创作者 | 15 |
-| [marketing-pro-workflow](./marketing-pro-workflow/) | 数字营销、社交媒体经理 | 10 |
+| [marketing-pro-workflow](./marketing-pro-workflow/) | 数字营销、增长营销、PMM | 18 |
 
 ## 快速使用
 

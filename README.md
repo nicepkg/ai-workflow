@@ -9,7 +9,7 @@ Ready-to-use Claude Code workflow collections with multi-AI tool support.
 | Workflow | Target Users | Skills |
 |----------|-------------|--------|
 | [content-creator-workflow](./content-creator-workflow/) | Bloggers, Content Creators | 15 |
-| [marketing-pro-workflow](./marketing-pro-workflow/) | Digital Marketers, Social Media Managers | 10 |
+| [marketing-pro-workflow](./marketing-pro-workflow/) | Digital Marketers, Growth Marketers, PMMs | 18 |
 
 ## Quick Start
 
