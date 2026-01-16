@@ -9,6 +9,7 @@
 | [content-creator-workflow](./content-creator-workflow/) | 自媒体博主、内容创作者 | 15 |
 | [marketing-pro-workflow](./marketing-pro-workflow/) | 数字营销、增长营销、PMM | 18 |
 | [video-creator-workflow](./video-creator-workflow/) | YouTuber、TikToker、视频创作者 | 15 |
+| [stock-trader-workflow](./stock-trader-workflow/) | 股票交易者、投资者（美股/A股/港股） | 25 |
 
 ## 快速使用
 
@@ -49,6 +50,8 @@ ai-workflow/
 ├── .claude/skills/           # 项目级skills（workflow-creator等）
 ├── content-creator-workflow/ # 内容创作者
 ├── marketing-pro-workflow/   # 营销专业人员
+├── video-creator-workflow/   # 视频创作者
+├── stock-trader-workflow/    # 股票交易者
 └── <your-workflow>/          # 你的新workflow
 ```
 
@@ -64,6 +67,7 @@ ai-workflow/
 - [alirezarezvani/claude-code-skill-factory](https://github.com/alirezarezvani/claude-code-skill-factory) - 趋势研究
 - [michalparkola/tapestry-skills](https://github.com/michalparkola/tapestry-skills-for-claude-code) - YouTube、文章提取
 - [skillhub.club](https://www.skillhub.club) - 1000+ skills集合
+- [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills) - 股票交易skills
 
 ## License
 

@@ -11,6 +11,7 @@ Ready-to-use Claude Code workflow collections with multi-AI tool support.
 | [content-creator-workflow](./content-creator-workflow/) | Bloggers, Content Creators | 15 |
 | [marketing-pro-workflow](./marketing-pro-workflow/) | Digital Marketers, Growth Marketers, PMMs | 18 |
 | [video-creator-workflow](./video-creator-workflow/) | YouTubers, TikTokers, Video Creators | 15 |
+| [stock-trader-workflow](./stock-trader-workflow/) | Stock Traders, Investors (US/A-share/HK) | 25 |
 
 ## Quick Start
 
@@ -51,6 +52,8 @@ ai-workflow/
 ├── .claude/skills/           # Project-level skills (workflow-creator, etc.)
 ├── content-creator-workflow/ # Content creators
 ├── marketing-pro-workflow/   # Marketing professionals
+├── video-creator-workflow/   # Video creators
+├── stock-trader-workflow/    # Stock traders
 └── <your-workflow>/          # Your new workflows
 ```
 
@@ -66,6 +69,7 @@ ai-workflow/
 - [alirezarezvani/claude-code-skill-factory](https://github.com/alirezarezvani/claude-code-skill-factory) - Trend research
 - [michalparkola/tapestry-skills](https://github.com/michalparkola/tapestry-skills-for-claude-code) - YouTube, article extraction
 - [skillhub.club](https://www.skillhub.club) - 1000+ skills collection
+- [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills) - Stock trading skills
 
 ## License
 

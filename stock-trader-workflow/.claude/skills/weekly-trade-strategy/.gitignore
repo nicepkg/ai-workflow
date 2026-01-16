@@ -1,0 +1,35 @@
+# Environment variables
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# Data files (if they contain sensitive info)
+# earnings_data.json
+
+# Temporary files
+*.tmp
+*.log
+
+# Generated content - ignore files but keep folder structure
+charts/**
+blogs/**
+reports/**
+
+# Keep folder structure with .gitkeep files
+!**/.gitkeep
