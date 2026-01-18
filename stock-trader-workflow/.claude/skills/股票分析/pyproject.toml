@@ -1,0 +1,13 @@
+[project]
+name = "share-trading-analysis"
+version = "0.1.0"
+description = "share-trading-analysis tools"
+readme = "SKILL.md"
+requires-python = ">=3.13"
+dependencies = [
+    "longport>=3.0.18",
+    "akshare>=1.18.3",
+    "pandas>=2.3.3",
+    "ta-lib>=0.6.8",
+    "quantstats>=0.0.77",
+]

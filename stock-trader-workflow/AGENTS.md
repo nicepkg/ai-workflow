@@ -1,56 +1,145 @@
-# Stock Trader Workflow - Agent Guide
+# Stock Trader Workflow - AI Instructions
 
-This document describes how the AI agent should utilize the skills in this workflow.
+AI execution guide for stock trader workflow with 29 skills for professional trading and investment analysis.
 
-## Skill Categories
+## Available Skills (29)
 
-### Market Analysis Skills
+### 1. Market Data & Foundation
+| Skill | Trigger |
+|-------|---------|
+| akshare | AKShare data, China market data, A-share data, futures data, fund data |
+| 股票分析 | 股票分析, A股分析, 港股分析, technical indicators, 技术指标 |
 
-**US Market:**
-- `us-stock-analysis` - Use for comprehensive US stock analysis (fundamentals + technicals)
+### 2. Market Analysis
+| Skill | Trigger |
+|-------|---------|
+| us-stock-analysis | US stocks, AAPL, MSFT, NVDA, American stocks, analyze [ticker] |
+| a-share-analysis | A股, A-share, 600xxx, 000xxx, 300xxx, 688xxx, 沪深, 分析[股票] |
+| hk-stock-analysis | 港股, HK stocks, xxx.HK, 腾讯, 阿里, Hong Kong |
+| technical-analyst | chart analysis, technicals, support, resistance, patterns, 技术面 |
+| market-environment-analysis | market conditions, overall market, 市场环境, big picture |
+| breadth-chart-analyst | market breadth, advance/decline, internals, 市场广度 |
 
-**China A-Share Market:**
-- `a-share-analysis` - Use for A-share analysis, considers T+1, price limits, northbound flow
-- `a-share-screener` - Use for multi-criteria stock screening
-- `china-macro-analyst` - Use for macro data and policy impact analysis
-- `cross-border-flow-tracker` - Use for tracking northbound/southbound capital flows
+### 3. Capital Flow Tracking
+| Skill | Trigger |
+|-------|---------|
+| cross-border-flow-tracker | northbound, southbound, 北向资金, 南向资金, Stock Connect |
+| institutional-flow-tracker | institutional, smart money, 机构资金, hedge fund, 主力 |
 
-**Hong Kong Market:**
-- `hk-stock-analysis` - Use for HK stocks, includes AH premium analysis
+### 4. Stock Screening
+| Skill | Trigger |
+|-------|---------|
+| stock-screener | screen stocks, filter, find stocks, multi-criteria, 筛选股票 |
+| a-share-screener | A股选股, A-share screen, 选股, 筛选A股 |
+| canslim-screener | CANSLIM, growth stocks, CAN SLIM, William O'Neil |
+| value-dividend-screener | value stocks, dividends, low PE, high ROE, 价值股, 股息 |
+| dividend-growth-pullback-screener | dividend growth, pullback, 股息成长, 回调买入 |
+| pair-trade-screener | pair trade, spread, arbitrage, 配对交易, 套利 |
 
-### Technical Analysis Skills
+### 5. Sector & Macro Analysis
+| Skill | Trigger |
+|-------|---------|
+| sector-analyst | sector, industry, rotation, 行业, 板块, 轮动 |
+| china-macro-analyst | China macro, policy, 宏观, 政策, 央行, GDP, PMI |
+| economic-calendar-fetcher | economic calendar, events, 经济日历, 数据发布 |
+| earnings-calendar | earnings, 财报, quarterly report, 季报, 业绩 |
+| market-news-analyst | news, headlines, impact, 新闻, 消息面 |
 
-- `technical-analyst` - Primary skill for chart analysis with scenario probability
-- `breadth-chart-analyst` - Use for market breadth analysis
-- `market-environment-analysis` - Use to assess overall market conditions
+### 6. Portfolio & Risk Management
+| Skill | Trigger |
+|-------|---------|
+| portfolio-manager | portfolio, allocation, rebalance, 持仓, 组合, 配置 |
+| options-strategy-advisor | options, calls, puts, hedge, 期权, 对冲 |
+| backtest-expert | backtest, historical test, 回测, 历史测试 |
+| scenario-analyzer | scenario, what if, bull case, bear case, 情景分析 |
 
-### Screening & Strategy Skills
+### 7. Strategy & Trading
+| Skill | Trigger |
+|-------|---------|
+| weekly-trade-strategy | weekly plan, trading plan, 周度计划, 交易计划 |
+| stanley-druckenmiller-investment | Druckenmiller, macro trading, 宏观交易 |
+| us-market-bubble-detector | bubble, overvalued, frothy, 泡沫, 高估 |
+| shioaji | Taiwan, 台股, TW market, Shioaji API, 台湾 |
 
-- `canslim-screener` - Use for CANSLIM growth stock screening
-- `value-dividend-screener` - Use for value + dividend screening
-- `dividend-growth-pullback-screener` - Use for dividend stocks on pullback
-- `pair-trade-screener` - Use for pair trading opportunities
-- `sector-analyst` - Use for sector rotation analysis
+## Professional Trading Pipeline
 
-### Portfolio & Risk Skills
+```
+Stage 1: Pre-Market Research (盘前研判)
+├── economic-calendar-fetcher → Check economic events
+├── earnings-calendar → Track earnings releases
+├── market-environment-analysis → Assess market conditions
+├── china-macro-analyst → Review macro data
+└── market-news-analyst → Scan important news
 
-- `portfolio-manager` - Use for portfolio analysis and rebalancing
-- `scenario-analyzer` - Use for investment scenario analysis
-- `options-strategy-advisor` - Use for options strategy recommendations
-- `backtest-expert` - Use for strategy backtesting
+Stage 2: Stock Screening (选股扫描)
+├── stock-screener → Broad multi-criteria filtering
+├── a-share-screener → A-share specific criteria
+├── canslim-screener → Growth stock identification
+├── value-dividend-screener → Value stock identification
+└── pair-trade-screener → Arbitrage opportunities
 
-### News & Calendar Skills
+Stage 3: Deep Analysis (深度分析)
+├── us-stock-analysis → US stock fundamentals
+├── a-share-analysis → A-share fundamentals
+├── hk-stock-analysis → HK stock analysis
+├── 股票分析 → Chinese stock with technicals
+├── technical-analyst → Chart patterns & levels
+├── institutional-flow-tracker → Smart money tracking
+└── cross-border-flow-tracker → Capital flow confirmation
 
-- `market-news-analyst` - Use for market news analysis
-- `earnings-calendar` - Use to track earnings releases
-- `economic-calendar-fetcher` - Use to track economic events
+Stage 4: Risk Assessment (风险评估)
+├── scenario-analyzer → Bull/bear/base cases
+├── us-market-bubble-detector → Bubble risk check
+├── options-strategy-advisor → Hedging strategies
+└── portfolio-manager → Position sizing
 
-### Specialty Skills
+Stage 5: Execution (下单执行)
+├── shioaji → Taiwan market orders
+└── weekly-trade-strategy → Actionable trading plan
 
-- `institutional-flow-tracker` - Use for institutional positioning
-- `stanley-druckenmiller-investment` - Use for macro-driven investing
-- `us-market-bubble-detector` - Use to assess bubble risks
-- `weekly-trade-strategy` - Use for weekly trading plan generation
+Stage 6: Post-Market Review (盘后复盘)
+├── market-news-analyst → News impact review
+├── breadth-chart-analyst → Market breadth analysis
+└── portfolio-manager → Performance tracking
+```
+
+## Skill Combinations
+
+### Comprehensive Stock Analysis
+```
+akshare → a-share-analysis → technical-analyst
+→ institutional-flow-tracker → portfolio-manager
+```
+
+### Growth Stock Discovery (CANSLIM)
+```
+canslim-screener → us-stock-analysis → technical-analyst
+→ us-market-bubble-detector → weekly-trade-strategy
+```
+
+### A-Share Value Investing
+```
+value-dividend-screener → a-share-analysis → cross-border-flow-tracker
+→ portfolio-manager → weekly-trade-strategy
+```
+
+### Macro-Driven Trading
+```
+china-macro-analyst → sector-analyst → a-share-screener
+→ 股票分析 → scenario-analyzer
+```
+
+### AH Arbitrage
+```
+hk-stock-analysis + a-share-analysis → cross-border-flow-tracker
+→ pair-trade-screener → portfolio-manager
+```
+
+### Weekly Planning
+```
+economic-calendar-fetcher → earnings-calendar → market-environment-analysis
+→ weekly-trade-strategy
+```
 
 ## Routing Guide
 
@@ -62,11 +151,13 @@ This document describes how the AI agent should utilize the skills in this workf
 - Route to `china-macro-analyst` for macro/policy questions
 - Route to `cross-border-flow-tracker` for 北向资金/南向资金 questions
 - Route to `a-share-screener` for 选股/筛选 requests
+- Route to `股票分析` for technical analysis requests
 
 **English queries:**
 - Route to `us-stock-analysis` for US stocks (AAPL, MSFT, etc.)
 - Route to `technical-analyst` for chart analysis requests
 - Route to `portfolio-manager` for portfolio-related questions
+- Route to `stock-screener` for general screening
 
 ### By Query Type
 
@@ -76,12 +167,14 @@ This document describes how the AI agent should utilize the skills in this workf
 3. Consider combining fundamental + technical
 
 **"Screen/filter stocks" / "选股/筛选":**
-1. Use `a-share-screener` for A-shares
-2. Use `canslim-screener` or `value-dividend-screener` for US
+1. Use `stock-screener` for general filtering
+2. Use `a-share-screener` for A-shares
+3. Use `canslim-screener` or `value-dividend-screener` for specific strategies
 
 **"What's happening in the market" / "市场怎么样":**
 1. Use `market-environment-analysis`
 2. Supplement with `market-news-analyst`
+3. Check `breadth-chart-analyst` for internals
 
 **"Capital flow" / "资金流向":**
 1. Use `cross-border-flow-tracker` for cross-border
@@ -91,36 +184,54 @@ This document describes how the AI agent should utilize the skills in this workf
 1. Use `portfolio-manager`
 2. Supplement with `scenario-analyzer` for planning
 
-## Combination Strategies
+**"Weekly plan" / "本周计划":**
+1. Start with `economic-calendar-fetcher`
+2. Check `earnings-calendar`
+3. Generate with `weekly-trade-strategy`
 
-### Comprehensive Stock Analysis
-1. `us-stock-analysis` or `a-share-analysis` (fundamentals)
-2. `technical-analyst` (chart analysis)
-3. `institutional-flow-tracker` (smart money)
+## Quality Gates
 
-### Market Timing
-1. `market-environment-analysis` (big picture)
-2. `china-macro-analyst` (macro data)
-3. `breadth-chart-analyst` (market breadth)
+1. **Before Stock Selection**: Run market-environment-analysis
+2. **After Screening**: Deep dive with analysis skills
+3. **Before Entry**: Run scenario-analyzer for risk assessment
+4. **Position Sizing**: Use portfolio-manager
+5. **Weekly Review**: Run breadth-chart-analyst + market-news-analyst
 
-### Stock Selection Process
-1. `a-share-screener` (initial filter)
-2. `a-share-analysis` (deep dive on candidates)
-3. `cross-border-flow-tracker` (capital flow confirmation)
+## Output Standards
 
-### Weekly Planning
-1. `economic-calendar-fetcher` (upcoming events)
-2. `earnings-calendar` (earnings dates)
-3. `weekly-trade-strategy` (actionable plan)
+### Stock Analysis
+- Use tables for financial data
+- Include both bull and bear cases
+- Provide specific price levels (support, resistance, targets)
+- Show PE, PB, ROE, revenue growth
+- Include data sources and dates
+
+### Screening Results
+- Top 10-20 candidates
+- Key metrics in table format
+- Brief rationale for each
+- Next steps for deep dive
+
+### Trading Plans
+- Clear entry/exit levels
+- Position size recommendations
+- Stop loss levels
+- Time horizon
+- Risk/reward ratio
+
+### Macro Analysis
+- Key data points
+- Policy implications
+- Sector impact
+- Historical comparison
 
 ## Data Sources
-
-Skills use web search to gather real-time data from:
 
 **US Markets:**
 - Yahoo Finance, MarketWatch, Seeking Alpha, Bloomberg, TradingView
 
 **China A-Shares:**
+- AKShare (akshare skill)
 - 东方财富 (eastmoney.com)
 - 同花顺 (10jqka.com.cn)
 - 雪球 (xueqiu.com)
@@ -130,12 +241,19 @@ Skills use web search to gather real-time data from:
 - 港交所 (hkexnews.hk)
 - 阿斯达克 (aastocks.com)
 
-## Output Standards
+**Taiwan:**
+- Shioaji API
+- 台湾证交所
 
-1. **Use tables** for financial data and comparisons
-2. **Include data sources** and dates
-3. **Present both bull and bear cases**
-4. **Provide specific price levels** for targets and stops
-5. **Always include risk disclaimers**
-6. **Use Chinese** when user queries in Chinese
-7. **Quantify** wherever possible (percentages, ratios)
+## Prerequisites
+
+| Skill | Requirement |
+|-------|-------------|
+| akshare | Python + `pip install akshare` |
+| shioaji | Shioaji API credentials + `pip install shioaji` |
+| 股票分析 | Web search access |
+| stock-screener | Web search access |
+
+## Risk Disclaimer
+
+All skills in this workflow are for **informational and educational purposes only**. They do not constitute investment advice. Always do your own research and consult with qualified financial advisors before making investment decisions.

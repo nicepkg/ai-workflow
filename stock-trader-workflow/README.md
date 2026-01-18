@@ -24,7 +24,7 @@
 ## ⚡ Quick Install
 
 ```bash
-# Install all 25 skills with one command
+# Install all 29 skills with one command
 npx add-skill nicepkg/ai-workflow/stock-trader-workflow
 
 # Or install specific skills
@@ -37,15 +37,22 @@ npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
 
 | Market | Skills | Features |
 |:-------|:------:|:---------|
-| 🇺🇸 **US Stocks** | 8 | Fundamental, Technical, Options |
-| 🇨🇳 **A-Shares** | 6 | T+1, Price limits, Northbound flow |
-| 🇭🇰 **HK Stocks** | 3 | AH Premium, Stock Connect |
+| 🇺🇸 **US Stocks** | 10 | Fundamental, Technical, Options, Bubble Detection |
+| 🇨🇳 **A-Shares** | 9 | T+1, Price limits, Northbound flow, AKShare Data |
+| 🇭🇰 **HK Stocks** | 4 | AH Premium, Stock Connect |
+| 🇹🇼 **TW Stocks** | 1 | Shioaji Trading API |
 
 ---
 
-## 📦 Skills Included (25)
+## 📦 Skills Included (29)
 
-### Market Analysis
+### 1️⃣ Market Data & Foundation
+| Skill | What It Does |
+|:------|:-------------|
+| `akshare` | China market data foundation (A-shares, futures, funds) |
+| `股票分析` | A/HK stock analysis with technical indicators |
+
+### 2️⃣ Market Analysis
 | Skill | What It Does |
 |:------|:-------------|
 | `us-stock-analysis` | US stock fundamental & technical analysis |
@@ -53,65 +60,171 @@ npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
 | `hk-stock-analysis` | Hong Kong with AH premium analysis |
 | `technical-analyst` | Weekly chart analysis with scenarios |
 | `market-environment-analysis` | Overall market condition assessment |
+| `breadth-chart-analyst` | Market breadth and internals |
 
-### Capital Flow
+### 3️⃣ Capital Flow Tracking
 | Skill | What It Does |
 |:------|:-------------|
 | `cross-border-flow-tracker` | Northbound/southbound capital tracking |
 | `institutional-flow-tracker` | Institutional money flow |
 
-### Screening & Strategy
+### 4️⃣ Stock Screening
 | Skill | What It Does |
 |:------|:-------------|
-| `a-share-screener` | Multi-criteria A-share screening |
+| `stock-screener` | General multi-criteria stock screening |
+| `a-share-screener` | A-share specific screening |
 | `canslim-screener` | CANSLIM growth stock screening |
 | `value-dividend-screener` | Value + dividend strategy |
-| `sector-analyst` | Sector rotation analysis |
+| `dividend-growth-pullback-screener` | Dividend stocks on pullback |
+| `pair-trade-screener` | Pair trading opportunities |
 
-### Macro & News
+### 5️⃣ Sector & Macro Analysis
 | Skill | What It Does |
 |:------|:-------------|
+| `sector-analyst` | Sector rotation analysis |
 | `china-macro-analyst` | China macro data & policy |
-| `economic-calendar-fetcher` | Economic events |
-| `earnings-calendar` | Earnings releases |
+| `economic-calendar-fetcher` | Economic events calendar |
+| `earnings-calendar` | Earnings releases tracking |
 | `market-news-analyst` | News impact analysis |
 
-### Portfolio
+### 6️⃣ Portfolio & Risk Management
 | Skill | What It Does |
 |:------|:-------------|
 | `portfolio-manager` | Allocation & rebalancing |
 | `options-strategy-advisor` | Options strategies |
 | `backtest-expert` | Strategy backtesting |
+| `scenario-analyzer` | Investment scenario analysis |
+
+### 7️⃣ Strategy & Trading
+| Skill | What It Does |
+|:------|:-------------|
+| `weekly-trade-strategy` | Weekly trading plan generation |
+| `stanley-druckenmiller-investment` | Macro-driven investment approach |
+| `us-market-bubble-detector` | Bubble risk assessment |
+| `shioaji` | Taiwan market trading API integration |
 
 ---
 
-## 💡 Example Commands
+## 🔄 Professional Trading Pipeline
 
-### US Stocks
 ```
-"Analyze NVDA fundamentals and technicals"
-"Is Microsoft overvalued?"
-"Technical analysis of SPY"
+Stage 1: Pre-Market Research (盘前研判)
+├── economic-calendar-fetcher → Upcoming economic events
+├── earnings-calendar → Earnings releases this week
+├── market-environment-analysis → Market conditions
+└── china-macro-analyst → Macro outlook
+
+Stage 2: Stock Screening (选股扫描)
+├── stock-screener → Initial broad filtering
+├── a-share-screener → A-share specific criteria
+├── canslim-screener → Growth stock identification
+└── value-dividend-screener → Value stock identification
+
+Stage 3: Deep Analysis (深度分析)
+├── us-stock-analysis / a-share-analysis → Fundamental analysis
+├── technical-analyst → Chart patterns & levels
+├── institutional-flow-tracker → Smart money tracking
+└── cross-border-flow-tracker → Capital flow confirmation
+
+Stage 4: Risk Assessment (风险评估)
+├── scenario-analyzer → Bull/bear/base cases
+├── us-market-bubble-detector → Bubble risk check
+├── options-strategy-advisor → Hedging strategies
+└── portfolio-manager → Position sizing
+
+Stage 5: Execution (下单执行)
+├── shioaji → Taiwan market orders
+└── weekly-trade-strategy → Actionable trading plan
+
+Stage 6: Post-Market Review (盘后复盘)
+├── market-news-analyst → News impact review
+├── breadth-chart-analyst → Market breadth analysis
+└── portfolio-manager → Performance tracking
 ```
 
-### A-Shares (中国A股)
+---
+
+## 💡 Example Workflows
+
+### Pre-Market Prep
 ```
-"分析贵州茅台"
-"帮我筛选低PE高ROE的股票"
-"北向资金今天流入多少"
+1. "What economic events are scheduled this week?"
+2. "Any major earnings releases to watch?"
+3. "What's the current market environment?"
+4. "Analyze northbound capital flow trends"
 ```
 
-### Hong Kong
+### Growth Stock Discovery (US)
 ```
-"分析腾讯港股"
-"比亚迪AH溢价多少"
+1. "Run CANSLIM screener for US stocks"
+2. "Analyze NVDA fundamentals and technicals"
+3. "What's the institutional positioning in NVDA?"
+4. "Is NVDA at bubble risk levels?"
+5. "Create a weekly trading plan for NVDA"
 ```
 
-### Macro
+### A-Share Value Investing
 ```
-"央行降息利好什么板块"
-"当前宏观经济形势分析"
+1. "帮我筛选低PE高ROE的A股"
+2. "分析贵州茅台基本面"
+3. "北向资金最近的流向趋势"
+4. "给我一个价值投资组合建议"
+5. "本周交易计划是什么"
 ```
+
+### Hong Kong Arbitrage
+```
+1. "分析腾讯港股"
+2. "比亚迪AH溢价分析"
+3. "南向资金流向港股哪些板块"
+4. "给我AH溢价套利机会"
+```
+
+### Macro-Driven Trading
+```
+1. "Analyze current macro environment"
+2. "Which sectors benefit from rate cuts?"
+3. "Run Druckenmiller-style macro analysis"
+4. "What's the scenario analysis for a recession?"
+```
+
+### Risk Management
+```
+1. "Analyze my portfolio for risk exposure"
+2. "What options strategies can hedge my positions?"
+3. "Backtest this strategy on historical data"
+4. "Run scenario analysis for 20% market drop"
+```
+
+---
+
+## 🔧 Prerequisites
+
+| Skill | Requirement |
+|-------|-------------|
+| `akshare` | Python + AKShare library |
+| `shioaji` | Shioaji API credentials (Taiwan market) |
+| `股票分析` | Web search access |
+| `stock-screener` | Web search access |
+
+```bash
+# For akshare skill
+pip install akshare
+
+# For shioaji skill (Taiwan market)
+pip install shioaji
+```
+
+---
+
+## 📊 Data Sources
+
+| Market | Sources |
+|:-------|:--------|
+| US | Yahoo Finance, MarketWatch, Seeking Alpha, Bloomberg, TradingView |
+| A-Shares | 东方财富, 同花顺, 雪球, 巨潮资讯, AKShare |
+| Hong Kong | 港交所, 阿斯达克 |
+| Taiwan | Shioaji API, 台湾证交所 |
 
 ---
 
