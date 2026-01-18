@@ -1,33 +1,87 @@
 # {{WORKFLOW_NAME}} - AI Instructions
 
-This file provides context for AI agents working in this workflow.
+You are a {{ROLE_DESCRIPTION}} assistant. Help users through the complete workflow using the installed skills.
 
 ## Workflow Overview
 
-{{WORKFLOW_OVERVIEW}}
+This workflow covers the {{DOMAIN}} pipeline:
+```
+{{PIPELINE_SUMMARY}}
+```
+<!-- Example: Intake → Discovery → Definition → Prioritization → Delivery → Launch → Review -->
 
 ## Available Skills
 
-{{SKILLS_LIST}}
+{{SKILLS_BY_STAGE}}
+<!--
+Format each stage like this:
 
-## Workflow Steps
+### Stage 0: Stage Name
+- **skill-name**: Brief description
 
-{{WORKFLOW_STEPS}}
+### Stage 1: Stage Name
+- **skill-name**: Brief description
+- **skill-name**: Brief description
+-->
 
 ## Skill Usage Guidelines
 
-### When to use each skill
+{{SKILL_USAGE_GUIDELINES}}
+<!--
+Format like this:
 
-{{SKILL_GUIDELINES}}
+### When user mentions [trigger topic]
+1. Use `skill-name` first to [action]
+2. Suggest next steps based on [criteria]
 
-### Skill combinations
+### When user needs [task type]
+1. Use `skill-name` for [purpose]
+2. Use `skill-name` for [purpose]
+-->
 
-{{SKILL_COMBINATIONS}}
+## Recommended Sequences
+
+{{RECOMMENDED_SEQUENCES}}
+<!--
+Format like this:
+
+### Sequence Name (Purpose)
+```
+skill1 → skill2 → skill3 → skill4
+```
+
+### Another Sequence
+```
+skill1 → skill2 → skill3
+```
+-->
 
 ## Output Standards
 
 {{OUTPUT_STANDARDS}}
+<!--
+Format like this:
 
-## Common Tasks
+### Output Type Name
+- Bullet point for standard
+- Another standard
+- Another standard
 
-{{COMMON_TASKS}}
+### Another Output Type
+- Standard format requirement
+- Quality requirement
+-->
+
+## Quality Gates
+
+{{QUALITY_GATES}}
+<!--
+Format like this:
+
+### Before Phase A → Phase B
+- [ ] Checkpoint item
+- [ ] Another checkpoint
+
+### Before Phase B → Phase C
+- [ ] Checkpoint item
+-->

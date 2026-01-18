@@ -19,7 +19,7 @@
 
 **Stop teaching your AI assistant the same things over and over.**
 
-One command. 128+ professional skills. Instant productivity boost.
+One command. 150+ professional skills. Instant productivity boost.
 
 [Get Started](#-quick-start) · [Browse Workflows](#-workflows) · [Create Your Own](#-create-your-own-workflow)
 
@@ -48,9 +48,10 @@ One command. 128+ professional skills. Instant productivity boost.
 | **[Marketing Pro](./marketing-pro-workflow/)** | Digital Marketers, Growth Hackers, PMMs | 38 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
 | **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[Stock Trader](./stock-trader-workflow/)** | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
+| **[Product Manager](./product-manager-workflow/)** | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/product-manager-workflow` |
 
 <details>
-<summary><b>📦 View All 128+ Skills</b></summary>
+<summary><b>📦 View All 150+ Skills</b></summary>
 
 ### Content Creator Workflow
 `weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
@@ -63,6 +64,9 @@ One command. 128+ professional skills. Instant productivity boost.
 
 ### Stock Trader Workflow
 `akshare` `股票分析` `stock-screener` `shioaji` `us-stock-analysis` `a-share-analysis` `hk-stock-analysis` `technical-analyst` `china-macro-analyst` `cross-border-flow-tracker` `a-share-screener` `portfolio-manager` `earnings-calendar` `market-news-analyst` `canslim-screener` `value-dividend-screener` `sector-analyst` `options-strategy-advisor` `backtest-expert` `scenario-analyzer` `institutional-flow-tracker` `market-environment-analysis` `breadth-chart-analyst` `pair-trade-screener` `dividend-growth-pullback-screener` `economic-calendar-fetcher` `weekly-trade-strategy` `us-market-bubble-detector` `stanley-druckenmiller-investment`
+
+### Product Manager Workflow
+`work-intake` `user-research` `discovery-interviews-surveys` `customer-feedback-analyzer` `user-persona-creation` `competitive-analysis` `prd-generator` `writing-product-specs` `requirements` `writing-user-stories` `prioritization-effort-impact` `roadmap` `roadmap-backcast` `strategy` `stakeholders-org-design` `feature-planning` `agile` `agile-sprint-planning` `launch` `technical-launch-planner` `analytics` `forecast-premortem` `postmortem`
 
 </details>
 

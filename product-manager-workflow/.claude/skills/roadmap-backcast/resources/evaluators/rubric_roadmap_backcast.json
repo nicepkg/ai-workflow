@@ -1,0 +1,171 @@
+{
+  "name": "Roadmap Backcast Evaluator",
+  "description": "Evaluates backcasting roadmaps for target clarity, milestone sequencing, dependency mapping, critical path identification, and feasibility assessment",
+  "criteria": [
+    {
+      "name": "Target Outcome Specificity",
+      "weight": 1.4,
+      "scale": {
+        "1": "Vague target ('launch product', 'improve system') with no date or success criteria",
+        "2": "Target has date but outcome unclear or unmeasurable ('product better', 'customers happy')",
+        "3": "Target somewhat specific with date (e.g., 'launch by Q1') but missing quantifiable success criteria",
+        "4": "Specific measurable target with fixed date (e.g., '1000 customers by Jan 31, 2025') and clear criteria",
+        "5": "Exemplary: Precise measurable outcome with fixed date, quantified success criteria (conversion rates, NPS, revenue), constraints documented (budget, scope, quality), strategic importance articulated"
+      }
+    },
+    {
+      "name": "Milestone Quality and Sequencing",
+      "weight": 1.5,
+      "scale": {
+        "1": "No milestones or milestones are activities ('working on X') not deliverables",
+        "2": "Milestones listed but not sequenced, vague deliverables, missing key checkpoints",
+        "3": "5-10 milestones identified working backward, deliverables stated but some vague, basic sequencing",
+        "4": "Clear milestones with specific deliverables, logically sequenced backward from target, owners assigned, durations estimated",
+        "5": "Exemplary: 5-10 milestones with verifiable deliverables (not activities), precise backward sequencing using 'what must be true before' logic, each with owner/duration/prerequisites, milestones align to natural project phases, no missing critical checkpoints"
+      }
+    },
+    {
+      "name": "Dependency Mapping Completeness",
+      "weight": 1.4,
+      "scale": {
+        "1": "No dependencies identified or implicit assumptions only",
+        "2": "Some dependencies noted but incomplete, no distinction between sequential/parallel",
+        "3": "Major dependencies mapped, sequential vs parallel identified, some gaps in upstream/downstream links",
+        "4": "Comprehensive dependency mapping, clear prerequisites and enabled tasks for each milestone, parallel workstreams identified",
+        "5": "Exemplary: All dependencies explicitly mapped (sequential, parallel, converging, diverging), dependency graph or table provided, handoff requirements specified, coordination points identified, external dependencies flagged with extra buffer"
+      }
+    },
+    {
+      "name": "Critical Path Identification",
+      "weight": 1.5,
+      "scale": {
+        "1": "No critical path identified or not understood",
+        "2": "Critical path mentioned but incorrectly identified or not validated",
+        "3": "Critical path identified (longest dependent chain) but slack on non-critical tasks not calculated",
+        "4": "Critical path correctly identified with duration, non-critical paths have slack calculated",
+        "5": "Exemplary: Critical path precisely identified using CPM (forward/backward pass), slack calculated for all milestones, critical vs non-critical clearly distinguished, management strategy for critical path defined (monitoring, buffer allocation, acceleration options)"
+      }
+    },
+    {
+      "name": "Buffer and Risk Management",
+      "weight": 1.3,
+      "scale": {
+        "1": "No buffers included, optimistic estimates only",
+        "2": "Generic buffer mentioned ('add some extra time') but not quantified or placed",
+        "3": "Buffers added (e.g., 20%) but uniform across all tasks regardless of uncertainty",
+        "4": "Risk-appropriate buffers (20-30% for moderate, 40%+ for high uncertainty), placed on critical path",
+        "5": "Exemplary: Buffers calibrated by uncertainty (10-50% range), PERT or 3-point estimates used, project buffer vs feeding buffers distinguished (CCPM), risk register with mitigation/contingency plans, triggers for re-planning defined, buffer consumption monitoring plan"
+      }
+    },
+    {
+      "name": "Feasibility Assessment Rigor",
+      "weight": 1.4,
+      "scale": {
+        "1": "No feasibility check, assumed possible without analysis",
+        "2": "Basic comparison (target date vs today) but no buffer, resource constraints, or risk consideration",
+        "3": "Feasibility assessed (available time vs required time) with buffer, but resource/scope constraints not addressed",
+        "4": "Rigorous feasibility: time + buffer + resource constraints + scope, verdict (feasible/tight/infeasible) with clear reasoning",
+        "5": "Exemplary: Comprehensive feasibility assessment including time/buffer/resources/scope/risks, Monte Carlo or probability analysis (P50/P80/P95), if infeasible clear options provided (extend deadline X weeks, reduce scope Y features, add resources $Z cost), trade-off analysis for options, honest assessment not wishful thinking"
+      }
+    },
+    {
+      "name": "Resource and Capacity Planning",
+      "weight": 1.2,
+      "scale": {
+        "1": "No resource consideration, assumes unlimited capacity",
+        "2": "Resources mentioned but not quantified (team size, budget, constraints)",
+        "3": "Resource requirements estimated but not compared to available capacity, gaps not identified",
+        "4": "Resource requirements vs available capacity analyzed, gaps identified with mitigation (hiring, contractors)",
+        "5": "Exemplary: Resource loading chart showing demand over time, peak capacity vs available, over-allocation identified and resolved (resource leveling/smoothing), hiring/onboarding timeline factored into plan, budget allocated to milestones, resource constraints drive sequencing decisions"
+      }
+    },
+    {
+      "name": "Actionability and Communication",
+      "weight": 1.1,
+      "scale": {
+        "1": "Theoretical roadmap with no execution plan, stakeholders unclear, no ownership",
+        "2": "Some execution details but vague, ownership not assigned, communication plan missing",
+        "3": "Milestones have owners, basic communication plan (updates), but escalation path and decision gates unclear",
+        "4": "Actionable: owners assigned, communication cadence defined (weekly updates, milestone reviews), escalation path for delays",
+        "5": "Exemplary: Complete execution plan with named owners for each milestone, stakeholder communication plan (who/what/when), Go/No-Go decision gates at key milestones, escalation paths (3-level), status dashboard defined, next steps to initiate roadmap clear (approvals, kickoff, resource allocation)"
+      }
+    }
+  ],
+  "guidance": {
+    "by_roadmap_type": {
+      "product_launch": {
+        "typical_milestones": "Requirements locked → Design finalized → MVP built → Feature complete → QA passed → Beta testing → GA launch",
+        "critical_path_focus": "Design → Engineering → Testing (usually 60-70% of timeline)",
+        "buffer_recommendation": "20-30% on engineering (unknowns), 20% on testing (bugs), 10-20% on beta (user feedback)",
+        "red_flags": ["No feature freeze milestone", "Testing squeezed at end", "No beta period", "Scope creep not controlled"]
+      },
+      "compliance_deadline": {
+        "typical_milestones": "Gap analysis → Remediation plan → Controls implemented → Policies updated → Internal audit → External audit passed",
+        "critical_path_focus": "Gap analysis → Remediation → Audit validation",
+        "buffer_recommendation": "40%+ (cannot miss regulatory deadline, audit findings may require rework)",
+        "red_flags": ["<30% buffer (high risk of missing)", "No internal audit before external", "Remediation not sequenced by dependency"]
+      },
+      "strategic_transformation": {
+        "typical_milestones": "Strategy approved → Pilot complete → Learnings applied → Phase 1 rollout → Phase 2 rollout → Full migration",
+        "critical_path_focus": "Pilot and learning (foundation for scale)",
+        "buffer_recommendation": "30%+ per phase (unknowns compound over time)",
+        "red_flags": ["No pilot/learning phase", "Trying to scale without validation", "Organizational change management missing"]
+      },
+      "event_planning": {
+        "typical_milestones": "Date announced → Venue booked → Speakers confirmed → Content ready → Rehearsal → Event day",
+        "critical_path_focus": "Venue booking (long lead time), speaker coordination",
+        "buffer_recommendation": "10-20% (hard deadline, less flexible)",
+        "red_flags": ["Venue not secured early", "No rehearsal milestone", "Content creation squeezed at end"]
+      }
+    }
+  },
+  "common_failure_modes": {
+    "optimistic_sequencing": {
+      "symptom": "Assumes perfect handoffs, no rework, no blockers; 0% buffer",
+      "root_cause": "Wishful thinking, pressure to say 'yes' to deadline, Hofstadter's Law ignored",
+      "fix": "Add 20-30% buffer to estimates, use PERT 3-point estimates (optimistic/likely/pessimistic), review against historical data"
+    },
+    "missing_dependencies": {
+      "symptom": "Tasks planned in parallel that actually require sequential completion, integration surprises",
+      "root_cause": "Didn't ask 'what must be true before this starts?', assumed work is independent",
+      "fix": "Explicit dependency mapping (prerequisite/enables table), review with technical leads, identify converging/diverging points"
+    },
+    "wrong_critical_path": {
+      "symptom": "Managing wrong tasks as critical, actual delays surprise team",
+      "root_cause": "Intuition-based not calculation-based, didn't account for all dependencies",
+      "fix": "Use CPM forward/backward pass, calculate slack, validate with project management tool"
+    },
+    "scope_creep_invalidates_plan": {
+      "symptom": "Milestones slip because scope expanded mid-project",
+      "root_cause": "No requirements freeze, stakeholder says 'just one more feature', change control missing",
+      "fix": "Requirements freeze milestone, change control process (cost/timeline impact analysis before approving), stakeholder alignment on must-haves vs nice-to-haves"
+    },
+    "ignoring_resource_constraints": {
+      "symptom": "Plan shows 10 engineers needed, only have 5, tasks over-allocated",
+      "root_cause": "Assumed can parallelize everything, didn't check capacity",
+      "fix": "Resource leveling (delay non-critical tasks), resource smoothing (steady demand), hire/contract to fill gaps"
+    },
+    "no_feasibility_check": {
+      "symptom": "Backcast reaches before today, team commits anyway, fails predictably",
+      "root_cause": "Sunk cost fallacy, pressure to commit, hope over reality",
+      "fix": "Honest feasibility assessment, if infeasible present options (extend date, reduce scope, add resources), escalate to leadership for decision"
+    }
+  },
+  "excellence_indicators": [
+    "Target outcome is specific, measurable, with fixed date and quantified success criteria",
+    "5-10 milestones working backward from target, each with clear deliverable",
+    "Milestones sequenced using 'what must be true before' logic",
+    "Dependencies explicitly mapped (sequential, parallel, converging, diverging)",
+    "Critical path identified using CPM or visual dependency graph",
+    "Slack calculated for non-critical milestones",
+    "Buffers calibrated by uncertainty (20-50% range based on risk)",
+    "Feasibility rigorously assessed: required time (with buffer) ≤ available time",
+    "Resource constraints analyzed (team capacity vs requirements)",
+    "If infeasible, clear options provided with trade-offs (extend deadline, reduce scope, add resources)",
+    "Risk register for timeline threats with mitigation/contingency",
+    "Owners assigned to each milestone",
+    "Communication plan defined (weekly updates, milestone reviews, escalation path)",
+    "Assumptions and constraints explicitly documented",
+    "Honest assessment not wishful thinking (acknowledges tight timelines, risks)"
+  ]
+}

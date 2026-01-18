@@ -1,0 +1,288 @@
+{
+  "name": "Postmortem Evaluator",
+  "description": "Evaluate quality of postmortems—assessing timeline clarity, impact quantification, root cause depth, corrective action quality, blameless tone, timeliness, and organizational learning.",
+  "version": "1.0.0",
+  "criteria": [
+    {
+      "name": "Timeline Clarity & Completeness",
+      "description": "Evaluates whether timeline has specific timestamps, key events, and clear sequence from detection to resolution",
+      "weight": 1.2,
+      "scale": {
+        "1": {
+          "label": "No timeline or vague",
+          "description": "Timeline missing, or times vague ('afternoon', 'later'). Events out of order. Can't reconstruct what happened."
+        },
+        "2": {
+          "label": "Incomplete timeline",
+          "description": "Some timestamps but many missing. Key events absent (e.g., when detected, when mitigated). Hard to follow sequence."
+        },
+        "3": {
+          "label": "Clear timeline with timestamps",
+          "description": "Timeline with specific times (14:05 UTC). Key events: detection, investigation, mitigation, resolution. Sequence clear."
+        },
+        "4": {
+          "label": "Detailed timeline",
+          "description": "Comprehensive timeline with timestamps, events, who took action, data sources (logs, monitoring). Table format for scannability. Detection lag, response time, mitigation time quantified."
+        },
+        "5": {
+          "label": "Exemplary timeline reconstruction",
+          "description": "Timeline reconstructed from multiple sources (logs, metrics, Slack, interviews). Timestamps precise (minute-level). Key observations noted (detection lag X min, response time Y min, why delays occurred). Visual aids (timeline diagram). Shows thoroughness in fact-gathering."
+        }
+      }
+    },
+    {
+      "name": "Impact Quantification",
+      "description": "Evaluates whether impact is quantified across multiple dimensions (users, revenue, SLA, reputation)",
+      "weight": 1.3,
+      "scale": {
+        "1": {
+          "label": "No impact or qualitative only",
+          "description": "Impact not quantified, or only qualitative ('many users', 'significant'). Can't assess severity."
+        },
+        "2": {
+          "label": "Partial quantification",
+          "description": "Some numbers (e.g., '2-hour outage') but incomplete. Missing key dimensions (users affected? revenue impact? SLA breach?)."
+        },
+        "3": {
+          "label": "Multi-dimensional impact",
+          "description": "Impact quantified: Users affected (50K), duration (2hr), revenue loss ($20K), SLA breach (yes/no). Multiple dimensions covered."
+        },
+        "4": {
+          "label": "Comprehensive impact analysis",
+          "description": "Impact across all dimensions: Users (50K, 20% of base), duration (2hr), revenue ($20K estimated), SLA breach (99.9% → 2hr down, $15K credits), reputation (social media, customer escalations), operational cost (person-hours, support tickets). Before/during/after metrics table."
+        },
+        "5": {
+          "label": "Exceptional impact depth",
+          "description": "Comprehensive impact with: User segmentation (which tiers affected most), geographic distribution, customer quotes/feedback, long-tail effects (churn risk, brand damage), opportunity cost (lost signups, abandoned carts). Metrics baseline/during/post in table. Impact tied to business context (e.g., '$20K = 2% of weekly revenue'). Shows deep understanding of business impact."
+        }
+      }
+    },
+    {
+      "name": "Root Cause Depth",
+      "description": "Evaluates whether root cause analysis goes beyond symptoms to systemic issues using 5 Whys or equivalent",
+      "weight": 1.4,
+      "scale": {
+        "1": {
+          "label": "No root cause or surface only",
+          "description": "Root cause missing, or stops at surface symptom ('bug caused outage', 'person made mistake'). No depth."
+        },
+        "2": {
+          "label": "Shallow root cause",
+          "description": "Identified proximate cause ('bad config deployed') but didn't ask why. Stopped at individual action, not system issue."
+        },
+        "3": {
+          "label": "System-level root cause",
+          "description": "Used 5 Whys or equivalent to reach systemic root cause. Example: 'Deployment pipeline lacked config validation' (fixable). Identified 1-2 root causes."
+        },
+        "4": {
+          "label": "Multi-factor root cause analysis",
+          "description": "Identified primary root cause + 2-3 contributing factors using 5 Whys or fishbone diagram. Categorized: Technical, process, organizational. Example: Primary: no config validation. Contributing: no staging env, rushed timeline, unclear runbook."
+        },
+        "5": {
+          "label": "Rigorous causal analysis",
+          "description": "Comprehensive root cause using multiple techniques (5 Whys for primary, fishbone for contributing factors, Swiss cheese model for safeguard failures). Identified immediate, enabling, and systemic causes. Contributing factors categorized (technical, process, organizational). Evidence provided (logs, metrics confirming each cause). Shows deep thinking beyond obvious. Addresses 'why this, why now' systemically."
+        }
+      }
+    },
+    {
+      "name": "Corrective Actions Quality",
+      "description": "Evaluates whether corrective actions are SMART (specific, measurable, assigned, realistic, time-bound) and address root causes",
+      "weight": 1.4,
+      "scale": {
+        "1": {
+          "label": "No actions or vague",
+          "description": "No corrective actions, or vague ('improve testing', 'be more careful'). Not actionable."
+        },
+        "2": {
+          "label": "Generic actions",
+          "description": "Actions listed but vague. Missing owner or deadline. Example: 'Better monitoring', 'Improve process' (what specifically?)."
+        },
+        "3": {
+          "label": "SMART actions",
+          "description": "Actions are specific ('Add config validation'), owned (Alex), and time-bound (Mar 15). Measurable. Realistic. 3-5 actions listed."
+        },
+        "4": {
+          "label": "Comprehensive action plan",
+          "description": "Actions categorized (immediate/short-term/long-term). Each action SMART. Address root causes (not just symptoms). Prioritized (high impact actions first). 5-8 actions total. Tracked in project management tool."
+        },
+        "5": {
+          "label": "Strategic corrective action framework",
+          "description": "Comprehensive action plan using hierarchy of controls (eliminate, substitute, engineering controls, administrative, training). Actions at all levels: immediate fixes (deployed), short-term (weeks), long-term (months). Each action: SMART + addresses specific root cause + rationale (why this action prevents recurrence). Prioritized by impact/effort. Tracked with clear accountability. Prevention/detection/mitigation balance. Shows strategic thinking about systemic improvement."
+        }
+      }
+    },
+    {
+      "name": "Blameless Tone",
+      "description": "Evaluates whether postmortem focuses on systems/processes (not individuals) and maintains constructive tone",
+      "weight": 1.3,
+      "scale": {
+        "1": {
+          "label": "Blameful or accusatory",
+          "description": "Blames individuals ('Engineer X caused outage by...'). Names names. Accusatory tone. Creates fear."
+        },
+        "2": {
+          "label": "Somewhat blameful",
+          "description": "Implies blame ('X should have checked', 'Y made mistake'). Focus on individual actions, not systems."
+        },
+        "3": {
+          "label": "Mostly blameless",
+          "description": "Focus on systems ('Process allowed bad config'). Avoids blaming individuals. Constructive tone. Minor lapses."
+        },
+        "4": {
+          "label": "Blameless and constructive",
+          "description": "Consistently blameless throughout. System-focused language ('Process gap', 'Missing safeguard'). Acknowledges human factors without blame. Constructive framing ('opportunity to improve'). Celebrates what went well."
+        },
+        "5": {
+          "label": "Exemplary blameless culture",
+          "description": "Blameless tone modeled throughout. Explicitly acknowledges pressure, constraints, trade-offs that led to decisions. Reframes 'mistakes' as learning opportunities. Celebrates transparency (thank you for sharing). Uses second victim language (acknowledges engineer's stress). Shows deep understanding of blameless culture principles. Creates psychological safety."
+        }
+      }
+    },
+    {
+      "name": "Timeliness & Follow-Through",
+      "description": "Evaluates whether postmortem conducted promptly (within 48hr) and action items tracked to completion",
+      "weight": 1.0,
+      "scale": {
+        "1": {
+          "label": "Delayed or no follow-up",
+          "description": "Postmortem written >1 week after incident (memory faded). No action tracking. Actions forgotten."
+        },
+        "2": {
+          "label": "Late postmortem",
+          "description": "Written 3-7 days after incident. Some actions tracked but many fall through cracks. Incomplete follow-up."
+        },
+        "3": {
+          "label": "Timely postmortem",
+          "description": "Written within 48-72 hours (memory fresh). Actions tracked in project tool. Some follow-up in standups."
+        },
+        "4": {
+          "label": "Timely with tracking",
+          "description": "Written within 48 hours. Actions added to tracker with owners and deadlines. Reviewed weekly in standups. Progress tracked. Most actions completed."
+        },
+        "5": {
+          "label": "Rigorous timeliness and accountability",
+          "description": "Postmortem written within 24-48 hours while memory fresh. Actions immediately added to tracker. Clear ownership (named individuals, not 'team'). Deadlines aligned to urgency. Weekly progress review in standups. Escalation if actions stalled. Postmortem closed only when all actions complete. Completion rate >90%. Shows commitment to follow-through and accountability."
+        }
+      }
+    },
+    {
+      "name": "Learning & Sharing",
+      "description": "Evaluates whether lessons extracted, documented, and shared for organizational learning",
+      "weight": 1.1,
+      "scale": {
+        "1": {
+          "label": "No learning or sharing",
+          "description": "Lessons not documented. Postmortem not shared beyond immediate team. No organizational learning."
+        },
+        "2": {
+          "label": "Minimal sharing",
+          "description": "Lessons vaguely stated. Shared with immediate team only. Limited learning value."
+        },
+        "3": {
+          "label": "Lessons documented and shared",
+          "description": "Lessons learned section with 3-5 insights. Shared with team and stakeholders. Archived in knowledge base."
+        },
+        "4": {
+          "label": "Comprehensive learning",
+          "description": "Lessons extracted and generalized (applicable beyond this incident). Shared broadly (team, stakeholders, company-wide). Presented in team meeting for discussion. Archived in searchable postmortem database. Tagged by category (root cause type, service, severity)."
+        },
+        "5": {
+          "label": "Exceptional organizational learning",
+          "description": "Lessons deeply analyzed and generalized. 'What went well' celebrated (not just failures). Shared company-wide with context (all-hands presentation, newsletter, postmortem database). Cross-team learnings identified (tag related teams to prevent repeat). Patterns identified from multiple postmortems. Metrics tracked (incident frequency, MTTR, repeat rate). Shows commitment to learning culture."
+        }
+      }
+    },
+    {
+      "name": "Completeness & Structure",
+      "description": "Evaluates whether postmortem includes all key sections (summary, timeline, impact, root cause, actions, lessons)",
+      "weight": 1.0,
+      "scale": {
+        "1": {
+          "label": "Incomplete or unstructured",
+          "description": "Missing major sections (no timeline or no root cause or no actions). Unstructured narrative."
+        },
+        "2": {
+          "label": "Partial completeness",
+          "description": "Has some sections but missing 1-2 key elements. Loose structure."
+        },
+        "3": {
+          "label": "Complete with standard sections",
+          "description": "Includes: Summary, timeline, impact, root cause, corrective actions. Follows template. Structured."
+        },
+        "4": {
+          "label": "Comprehensive structure",
+          "description": "All standard sections plus: What went well, lessons learned, appendix (links to logs/metrics/Slack). Well-structured, scannable. Easy to navigate."
+        },
+        "5": {
+          "label": "Exemplary completeness",
+          "description": "All sections comprehensive: Summary (clear), timeline (detailed), impact (multi-dimensional), root cause (deep), actions (SMART), what went well (celebrated), lessons (generalized), appendix (thorough references). Uses tables, formatting for scannability. Passes 'grandmother test' (non-expert can understand what happened). Shows attention to detail and communication quality."
+        }
+      }
+    }
+  ],
+  "guidance": {
+    "by_incident_type": {
+      "production_outage": {
+        "focus": "Prioritize timeline clarity (1.3x), impact quantification (1.4x), and root cause depth (1.4x). Outages need technical rigor.",
+        "typical_scores": "Timeline 4+, impact 4+, root cause 4+, actions 4+. Blameless 3+ (pressure high during outages).",
+        "red_flags": "Timeline vague, impact not quantified, root cause stops at 'bug' or 'config error', actions vague ('improve monitoring')"
+      },
+      "security_incident": {
+        "focus": "Prioritize root cause depth (1.5x), corrective actions (1.5x), and completeness (1.3x). Security needs thoroughness.",
+        "typical_scores": "Root cause 4+, actions 4+, completeness 4+. Timeline can be 3+ (detection often delayed in security).",
+        "red_flags": "Root cause shallow (stops at 'vulnerability'), no security audit action, missing compliance considerations"
+      },
+      "product_failure": {
+        "focus": "Prioritize impact quantification (1.3x), root cause (1.3x), and learning (1.3x). Product failures need business context.",
+        "typical_scores": "Impact 4+ (business metrics), root cause 4+, learning 4+. Timeline can be 3+ (less time-critical).",
+        "red_flags": "Impact qualitative only ('failed to meet expectations'), root cause blames individuals ('PM didn't validate'), no process improvements"
+      },
+      "project_deadline_miss": {
+        "focus": "Prioritize root cause depth (1.3x), blameless tone (1.5x), and learning (1.3x). Project failures prone to blame.",
+        "typical_scores": "Root cause 4+, blameless 4+ (critical), learning 4+. Timeline can be 3+ (long duration).",
+        "red_flags": "Blames individuals ('X underestimated'), superficial root cause ('poor planning'), no systemic improvements"
+      }
+    },
+    "by_severity": {
+      "sev_1_critical": {
+        "expectations": "All criteria 4+. High-severity incidents require rigorous postmortems. Timeline detailed, impact comprehensive, root cause deep, actions strategic.",
+        "next_steps": "Share company-wide, present to leadership, track metrics (MTTR improvement), quarterly review of all Sev 1 incidents"
+      },
+      "sev_2_high": {
+        "expectations": "All criteria 3.5+. Important incidents need thorough postmortems. Timeline clear, impact quantified, root cause systemic, actions SMART.",
+        "next_steps": "Share with team and stakeholders, track actions, monthly review of Sev 2 trends"
+      },
+      "sev_3_medium": {
+        "expectations": "All criteria 3+. Lower-severity incidents can have lighter postmortems. Focus: root cause and actions (learn and prevent).",
+        "next_steps": "Share with immediate team, batch review monthly for patterns"
+      }
+    }
+  },
+  "common_failure_modes": {
+    "superficial_root_cause": "Stops at symptom ('bug', 'config error') instead of asking why 5 times. Fix: Use 5 Whys until reach fixable system issue.",
+    "vague_actions": "Actions like 'improve monitoring', 'better communication'. Fix: Make SMART (specific metric, owner, deadline).",
+    "blame_individuals": "Postmortem blames person ('X caused outage'). Fix: Reframe to system focus ('Process allowed bad config').",
+    "no_impact_quantification": "Impact qualitative ('many users', 'significant'). Fix: Quantify (50K users, 2hr, $20K revenue loss).",
+    "delayed_postmortem": "Written >1 week after, memory faded. Fix: Conduct within 48 hours while fresh.",
+    "no_follow_through": "Actions never completed, languish in backlog. Fix: Track in project tool, review weekly, escalate if stalled.",
+    "not_shared": "Postmortem stays with immediate team, no org learning. Fix: Share company-wide, present in all-hands, archive in searchable database.",
+    "missing_timeline": "No timeline or vague times. Fix: Reconstruct from logs/metrics, use specific timestamps (14:05 UTC)."
+  },
+  "excellence_indicators": [
+    "Timeline reconstructed from multiple sources with minute-level precision and key observations (detection lag, response time)",
+    "Impact quantified across all dimensions (users, revenue, SLA, reputation, operational) with before/during/after metrics",
+    "Root cause uses multiple techniques (5 Whys, fishbone) to identify immediate, enabling, and systemic causes with evidence",
+    "Corrective actions use hierarchy of controls (eliminate/substitute/engineering/admin/training) with SMART criteria and rationale",
+    "Blameless tone maintained throughout with acknowledgment of pressure/constraints and celebration of transparency",
+    "Postmortem written within 24-48 hours, actions tracked to >90% completion, closed only when all complete",
+    "Lessons generalized and shared company-wide with cross-team tagging and pattern analysis across multiple incidents",
+    "Complete structure with all sections (summary, timeline, impact, root cause, actions, what went well, lessons, appendix)",
+    "Uses tables and formatting for scannability, passes 'grandmother test' (non-expert can understand)",
+    "Celebrates what went well, not just failures (detection worked, team responded fast, good communication)"
+  ],
+  "evaluation_notes": {
+    "scoring": "Calculate weighted average across all criteria. Minimum passing score: 3.0 (basic quality). Production-ready target: 3.5+. Excellence threshold: 4.2+. For production outages, weight timeline, impact, and root cause higher. For security incidents, weight root cause and actions higher. For product failures, weight impact and learning higher.",
+    "context": "Adjust expectations by severity. Sev 1 incidents need 4+ across all criteria (high rigor). Sev 2 incidents need 3.5+ (thorough). Sev 3 incidents need 3+ (lighter but still valuable). Different incident types need different emphasis: outages need technical rigor (timeline, root cause), security needs thoroughness (root cause, actions, completeness), product failures need business context (impact, learning).",
+    "iteration": "Low scores indicate specific improvement areas. Priority order: 1) Fix blameful tone (critical for culture), 2) Deepen root cause (5 Whys to system level), 3) Make actions SMART (specific, owned, time-bound), 4) Quantify impact (numbers not adjectives), 5) Improve timeliness (within 48hr), 6) Complete timeline (specific timestamps), 7) Extract and share lessons (org learning), 8) Ensure completeness (all sections). Re-score after each improvement cycle."
+  }
+}

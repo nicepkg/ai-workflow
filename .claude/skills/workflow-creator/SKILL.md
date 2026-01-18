@@ -20,7 +20,8 @@ python scripts/create_workflow.py <workflow-name> --path <output-dir>
 Creates (with multi-AI tool support):
 ```
 <workflow-name>-workflow/
-├── README.md          # User documentation
+├── README.md          # User documentation (English)
+├── README_cn.md       # User documentation (Chinese)
 ├── AGENTS.md          # AI context (auto-loaded)
 ├── .claude/
 │   ├── settings.json
@@ -56,7 +57,7 @@ Symlinks enable all AI tools to use the same skills from .claude/skills/.
 
 ### Step 2: Select and download skills
 
-1. Read `references/skill-sources.md` to find relevant skills for the workflow type
+1. Use the **Skill Sources** section below to find relevant skills
 2. Download each skill using `scripts/download_skill.py`:
 
 ```bash
@@ -73,60 +74,166 @@ python scripts/download_skill.py https://github.com/anthropics/skills skills/doc
 python scripts/download_skill.py https://github.com/gked2121/claude-skills social-repurposer --output ./media-workflow/.claude/skills/
 ```
 
-### Step 3: Generate README.md
+### Step 3: Generate README.md (English)
 
-Write user documentation covering:
-- Workflow purpose and target users
-- Installed skills table with descriptions
-- Quick start guide
-- Usage examples
-- FAQ
+**CRITICAL: Follow the exact format from `marketing-pro-workflow/README.md`**
+
+Required structure:
+```markdown
+<div align="center">
+
+# 📋 Workflow Name
+
+### **Your AI-Powered [Domain] Team**
+
+[← Back to AI Workflow](../README.md)
+
+[简体中文](./README_cn.md) | English
+
+</div>
+
+---
+
+## 🎯 Who Is This For?
+- **Role 1** - Use case
+- **Role 2** - Use case
+
+---
+
+## ⚡ Quick Install
+[Install commands]
+
+---
+
+## 📦 Skills Included (N)
+
+### 0️⃣ Stage Name
+| Skill | What It Does |
+|:------|:-------------|
+| `skill-name` | Description |
+
+### 1️⃣ Next Stage
+...
+
+---
+
+## 🔄 Complete Pipeline (N Stages)
+[ASCII tree diagram]
+
+---
+
+## 💡 Example Workflows
+[Multiple scenario examples with numbered prompts]
+
+---
+
+## 🔗 Skill Combinations
+[Table with Goal → Skill Chain]
+
+---
+
+## 📄 License
+MIT © [nicepkg](https://github.com/nicepkg)
+```
 
 Use `assets/templates/README.template.md` as reference.
 
-### Step 4: Generate AGENTS.md
+### Step 4: Generate README_cn.md (Chinese)
+
+Create Chinese version with:
+- Same structure as English README
+- Professional Chinese terminology
+- Link back to `../README_cn.md`
+
+### Step 5: Generate AGENTS.md
 
 Write AI instructions covering:
-- Workflow overview
-- Available skills list with trigger conditions
-- Recommended workflow steps
-- Skill usage guidelines and combinations
+- Workflow overview with pipeline diagram
+- Available skills grouped by stage
+- Skill usage guidelines (when to use each)
+- Recommended sequences for common tasks
 - Output standards
-
-Use `assets/templates/AGENTS.template.md` as reference.
+- Quality gates between phases
 
 **Important:** AGENTS.md is auto-loaded by Claude Code. Keep it concise (<500 lines) and focused on actionable instructions.
 
-## Workflow Type Recommendations
+Use `assets/templates/AGENTS.template.md` as reference.
 
-### Media Creator / Content Creator
-Skills: content-research-writer, social-repurposer, canvas-design, web-asset-generator, twitter-reader, youtube-transcript, article-extractor, docx, pdf, pptx
+### Step 6: Update project README
 
-### Marketing Professional
-Skills: seo-optimizer, linkedin-post-optimizer, social-repurposer, landing-page-copywriter, email-template-generator, content-research-writer, web-asset-generator
+After creating a workflow in the ai-workflow project, update:
 
-### Developer
-Skills: code-review-pro, api-documentation-writer, technical-writer, database-schema-designer, screenshot-to-code, regex-debugger, mermaid-tools, frontend-design
+1. **README.md** (English):
+   - Add new workflow to the workflow table
+   - Add skills list under `<details>` section
+   - Update skill count (e.g., "150+ skills")
 
-### Researcher
-Skills: content-research-writer, fact-checker, article-extractor, youtube-transcript, pdf, docx
+2. **README_cn.md** (Chinese):
+   - Same updates in Chinese
+   - Link to `README_cn.md` in workflow folder
 
-See `references/skill-sources.md` for complete skill catalog and repository URLs.
+---
 
-## Dynamic Skill Search
+## Skill Sources
 
-When curated list lacks needed skills:
+### A. Skill Aggregators & Directories (for discovering skills)
 
-1. Search GitHub: `"claude" "skills" "SKILL.md" <topic>`
-2. Validate: Check SKILL.md has valid YAML frontmatter with name/description
-3. Download using download_skill.py
+| Name | Type | Scale | Best For |
+|:-----|:-----|------:|:---------|
+| **[Skillhub Awesome Skills](https://github.com/keyuyuan/skillhub-awesome-skills)** | GitHub curated list | 1000+ skills | Top skills by category, well-organized |
+| **[Skillhub.club](https://skillhub.club)** | Online directory | 1000+ | Web UI for browsing by category |
+| **[SkillsMP](https://skillsmp.com)** | Marketplace | 63,000+ | Mass search with filters (category/popularity/author) |
+| **[agent-skills.md](https://agent-skills.md)** | Online directory | Large | Install commands included (`pnpm dlx add-skill ...`) |
+| **[Claude Skills Hub](https://claudeskills.info)** | Online directory | Medium | Product-style browsing, good for inspiration |
+| **[MCP Market Skills](https://mcpmarket.com/tools/skills)** | Online store | Medium | Product pages with About/FAQ, content creator friendly |
+| **[Skills Directory](https://skillsdirectory.com)** | Online directory | Medium | Copy SKILL.md directly, good structure |
+| **[Smithery Skills](https://smithery.ai/skills)** | Skill directory | Medium | Includes expected_output.json, tool-oriented |
+| **[Awesome Claude Skills (ComposioHQ)](https://github.com/ComposioHQ/awesome-claude-skills)** | GitHub awesome list | High stars | Ecosystem resources, comprehensive |
+| **[Awesome Claude Skills (travisvn)](https://github.com/travisvn/awesome-claude-skills)** | GitHub awesome list | 5k+ stars | Second perspective, prevents single-source bias |
+| **[Awesome Agent Skills](https://github.com/heilcheng/awesome-agent-skills)** | GitHub multi-agent list | 1k+ stars | Covers Claude/Codex/Copilot/VSCode |
 
-### Step 5: Update project README
+### B. Production-Ready Skill Repositories (for bulk import)
 
-After creating a workflow in the ai-workflow project, update the project's root README.md:
-- Add new workflow to the workflow list/table
-- Include workflow name, target users, and brief description
-- Update any workflow counts
+| Repository | Focus | Best For |
+|:-----------|:------|:---------|
+| **[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills)** | Multi-role skill packs | Content Creator suite (brand voice, SEO, platform frameworks) |
+| **[gked2121/claude-skills](https://github.com/gked2121/claude-skills)** | Production workflows | Clear workflow examples (Podcast→Content→Social→SEO) |
+| **[sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)** | Skill registry | Organized by role (`skills/content-creator`) |
+| **[Microck/ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)** | 600+ skills collection | skill-navigator, SEO clustering, email optimization |
+| **[synapz-org/marketing-ops-hub](https://github.com/synapz-org/marketing-ops-hub)** | Marketing orchestration | Multi-skill coordination patterns |
+| **[m2ai-portfolio/claude-skills](https://github.com/m2ai-portfolio/claude-skills)** | Creator/Growth suite | IG caption, YouTube script, tweet thread, blog outline |
+| **[pluginagentmarketplace/custom-plugin-product-manager](https://github.com/pluginagentmarketplace/custom-plugin-product-manager)** | Product Manager suite | user-research, roadmap, requirements, analytics |
+| **[lyndonkl/claude](https://github.com/lyndonkl/claude)** | Decision frameworks | prioritization, forecasting, stakeholder mapping |
+| **[jamesrochabrun/skills](https://github.com/jamesrochabrun/skills)** | Mixed professional | prd-generator, technical-launch-planner |
+| **[britt/claude-code-skills](https://github.com/britt/claude-code-skills)** | Writing & specs | writing-product-specs, writing-user-stories |
+| **[troykelly/codex-skills](https://github.com/troykelly/codex-skills)** | Workflow management | work-intake, milestone-management |
+| **[escarti/agentDevPrompts](https://github.com/escarti/agentDevPrompts)** | Feature lifecycle | feature-planning, feature-implementing |
+| **[aj-geddes/useful-ai-prompts](https://github.com/aj-geddes/useful-ai-prompts)** | Sprint & agile | agile-sprint-planning, requirements-gathering |
+| **[daffy0208/ai-dev-standards](https://github.com/daffy0208/ai-dev-standards)** | Multi-role standards | customer-feedback-analyzer, go-to-market-planner |
+
+### C. Search Strategy
+
+When the above sources lack needed skills:
+
+1. **GitHub Search**: `"claude" "skills" "SKILL.md" <topic>`
+2. **agent-skills.md Search**: Browse by tags at https://agent-skills.md/tags
+3. **SkillsMP Search**: Filter by category at https://skillsmp.com
+4. **Validate**: Check SKILL.md has valid YAML frontmatter with `name` and `description`
+
+### D. Download Commands
+
+```bash
+# From GitHub repository
+python scripts/download_skill.py https://github.com/<owner>/<repo> <skill-path> --output <workflow>/.claude/skills/
+
+# Example: Download from alirezarezvani
+python scripts/download_skill.py https://github.com/alirezarezvani/claude-skills skills/content-creator --output ./content-creator-workflow/.claude/skills/
+
+# Example: Download from pluginagentmarketplace
+python scripts/download_skill.py https://github.com/pluginagentmarketplace/custom-plugin-product-manager skills/user-research --output ./product-manager-workflow/.claude/skills/
+```
+
+---
 
 ## Output Checklist
 
@@ -134,7 +241,10 @@ After workflow creation, verify:
 - [ ] `.claude/skills/` contains downloaded skill folders
 - [ ] Each skill folder has `SKILL.md`
 - [ ] All symlinks work (`.codex/skills`, `.cursor/skills`, `.opencode/skill`, `.agents/skills`, `.kilocode/skills`, `.roo/skills`, `.goose/skills`, `.gemini/skills`, `.agent/skills`, `.github/skills`, `skills`, `.factory/skills`, `.windsurf/skills`)
-- [ ] `README.md` documents all skills with usage examples
+- [ ] `README.md` follows standard format with all sections
+- [ ] `README_cn.md` created with Chinese translation
 - [ ] `AGENTS.md` provides clear AI instructions (<500 lines)
 - [ ] `settings.json` exists in `.claude/`
 - [ ] Project README.md updated with new workflow
+- [ ] Project README_cn.md updated with new workflow
+- [ ] Skill counts updated in both README files

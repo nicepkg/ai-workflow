@@ -1,0 +1,360 @@
+{
+  "name": "Prioritization Effort-Impact Evaluator",
+  "description": "Evaluates prioritization artifacts (effort-impact matrices, roadmaps) for quality of scoring, stakeholder alignment, and decision clarity",
+  "criteria": [
+    {
+      "name": "Scoring Quality & Differentiation",
+      "weight": 1.4,
+      "scale": {
+        "1": "All items scored similarly (e.g., all 3s) with no differentiation, or scores appear random/unsupported",
+        "2": "Some differentiation but clustering around middle (2.5-3.5 range), limited use of full scale, weak rationale",
+        "3": "Moderate differentiation with scores using 1-5 range, basic rationale provided for most items, some bias evident",
+        "4": "Strong differentiation across full 1-5 scale, clear rationale for scores, stakeholder input documented, few items cluster at boundaries",
+        "5": "Exemplary differentiation with calibrated scoring (reference examples documented), transparent rationale for all items, bias mitigation techniques used (silent voting, forced ranking), no suspicious clustering"
+      },
+      "indicators": {
+        "excellent": [
+          "Scores use full 1-5 range with clear distribution (few 1s/5s, more 2s/4s)",
+          "Reference items documented for calibration (e.g., 'Effort=2 example: CSV export, 2 days')",
+          "Scoring rationale explicit for each item (why Effort=4, why Impact=3)",
+          "Stakeholder perspectives documented (eng estimated effort, sales estimated impact)",
+          "Bias mitigation used (silent voting, anonymous scoring before discussion)"
+        ],
+        "poor": [
+          "All scores 2.5-3.5 (no differentiation)",
+          "No rationale for why scores assigned",
+          "Single person scored everything alone",
+          "Scores don't match descriptions (called 'critical' but scored Impact=2)",
+          "Obvious optimism bias (everything is low effort, high impact)"
+        ]
+      }
+    },
+    {
+      "name": "Quadrant Classification Accuracy",
+      "weight": 1.3,
+      "scale": {
+        "1": "Items misclassified (e.g., Effort=5 Impact=2 called 'Quick Win'), or no quadrants identified at all",
+        "2": "Quadrants identified but boundaries unclear (what's 'high' vs 'low'?), some misclassifications",
+        "3": "Quadrants correctly identified with reasonable boundaries (e.g., >3.5 = high), minor edge cases unclear",
+        "4": "Clear quadrant boundaries documented, all items classified correctly, edge cases explicitly addressed",
+        "5": "Exemplary classification with explicit boundary definitions, items near boundaries re-evaluated, typical quadrant distribution validated (10-20% Quick Wins, not 50%)"
+      },
+      "indicators": {
+        "excellent": [
+          "Quadrant boundaries explicit (e.g., 'High Impact = ≥4, Low Effort = ≤2')",
+          "10-20% Quick Wins (realistic, not over-optimistic)",
+          "20-30% Big Bets (sufficient strategic work)",
+          "Time Sinks identified and explicitly cut/deferred",
+          "Items near boundaries (e.g., Effort=3, Impact=3) re-evaluated or called out as edge cases"
+        ],
+        "poor": [
+          "50%+ Quick Wins (unrealistic, likely miscalibrated)",
+          "0 Quick Wins (likely miscalibrated, overestimating effort)",
+          "No Time Sinks identified (probably hiding low-value work)",
+          "Boundaries undefined (unclear what 'high impact' means)",
+          "Items clearly misclassified (Effort=5 Impact=1 in roadmap as priority)"
+        ]
+      }
+    },
+    {
+      "name": "Stakeholder Alignment & Input Quality",
+      "weight": 1.2,
+      "scale": {
+        "1": "Single person created prioritization with no stakeholder input, or stakeholder disagreements unresolved",
+        "2": "Minimal stakeholder input (1-2 people), no documentation of how disagreements resolved",
+        "3": "Multiple stakeholders involved (eng, product, sales), basic consensus reached, some perspectives missing",
+        "4": "Diverse stakeholders (eng, product, sales, CS, design) contributed appropriately (eng on effort, sales on value), disagreements discussed and resolved, participants documented",
+        "5": "Exemplary stakeholder process with weighted input by expertise (eng estimates effort, sales estimates customer value), bias mitigation (silent voting, anonymous scoring), pre-mortem for controversial items, all participants and resolution process documented"
+      },
+      "indicators": {
+        "excellent": [
+          "Participants listed with roles (3 eng, 1 PM, 2 sales, 1 CS)",
+          "Expertise-based weighting (eng scores effort 100%, sales contributes to impact)",
+          "Bias mitigation documented (silent voting used, then discussion)",
+          "Disagreements surfaced and resolved (eng said Effort=5, product said 3, converged at 4 because...)",
+          "Pre-mortem or red-teaming for controversial/uncertain items"
+        ],
+        "poor": [
+          "No participant list (unclear who contributed)",
+          "PM scored everything alone",
+          "HIPPO (highest paid person) scores overrode team input with no discussion",
+          "Stakeholders disagree but no resolution documented",
+          "One function (e.g., only eng) scored both effort and impact"
+        ]
+      }
+    },
+    {
+      "name": "Roadmap Sequencing & Realism",
+      "weight": 1.3,
+      "scale": {
+        "1": "No roadmap created, or roadmap ignores quadrants (Time Sinks scheduled first), or plans 100%+ of capacity",
+        "2": "Roadmap exists but doesn't follow quadrant logic (Big Bets before Quick Wins), capacity planning missing or unrealistic",
+        "3": "Roadmap sequences Quick Wins → Big Bets, basic timeline, capacity roughly considered but not calculated",
+        "4": "Roadmap sequences correctly, timeline realistic with capacity calculated (team size × time), dependencies mapped, buffer included (70-80% utilization)",
+        "5": "Exemplary roadmap with Quick Wins first (momentum), Big Bets phased for incremental value, Fill-Ins opportunistic, Time Sinks explicitly cut with rationale, dependencies mapped with critical path identified, capacity buffer (20-30%), velocity-based forecasting"
+      },
+      "indicators": {
+        "excellent": [
+          "Phase 1: Quick Wins (Weeks 1-4) to build momentum",
+          "Phase 2: Big Bets (phased for incremental value, not monolithic)",
+          "Fill-Ins not scheduled explicitly (opportunistic during downtime)",
+          "Time Sinks explicitly rejected with rationale communicated",
+          "Dependencies mapped (item X depends on Y completing first)",
+          "Capacity buffer (planned 70-80% of capacity, not 100%)",
+          "Timeline realistic (effort scores × team size = weeks)"
+        ],
+        "poor": [
+          "No sequencing (items listed randomly)",
+          "Big Bets scheduled before Quick Wins (no momentum)",
+          "Time Sinks included in roadmap (low ROI items)",
+          "Planned at 100%+ capacity (no buffer for unknowns)",
+          "No timeline or unrealistic timeline (20 effort points in 1 week)",
+          "Dependencies ignored (dependent items scheduled in parallel)"
+        ]
+      }
+    },
+    {
+      "name": "Effort Scoring Rigor",
+      "weight": 1.1,
+      "scale": {
+        "1": "Effort scored on single dimension (time only) with no consideration of complexity, risk, dependencies, or scores are guesses with no rationale",
+        "2": "Effort considers time but inconsistently accounts for complexity/risk/dependencies, weak rationale",
+        "3": "Effort considers multiple dimensions (time, complexity, risk) with reasonable rationale, some dimensions missing (e.g., dependencies)",
+        "4": "Effort considers time, complexity, risk, dependencies with clear rationale, minor gaps (e.g., didn't account for QA/deployment)",
+        "5": "Effort comprehensively considers time, complexity, risk, dependencies, unknowns, cross-team coordination, QA, deployment, with transparent rationale and historical calibration (past estimates vs actuals reviewed)"
+      },
+      "indicators": {
+        "excellent": [
+          "Effort dimensions documented (time=3, complexity=4, risk=2, dependencies=3 → avg=3)",
+          "Rationale explains all factors (Effort=4 because: 6 weeks, requires 3 teams, new tech stack, integration with 2 external systems)",
+          "Historical calibration referenced (similar item took 8 weeks last time)",
+          "Accounts for full lifecycle (dev + design + QA + deployment + docs)",
+          "Risk/unknowns factored in (confidence intervals or buffers)"
+        ],
+        "poor": [
+          "Effort = engineering time only (ignores design, QA, deployment)",
+          "No rationale (just 'Effort=3' with no explanation)",
+          "Optimism bias evident (everything is 1-2 effort)",
+          "Dependencies ignored (item requires prerequisite but scored standalone)",
+          "Doesn't match description (called 'major migration' but Effort=2)"
+        ]
+      }
+    },
+    {
+      "name": "Impact Scoring Rigor",
+      "weight": 1.2,
+      "scale": {
+        "1": "Impact scored on single dimension (revenue only, or gut feel) with no consideration of users, strategy, pain, or scores appear arbitrary",
+        "2": "Impact considers one dimension (e.g., users) but ignores business value, strategic alignment, or pain severity, weak rationale",
+        "3": "Impact considers multiple dimensions (users, value, strategy) with reasonable rationale, some dimensions missing or speculative",
+        "4": "Impact considers users, business value, strategic alignment, user pain with clear rationale, minor gaps (e.g., no data validation)",
+        "5": "Impact comprehensively considers users, business value, strategic alignment, user pain, competitive positioning, with transparent rationale and data validation (user research, usage analytics, revenue models, NPS/CSAT drivers)"
+      },
+      "indicators": {
+        "excellent": [
+          "Impact dimensions documented (users=5, value=$500K, strategy=4, pain=3 → avg=4.25)",
+          "Rationale explains all factors (Impact=5 because: 90% users affected, $1M ARR at risk, critical to Q1 OKR, top NPS detractor)",
+          "Data-driven validation (50 customer survey, 80% rated 'very important')",
+          "Usage analytics support (10K support tickets, 500K page views/mo with 30% bounce)",
+          "Strategic alignment explicit (ties to company OKR, competitive differentiation)",
+          "User pain quantified (severity, frequency, workarounds)"
+        ],
+        "poor": [
+          "Impact = revenue only (ignores users, strategy, pain)",
+          "No rationale (just 'Impact=4' with no explanation)",
+          "Speculation without validation ('probably' high impact, 'might' drive revenue)",
+          "Doesn't match description (called 'niche edge case' but Impact=5)",
+          "Strategic override without justification ('CEO wants it' → Impact=5)",
+          "Ignores user research (survey says low importance, scored high anyway)"
+        ]
+      }
+    },
+    {
+      "name": "Communication & Decision Transparency",
+      "weight": 1.1,
+      "scale": {
+        "1": "No explanation of decisions, just list of prioritized items with no rationale, or decisions contradict scores without explanation",
+        "2": "Minimal explanation (prioritized X, Y, Z) with no rationale for why or why not others, trade-offs unclear",
+        "3": "Basic explanation of decisions (doing X because high impact, deferring Y because low impact), trade-offs mentioned but not detailed",
+        "4": "Clear explanation of decisions with rationale tied to scores, trade-offs explicit (doing X means not doing Y), stakeholder concerns addressed",
+        "5": "Exemplary transparency with full rationale for all decisions, trade-offs explicit and quantified, stakeholder concerns documented and addressed, communication plan for rejected items (what we're NOT doing and why), success metrics defined, review cadence set"
+      },
+      "indicators": {
+        "excellent": [
+          "Decision rationale clear (prioritized X because Impact=5 Effort=2, deferred Y because Impact=2 Effort=5)",
+          "Trade-offs explicit (doing X means not doing Y this quarter)",
+          "Stakeholder concerns addressed (Sales wanted Z but impact is low because only 2 customers requesting)",
+          "Rejected items communicated (explicitly closing 15 Time Sinks to focus resources)",
+          "Success metrics defined (how will we know this roadmap succeeded? Ship 3 Quick Wins by end of month, 50% user adoption of Big Bet)",
+          "Review cadence set (re-score quarterly, adjust roadmap monthly)"
+        ],
+        "poor": [
+          "No rationale for decisions (just 'we're doing X, Y, Z')",
+          "Trade-offs hidden (doesn't mention what's NOT being done)",
+          "Stakeholder concerns ignored or dismissed without explanation",
+          "No communication plan for rejected items",
+          "No success metrics (unclear how to measure if prioritization worked)",
+          "One-time prioritization (no plan to revisit/adjust)"
+        ]
+      }
+    },
+    {
+      "name": "Completeness & Structure",
+      "weight": 1.0,
+      "scale": {
+        "1": "Missing critical components (no matrix, no roadmap, or just a list of items), or completely unstructured",
+        "2": "Some components present (matrix OR roadmap) but incomplete, minimal structure",
+        "3": "Most components present (scoring table, matrix, roadmap) with basic structure, some sections missing detail",
+        "4": "All components present and well-structured (scoring table with rationale, matrix with quadrants, phased roadmap, capacity planning), minor gaps",
+        "5": "Comprehensive artifact with all components (scoring table with multi-dimensional rationale, visual matrix, phased roadmap with dependencies, capacity planning with buffer, quality checklist completed, stakeholder sign-off documented)"
+      },
+      "indicators": {
+        "excellent": [
+          "Scoring table with all items, effort/impact scores, quadrant classification, rationale",
+          "Visual matrix plotted (2x2 grid with items positioned)",
+          "Quadrant summary (lists Quick Wins, Big Bets, Fill-Ins, Time Sinks with counts)",
+          "Phased roadmap (Phase 1: Quick Wins weeks 1-4, Phase 2: Big Bets weeks 5-16, etc.)",
+          "Capacity planning (team size, utilization, buffer calculated)",
+          "Dependencies mapped (critical path identified)",
+          "Quality checklist completed (self-assessment documented)",
+          "Stakeholder participants and sign-off documented"
+        ],
+        "poor": [
+          "Just a list of items with scores (no matrix, no roadmap)",
+          "No visual representation (hard to see quadrants at a glance)",
+          "No roadmap sequencing (unclear execution order)",
+          "No capacity planning (unclear if realistic)",
+          "Missing quadrant summaries (can't quickly see Quick Wins)",
+          "No documentation of process (unclear how decisions were made)"
+        ]
+      }
+    }
+  ],
+  "guidance": {
+    "by_context": {
+      "product_backlog": {
+        "focus": "Emphasize user reach, business value, and technical complexity. Quick wins should be UX improvements or small integrations. Big bets are new workflows or platform changes.",
+        "red_flags": [
+          "All features scored high impact (if everything is priority, nothing is)",
+          "Effort ignores design/QA time (only engineering hours)",
+          "No usage data to validate impact assumptions",
+          "Edge cases prioritized over core functionality"
+        ]
+      },
+      "technical_debt": {
+        "focus": "Emphasize developer productivity impact, future velocity, and risk reduction. Quick wins are dependency upgrades or small refactors. Big bets are architecture overhauls.",
+        "red_flags": [
+          "Impact scored only on 'clean code' (not business value or velocity)",
+          "Premature optimizations (performance work with no bottleneck)",
+          "Refactoring for refactoring's sake (no measurable improvement)",
+          "Not tying technical debt to business outcomes"
+        ]
+      },
+      "bug_triage": {
+        "focus": "Emphasize user pain severity, frequency, and business impact (revenue, support cost). Quick wins are high-frequency easy fixes. Big bets are complex architectural bugs.",
+        "red_flags": [
+          "Severity without frequency (rare edge case scored high priority)",
+          "Cosmetic bugs prioritized over functional bugs",
+          "Effort underestimated (bug fixes often have hidden complexity)",
+          "No workarounds considered (high-effort bug with easy workaround is lower priority)"
+        ]
+      },
+      "strategic_initiatives": {
+        "focus": "Emphasize strategic alignment, competitive positioning, and revenue/cost impact. Quick wins are pilot programs or process tweaks. Big bets are market expansion or platform investments.",
+        "red_flags": [
+          "All initiatives scored 'strategic' (dilutes meaning)",
+          "No tie to company OKRs or goals",
+          "Ignoring opportunity cost (resources used here can't be used there)",
+          "Betting on too many big bets (spreading too thin)"
+        ]
+      }
+    },
+    "by_team_size": {
+      "small_team_2_5": {
+        "advice": "Focus heavily on Quick Wins and Fill-Ins. Can only do 1 Big Bet at a time. Avoid Time Sinks completely (no capacity to waste). Expect 60-70% utilization (support/bugs take more time in small teams).",
+        "capacity_planning": "Assume 60% project capacity (40% goes to support, bugs, meetings, context switching)"
+      },
+      "medium_team_6_15": {
+        "advice": "Balance Quick Wins (70%) and Big Bets (30%). Can parallelize 2-3 Big Bets if low dependencies. Explicitly cut Time Sinks. Expect 70-80% utilization.",
+        "capacity_planning": "Assume 70% project capacity (30% support, bugs, meetings, code review)"
+      },
+      "large_team_16_plus": {
+        "advice": "Can run multiple Big Bets in parallel, but watch for coordination overhead. Need more strategic work (Big Bets 40%, Quick Wins 60%) to justify team size. Expect 75-85% utilization.",
+        "capacity_planning": "Assume 75% project capacity (25% meetings, cross-team coordination, support)"
+      }
+    },
+    "by_time_horizon": {
+      "sprint_2_weeks": {
+        "advice": "Only Quick Wins and Fill-Ins. No Big Bets (can't complete in 2 weeks). Focus on 1-3 Quick Wins max. Expect interruptions (support, bugs).",
+        "typical_velocity": "3-5 effort points per sprint for 3-person team"
+      },
+      "quarter_3_months": {
+        "advice": "2-3 Quick Wins in first month, 1-2 Big Bets over remaining 2 months. Don't overcommit (leave buffer for Q-end support/planning).",
+        "typical_velocity": "15-25 effort points per quarter for 3-person team"
+      },
+      "annual_12_months": {
+        "advice": "Mix of 8-12 Quick Wins and 3-5 Big Bets across year. Revisit quarterly (don't lock in for full year). Balance short-term momentum and long-term strategy.",
+        "typical_velocity": "60-100 effort points per year for 3-person team"
+      }
+    }
+  },
+  "common_failure_modes": {
+    "all_quick_wins": {
+      "symptom": "50%+ of items scored as Quick Wins (high impact, low effort)",
+      "root_cause": "Optimism bias (underestimating effort or overestimating impact), lack of calibration, wishful thinking",
+      "fix": "Run pre-mortem on 'Quick Wins': If this is so easy and valuable, why haven't we done it already? Re-calibrate effort scores with engineering input. Validate impact with user research."
+    },
+    "no_quick_wins": {
+      "symptom": "0 Quick Wins identified (everything is low impact or high effort)",
+      "root_cause": "Pessimism bias (overestimating effort or underestimating impact), lack of creativity, analysis paralysis",
+      "fix": "Force brainstorm: What's the smallest thing we could do to deliver value? What's the lowest-hanging fruit? Consider config changes, UX tweaks, integrations."
+    },
+    "all_3s": {
+      "symptom": "80%+ of items scored 2.5-3.5 (no differentiation)",
+      "root_cause": "Lack of calibration, avoiding hard choices, consensus-seeking without debate",
+      "fix": "Forced ranking (only one item can be #1), use wider scale (1-10), calibrate with reference items, silent voting to avoid groupthink."
+    },
+    "time_sinks_in_roadmap": {
+      "symptom": "Time Sinks (low impact, high effort) scheduled in roadmap",
+      "root_cause": "Sunk cost fallacy, HIPPO pressure, not saying 'no', ignoring opportunity cost",
+      "fix": "Explicitly cut Time Sinks. Challenge: Can we descope to make this lower effort? If not, reject. Communicate to stakeholders: 'We're not doing X because low ROI.'"
+    },
+    "capacity_overload": {
+      "symptom": "Roadmap plans 100%+ of team capacity",
+      "root_cause": "Ignoring support/bugs/meetings, optimism about execution, not accounting for unknowns",
+      "fix": "Reduce planned capacity to 70-80% (buffer for unknowns). Calculate realistic capacity: team size × hours × utilization. Cut lowest-priority items to fit."
+    },
+    "solo_prioritization": {
+      "symptom": "One person (usually PM) scored everything alone",
+      "root_cause": "Lack of process, time pressure, avoiding conflict",
+      "fix": "Multi-stakeholder scoring session (2-hour workshop with eng, product, sales, CS). Diverse input improves accuracy and builds buy-in."
+    }
+  },
+  "excellence_indicators": {
+    "overall": [
+      "Scores are differentiated (use full 1-5 range, not clustered at 3)",
+      "Scoring rationale is transparent and defensible for all items",
+      "Diverse stakeholders contributed (eng, product, sales, CS, design)",
+      "Quadrant distribution is realistic (10-20% Quick Wins, 20-30% Big Bets, not 50% Quick Wins)",
+      "Roadmap sequences Quick Wins → Big Bets → Fill-Ins, explicitly cuts Time Sinks",
+      "Capacity planning includes buffer (70-80% utilization, not 100%)",
+      "Dependencies mapped and accounted for in sequencing",
+      "Trade-offs explicit (doing X means not doing Y)",
+      "Success metrics defined and review cadence set"
+    ],
+    "data_driven": [
+      "Impact scores validated with user research (surveys, interviews, usage analytics)",
+      "Effort scores calibrated with historical data (past estimates vs actuals)",
+      "Business value quantified (revenue impact, cost savings, NPS drivers)",
+      "User pain measured (support ticket frequency, NPS detractor feedback)",
+      "A/B test results inform prioritization (validate assumptions before big bets)"
+    ],
+    "stakeholder_alignment": [
+      "Participants documented (names, roles, contributions)",
+      "Bias mitigation used (silent voting, anonymous scoring, forced ranking)",
+      "Disagreements surfaced and resolved (documented how consensus reached)",
+      "Pre-mortem for controversial items (surface hidden assumptions/risks)",
+      "Stakeholder sign-off documented (alignment on final roadmap)"
+    ]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "name": "Stakeholders & Organizational Design Evaluator",
+  "description": "Evaluates org designs for stakeholder mapping completeness, Conway's Law alignment, team interface clarity, capability maturity assessment, and transition planning",
+  "criteria": [
+    {
+      "name": "Stakeholder Mapping Completeness & Strategy",
+      "weight": 1.3,
+      "scale": {
+        "1": "No stakeholder mapping, or only lists names without analysis, missing key stakeholders (forgot legal, finance, or affected teams)",
+        "2": "Stakeholders identified but power-interest not assessed, no RACI, no engagement strategy, champions/blockers not identified",
+        "3": "Power-interest matrix complete, some RACI defined, general engagement strategy but not tailored per quadrant, some key stakeholders identified",
+        "4": "Comprehensive stakeholder map (power-interest + RACI + influence network), champions/blockers identified, engagement strategy per quadrant, decision rights clear",
+        "5": "Exemplary: Complete stakeholder ecosystem mapped (internal + external, formal + informal power), power-interest assessed with evidence (not assumptions), RACI for all key decisions with exactly one Accountable each, influence network analyzed (champions, blockers, bridges, gatekeepers documented), coalition building strategy (WIIFM per stakeholder, sequencing plan), tailored engagement per quadrant (manage closely, keep satisfied, keep informed, monitor), political dynamics understood (competing agendas, veto power, historical context)"
+      }
+    },
+    {
+      "name": "Conway's Law Alignment",
+      "weight": 1.5,
+      "scale": {
+        "1": "No mention of Conway's Law, team structure clearly misaligned with desired architecture (e.g., monolithic teams for microservices), no analysis of current misalignment",
+        "2": "Conway's Law mentioned but not applied, team structure doesn't match desired architecture, current architecture-team mismatches not identified",
+        "3": "Basic alignment attempt (team boundaries roughly match system boundaries), some misalignments identified but not resolved, rationale provided",
+        "4": "Good alignment (team boundaries match desired architecture), reverse Conway maneuver applied, current misalignments identified and transition plan addresses them",
+        "5": "Exemplary: Perfect architecture-team alignment (each team owns complete bounded context/service), reverse Conway maneuver explicitly applied (designed teams to produce desired architecture), current Conway violations identified with evidence (coordination bottlenecks, tightly-coupled modules despite team separation), team boundaries match system boundaries 1:1 (or clear rationale for deviation), interface contracts between teams = interface contracts between systems, team communication patterns designed to enable desired system evolution, fracture planes identified for future team splitting"
+      }
+    },
+    {
+      "name": "Team Structure Design Quality",
+      "weight": 1.4,
+      "scale": {
+        "1": "Arbitrary team structure (no rationale), team sizes unrealistic (<3 or >15), ownership unclear (shared code ownership, no clear boundaries)",
+        "2": "Some rationale but weak (based on politics not principles), team sizes sometimes problematic, ownership boundaries fuzzy",
+        "3": "Reasonable team structure with some rationale, team sizes mostly 5-12, ownership generally clear but some overlaps, team types not specified",
+        "4": "Well-designed structure (Team Topologies applied: stream/platform/enabling/subsystem), team sizes 5-9, clear ownership boundaries, cognitive load considered",
+        "5": "Exemplary: Optimal team topology (4 fundamental types applied correctly: stream-aligned for products, platform for shared services, enabling for capability building, complicated-subsystem for deep specialties), team sizes follow 2-pizza rule (5-9) with rationale for deviations, cognitive load explicitly managed (1 simple domain, 2-3 related, or max 1 complex per team), ownership boundaries crystal clear (bounded contexts from DDD), team interaction modes defined (collaboration temporary, X-as-a-Service for stable, facilitating time-boxed), evolution path from current to target state with intermediate steps, staffing model defined (platform: 1 engineer per 7-10 product engineers)"
+      }
+    },
+    {
+      "name": "Team Interface Contracts Clarity",
+      "weight": 1.4,
+      "scale": {
+        "1": "No interfaces defined, or vague ('teams will collaborate'), ownership of interfaces unclear, no SLAs, no contact/escalation info",
+        "2": "Interfaces listed but not specified (no APIs, no SLAs, no handoff protocols), ownership mentioned but not documented, minimal contact info",
+        "3": "Basic interface contracts (APIs or workflows identified, some SLAs, contact info), ownership assigned but not detailed, handoffs described generally",
+        "4": "Good interface contracts (APIs with endpoints, SLAs with metrics, handoff protocols with triggers/inputs/outputs, decision rights with DACI), every interface has clear owner",
+        "5": "Exemplary: Complete interface specifications for every team boundary: Technical interfaces (API contracts with endpoints, data formats, auth, rate limits, versioning, documentation links, performance SLAs with p50/p95/p99 targets, availability SLAs with uptime %, support SLAs with response times), Organizational interfaces (handoff protocols with triggers/inputs/outputs/timelines for Design→Eng, Eng→QA, Eng→Support, Research→Product), Decision rights (DACI for each decision type with exactly one Approver, Contributors, Informed stakeholders), Team API documented (what we provide, how to reach us, interaction modes, SLAs), every interface has single clear owner (name + contact + escalation path), monitoring and alerting defined for SLA violations"
+      }
+    },
+    {
+      "name": "Capability Maturity Assessment Rigor",
+      "weight": 1.3,
+      "scale": {
+        "1": "No maturity assessment, or purely subjective ('we're pretty good'), no evidence, no benchmarks",
+        "2": "Vague maturity claims ('we need to improve testing') without levels or evidence, no structured assessment framework",
+        "3": "Some structured assessment (DORA or CMM levels) but incomplete, current state assessed but not all capabilities, some evidence provided, gaps identified generally",
+        "4": "Structured assessment using standard frameworks (DORA, CMMC, CMM), current state with evidence, target state defined, gaps identified, action items with owners",
+        "5": "Exemplary: Rigorous capability maturity assessment using appropriate frameworks (DORA for DevOps, CMMC for security, CMM for process, custom rubrics for domain-specific), each capability rated on 1-5 scale with specific evidence (metrics like deployment frequency: 2x/month, MTTR: 4 hours; artifacts like runbooks, dashboards; observations from team surveys), current state realistic (not aspirational—evidence-based), target state justified (why this level? business value?), gap analysis detailed (what's missing: specific tools, processes, skills), action items SMART (specific actions, measurable outcomes, assigned owners, realistic timelines, time-bound), external benchmarks used where available (DORA Elite/High/Medium/Low percentiles)"
+      }
+    },
+    {
+      "name": "Transition Plan Feasibility & Governance",
+      "weight": 1.3,
+      "scale": {
+        "1": "No transition plan, or unrealistic (big bang with no risk mitigation), no governance, no success metrics, no communication plan",
+        "2": "Vague transition plan ('we'll migrate over 6 months') without phases, weak governance (no decision authority), no metrics, minimal communication",
+        "3": "Basic transition plan (phases identified), some governance (steering committee), process metrics, general communication plan, some risks identified",
+        "4": "Good transition plan (incremental or pilot approach, phases with success criteria, risk mitigation), clear governance (decision authority, review cadence), success metrics baselined, communication plan by audience",
+        "5": "Exemplary: Detailed transition plan with approach justified (big bang/incremental/pilot/hybrid with rationale), phases defined (3-5 phases with timelines, goals, teams affected, specific changes, success criteria, risks with mitigations), governance structure (steering committee for go/no-go, working group for execution, escalation path defined, review cadence: weekly/monthly/quarterly), success metrics (process: migration timeline, teams transitioned; outcome: DORA metrics, team satisfaction, cross-team dependencies, all baselined with targets), communication plan (audience-specific: all employees/affected teams/leadership/stakeholders, what to communicate, when, which channel), rollback plan if transition fails, celebration milestones for momentum"
+      }
+    },
+    {
+      "name": "Org Design Principles Adherence",
+      "weight": 1.2,
+      "scale": {
+        "1": "Violates core principles (matrix hell with unclear accountability, shared ownership anti-patterns, teams too large >15 or too small <3, excessive coordination required)",
+        "2": "Some principle violations (unclear decision rights, some shared ownership, team sizes sometimes problematic, high coordination overhead not addressed)",
+        "3": "Mostly follows principles (team sizes reasonable, ownership generally clear, decision rights defined, some coordination needed), few violations with weak rationale",
+        "4": "Adheres to principles (team sizes 5-9, clear ownership, explicit decision rights, minimal coordination overhead, cognitive load managed), violations have good rationale",
+        "5": "Exemplary: Strictly adheres to all principles: Team sizes (5-9 people, 2-pizza rule, Dunbar's number constraints respected), Cognitive load (1 simple domain, 2-3 related, or max 1 complex per team, <10% time in cross-team coordination), Clear ownership (every system/service has exactly one owning team, no shared code ownership), Decision rights (RACI/DACI with exactly one Accountable per decision, no matrix ambiguity), Interface clarity (every interface has owner, documented contracts, measurable SLAs), Autonomy (teams can deploy independently >80% of time), Conway's Law alignment (team structure = desired architecture), Violations explicitly documented with strong rationale and mitigation"
+      }
+    },
+    {
+      "name": "Actionability & Practicality",
+      "weight": 1.1,
+      "scale": {
+        "1": "Purely theoretical, no concrete steps, unclear how to implement, no consideration of practical constraints (hiring, budget, politics)",
+        "2": "Some concrete steps but vague ('form platform team'), doesn't address practical constraints, unclear execution path, no ownership",
+        "3": "Reasonably actionable (specific teams to form, general timelines, some constraints addressed), execution path somewhat clear, some ownership assigned",
+        "4": "Actionable design (specific actions, realistic timelines, constraints addressed, ownership clear), execution path clear, risk mitigation planned",
+        "5": "Exemplary: Completely actionable with detailed execution plan: Specific actions (hire 3 platform engineers, split Checkout team on Oct 1, define API contracts by Nov 1), realistic timelines accounting for hiring/onboarding/ramp-up, practical constraints addressed (budget: platform team = $800K/year, existing team reshuffle before external hiring, political dynamics: sponsor identified for each team change), ownership explicit (named individuals or specific roles: 'Platform Team Lead: Alex Chen'), dependencies tracked (can't launch platform until CI/CD automated), assumptions documented ('assumes we can hire senior engineers in Q4—mitigation: start recruiting in Q3'), would survive 'Can we actually do this?' test from experienced engineering leaders"
+      }
+    }
+  ],
+  "guidance": {
+    "by_org_size": {
+      "startup_small": {
+        "size": "<30 people",
+        "team_structure": "1-3 cross-functional teams, no platform team yet (premature), all stream-aligned",
+        "interfaces": "Informal, lightweight, focus on communication over documentation",
+        "maturity": "Basic levels (ad-hoc to repeatable), focus on survival and product-market fit",
+        "stakeholders": "Small group (founders, early employees, investors, key customers)",
+        "typical_score": "Aim for 3.0-3.5 (functional design, not over-engineered)"
+      },
+      "scaleup_medium": {
+        "size": "30-150 people",
+        "team_structure": "4-15 stream-aligned teams, emerging platform team (1-2), possibly enabling team",
+        "interfaces": "Documented APIs, basic SLAs, clear handoffs, RACI for key decisions",
+        "maturity": "Repeatable to defined (DORA High/Medium), focus on standardization",
+        "stakeholders": "Multiple layers (exec, directors, managers, ICs, customers, partners)",
+        "typical_score": "Aim for 3.5-4.0 (solid design with some sophistication)"
+      },
+      "large_enterprise": {
+        "size": "150+ people",
+        "team_structure": "Many stream teams organized in tribes/platforms, multiple platform teams (federated), enabling teams, complicated-subsystem teams for specialties",
+        "interfaces": "Full API contracts, rigorous SLAs, comprehensive handoff protocols, DACI for all decision types",
+        "maturity": "Defined to optimizing (DORA Elite/High), focus on continuous improvement and innovation",
+        "stakeholders": "Complex ecosystem (internal: many layers, external: customers, partners, regulators, board)",
+        "typical_score": "Aim for 4.0-5.0 (sophisticated design, proven patterns)"
+      }
+    },
+    "by_change_type": {
+      "greenfield_new_org": {
+        "focus": "Design from scratch, no legacy constraints, optimize for target state",
+        "conways_law": "Design teams to match desired architecture (reverse Conway maneuver)",
+        "transition": "Hire into structure, big bang formation",
+        "challenges": "No existing team dynamics to leverage, everything new, high coordination to establish norms",
+        "typical_score": "Aim for 4.0-4.5 (clean slate enables better design)"
+      },
+      "restructure_existing": {
+        "focus": "Transition from current to target, manage people through change, legacy constraints",
+        "conways_law": "Identify current misalignments, plan transition addressing Conway violations",
+        "transition": "Incremental or pilot, manage resistance, communication critical",
+        "challenges": "Politics, sunk cost (existing teams), fear of change, coordination overhead during transition",
+        "typical_score": "Aim for 3.5-4.0 (constrained by legacy, focus on feasibility)"
+      },
+      "optimization_tuning": {
+        "focus": "Small adjustments to existing structure, interface improvements, capability upgrades",
+        "conways_law": "Minor realignments, extract platform or enabling teams from existing",
+        "transition": "Low-risk changes, quick wins, continuous improvement",
+        "challenges": "Incremental, may not address root causes if fundamental misalignment exists",
+        "typical_score": "Aim for 3.0-3.5 (incremental improvements)"
+      }
+    }
+  },
+  "common_failure_modes": {
+    "conways_law_ignored": {
+      "symptom": "Team structure doesn't match desired architecture. Example: Monolithic teams (Frontend, Backend, QA, DevOps) trying to build microservices → coordination nightmare, slow delivery.",
+      "root_cause": "Org design done in isolation from architecture design. Assuming team structure can be independent of system structure.",
+      "fix": "Reverse Conway maneuver: Design teams to match desired architecture. If want microservices, create teams per service with full-stack ownership. If want modular monolith, create teams per module."
+    },
+    "shared_ownership": {
+      "symptom": "Multiple teams 'share' ownership of service/system. Nobody feels accountable. Changes require coordination. Bugs fall through cracks.",
+      "root_cause": "Trying to maximize resource utilization or avoid 'siloing'. Misunderstanding that autonomy requires clear boundaries.",
+      "fix": "Every system/service has exactly one owning team. If system too large, split it. If team too small to own separately, merge teams but give clear combined ownership."
+    },
+    "no_interfaces": {
+      "symptom": "Teams expected to 'collaborate' but no defined interfaces. Constant meetings to coordinate. Unclear who to ask for what. No SLAs.",
+      "root_cause": "Belief that documentation and contracts are bureaucratic overhead. Informal works for small orgs, breaks at scale.",
+      "fix": "Document Team API for every team: What services provided (endpoints, SLAs), how to communicate (Slack, email, office hours), interaction modes (X-as-a-Service preferred, collaboration time-boxed)."
+    },
+    "unrealistic_maturity": {
+      "symptom": "Maturity assessment inflated ('we're Level 4') without evidence. Gaps underestimated. Action items vague ('improve testing').",
+      "root_cause": "Grading on aspirations not reality. Desire to look good. Lack of external benchmarks.",
+      "fix": "Evidence-based assessment only. Use metrics (deployment frequency: 2x/month = DORA Medium), artifacts (have runbooks? yes/no), observations (team survey: 60% say deployments scary). Compare to external benchmarks (DORA, CMMC). Be honest about current state—only then can you improve."
+    },
+    "matrix_hell": {
+      "symptom": "Dual reporting lines, unclear accountability, slow decisions ('need to check with both managers'), teams unsure who approves what.",
+      "root_cause": "Trying to get benefits of multiple structures (functional expertise + product alignment) without accepting tradeoffs.",
+      "fix": "Minimize matrix. If unavoidable: Define primary vs secondary manager explicitly. Use RACI/DACI for all decisions (exactly one Approver). Establish clear decision rights (tech decisions: tech lead; people decisions: people manager)."
+    },
+    "no_transition_plan": {
+      "symptom": "Beautiful target state design but no plan to get there. Big bang approach with no risk mitigation. Undefined governance. No metrics.",
+      "root_cause": "Focus on end state, not journey. Underestimating change management difficulty.",
+      "fix": "Incremental or pilot transition (not big bang). Phases with success criteria. Governance (steering, working group). Success metrics baselined. Communication plan. Rollback option if fails."
+    },
+    "team_size_violations": {
+      "symptom": "Teams of 2 people (fragile, lack skills) or 20 people (coordination overhead, subgroups form).",
+      "root_cause": "Not applying team size constraints (2-pizza, Dunbar). Trying to optimize for utilization not effectiveness.",
+      "fix": "Teams 5-9 people. If <5: Merge teams or accept fragility with cross-training. If >12: Split using natural seam (product area, service boundary, user journey)."
+    },
+    "ignoring_cognitive_load": {
+      "symptom": "Teams overwhelmed, owning too many systems/domains, spending >20% time in coordination meetings, constant context switching.",
+      "root_cause": "Assigning work based on capacity without considering cognitive limits. Treating teams as resource pools.",
+      "fix": "Limit cognitive load: 1 simple domain, 2-3 related domains, or max 1 complex domain per team. If team overloaded, reduce scope (extract platform team for infrastructure) or split team (cell division along domain boundary)."
+    }
+  },
+  "excellence_indicators": [
+    "All stakeholders identified including informal influencers",
+    "Power-interest matrix with evidence, RACI with exactly one Accountable per decision",
+    "Conway's Law alignment verified (team boundaries = system boundaries)",
+    "Team sizes 5-9 (2-pizza rule), cognitive load managed (<10% time in coordination)",
+    "Team types appropriate (stream-aligned, platform, enabling, complicated-subsystem)",
+    "Every team interface documented (API contracts, SLAs, handoffs, decision rights)",
+    "SLAs measurable (99.9% uptime, <100ms p95 latency, 1hr critical response)",
+    "Every interface has single clear owner with contact/escalation",
+    "Maturity assessed with evidence (metrics, artifacts, observations), not aspirations",
+    "External benchmarks used (DORA percentiles, CMMC levels)",
+    "Transition plan realistic (incremental/pilot, not big bang without mitigation)",
+    "Governance defined (decision authority, review cadence, escalation path)",
+    "Success metrics baselined with targets (DORA, team satisfaction, dependencies)",
+    "Communication plan audience-specific (employees, teams, leadership, stakeholders)",
+    "Principles adhered to (no shared ownership, clear decision rights, manageable coordination)",
+    "Design survives 'Would this work in practice?' test from experienced leaders",
+    "Assumptions and risks documented explicitly"
+  ]
+}

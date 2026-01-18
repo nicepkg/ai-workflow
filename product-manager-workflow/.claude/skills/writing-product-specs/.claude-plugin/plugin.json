@@ -1,0 +1,13 @@
+{
+  "name": "writing-product-specs",
+  "description": "Write comprehensive product specification documents that clearly communicate what we're building, why, and how we'll know it's successful",
+  "version": "1.0.0",
+  "author": {
+    "name": "Britt Crawford",
+    "email": "britt@brittcrawford.com"
+  },
+  "homepage": "https://github.com/britt/claude-code-skills",
+  "repository": "https://github.com/britt/claude-code-skills",
+  "license": "MIT",
+  "keywords": ["specs", "prd", "product", "requirements", "documentation"]
+}

@@ -1,59 +1,115 @@
-# {{WORKFLOW_NAME}}
+<div align="center">
 
-{{WORKFLOW_DESCRIPTION}}
+# {{EMOJI}} {{WORKFLOW_NAME}}
 
-## Target Users
+### **{{TAGLINE}}**
+
+[← Back to AI Workflow](../README.md)
+
+[简体中文](./README_cn.md) | English
+
+</div>
+
+---
+
+## 🎯 Who Is This For?
 
 {{TARGET_USERS}}
+<!-- Example:
+- **Role 1** - Use case description
+- **Role 2** - Use case description
+- **Role 3** - Use case description
+-->
 
-## Core Capabilities
+---
 
-{{CAPABILITIES}}
-
-## Quick Start
-
-### 1. Clone this workflow
-
-```bash
-git clone <repository-url>
-cd {{WORKFLOW_DIR}}
-```
-
-### 2. Verify skills
+## ⚡ Quick Install
 
 ```bash
-# Check installed skills
-ls -la .claude/skills/
+# Install all {{SKILL_COUNT}} skills with one command
+npx add-skill nicepkg/ai-workflow/{{WORKFLOW_DIR}}
 
-# Verify SKILL.md files exist
-find .claude/skills -name "SKILL.md" -type f
+# Or install specific skills
+npx add-skill nicepkg/ai-workflow/{{WORKFLOW_DIR}} --skill {{EXAMPLE_SKILL}}
 ```
 
-### 3. Start using
+---
 
-Launch Claude Code in this directory. Skills activate automatically based on your requests.
+## 📦 Skills Included ({{SKILL_COUNT}})
 
-## Installed Skills
+{{SKILLS_BY_STAGE}}
+<!--
+Format each stage like this:
 
-{{SKILLS_TABLE}}
+### 0️⃣ Stage Name
+| Skill | What It Does |
+|:------|:-------------|
+| `skill-name` | Brief description of what this skill does |
 
-## Usage Examples
+### 1️⃣ Next Stage
+| Skill | What It Does |
+|:------|:-------------|
+| `skill-name` | Brief description |
+-->
 
-{{USAGE_EXAMPLES}}
+---
 
-## Workflow Guide
+## 🔄 Complete Pipeline ({{STAGE_COUNT}} Stages)
 
-{{WORKFLOW_GUIDE}}
+```
+{{PIPELINE_ASCII}}
+```
+<!--
+Format like this:
 
-## FAQ
+Stage 0: Stage Name
+└── skill-name → What it does
 
-{{FAQ}}
+Stage 1: Stage Name
+├── skill-name → What it does
+├── skill-name → What it does
+└── skill-name → What it does
 
-## Sources
+Stage 2: Stage Name
+├── skill-name → What it does
+└── skill-name → What it does
+-->
 
-Skills are sourced from:
-{{SOURCES}}
+---
 
-## License
+## 💡 Example Workflows
 
-MIT License. Individual skills follow their original project licenses.
+{{EXAMPLE_WORKFLOWS}}
+<!--
+Format each example like this:
+
+### Workflow Name
+```
+1. "First prompt to AI"
+2. "Second prompt to AI"
+3. "Third prompt to AI"
+```
+-->
+
+---
+
+## 🔗 Skill Combinations
+
+| Goal | Skill Chain |
+|:-----|:------------|
+{{SKILL_COMBINATIONS}}
+<!--
+| **Goal Name** | skill1 → skill2 → skill3 → skill4 |
+-->
+
+---
+
+## 📄 License
+
+MIT © [nicepkg](https://github.com/nicepkg)
+
+<div align="center">
+
+**[⬆ Back to Main Project](../README.md)**
+
+</div>

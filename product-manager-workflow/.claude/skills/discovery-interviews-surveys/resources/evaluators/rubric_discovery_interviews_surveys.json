@@ -1,0 +1,265 @@
+{
+  "criteria": [
+    {
+      "name": "Research Objective Clarity",
+      "description": "Is the research objective clearly defined with specific learning goals and hypotheses?",
+      "scoring": {
+        "1": "Vague objective ('learn about users'). No specific learning goals. Hypotheses missing. No connection to decision.",
+        "3": "Objective stated but could be more specific. Some learning goals identified. Hypotheses present but may lack precision. Decision somewhat clear.",
+        "5": "Crystal clear objective with specific learning goals. Testable hypotheses documented. Clear connection to decision to be informed. Success criteria defined."
+      }
+    },
+    {
+      "name": "Participant Targeting & Recruitment",
+      "description": "Are target participants well-defined with appropriate screening and recruitment strategy?",
+      "scoring": {
+        "1": "Participant criteria vague or missing. No screening questions. Recruitment strategy not specified. Sample size not justified.",
+        "3": "Participant criteria identified but may lack specificity. Basic screening questions. Recruitment strategy mentioned. Sample size roughly appropriate.",
+        "5": "Precise participant criteria (demographics, behaviors, firmographics). Comprehensive screening questions. Clear recruitment strategy with channels. Sample size justified by method (5-15 for qual, 100+ for quant, 30+ per segment)."
+      }
+    },
+    {
+      "name": "Question Quality & Bias Avoidance",
+      "description": "Are questions well-designed, open-ended, behavior-focused, and free of leading bias?",
+      "scoring": {
+        "1": "Many leading or hypothetical questions ('Would you...?', 'Don't you think...?'). Closed yes/no questions dominate. No behavior focus. Confirmation bias obvious.",
+        "3": "Mix of open and closed questions. Some behavior focus but also hypotheticals. Minor leading language. Some bias-avoidance techniques attempted.",
+        "5": "Exemplary questions: open-ended, behavior-focused ('Tell me about the last time...'), use 'show me' requests, avoid hypotheticals, no leading language. Systematic bias-avoidance techniques applied throughout."
+      }
+    },
+    {
+      "name": "Interview Guide / Survey Structure",
+      "description": "Is the research instrument well-structured with logical flow and appropriate depth?",
+      "scoring": {
+        "1": "Poor structure. No logical flow. Too shallow (only surface questions) or too narrow (missing key areas). Inappropriate question types.",
+        "3": "Decent structure with some flow. Covers main topics but may miss areas. Question types mostly appropriate. Could use refinement.",
+        "5": "Excellent structure: warm-up, core questions, concept test (if applicable), wrap-up. Logical flow from general to specific. Appropriate depth and breadth. Question types match objectives (open-ended for discovery, scaled for validation). Includes follow-up probes."
+      }
+    },
+    {
+      "name": "JTBD / Problem Discovery Focus",
+      "description": "For discovery research, does it focus on jobs-to-be-done, problems, and context (not just features)?",
+      "scoring": {
+        "1": "Feature-focused ('Do you want feature X?'). No JTBD exploration. Missing context about problems, workflows, or triggers. Hypothetical focus.",
+        "3": "Some problem exploration. Brief JTBD elements. Context partially explored. Mix of problem and feature questions.",
+        "5": "Deep JTBD focus: hiring/firing triggers, desired outcomes, current workarounds, pain points, context. Timeline reconstruction for switchers. Problems before solutions. 'Show me' requests for workflows."
+      }
+    },
+    {
+      "name": "Sample Size & Statistical Rigor",
+      "description": "Is sample size appropriate for method and are statistical considerations addressed for surveys?",
+      "scoring": {
+        "1": "Sample size inappropriate (e.g., 3 interviews claiming statistical significance, or 20-person survey). No power analysis. No consideration of statistical validity for quantitative claims.",
+        "3": "Sample size roughly appropriate but not justified. Some statistical awareness for surveys (e.g., descriptive stats). May lack power analysis or significance testing.",
+        "5": "Sample size justified: 5-15 for qualitative themes, 100+ for survey stats, 30+ per segment for comparisons. Power analysis for surveys (margin of error, confidence level). Statistical tests specified (t-test, chi-square, etc.). Saturation check for interviews."
+      }
+    },
+    {
+      "name": "Analysis Plan & Rigor",
+      "description": "Is there a clear, systematic analysis plan with rigor techniques?",
+      "scoring": {
+        "1": "No analysis plan. Unclear how data will be processed. No mention of systematic approach, coding, or statistical tests. Risk of cherry-picking.",
+        "3": "Basic analysis plan. For interviews: thematic coding mentioned. For surveys: descriptive stats mentioned. Some structure but may lack rigor techniques.",
+        "5": "Comprehensive analysis plan. For interviews: systematic thematic coding, affinity mapping, frequency counting, saturation check, negative case analysis. For surveys: descriptive stats, inferential tests, segmentation, open-end coding. Pre-specified to avoid p-hacking."
+      }
+    },
+    {
+      "name": "Facilitation & Execution Guidance",
+      "description": "For interviews, is there guidance on facilitation techniques (active listening, probes, silence)?",
+      "scoring": {
+        "1": "No facilitation guidance. Script-only approach with no flexibility. Missing techniques like probing, silence, active listening.",
+        "3": "Some facilitation guidance. Probes included for some questions. Brief mention of techniques. Could be more comprehensive.",
+        "5": "Detailed facilitation guidance: active listening, follow-up probes ('Tell me more', 'Why did that matter?'), embrace silence (3-5 sec pause), mirroring, 'show me' requests, non-verbal cue awareness. Recording and note-taking protocol."
+      }
+    },
+    {
+      "name": "Ethics & Consent",
+      "description": "Are ethical considerations addressed (informed consent, privacy, compensation)?",
+      "scoring": {
+        "1": "No mention of consent, privacy, or compensation. Ethical considerations ignored.",
+        "3": "Brief mention of consent or compensation. Some privacy awareness. May lack detail on implementation.",
+        "5": "Comprehensive ethics: informed consent script, explicit recording permission, anonymization in reports, secure data storage, fair compensation specified, opt-out option. Privacy-first approach."
+      }
+    },
+    {
+      "name": "Insights Documentation & Actionability",
+      "description": "Is there a clear template or plan for documenting insights with evidence and recommendations?",
+      "scoring": {
+        "1": "No insights documentation plan. Unclear how findings will be communicated. Missing connection to actionable recommendations.",
+        "3": "Basic insights template. Some structure for documenting findings. Recommendations mentioned but may lack specificity. Somewhat actionable.",
+        "5": "Comprehensive insights document template: executive summary, methodology, key findings with evidence (quotes/stats), surprises, recommendations (specific actions), confidence level, limitations. Actionable and decision-ready."
+      }
+    }
+  ],
+  "minimum_score": 3.5,
+  "guidance_by_research_type": {
+    "Problem Discovery Interviews": {
+      "target_score": 4.0,
+      "focus_criteria": [
+        "Question Quality & Bias Avoidance",
+        "JTBD / Problem Discovery Focus",
+        "Facilitation & Execution Guidance"
+      ],
+      "sample_size": "8-15 participants",
+      "key_requirements": [
+        "Open-ended, behavior-focused questions",
+        "Focus on past behavior, not hypotheticals",
+        "'Show me' requests for workflows",
+        "Problem before solution",
+        "Current workarounds explored",
+        "Systematic thematic coding planned"
+      ],
+      "common_pitfalls": [
+        "Asking 'Would you use...' instead of 'Tell me about the last time you...'",
+        "Jumping to solutions before understanding problems",
+        "Not probing deeply enough (stopping at surface answers)",
+        "Selection bias (only interviewing enthusiasts)"
+      ]
+    },
+    "Jobs-to-be-Done Research": {
+      "target_score": 4.2,
+      "focus_criteria": [
+        "JTBD / Problem Discovery Focus",
+        "Question Quality & Bias Avoidance",
+        "Interview Guide / Survey Structure"
+      ],
+      "sample_size": "10-15 recent switchers",
+      "key_requirements": [
+        "Recruit recent switchers (last 3-6 months)",
+        "Timeline reconstruction (first thought → current state)",
+        "Forces of progress (push, pull, anxiety, habit)",
+        "Hiring/firing triggers identified",
+        "Desired outcomes vs current capabilities",
+        "Context and constraints explored"
+      ],
+      "common_pitfalls": [
+        "Interviewing people who switched too long ago (memory fades)",
+        "Not reconstructing timeline (missing trigger events)",
+        "Ignoring anxieties and habits (forces resisting change)",
+        "Focusing only on product features, not job to be done"
+      ]
+    },
+    "Concept Testing (Qualitative)": {
+      "target_score": 3.8,
+      "focus_criteria": [
+        "Question Quality & Bias Avoidance",
+        "Interview Guide / Survey Structure",
+        "Participant Targeting & Recruitment"
+      ],
+      "sample_size": "10-15 target users",
+      "key_requirements": [
+        "Comprehension check ('In your own words, what is this?')",
+        "Target audience validation ('Who is this for?')",
+        "Use case exploration ('When would you use it?')",
+        "Value perception (pricing anchors, comparisons)",
+        "Concerns and objections surfaced",
+        "Avoid leading ('Don't you think this is great?')"
+      ],
+      "common_pitfalls": [
+        "Testing with wrong audience (not actual target users)",
+        "Leading participants to 'correct' answer",
+        "Not exploring concerns (only positive feedback)",
+        "Mistaking 'sounds interesting' for 'will actually use'"
+      ]
+    },
+    "Quantitative Surveys": {
+      "target_score": 4.1,
+      "focus_criteria": [
+        "Sample Size & Statistical Rigor",
+        "Question Quality & Bias Avoidance",
+        "Analysis Plan & Rigor"
+      ],
+      "sample_size": "100+ overall, 30+ per segment",
+      "key_requirements": [
+        "Sample size justified (power analysis, margin of error)",
+        "Mix of scaled questions and open-ends",
+        "Avoid leading language in questions",
+        "Randomize option order",
+        "Pilot test with 5-10 people",
+        "Statistical tests pre-specified (t-test, chi-square, etc.)",
+        "Segmentation plan for subgroup analysis"
+      ],
+      "common_pitfalls": [
+        "Too small sample for statistical claims (n < 30 per segment)",
+        "Leading questions ('How much do you love our product?')",
+        "No pilot test (discovering issues after launch)",
+        "Cherry-picking significant results (p-hacking)",
+        "Ignoring non-response bias"
+      ]
+    },
+    "Continuous Discovery": {
+      "target_score": 3.7,
+      "focus_criteria": [
+        "Interview Guide / Survey Structure",
+        "Facilitation & Execution Guidance",
+        "Insights Documentation & Actionability"
+      ],
+      "sample_size": "3-5 conversations per week",
+      "key_requirements": [
+        "Lightweight process (15-30 min conversations)",
+        "Rotating team members (product, eng, design)",
+        "Shared notes repository",
+        "Flexible guide based on current focus",
+        "Monthly synthesis of patterns",
+        "Relationship building with customers"
+      ],
+      "common_pitfalls": [
+        "Making it too formal (blocks adoption)",
+        "Only product team participates (team stays disconnected)",
+        "No shared documentation (insights lost)",
+        "No periodic synthesis (patterns missed)",
+        "Stopping after a few weeks (not continuous)"
+      ]
+    }
+  },
+  "common_failure_modes": [
+    {
+      "failure": "Hypothetical questions ('Would you...?')",
+      "symptom": "Questions like 'Would you pay $X?', 'Would you use feature Y?', 'If we built Z, would you switch?'. Participants describe future intent, not past behavior.",
+      "detection": "Look for 'would', 'if', 'imagine'. Check if questions focus on actual past behavior vs hypothetical scenarios.",
+      "fix": "Reframe to past behavior: 'Tell me about the last time you [needed this]', 'What have you tried?', 'Show me your current workflow'. Use 'have you' not 'would you'."
+    },
+    {
+      "failure": "Leading questions (telegraphing desired answer)",
+      "symptom": "Questions like 'Don't you think...?', 'Isn't it true that...?', 'How much do you love...?'. Bias obvious.",
+      "detection": "Check if question suggests 'right' answer. Would neutral observer detect researcher's opinion from question?",
+      "fix": "Use neutral phrasing: 'What's your experience with...?', 'Walk me through...'. Let participant form own opinion, don't guide."
+    },
+    {
+      "failure": "Insufficient sample size for claims",
+      "symptom": "Statistical claims from tiny samples ('80% of users want X' from 5 interviews). Surveys with n < 30 per segment claiming significance.",
+      "detection": "Check sample size vs type of claim. Interviews → themes only. Surveys → need n ≥ 30 per segment for stats.",
+      "fix": "For interviews: Report themes ('8/12 mentioned Y'), not percentages. For surveys: Ensure n ≥ 100 overall, 30+ per segment. Run power analysis."
+    },
+    {
+      "failure": "Wrong participants (selection bias)",
+      "symptom": "Interviewing only enthusiasts, or only detractors. Convenience sample (co-workers, friends). Not screening for target criteria.",
+      "detection": "Check recruitment strategy. Are criteria specific? Is sample diverse? Any obvious biases?",
+      "fix": "Define precise inclusion/exclusion criteria. Screen with survey. Recruit diverse sample (enthusiasts AND detractors, various demographics). Avoid convenience sampling."
+    },
+    {
+      "failure": "No systematic analysis (cherry-picking)",
+      "symptom": "No coding or analysis plan. Quotes selected to support pre-existing belief. Contradictory evidence ignored or dismissed.",
+      "detection": "Check for analysis plan. Is there systematic coding? Are contradictory findings presented? Does report feel one-sided?",
+      "fix": "Pre-specify analysis approach: thematic coding, affinity mapping, frequency counting. Actively look for disconfirming evidence. Present contradictions. Use inter-rater reliability."
+    },
+    {
+      "failure": "Surface-level probing (stopping too early)",
+      "symptom": "Accepting first answer without follow-up. Not asking 'Why did that matter?', 'Tell me more', 'What else?'. Missing deeper motivations.",
+      "detection": "Check interview guide for follow-up probes. Are there '5 whys' style follow-ups? Does guide encourage depth?",
+      "fix": "Add systematic probes: 'Tell me more', 'Why did that matter?', 'What else?', 'Walk me through what happened next'. Train interviewers to dig deeper."
+    },
+    {
+      "failure": "Feature-focused (not problem-focused)",
+      "symptom": "Questions about features ('Do you want dark mode?') instead of problems ('Tell me about when poor visibility is an issue'). Solutions before problems.",
+      "detection": "Count feature mentions vs problem mentions. Are questions about 'what we could build' or 'what problems you face'?",
+      "fix": "Reframe to problems: 'What challenges do you face with...?', 'When does [current solution] break down?', 'What workarounds have you tried?'. Problems first, solutions later."
+    },
+    {
+      "failure": "No ethics/consent",
+      "symptom": "Recording without permission. No informed consent. PII not anonymized. No compensation. Participants feel exploited.",
+      "detection": "Check for consent script, recording permission, anonymization plan, compensation details.",
+      "fix": "Add consent script. Explicitly ask to record. Anonymize in reports (P1, P2). Offer fair compensation ($50-150 for 60 min). Respect opt-outs."
+    }
+  ]
+}

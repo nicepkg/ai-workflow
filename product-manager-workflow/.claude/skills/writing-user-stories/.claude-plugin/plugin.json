@@ -1,0 +1,13 @@
+{
+  "name": "writing-user-stories",
+  "description": "Write properly formatted user stories that identify the persona, desired action, and expected benefit",
+  "version": "1.0.0",
+  "author": {
+    "name": "Britt Crawford",
+    "email": "britt@brittcrawford.com"
+  },
+  "homepage": "https://github.com/britt/claude-code-skills",
+  "repository": "https://github.com/britt/claude-code-skills",
+  "license": "MIT",
+  "keywords": ["user-stories", "agile", "requirements", "planning"]
+}
