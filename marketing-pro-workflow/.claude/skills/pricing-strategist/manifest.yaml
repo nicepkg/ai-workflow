@@ -1,0 +1,51 @@
+name: pricing-strategist
+kind: skill
+description: Design and optimize pricing strategies for SaaS products including tiering,
+  packaging, value metrics, and experimentation. Use when setting initial pricing,
+  optimizing conversion, expanding revenue, or when users ask about pricing strategy,
+  monetization, or revenue optimization.
+preconditions:
+- check: project_initialized
+  description: Project environment is set up
+  required: true
+effects:
+- designs_and
+domains: &id001
+- ai
+- rag
+- api
+- frontend
+- backend
+- security
+- testing
+- product
+- design
+- data
+cost: medium
+latency: medium
+risk_level: low
+side_effects:
+- modifies_files
+- creates_artifacts
+idempotent: false
+success_signal: pricing-strategist capability successfully applied
+failure_signals:
+- Prerequisites not met
+- Configuration error
+compatibility:
+  requires: []
+  conflicts_with: []
+  composes_with: []
+  enables: []
+observability:
+  logs:
+  - Applying pricing-strategist...
+  - pricing-strategist completed
+  metrics:
+  - execution_time_ms
+  - success_rate
+metadata:
+  version: 1.0.0
+  created_at: '2025-10-30'
+  tags: *id001
+  examples: []

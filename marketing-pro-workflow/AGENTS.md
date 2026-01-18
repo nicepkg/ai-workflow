@@ -1,102 +1,276 @@
 # Marketing Pro Workflow - AI Instructions
 
-AI execution guide for marketing professional workflow.
+AI execution guide for marketing pro workflow with 38 skills for full-funnel marketing automation.
 
-## Available Skills (18)
+## Available Skills (38)
 
-### Strategy & Research
+### 0. Skill Orchestration
 | Skill | Trigger |
 |-------|---------|
-| marketing-strategy-pmm | positioning, GTM, go-to-market, product marketing, competitive battlecard, ICP |
-| marketing-demand-acquisition | demand gen, paid ads, CAC, acquisition, lead generation, pipeline |
-| buyer-persona-generator | buyer persona, ICP, ideal customer profile, target audience |
+| skill-navigator | which skills, recommend skills, what should I use, help me choose |
+
+### 1. Audience & Positioning
+| Skill | Trigger |
+|-------|---------|
+| marketing | marketing assets, full suite, persona to copy, marketing materials |
+| buyer-persona-generator | buyer persona, ICP, ideal customer, target audience |
+| Go-to-Market Planner | GTM, go-to-market, launch plan, positioning, channels |
+| prd-v09-gtm-strategy | PRD, product launch, GTM strategy, executable launch |
+| marketing-strategy-pmm | product marketing, PMM, battlecard, competitive positioning |
+
+### 2. Pricing & Competition
+| Skill | Trigger |
+|-------|---------|
+| pricing-strategist | pricing, SaaS pricing, tiers, price experiment |
+| competitor-price-tracker | competitor pricing, price monitoring, price alerts |
 | competitive-ads-extractor | competitor ads, ad library, competitive intelligence |
-| lead-research-assistant | find leads, identify prospects, lead research |
+
+### 3. Copywriting & Messaging
+| Skill | Trigger |
+|-------|---------|
+| copy | copywriting, SaaS copy, high-converting, benefits |
+| ad-copy-generator | ad copy, Google ads, Meta ads, LinkedIn ads |
+| content-optimizer | SEO, on-page, keyword density, meta tags |
+| content-brief | content brief, SEO brief, content planning |
+
+### 4. Landing Pages & Conversion
+| Skill | Trigger |
+|-------|---------|
+| landing-page | landing page, LP, conversion page, sales page |
+| landing-page-copywriter | AIDA, landing copy, page copy |
+| ui-ux-audit | UX audit, conversion audit, page review |
+
+### 5. Campaign Execution
+| Skill | Trigger |
+|-------|---------|
+| running-marketing-campaigns | campaign, marketing campaign, execute campaign |
+| utm-builder | UTM, tracking links, campaign tracking |
+| qr-code-generator | QR code, QR, offline tracking |
+| email-template-generator | email template, email sequence, drip campaign |
+
+### 6. Outreach & Growth
+| Skill | Trigger |
+|-------|---------|
+| cold-email-sequence-generator | cold email, outreach sequence, email sequence |
+| cold-outreach-generator | cold outreach, LinkedIn outreach, meeting request |
+| personalization-at-scale | personalization, mass personalization, custom hooks |
+| lead-research-assistant | lead research, prospect research, lead qualification |
+
+### 7. A/B Testing & Optimization
+| Skill | Trigger |
+|-------|---------|
+| funnel-analysis | funnel, conversion funnel, bottleneck, drop-off |
+| analytics-interpretation | GA4, GSC, analytics, data interpretation |
+
+### 8. Launch Management
+| Skill | Trigger |
+|-------|---------|
+| technical-launch-planner | product launch, tech launch, launch timeline |
+| launch-gtm-execution | launch execution, GTM execution, sales enablement |
+
+### 9. Dashboard & Review
+| Skill | Trigger |
+|-------|---------|
+| executive-dashboard-generator | dashboard, executive report, metrics summary |
+| product-analytics | AARRR, retention, product metrics, weekly review |
+| roi-analyzer | ROI, LTV, CAC, NPV, budget allocation |
+| social-media-analyzer | social ROI, campaign performance |
+| marketing-demand-acquisition | demand gen, paid media, CAC |
 
 ### SEO & Content
 | Skill | Trigger |
 |-------|---------|
-| seo-optimizer | SEO, optimize keywords, search ranking |
-| content-optimizer | keyword density, meta tags, heading structure, readability |
-| serp-analysis | SERP analysis, search results, competitor analysis |
-| keyword-cluster-builder | keyword research, keyword expansion, topic clusters |
-| content-brief | content brief, content plan, SEO brief |
-
-### Advertising & Campaigns
-| Skill | Trigger |
-|-------|---------|
-| ad-copy-generator | Google Ads, Meta ads, LinkedIn ads, ad copy, A/B test copy |
-| landing-page-copywriter | landing page, conversion copy, sales page |
-| email-template-generator | email marketing, email sequence, newsletter, drip campaign |
-| utm-builder | UTM, tracking links, campaign URLs, attribution |
+| seo-optimizer | SEO, optimization, rankings |
+| serp-analysis | SERP, search results, competitor SERP |
+| keyword-cluster-builder | keywords, keyword cluster, topic cluster |
 
 ### Social Media
 | Skill | Trigger |
 |-------|---------|
-| linkedin-post-optimizer | LinkedIn, professional post optimization |
-| social-repurposer | social media conversion, multi-platform, repurpose content |
-| social-media-analyzer | social ROI, engagement metrics, campaign performance |
+| linkedin-post-optimizer | LinkedIn, post optimization |
+| social-repurposer | repurpose, cross-platform, content conversion |
 
-### Analytics
-| Skill | Trigger |
-|-------|---------|
-| analytics-interpretation | GA4, GSC, analytics, metrics, traffic analysis, conversion data |
+## Complete Marketing Pipeline
 
-## Recommended Workflows
+```
+Stage 0: Skill Selection
+└── skill-navigator → Auto-route to best skills for your goal
 
-### Complete GTM Strategy
-1. **Define ICP** - Use buyer-persona-generator to create detailed personas
-2. **Positioning** - Use marketing-strategy-pmm with April Dunford framework
-3. **Competitive Intel** - Use competitive-ads-extractor for ad research
-4. **Battlecards** - Use marketing-strategy-pmm for competitive battlecards
-5. **Launch Plan** - Use marketing-demand-acquisition for channel strategy
+Stage 1: Positioning & Audience
+├── buyer-persona-generator → Create ICP and personas
+├── marketing → Generate full marketing asset suite
+├── Go-to-Market Planner → Complete GTM planning
+└── prd-v09-gtm-strategy → PRD-driven launch strategy
 
-### Full-Funnel Campaign
-1. **Audience** - Use buyer-persona-generator for targeting
-2. **Ads** - Use ad-copy-generator for multi-platform copy
-3. **Landing Page** - Use landing-page-copywriter for conversion
-4. **Email** - Use email-template-generator for nurture sequence
-5. **Tracking** - Use utm-builder for attribution
-6. **Analysis** - Use analytics-interpretation for optimization
+Stage 2: Pricing & Competition
+├── pricing-strategist → Define pricing strategy
+├── competitor-price-tracker → Monitor competitor pricing
+└── competitive-ads-extractor → Analyze competitor ads
 
-### SEO Content Strategy
-1. **Keywords** - Use keyword-cluster-builder to expand and cluster
-2. **SERP** - Use serp-analysis to understand search intent
-3. **Brief** - Use content-brief for content requirements
-4. **Optimization** - Use content-optimizer to verify SEO
+Stage 3: Copywriting
+├── copy → High-converting copy for all channels
+├── ad-copy-generator → Ads for all platforms
+└── content-brief → SEO content briefs
 
-### ABM / Lead Gen Campaign
-1. **Leads** - Use lead-research-assistant to find prospects
-2. **Personas** - Use buyer-persona-generator for messaging
-3. **Ads** - Use ad-copy-generator for targeted copy
-4. **LinkedIn** - Use linkedin-post-optimizer for outreach
-5. **Tracking** - Use utm-builder for attribution
+Stage 4: Landing Pages
+├── landing-page → Full LP structure & copy
+├── landing-page-copywriter → AIDA copy
+└── ui-ux-audit → Conversion optimization
 
-### Paid Media Optimization
-1. **Competitive** - Use competitive-ads-extractor for insights
-2. **Copy** - Use ad-copy-generator for A/B variations
-3. **UTM** - Use utm-builder for tracking
-4. **Analysis** - Use analytics-interpretation for performance
+Stage 5: Campaign Execution
+├── running-marketing-campaigns → Full campaign planning
+├── utm-builder → Unified tracking
+├── qr-code-generator → Offline material tracking
+└── email-template-generator → Email sequences
+
+Stage 6: Outreach & Growth
+├── cold-email-sequence-generator → Cold outreach sequences
+├── cold-outreach-generator → Meeting-focused scripts
+├── personalization-at-scale → Mass personalization
+└── lead-research-assistant → Lead qualification
+
+Stage 7: Testing & Optimization
+├── funnel-analysis → Diagnose conversion bottlenecks
+└── analytics-interpretation → Data interpretation
+
+Stage 8: Launch
+├── technical-launch-planner → Product launch planning
+└── launch-gtm-execution → Execution checklist
+
+Stage 9: Dashboard & Review
+├── executive-dashboard-generator → Executive reporting
+├── product-analytics → AARRR metrics review
+├── roi-analyzer → ROI/LTV/CAC analysis
+└── social-media-analyzer → Campaign ROI
+```
 
 ## Skill Combinations
 
-- **Product Launch**: buyer-persona-generator → marketing-strategy-pmm → ad-copy-generator → landing-page-copywriter → email-template-generator
-- **ABM Campaign**: lead-research-assistant → buyer-persona-generator → ad-copy-generator → linkedin-post-optimizer
-- **SEO Campaign**: keyword-cluster-builder → serp-analysis → content-brief → content-optimizer
-- **Paid Media**: competitive-ads-extractor → ad-copy-generator → utm-builder → analytics-interpretation
-- **Social Strategy**: marketing-strategy-pmm → ad-copy-generator → social-repurposer → social-media-analyzer
+### Product Launch Pipeline
+```
+buyer-persona-generator → Go-to-Market Planner → pricing-strategist
+→ marketing → landing-page → technical-launch-planner
+→ utm-builder → executive-dashboard-generator
+```
+
+### Cold Outreach Machine
+```
+lead-research-assistant → buyer-persona-generator
+→ personalization-at-scale → cold-email-sequence-generator
+→ cold-outreach-generator → analytics-interpretation
+```
+
+### Landing Page Optimization
+```
+copy → landing-page → landing-page-copywriter
+→ ui-ux-audit → utm-builder → funnel-analysis
+```
+
+### Full-Funnel Campaign
+```
+running-marketing-campaigns → ad-copy-generator → email-template-generator
+→ utm-builder → funnel-analysis → roi-analyzer
+```
+
+### SEO Content Pipeline
+```
+keyword-cluster-builder → serp-analysis → content-brief
+→ content-optimizer → seo-optimizer
+```
+
+### Weekly Marketing Review
+```
+executive-dashboard-generator → product-analytics
+→ roi-analyzer → funnel-analysis
+```
+
+## Routing Guide
+
+### By Goal Type
+
+**"Launch a product":**
+1. Start with `Go-to-Market Planner`
+2. Use `pricing-strategist` for pricing
+3. Generate assets with `marketing`
+4. Plan launch with `technical-launch-planner`
+
+**"Create landing page":**
+1. Use `copy` for messaging
+2. Use `landing-page` for structure
+3. Audit with `ui-ux-audit`
+4. Track with `utm-builder`
+
+**"Run outreach campaign":**
+1. Research with `lead-research-assistant`
+2. Personalize with `personalization-at-scale`
+3. Generate with `cold-email-sequence-generator`
+4. Track with `analytics-interpretation`
+
+**"Review marketing performance":**
+1. Generate with `executive-dashboard-generator`
+2. Analyze with `product-analytics`
+3. Calculate with `roi-analyzer`
+4. Diagnose with `funnel-analysis`
+
+**"Create ad campaigns":**
+1. Research with `competitive-ads-extractor`
+2. Write with `ad-copy-generator`
+3. Track with `utm-builder`
+4. Analyze with `social-media-analyzer`
+
+## Quality Gates
+
+1. **Before Copy**: Run buyer-persona-generator to understand audience
+2. **Before Landing Page**: Get copy approved with conversion hooks
+3. **Before Launch**: Run technical-launch-planner checklist
+4. **Before Campaign**: Set up UTM tracking
+5. **After Campaign**: Run funnel-analysis + roi-analyzer
 
 ## Output Standards
 
-- **Positioning**: April Dunford framework, competitive alternatives, unique attributes
-- **Personas**: Demographics, psychographics, pain points, objections, messaging
-- **Ad Copy**: Platform-specific formats, character limits validated, 5+ variations
-- **UTM Links**: Lowercase, hyphenated, documented in spreadsheet format
-- **Email**: 3-5 email sequence, progressive engagement, clear CTAs
-- **Landing Pages**: AIDA framework, above-fold hook, social proof
-- **SERP Analysis**: Intent classification, feature opportunities, competitor matrix
-- **Keyword Clusters**: Grouped by topic and intent, funnel stage mapping
-- **Analytics**: Actionable insights with specific recommendations
+### Buyer Personas
+- Demographics, psychographics, pain points
+- Jobs-to-be-done framework
+- Buying triggers and objections
+- Channel preferences
+
+### Copy
+- Headline, subheadline, body
+- Feature → Benefit mapping
+- Social proof elements
+- Clear CTA
+
+### Landing Pages
+- Hero section with value prop
+- Problem-agitation-solution
+- Features with benefits
+- Social proof section
+- FAQ
+- CTA sections
+
+### Campaign Plans
+- Timeline with milestones
+- Channel mix with budgets
+- UTM tracking scheme
+- Success metrics
+
+### Analytics Reports
+- Key metrics summary
+- Trend analysis
+- Anomaly detection
+- Action recommendations
+
+### Pricing Strategy
+- Tier definitions
+- Value metrics
+- Competitive positioning
+- A/B test recommendations
+
+### Cold Outreach
+- 7-14 email sequence
+- A/B subject line variations
+- Personalization fields
+- Follow-up rhythm
 
 ## Key Frameworks
 
@@ -108,21 +282,25 @@ AI execution guide for marketing professional workflow.
 5. Market category
 6. Relevant trends
 
+### AARRR Metrics
+- Acquisition
+- Activation
+- Retention
+- Revenue
+- Referral
+
 ### Demand Gen Metrics
 - CAC (Customer Acquisition Cost)
+- LTV (Lifetime Value)
 - MQL → SQL conversion
 - Pipeline velocity
 - ROAS / ROMI
-- Channel efficiency
 
-### Ad Testing
-- Headlines: Question vs Statement, Benefit vs Feature
-- Copy: Short vs Long, Problem vs Solution
-- CTA: Direct vs Soft
+## Data Sources
 
-## Integration Notes
-
-- HubSpot: UTM parameters auto-sync with campaigns
-- Google Analytics: utm_builder follows GA4 conventions
-- LinkedIn: ad-copy-generator includes platform macros
-- Meta: ad-copy-generator includes dynamic parameters
+- Google Analytics 4
+- Google Search Console
+- Social media platforms
+- CRM data
+- Competitor websites
+- Ad libraries (Meta, Google, LinkedIn)

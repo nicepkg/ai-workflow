@@ -1,0 +1,22 @@
+{
+  "name": "roi-analyzer",
+  "version": "1.0.0",
+  "description": "Comprehensive ROI and business value analysis framework with financial modeling and investment evaluation",
+  "author": "Tempuss",
+  "license": "MIT",
+  "repository": "https://github.com/Tempuss/agent-hub",
+  "format": "claude",
+  "subtype": "skill",
+  "tags": [
+    "roi-analysis",
+    "financial-modeling",
+    "investment-evaluation",
+    "business-value",
+    "cost-benefit-analysis"
+  ],
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "REFERENCE.md"
+  ]
+}

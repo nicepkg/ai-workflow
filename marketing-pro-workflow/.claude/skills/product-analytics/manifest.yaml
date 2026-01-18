@@ -1,0 +1,46 @@
+name: product-analytics
+kind: skill
+description: Measure what matters with proper event tracking, funnels, cohorts, and
+  metrics. Use when setting up analytics, tracking features, or understanding behavior.
+preconditions:
+- check: project_initialized
+  description: Project environment is set up
+  required: true
+effects:
+- provides_capability
+domains: &id001
+- ai
+- rag
+- frontend
+- testing
+- product
+- design
+- data
+cost: medium
+latency: medium
+risk_level: low
+side_effects:
+- modifies_files
+- creates_artifacts
+idempotent: false
+success_signal: product-analytics capability successfully applied
+failure_signals:
+- Prerequisites not met
+- Configuration error
+compatibility:
+  requires: []
+  conflicts_with: []
+  composes_with: []
+  enables: []
+observability:
+  logs:
+  - Applying product-analytics...
+  - product-analytics completed
+  metrics:
+  - execution_time_ms
+  - success_rate
+metadata:
+  version: 1.0.0
+  created_at: '2025-10-30'
+  tags: *id001
+  examples: []

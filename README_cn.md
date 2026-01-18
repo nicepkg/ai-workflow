@@ -19,7 +19,7 @@
 
 **别再重复教你的 AI 同样的事情了。**
 
-一条命令，108+ 专业技能，效率直接起飞。
+一条命令，128+ 专业技能，效率直接起飞。
 
 [立即开始](#-快速开始) · [浏览工作流](#-工作流一览) · [创建自定义工作流](#-创建你自己的工作流)
 
@@ -45,18 +45,18 @@
 | 工作流 | 适合谁 | 技能数 | 一键安装 |
 |:-------|:------|:------:|:---------|
 | **[内容创作者](./content-creator-workflow/README_cn.md)** | 博主、写手、SEO 专家 | 32 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
-| **[营销专家](./marketing-pro-workflow/README_cn.md)** | 数字营销、增长黑客、PMM | 18 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
+| **[营销专家](./marketing-pro-workflow/README_cn.md)** | 数字营销、增长黑客、PMM | 38 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
 | **[视频创作者](./video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[股票交易员](./stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股/台股） | 29 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
 
 <details>
-<summary><b>📦 查看全部 108+ 技能</b></summary>
+<summary><b>📦 查看全部 128+ 技能</b></summary>
 
 ### 内容创作者工作流
 `weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
 
 ### 营销专家工作流
-`ad-copy-generator` `buyer-persona-generator` `utm-builder` `competitive-ads-extractor` `lead-research-assistant` `social-media-analyzer` `marketing-strategy-pmm` `email-campaign-creator` `landing-page-optimizer` `ab-test-designer` `funnel-analyzer` `roi-calculator` `brand-voice-guide` `market-research-assistant` `customer-journey-mapper` `pricing-strategy-advisor` `launch-checklist-generator` `growth-experiment-designer`
+`skill-navigator` `marketing` `buyer-persona-generator` `Go-to-Market Planner` `prd-v09-gtm-strategy` `marketing-strategy-pmm` `pricing-strategist` `competitor-price-tracker` `competitive-ads-extractor` `copy` `ad-copy-generator` `content-optimizer` `content-brief` `landing-page` `landing-page-copywriter` `ui-ux-audit` `running-marketing-campaigns` `utm-builder` `qr-code-generator` `email-template-generator` `cold-email-sequence-generator` `cold-outreach-generator` `personalization-at-scale` `lead-research-assistant` `funnel-analysis` `analytics-interpretation` `technical-launch-planner` `launch-gtm-execution` `executive-dashboard-generator` `product-analytics` `roi-analyzer` `social-media-analyzer` `marketing-demand-acquisition` `seo-optimizer` `serp-analysis` `keyword-cluster-builder` `linkedin-post-optimizer` `social-repurposer`
 
 ### 视频创作者工作流
 `serpapi` `content-trend-researcher` `content-research` `capture-triage` `youtube-transcript` `youtube-to-markdown` `transcribe-and-analyze` `video-downloader` `tapestry` `video-script-writer` `video-script-collaborial` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `canvas-design` `pexels-media` `media-processing` `video-to-gif` `youtube-seo-optimizer` `short-form-converter` `social-repurposer` `srt-translator` `instagram` `video-analytics-interpreter` `posthog-analytics` `webfluence` `sponsor-pitch-generator` `video-comparer` `n8n-skills`

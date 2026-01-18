@@ -1,0 +1,47 @@
+name: go-to-market-planner
+kind: skill
+description: Plan product launches and go-to-market strategy. Use when launching products,
+  entering new markets, or planning marketing campaigns. Covers positioning, channels,
+  messaging, and launch execution.
+preconditions:
+- check: project_initialized
+  description: Project environment is set up
+  required: true
+effects:
+- provides_capability
+domains: &id001
+- ai
+- frontend
+- security
+- testing
+- product
+- design
+- data
+cost: medium
+latency: medium
+risk_level: low
+side_effects:
+- modifies_files
+- creates_artifacts
+idempotent: false
+success_signal: go-to-market-planner capability successfully applied
+failure_signals:
+- Prerequisites not met
+- Configuration error
+compatibility:
+  requires: []
+  conflicts_with: []
+  composes_with: []
+  enables: []
+observability:
+  logs:
+  - Applying go-to-market-planner...
+  - go-to-market-planner completed
+  metrics:
+  - execution_time_ms
+  - success_rate
+metadata:
+  version: 1.0.0
+  created_at: '2025-10-30'
+  tags: *id001
+  examples: []
