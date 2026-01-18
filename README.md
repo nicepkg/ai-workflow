@@ -19,7 +19,7 @@
 
 **Stop teaching your AI assistant the same things over and over.**
 
-One command. 90+ professional skills. Instant productivity boost.
+One command. 104+ professional skills. Instant productivity boost.
 
 [Get Started](#-quick-start) · [Browse Workflows](#-workflows) · [Create Your Own](#-create-your-own-workflow)
 
@@ -46,11 +46,11 @@ One command. 90+ professional skills. Instant productivity boost.
 |:---------|:--------|:------:|:--------|
 | **[Content Creator](./content-creator-workflow/)** | Bloggers, Writers, SEO Specialists | 32 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
 | **[Marketing Pro](./marketing-pro-workflow/)** | Digital Marketers, Growth Hackers, PMMs | 18 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
-| **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 15 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
+| **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[Stock Trader](./stock-trader-workflow/)** | Traders, Investors (US/CN/HK Markets) | 25 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
 
 <details>
-<summary><b>📦 View All 90+ Skills</b></summary>
+<summary><b>📦 View All 104+ Skills</b></summary>
 
 ### Content Creator Workflow
 `weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
@@ -59,7 +59,7 @@ One command. 90+ professional skills. Instant productivity boost.
 `ad-copy-generator` `buyer-persona-generator` `utm-builder` `competitive-ads-extractor` `lead-research-assistant` `social-media-analyzer` `marketing-strategy-pmm` `email-campaign-creator` `landing-page-optimizer` `ab-test-designer` `funnel-analyzer` `roi-calculator` `brand-voice-guide` `market-research-assistant` `customer-journey-mapper` `pricing-strategy-advisor` `launch-checklist-generator` `growth-experiment-designer`
 
 ### Video Creator Workflow
-`video-script-writer` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `youtube-seo-optimizer` `short-form-converter` `video-analytics-interpreter` `sponsor-pitch-generator` `srt-translator` `youtube-transcript` `content-trend-researcher` `social-repurposer` `canvas-design` `video-comparer` `video-downloader`
+`serpapi` `content-trend-researcher` `content-research` `capture-triage` `youtube-transcript` `youtube-to-markdown` `transcribe-and-analyze` `video-downloader` `tapestry` `video-script-writer` `video-script-collaborial` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `canvas-design` `pexels-media` `media-processing` `video-to-gif` `youtube-seo-optimizer` `short-form-converter` `social-repurposer` `srt-translator` `instagram` `video-analytics-interpreter` `posthog-analytics` `webfluence` `sponsor-pitch-generator` `video-comparer` `n8n-skills`
 
 ### Stock Trader Workflow
 `us-stock-analysis` `a-share-analysis` `hk-stock-analysis` `technical-analyst` `china-macro-analyst` `cross-border-flow-tracker` `a-share-screener` `portfolio-manager` `earnings-calendar` `market-news-analyst` `canslim-screener` `value-dividend-screener` `sector-analyst` `options-strategy-advisor` `backtest-expert` `scenario-analyzer` `institutional-flow-tracker` `market-environment-analysis` `breadth-chart-analyst` `pair-trade-screener` `dividend-growth-pullback-screener` `economic-calendar-fetcher` `weekly-trade-strategy` `us-market-bubble-detector` `stanley-druckenmiller-investment`

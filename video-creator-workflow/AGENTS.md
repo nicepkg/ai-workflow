@@ -1,99 +1,171 @@
 # Video Creator Workflow - AI Instructions
 
-AI execution guide for video creator workflow.
+AI execution guide for video creator workflow with 29 skills for industrial-scale video production.
 
-## Available Skills (15)
+## Available Skills (29)
 
-### Research & Ideation
+### 1. Trend Discovery & Topic Research
 | Skill | Trigger |
 |-------|---------|
+| serpapi | search trends, keyword monitoring, topic pool, Google trends |
 | content-trend-researcher | trending topics, hot topics, what's popular, content trends |
-| youtube-transcript | youtube transcript, video subtitles, captions, get transcript |
-| video-downloader | download video, save video, grab video |
+| content-research | research topic, cross-platform research, citations |
+| capture-triage | sort ideas, organize captures, actionable tasks |
 
-### Scripting & Hooks
+### 2. Competitor Analysis & Material Collection
+| Skill | Trigger |
+|-------|---------|
+| youtube-transcript | youtube transcript, video subtitles, captions, get transcript |
+| youtube-to-markdown | youtube summary, video to markdown, batch transcripts |
+| transcribe-and-analyze | transcribe video, whisper, local transcription, audio to text |
+| video-downloader | download video, save video, grab video |
+| tapestry | auto-detect content, route to skill, unified extraction |
+
+### 3. Scripting & Voice Optimization
 | Skill | Trigger |
 |-------|---------|
 | video-script-writer | video script, write script, YouTube script, tutorial script |
+| video-script-collaborial | make natural, conversational, sound human, oral style |
 | video-hook-generator | hook, opening, first 3 seconds, attention grab, scroll stop |
 
-### Titles & Thumbnails
+### 4. Titles & Thumbnails
 | Skill | Trigger |
 |-------|---------|
 | video-title-optimizer | video title, YouTube title, CTR, title ideas |
 | thumbnail-concept-generator | thumbnail, cover image, thumbnail concept, click-worthy |
 | canvas-design | design thumbnail, create image, visual design |
 
-### SEO & Distribution
+### 5. B-Roll & Media Processing
+| Skill | Trigger |
+|-------|---------|
+| pexels-media | B-roll, stock footage, royalty-free, pexels, stock video |
+| media-processing | ffmpeg, cut video, merge, watermark, batch edit |
+| video-to-gif | convert to gif, GIF, animated preview, promo gif |
+
+### 6. SEO & Distribution
 | Skill | Trigger |
 |-------|---------|
 | youtube-seo-optimizer | YouTube SEO, description, tags, chapters, hashtags |
 | short-form-converter | shorts, TikTok, reels, clip, cut from long video |
 | social-repurposer | multi-platform, repurpose, convert format |
 | srt-translator | translate subtitles, SRT, VTT, multilingual, captions |
+| instagram | post to instagram, instagram publish, IG, reels |
 
-### Analytics & Monetization
+### 7. Analytics & Growth
 | Skill | Trigger |
 |-------|---------|
 | video-analytics-interpreter | analytics, metrics, CTR, retention, views, performance |
+| posthog-analytics | product analytics, conversion, growth dashboard |
+| webfluence | content system, binge, channel architecture |
+
+### 8. Monetization & Automation
+| Skill | Trigger |
+|-------|---------|
 | sponsor-pitch-generator | sponsor, brand deal, media kit, pitch, collaboration |
 | video-comparer | compare videos, video quality, compression |
+| n8n-skills | automation, n8n, workflow, scheduled tasks |
 
-## Recommended Workflows
+## Industrial Video Pipeline
 
-### Complete Video Production
-1. **Research** - Use content-trend-researcher to find hot topics
-2. **Script** - Use video-script-writer for complete script
-3. **Hook** - Use video-hook-generator for opening variations
-4. **Title** - Use video-title-optimizer for CTR-optimized title
-5. **SEO** - Use youtube-seo-optimizer for description, tags, chapters
-6. **Thumbnail** - Use thumbnail-concept-generator for visual brief
+```
+Stage 1: Trend Radar
+├── serpapi → Daily keyword monitoring (20+ keywords)
+├── content-trend-researcher → Hot topics across platforms
+└── capture-triage → Sort ideas into actionable tasks
 
-### Short-Form Content Factory
-1. **Extract** - Use youtube-transcript to get source content
-2. **Identify** - Use short-form-converter to find viral moments
-3. **Hook** - Use video-hook-generator for each clip
-4. **Distribute** - Use social-repurposer for platform adaptation
+Stage 2: Competitor Research
+├── youtube-transcript → Analyze competitor videos
+├── youtube-to-markdown → Batch process 50+ videos
+└── transcribe-and-analyze → Transcribe your recordings
 
-### International Expansion
-1. **Transcript** - Use youtube-transcript to extract text
-2. **Translate** - Use srt-translator for target languages
-3. **Localize** - Use video-title-optimizer per market
+Stage 3: Script Writing
+├── video-script-writer → Full script with structure
+├── video-script-collaborial → Make it sound natural
+└── video-hook-generator → Nail the first 3 seconds
 
-### Channel Optimization
-1. **Analyze** - Use video-analytics-interpreter for performance data
-2. **Research** - Use content-trend-researcher for opportunities
-3. **Plan** - Use video-script-writer for new content
+Stage 4: Production
+├── pexels-media → Auto-fetch B-roll footage
+├── media-processing → Batch edit, cut, watermark
+└── video-to-gif → Create promotional GIFs
 
-### Monetization
-1. **Analyze** - Use video-analytics-interpreter for channel stats
-2. **Pitch** - Use sponsor-pitch-generator for media kit and proposals
+Stage 5: Optimization
+├── video-title-optimizer → CTR-optimized titles
+├── thumbnail-concept-generator → Thumbnail concepts
+└── youtube-seo-optimizer → Tags, descriptions, chapters
+
+Stage 6: Distribution
+├── short-form-converter → Long → Shorts/TikTok
+├── social-repurposer → Cross-platform versions
+├── instagram → Direct publish to IG
+└── srt-translator → Multi-language subtitles
+
+Stage 7: Growth Loop
+├── video-analytics-interpreter → Performance analysis
+├── posthog-analytics → Conversion tracking
+└── webfluence → Build content moat
+```
 
 ## Skill Combinations
 
-- **Viral Video**: content-trend-researcher → video-script-writer → video-hook-generator → video-title-optimizer → youtube-seo-optimizer
-- **Shorts Factory**: youtube-transcript → short-form-converter → video-hook-generator → social-repurposer
-- **Global Reach**: youtube-transcript → srt-translator → video-title-optimizer
-- **Growth Strategy**: video-analytics-interpreter → content-trend-researcher → video-script-writer
+### Viral Video Factory
+```
+serpapi → content-research → video-script-writer
+→ video-script-collaborial → video-hook-generator
+→ video-title-optimizer → youtube-seo-optimizer → instagram
+```
+
+### Competitor Teardown
+```
+video-downloader → youtube-to-markdown (batch 50 videos)
+→ content-research → video-script-writer
+```
+
+### Shorts Mass Production
+```
+youtube-transcript → short-form-converter → video-hook-generator
+→ pexels-media → media-processing → social-repurposer
+```
+
+### Global Reach
+```
+youtube-transcript → srt-translator → video-title-optimizer
+→ thumbnail-concept-generator
+```
+
+### Full Automation
+```
+serpapi (scheduled) → capture-triage → n8n-skills
+→ video-analytics-interpreter → webfluence
+```
+
+## Quality Gates
+
+1. **Before Script**: Run serpapi + content-research
+2. **After Script**: Run video-script-collaborial for natural voice
+3. **Hook Check**: Run video-hook-generator, must have 5+ variations
+4. **Title Check**: Run video-title-optimizer, CTR estimate >5%
+5. **Before Publish**: Run youtube-seo-optimizer
+6. **After Publish**: Track with video-analytics-interpreter
 
 ## Output Standards
 
 ### Video Scripts
 - Complete timestamps throughout
-- B-roll suggestions included
+- B-roll suggestions (with pexels-media sources)
 - Text overlay recommendations
 - Clear section breaks (Hook, Content, CTA)
+- Natural conversational tone (after video-script-collaborial)
 
 ### Hooks
-- Multiple variations (5+)
+- 5+ variations per video
 - First 3 seconds optimized
 - Text overlay included
-- Platform-specific versions
+- Platform-specific versions (YouTube vs TikTok)
 
 ### Titles
-- CTR-optimized
+- CTR-optimized (target 5-10%)
 - Keywords in first 50 characters
-- Character count validated (60-70 for YouTube)
+- Character count: 60-70 for YouTube
 - A/B test variations
 
 ### Thumbnails
@@ -101,54 +173,45 @@ AI execution guide for video creator workflow.
 - Color palette specified
 - Text overlay (3-4 words max)
 - Emotion/expression direction
-- Platform-appropriate dimensions
+- Platform dimensions (1280x720 YouTube)
 
 ### SEO Package
-- Full description (200+ words)
-- 8-12 relevant tags
-- Chapters with timestamps
-- 3-5 hashtags
-- Keyword density optimized
+- Description: 200+ words, front-loaded keywords
+- Tags: 8-12 relevant tags
+- Chapters: Timestamps every 2-3 minutes
+- Hashtags: 3-5 relevant hashtags
 
-### Translations
-- Timing preserved from original
-- Cultural adaptations noted
-- Platform-ready format (SRT/VTT)
-- Quality checklist completed
+### Shorts/TikTok
+- Length: 15-60 seconds
+- Vertical 9:16
+- Auto-captions enabled
+- Hook in first 1 second
 
-## Platform-Specific Guidelines
+## Platform Metrics
 
-### YouTube Long-form
-- Scripts: 8-15 minutes optimal
-- Retention patterns: Open loops, pattern breaks
-- SEO: Front-load keywords
-- Thumbnails: Face + Text + Contrast
-
-### YouTube Shorts / TikTok
-- Length: 15-60 seconds optimal
-- Hook: First 1-2 seconds critical
-- Captions: Essential (85% watch muted)
-- Vertical: 9:16 aspect ratio
-
-### Instagram Reels
-- Slightly more polished aesthetic
-- Trending audio helps
-- Hashtags in caption, not on video
-
-## Key Metrics
-
-### YouTube
-- CTR: 4-10% good, 10%+ excellent
-- AVD: 50%+ of video length
-- Engagement: 4-8% good
-
-### TikTok
-- Watch Full Video: 30%+ good
-- Engagement: 5-10% good
-- Shares: Most important metric
+| Platform | Good CTR | Good Retention | Key Metric |
+|----------|----------|----------------|------------|
+| YouTube Long | 4-10% | 50%+ AVD | Watch Time |
+| YouTube Shorts | N/A | 90%+ loop | Shares |
+| TikTok | N/A | 30%+ full watch | Shares |
+| Instagram Reels | N/A | 50%+ | Saves |
 
 ## Prerequisites
 
-Some skills require:
-- `yt-dlp`: Install via `brew install yt-dlp` or `pip install yt-dlp`
-- `ffmpeg`: Install via `brew install ffmpeg` or `apt install ffmpeg`
+| Skill | Requirement |
+|-------|-------------|
+| youtube-transcript | `yt-dlp` |
+| video-downloader | `yt-dlp` |
+| transcribe-and-analyze | `whisperkit` |
+| media-processing | `ffmpeg` |
+| video-to-gif | `ffmpeg` |
+| serpapi | `SERPAPI_KEY` |
+| instagram | Instagram Graph API token |
+| pexels-media | `PEXELS_API_KEY` |
+| posthog-analytics | PostHog project key |
+
+```bash
+# Install required tools
+brew install yt-dlp ffmpeg
+pip install whisperkit
+```
