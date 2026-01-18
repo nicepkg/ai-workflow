@@ -1,0 +1,82 @@
+import { Footer, Layout, LocaleSwitch, Navbar } from "nextra-theme-docs";
+import { Banner } from "nextra/components";
+import { getPageMap } from "nextra/page-map";
+
+const logo = (
+  <span style={{ fontWeight: 700 }}>
+    AI Workflow
+  </span>
+);
+
+const footerContent = (
+  <span>
+    MIT {new Date().getFullYear()} &copy;{" "}
+    <a href="https://github.com/nicepkg/ai-workflow" target="_blank" rel="noopener noreferrer">
+      AI Workflow
+    </a>
+  </span>
+);
+
+type LayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{
+    locale: string;
+  }>;
+};
+
+export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const { locale } = await params;
+  const pageMap = await getPageMap(`/${locale}`);
+
+  return (
+    <>
+      <Layout
+        pageMap={pageMap}
+        docsRepositoryBase="https://github.com/nicepkg/ai-workflow/tree/main/website/content"
+        editLink="Edit this page on GitHub"
+        sidebar={{
+          defaultMenuCollapseLevel: 1,
+          toggleButton: true,
+        }}
+        toc={{
+          backToTop: true,
+        }}
+        feedback={{
+          content: "Question? Give us feedback",
+          labels: "feedback",
+        }}
+        i18n={[
+          { locale: "en", name: "English" },
+          { locale: "zh", name: "中文" },
+        ]}
+        navbar={
+          <Navbar
+            logo={logo}
+            logoLink={`/${locale}`}
+            projectLink="https://github.com/nicepkg/ai-workflow"
+          >
+            <LocaleSwitch className="x:ml-2" />
+          </Navbar>
+        }
+        footer={<Footer>{footerContent}</Footer>}
+        banner={
+          <Banner storageKey="ai-workflow-banner">
+            <span>
+              🎉 AI Workflow is now open source!{" "}
+              <a
+                href="https://github.com/nicepkg/ai-workflow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="x:underline x:underline-offset-2"
+              >
+                Star us on GitHub
+              </a>
+            </span>
+          </Banner>
+        }
+      >
+        {children}
+      </Layout>
+    </>
+  );
+}

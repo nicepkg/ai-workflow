@@ -6,12 +6,18 @@ const withNextra = nextra({
   search: {
     codeblocks: false,
   },
+  unstable_shouldAddLocaleToLinks: true,
 });
 
 /** @type {import("next").NextConfig} */
 const config = {
   // Static export for Cloudflare Pages (no server functions)
   output: "export",
+
+  i18n: {
+    locales: ["en", "zh"],
+    defaultLocale: "en",
+  },
 
   // Required for static export
   images: {

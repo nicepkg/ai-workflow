@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
+    "build": "next build && pnpm postbuild",
     "check": "eslint . && tsc --noEmit",
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
@@ -77,6 +78,7 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.2",
     "eslint-config-next": "^15.2.3",
+    "pagefind": "^1.4.0",
     "postcss": "^8.5.6",
     "prettier": "^3.8.0",
     "prettier-plugin-tailwindcss": "^0.7.2",

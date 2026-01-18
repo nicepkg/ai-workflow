@@ -24,11 +24,13 @@ node_modules
 out
 dist
 build
+_pagefind
 
 # Cache
 .turbo
 .cache
 *.tsbuildinfo
+tsconfig.tsbuildinfo
 
 # Next.js
 next-env.d.ts
