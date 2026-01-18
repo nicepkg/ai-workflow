@@ -1,0 +1,148 @@
+---
+title: 安装指南
+description: 安装和使用 AI Workflow 的不同方式
+---
+
+# 安装指南
+
+有多种方式在你的项目中使用 AI Workflow。
+
+## 方法一：npx add-skill（推荐）
+
+最简单的安装方式，无需任何设置。
+
+### 安装完整工作流
+
+```bash
+# 内容创作者、博主、写手
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
+
+# 数字营销人、增长黑客
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow
+
+# YouTuber、视频制作人
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow
+
+# 股票交易员、投资者
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow
+
+# 产品经理
+npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow
+
+# 演示文稿创作者
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
+```
+
+### 安装单个技能
+
+```bash
+# 列出工作流中的可用技能
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --list
+
+# 安装特定技能
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-share-analysis
+```
+
+### 安装选项
+
+```bash
+# 全局安装（在所有项目中可用）
+npx add-skill <workflow> --global
+
+# 只安装到指定的 AI 工具
+npx add-skill <workflow> -a claude-code -a cursor
+
+# 非交互模式（用于 CI/CD）
+npx add-skill <workflow> -y
+
+# 指定安装目录
+npx add-skill <workflow> --path ./my-project
+```
+
+## 方法二：手动安装
+
+适合需要更多控制的高级用户。
+
+### 克隆并复制
+
+```bash
+# 克隆仓库
+git clone https://github.com/nicepkg/ai-workflow.git
+
+# 将工作流的技能复制到你的项目
+cp -r ai-workflow/workflows/content-creator-workflow/.claude/skills your-project/.claude/
+```
+
+### 为其他 AI 工具创建软链接
+
+```bash
+cd your-project
+
+# 创建目录
+mkdir -p .cursor .codex .opencode
+
+# 创建软链接
+ln -s ../.claude/skills .cursor/skills
+ln -s ../.claude/skills .codex/skills
+ln -s ../.claude/skills .opencode/skill
+```
+
+## 目录结构
+
+安装后，你的项目将包含：
+
+```
+your-project/
+├── .claude/
+│   └── skills/           # 主要技能存储
+│       ├── skill-1/
+│       │   └── SKILL.md
+│       └── skill-2/
+│           └── SKILL.md
+├── .cursor/
+│   └── skills -> ../.claude/skills
+├── .codex/
+│   └── skills -> ../.claude/skills
+└── ...（其他 AI 工具软链接）
+```
+
+## 全局安装 vs 项目安装
+
+| 类型 | 位置 | 使用场景 |
+|:-----|:-----|:---------|
+| 项目级 | `.claude/skills/` | 特定项目专用的技能 |
+| 全局 | `~/.claude/skills/` | 所有项目都可用的技能 |
+
+```bash
+# 项目安装（默认）
+npx add-skill <workflow>
+
+# 全局安装
+npx add-skill <workflow> --global
+```
+
+## 更新技能
+
+```bash
+# 重新安装以获取最新版本
+npx add-skill <workflow>
+
+# 或者手动拉取最新并复制
+cd ai-workflow
+git pull origin main
+```
+
+## 故障排除
+
+### 技能未加载？
+
+1. 检查技能是否在你的 AI 工具的正确目录中
+2. 重启你的 AI 助手
+3. 验证 `SKILL.md` 文件是否存在
+
+### 权限错误？
+
+```bash
+# 在 Unix/Mac 上修复权限
+chmod -R 755 .claude/skills
+```

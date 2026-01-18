@@ -1,0 +1,45 @@
+---
+title: Workflows Overview
+description: Browse pre-configured AI workflows for different use cases
+---
+
+# Workflows
+
+AI Workflow provides curated skill collections for different professional needs. Each workflow includes carefully selected skills optimized for specific use cases.
+
+## Available Workflows
+
+| Workflow | For Who | Skills | Install |
+|:---------|:--------|:------:|:--------|
+| [Content Creator](/workflows/content-creator) | Bloggers, Writers, SEO Specialists | 32 | `npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow` |
+| [Marketing Pro](/workflows/marketing-pro) | Digital Marketers, Growth Hackers, PMMs | 38 | `npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow` |
+| [Video Creator](/workflows/video-creator) | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
+| [Stock Trader](/workflows/stock-trader) | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
+| [Product Manager](/workflows/product-manager) | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
+| [Talk to Slidev](/workflows/talk-to-slidev) | Keynote Speakers, Tech Presenters, Educators | 18 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
+
+## Quick Install
+
+```bash
+# Pick your workflow and run ONE command:
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
+
+# That's it! Skills are now active in your AI assistant.
+```
+
+## Advanced Options
+
+```bash
+# Install globally (available in all projects)
+npx add-skill <workflow> --global
+
+# Install specific skills only
+npx add-skill <workflow> --skill skill-name
+
+# List available skills
+npx add-skill <workflow> --list
+```
+
+## Creating Custom Workflows
+
+Need a workflow for your specific use case? See [Creating Workflows](/docs/creating-workflows) to build your own.

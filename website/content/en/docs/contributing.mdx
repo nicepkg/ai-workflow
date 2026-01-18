@@ -1,0 +1,123 @@
+---
+title: Contributing
+description: How to contribute to AI Workflow
+---
+
+# Contributing
+
+We welcome contributions to AI Workflow! This guide explains how to contribute.
+
+## Ways to Contribute
+
+- **New Skills** - Create useful skills for the community
+- **New Workflows** - Curate skill collections for specific use cases
+- **Bug Fixes** - Fix issues in existing skills or documentation
+- **Documentation** - Improve guides and examples
+- **Translations** - Help translate documentation
+
+## Getting Started
+
+1. Fork the repository on GitHub
+2. Clone your fork:
+```bash
+git clone https://github.com/your-username/ai-workflow.git
+cd ai-workflow
+```
+
+3. Create a branch for your contribution:
+```bash
+git checkout -b feature/my-contribution
+```
+
+## Contributing Skills
+
+### 1. Create Your Skill
+
+```bash
+mkdir -p workflows/your-workflow/.claude/skills/your-skill
+```
+
+### 2. Write SKILL.md
+
+Follow the [Creating Skills](/docs/creating-skills) guide to write your skill definition.
+
+### 3. Test Your Skill
+
+Test the skill with multiple AI assistants to ensure compatibility.
+
+### 4. Submit a Pull Request
+
+Push your changes and open a pull request:
+
+```bash
+git add .
+git commit -m "feat: add your-skill to your-workflow"
+git push origin feature/my-contribution
+```
+
+## Contributing Workflows
+
+### 1. Create Workflow Structure
+
+Use the workflow creator script:
+
+```bash
+python .claude/skills/workflow-creator/scripts/create_workflow.py my-workflow --path ./workflows
+```
+
+### 2. Add Skills
+
+Add at least 10 useful skills to your workflow.
+
+### 3. Write Documentation
+
+- `README.md` - User-facing documentation
+- `AGENTS.md` - AI instructions
+
+### 4. Verify Symlinks
+
+Ensure all 13 AI tool symlinks are correctly created.
+
+## Pull Request Guidelines
+
+### Checklist
+
+For new workflows:
+- [ ] README.md included
+- [ ] README_cn.md included (Chinese documentation)
+- [ ] AGENTS.md included
+- [ ] At least 10 skills included
+- [ ] All symlinks created
+
+For new skills:
+- [ ] SKILL.md has valid frontmatter
+- [ ] Clear, actionable instructions
+- [ ] Examples included
+- [ ] Tested with at least one AI tool
+
+### Commit Messages
+
+Use conventional commits:
+
+```
+feat: add new skill for X
+fix: correct typo in skill instructions
+docs: improve getting started guide
+```
+
+### Code Review
+
+- All PRs require review before merging
+- Address feedback promptly
+- Keep discussions constructive
+
+## Code of Conduct
+
+Please read our [Code of Conduct](https://github.com/nicepkg/ai-workflow/blob/main/CODE_OF_CONDUCT.md) before contributing.
+
+## Questions?
+
+- Open an issue on GitHub
+- Join discussions in the repository
+
+Thank you for contributing!

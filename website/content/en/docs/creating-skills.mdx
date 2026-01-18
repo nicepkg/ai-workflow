@@ -1,0 +1,171 @@
+---
+title: Creating Skills
+description: How to create your own AI skills
+---
+
+# Creating Skills
+
+Skills are reusable instructions that extend your AI assistant's capabilities. This guide shows you how to create your own skills.
+
+## Skill Structure
+
+Each skill is a folder containing at least a `SKILL.md` file:
+
+```
+skill-name/
+├── SKILL.md              # Required: Skill definition
+├── scripts/              # Optional: Helper scripts
+│   └── helper.py
+├── templates/            # Optional: File templates
+│   └── template.md
+└── references/           # Optional: Reference materials
+    └── guide.md
+```
+
+## SKILL.md Format
+
+The `SKILL.md` file defines your skill:
+
+```markdown
+---
+name: my-skill
+description: A brief description of what this skill does
+triggers:
+  - "keyword1"
+  - "keyword2"
+---
+
+# My Skill
+
+## Overview
+Explain what this skill does and when to use it.
+
+## Instructions
+Step-by-step instructions for the AI to follow.
+
+### Step 1: Analyze
+Describe the first step...
+
+### Step 2: Execute
+Describe the second step...
+
+## Examples
+
+### Example 1
+Show an example input and expected output.
+
+## Notes
+Any additional context or warnings.
+```
+
+## Best Practices
+
+### 1. Clear Instructions
+Write instructions that are:
+- Specific and actionable
+- Broken into numbered steps
+- Include examples where helpful
+
+### 2. Appropriate Scope
+Each skill should:
+- Do one thing well
+- Be reusable across projects
+- Not overlap with other skills
+
+### 3. Good Naming
+- Use lowercase with hyphens: `my-skill-name`
+- Be descriptive but concise
+- Avoid generic names like `helper` or `utils`
+
+## Adding to a Workflow
+
+1. Create your skill folder in `.claude/skills/`:
+
+```bash
+mkdir -p .claude/skills/my-skill
+```
+
+2. Create the `SKILL.md` file:
+
+```bash
+touch .claude/skills/my-skill/SKILL.md
+```
+
+3. Edit `SKILL.md` with your skill definition
+
+4. Test the skill with your AI assistant
+
+## Example Skill
+
+Here's a complete example of a documentation skill:
+
+```markdown
+---
+name: write-docs
+description: Generate documentation for code
+triggers:
+  - "document this"
+  - "write docs"
+  - "add documentation"
+---
+
+# Documentation Generator
+
+## Overview
+Generates comprehensive documentation for code files, functions, and modules.
+
+## Instructions
+
+### Step 1: Analyze the Code
+- Identify the purpose of the code
+- Note all public functions and classes
+- Understand the input/output types
+
+### Step 2: Generate Documentation
+- Write a module-level docstring
+- Document each public function
+- Include parameter types and return values
+- Add usage examples
+
+### Step 3: Review
+- Ensure documentation is accurate
+- Check for completeness
+- Verify examples work
+
+## Output Format
+Use the project's existing documentation style. Default to:
+- JSDoc for JavaScript/TypeScript
+- Docstrings for Python
+- XML comments for C#
+
+## Example
+
+Input:
+\`\`\`python
+def calculate_total(items, tax_rate):
+    subtotal = sum(item.price for item in items)
+    return subtotal * (1 + tax_rate)
+\`\`\`
+
+Output:
+\`\`\`python
+def calculate_total(items: list[Item], tax_rate: float) -> float:
+    """
+    Calculate the total price including tax.
+
+    Args:
+        items: List of items to calculate total for
+        tax_rate: Tax rate as a decimal (e.g., 0.08 for 8%)
+
+    Returns:
+        Total price including tax
+
+    Example:
+        >>> items = [Item(price=10), Item(price=20)]
+        >>> calculate_total(items, 0.08)
+        32.4
+    """
+    subtotal = sum(item.price for item in items)
+    return subtotal * (1 + tax_rate)
+\`\`\`
+```

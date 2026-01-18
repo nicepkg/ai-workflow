@@ -1,0 +1,123 @@
+---
+title: 贡献指南
+description: 如何为 AI Workflow 做贡献
+---
+
+# 贡献指南
+
+我们欢迎对 AI Workflow 的贡献！本指南将说明如何贡献。
+
+## 贡献方式
+
+- **新技能** - 为社区创建有用的技能
+- **新工作流** - 为特定用例策划技能集合
+- **Bug 修复** - 修复现有技能或文档中的问题
+- **文档** - 改进指南和示例
+- **翻译** - 帮助翻译文档
+
+## 开始
+
+1. 在 GitHub 上 Fork 仓库
+2. 克隆你的 Fork：
+```bash
+git clone https://github.com/your-username/ai-workflow.git
+cd ai-workflow
+```
+
+3. 为你的贡献创建分支：
+```bash
+git checkout -b feature/my-contribution
+```
+
+## 贡献技能
+
+### 1. 创建你的技能
+
+```bash
+mkdir -p workflows/your-workflow/.claude/skills/your-skill
+```
+
+### 2. 编写 SKILL.md
+
+按照 [创建技能](/zh/docs/creating-skills) 指南编写你的技能定义。
+
+### 3. 测试你的技能
+
+用多个 AI 助手测试技能以确保兼容性。
+
+### 4. 提交 Pull Request
+
+推送你的更改并创建 Pull Request：
+
+```bash
+git add .
+git commit -m "feat: add your-skill to your-workflow"
+git push origin feature/my-contribution
+```
+
+## 贡献工作流
+
+### 1. 创建工作流结构
+
+使用工作流创建脚本：
+
+```bash
+python .claude/skills/workflow-creator/scripts/create_workflow.py my-workflow --path ./workflows
+```
+
+### 2. 添加技能
+
+为你的工作流添加至少 10 个有用的技能。
+
+### 3. 编写文档
+
+- `README.md` - 面向用户的文档
+- `AGENTS.md` - AI 指令
+
+### 4. 验证软链接
+
+确保所有 13 个 AI 工具软链接正确创建。
+
+## Pull Request 指南
+
+### 检查清单
+
+对于新工作流：
+- [ ] 包含 README.md
+- [ ] 包含 README_cn.md（中文文档）
+- [ ] 包含 AGENTS.md
+- [ ] 包含至少 10 个技能
+- [ ] 创建所有软链接
+
+对于新技能：
+- [ ] SKILL.md 有有效的 frontmatter
+- [ ] 清晰、可操作的指令
+- [ ] 包含示例
+- [ ] 至少用一个 AI 工具测试过
+
+### 提交信息
+
+使用约定式提交：
+
+```
+feat: add new skill for X
+fix: correct typo in skill instructions
+docs: improve getting started guide
+```
+
+### 代码审查
+
+- 所有 PR 在合并前需要审查
+- 及时处理反馈
+- 保持讨论建设性
+
+## 行为准则
+
+贡献前请阅读我们的 [行为准则](https://github.com/nicepkg/ai-workflow/blob/main/CODE_OF_CONDUCT.md)。
+
+## 有问题？
+
+- 在 GitHub 上创建 issue
+- 加入仓库的讨论
+
+感谢你的贡献！

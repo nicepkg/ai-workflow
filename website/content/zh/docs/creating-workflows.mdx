@@ -1,0 +1,151 @@
+---
+title: 创建工作流
+description: 如何创建包含精选技能的自定义工作流
+---
+
+# 创建工作流
+
+工作流是为特定用例设计的精选技能集合。本指南将向你展示如何创建自己的工作流。
+
+## 方法一：AI 辅助创建（推荐）
+
+最简单的创建工作流方式是让你的 AI 助手来完成。
+
+### 步骤 1：克隆仓库
+
+```bash
+git clone https://github.com/nicepkg/ai-workflow.git
+cd ai-workflow
+```
+
+### 步骤 2：使用 AI 编程助手打开
+
+使用任何支持技能的 AI 工具打开项目：
+- **Claude Code**：在终端中运行 `claude`
+- **Cursor**：在 Cursor 中打开文件夹
+- **Codex**：在终端中运行 `codex`
+- **OpenCode**：在终端中运行 `opencode`
+
+### 步骤 3：让 AI 创建你的工作流
+
+只需描述你的需求：
+
+```
+"创建一个用于学术论文写作的研究员工作流"
+"创建一个用于 kubernetes 管理的 devops 工作流"
+"创建一个用于 ML 项目的数据科学家工作流"
+```
+
+AI 会自动：
+1. 创建工作流目录结构
+2. 从技能源找到并下载相关技能
+3. 根据需要创建自定义技能
+4. 生成文档（README.md、AGENTS.md）
+5. 为所有 AI 工具设置软链接
+
+## 方法二：手动创建
+
+完全控制工作流结构。
+
+### 工作流结构
+
+```
+workflows/my-workflow/
+├── README.md              # 用户文档
+├── AGENTS.md              # AI 指令
+├── .claude/
+│   ├── settings.json
+│   └── skills/            # 主要技能存储
+│       ├── skill-1/
+│       │   └── SKILL.md
+│       └── skill-2/
+│           └── SKILL.md
+├── .cursor/
+│   └── skills -> ../.claude/skills
+├── .codex/
+│   └── skills -> ../.claude/skills
+└── ...（其他 AI 工具软链接）
+```
+
+### 创建目录结构
+
+```bash
+# 创建工作流目录
+mkdir -p workflows/my-workflow/.claude/skills
+
+# 创建设置文件
+echo '{"permissions": {}}' > workflows/my-workflow/.claude/settings.json
+
+# 创建文档文件
+touch workflows/my-workflow/README.md
+touch workflows/my-workflow/AGENTS.md
+```
+
+### 创建软链接
+
+```bash
+cd workflows/my-workflow
+
+# 为每个 AI 工具创建目录
+mkdir -p .cursor .codex .opencode .agents .kilocode .roo .goose .gemini .agent .github .factory .windsurf
+
+# 创建软链接
+ln -s ../.claude/skills .cursor/skills
+ln -s ../.claude/skills .codex/skills
+ln -s ../.claude/skills .opencode/skill
+ln -s ../.claude/skills .agents/skills
+ln -s ../.claude/skills .kilocode/skills
+ln -s ../.claude/skills .roo/skills
+ln -s ../.claude/skills .goose/skills
+ln -s ../.claude/skills .gemini/skills
+ln -s ../.claude/skills .agent/skills
+ln -s ../.claude/skills .github/skills
+ln -s ../.claude/skills .factory/skills
+ln -s ../.claude/skills .windsurf/skills
+ln -s .claude/skills skills
+```
+
+## 添加技能
+
+### 选项 1：从技能源下载
+
+技能可以从以下来源获取：
+- [Anthropic 官方技能](https://github.com/anthropics/skills)
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- [skillhub.club](https://www.skillhub.club) - 1000+ 技能集合
+
+### 选项 2：创建自定义技能
+
+在 `.claude/skills/` 中创建新技能：
+
+```bash
+mkdir -p .claude/skills/my-skill
+```
+
+创建 `SKILL.md`：
+
+```markdown
+---
+name: my-skill
+description: 这个技能的功能以及 AI 应该何时使用它
+---
+
+# 我的技能
+
+AI 需要遵循的指令...
+```
+
+详细指导请参阅 [创建技能](/zh/docs/creating-skills)。
+
+## 发布你的工作流
+
+1. Fork [ai-workflow 仓库](https://github.com/nicepkg/ai-workflow)
+2. 将你的工作流添加到 `workflows/` 目录
+3. 更新主 README.md 添加你的工作流
+4. 提交 Pull Request
+
+你的工作流将可以通过以下方式安装：
+```bash
+npx add-skill nicepkg/ai-workflow/workflows/your-workflow
+```

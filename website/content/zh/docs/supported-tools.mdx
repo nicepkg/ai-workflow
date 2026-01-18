@@ -1,0 +1,89 @@
+---
+title: 支持的 AI 工具
+description: AI Workflow 支持的 AI 编程助手完整列表
+---
+
+# 支持的 AI 工具
+
+AI Workflow 开箱即支持 **14+ AI 编程助手**。所有工具通过软链接架构共享相同的技能。
+
+## 架构
+
+```
+your-project/
+├── .claude/
+│   └── skills/           ← 主存储（真实文件）
+├── .cursor/
+│   └── skills            ← 软链接 → ../.claude/skills
+├── .codex/
+│   └── skills            ← 软链接 → ../.claude/skills
+├── .opencode/
+│   └── skill             ← 软链接 → ../.claude/skills
+└── ...（其他软链接）
+```
+
+## 支持的工具
+
+| AI 工具 | 项目路径 | 全局路径 | 备注 |
+|:--------|:---------|:---------|:-----|
+| **Claude Code** | `.claude/skills/` | `~/.claude/skills/` | 主存储 |
+| **Cursor** | `.cursor/skills/` | `~/.cursor/skills/` | 软链接 |
+| **GitHub Copilot** | `.github/skills/` | `~/.copilot/skills/` | 软链接 |
+| **Codex** | `.codex/skills/` | `~/.codex/skills/` | 软链接 |
+| **OpenCode** | `.opencode/skill/` | `~/.config/opencode/skill/` | 软链接（单数） |
+| **Amp** | `.agents/skills/` | `~/.config/agents/skills/` | 软链接 |
+| **Roo Code** | `.roo/skills/` | `~/.roo/skills/` | 软链接 |
+| **Kilo Code** | `.kilocode/skills/` | `~/.kilocode/skills/` | 软链接 |
+| **Goose** | `.goose/skills/` | `~/.config/goose/skills/` | 软链接 |
+| **Gemini CLI** | `.gemini/skills/` | `~/.gemini/skills/` | 软链接 |
+| **Antigravity** | `.agent/skills/` | `~/.gemini/antigravity/skills/` | 软链接 |
+| **Clawdbot** | `skills/` | `~/.clawdbot/skills/` | 根级软链接 |
+| **Droid** | `.factory/skills/` | `~/.factory/skills/` | 软链接 |
+| **Windsurf** | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` | 软链接 |
+
+## 创建软链接
+
+使用提供的脚本自动创建所有软链接：
+
+```bash
+python scripts/create_workflow.py my-workflow --path ./workflows
+```
+
+或手动创建：
+
+```bash
+# 创建目录
+mkdir -p .cursor .codex .opencode .agents .kilocode .roo .goose .gemini .agent .github .factory .windsurf
+
+# 创建软链接
+ln -s ../.claude/skills .cursor/skills
+ln -s ../.claude/skills .codex/skills
+ln -s ../.claude/skills .opencode/skill
+ln -s ../.claude/skills .agents/skills
+ln -s ../.claude/skills .kilocode/skills
+ln -s ../.claude/skills .roo/skills
+ln -s ../.claude/skills .goose/skills
+ln -s ../.claude/skills .gemini/skills
+ln -s ../.claude/skills .agent/skills
+ln -s ../.claude/skills .github/skills
+ln -s ../.claude/skills .factory/skills
+ln -s ../.claude/skills .windsurf/skills
+ln -s .claude/skills skills
+```
+
+## 特定工具说明
+
+### OpenCode
+OpenCode 使用 `skill`（单数）而不是 `skills`：
+```bash
+ln -s ../.claude/skills .opencode/skill
+```
+
+### Clawdbot
+Clawdbot 在根级别查找技能：
+```bash
+ln -s .claude/skills skills
+```
+
+### GitHub Copilot
+GitHub Copilot 与 GitHub 工作流共享 `.github/` 目录。`skills/` 子目录不会与现有的 GitHub 配置冲突。

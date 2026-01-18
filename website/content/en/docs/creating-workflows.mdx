@@ -1,0 +1,168 @@
+---
+title: Creating Workflows
+description: How to create custom workflows with curated skills
+---
+
+# Creating Workflows
+
+Workflows are curated collections of skills designed for specific use cases. This guide shows you how to create your own workflows.
+
+## Method 1: AI-Assisted Creation (Recommended)
+
+The easiest way to create a workflow is to let your AI assistant do it for you.
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/nicepkg/ai-workflow.git
+cd ai-workflow
+```
+
+### Step 2: Open with AI Coding Assistant
+
+Open the project with any AI tool that supports skills:
+- **Claude Code**: `claude` in terminal
+- **Cursor**: Open folder in Cursor
+- **Codex**: `codex` in terminal
+- **OpenCode**: `opencode` in terminal
+
+### Step 3: Ask AI to Create Your Workflow
+
+Simply describe what you need:
+
+```
+"Create a researcher workflow for academic paper writing"
+"Create a devops workflow for kubernetes management"
+"Create a data-scientist workflow for ML projects"
+```
+
+The AI will automatically:
+1. Create the workflow directory structure
+2. Find and download relevant skills from skill sources
+3. Create custom skills as needed
+4. Generate documentation (README.md, AGENTS.md)
+5. Set up symlinks for all AI tools
+
+## Method 2: Manual Creation
+
+For full control over the workflow structure.
+
+### Workflow Structure
+
+```
+workflows/my-workflow/
+├── README.md              # User documentation
+├── AGENTS.md              # AI instructions
+├── .claude/
+│   ├── settings.json
+│   └── skills/            # Primary skill storage
+│       ├── skill-1/
+│       │   └── SKILL.md
+│       └── skill-2/
+│           └── SKILL.md
+├── .cursor/
+│   └── skills -> ../.claude/skills
+├── .codex/
+│   └── skills -> ../.claude/skills
+└── ... (other AI tool symlinks)
+```
+
+### Create Directory Structure
+
+```bash
+# Create workflow directory
+mkdir -p workflows/my-workflow/.claude/skills
+
+# Create settings file
+echo '{"permissions": {}}' > workflows/my-workflow/.claude/settings.json
+
+# Create documentation files
+touch workflows/my-workflow/README.md
+touch workflows/my-workflow/AGENTS.md
+```
+
+### Create Symlinks
+
+```bash
+cd workflows/my-workflow
+
+# Create directories for each AI tool
+mkdir -p .cursor .codex .opencode .agents .kilocode .roo .goose .gemini .agent .github .factory .windsurf
+
+# Create symlinks
+ln -s ../.claude/skills .cursor/skills
+ln -s ../.claude/skills .codex/skills
+ln -s ../.claude/skills .opencode/skill
+ln -s ../.claude/skills .agents/skills
+ln -s ../.claude/skills .kilocode/skills
+ln -s ../.claude/skills .roo/skills
+ln -s ../.claude/skills .goose/skills
+ln -s ../.claude/skills .gemini/skills
+ln -s ../.claude/skills .agent/skills
+ln -s ../.claude/skills .github/skills
+ln -s ../.claude/skills .factory/skills
+ln -s ../.claude/skills .windsurf/skills
+ln -s .claude/skills skills
+```
+
+## Adding Skills
+
+### Option 1: Download from Skill Sources
+
+Skills can be sourced from:
+- [Anthropic Official Skills](https://github.com/anthropics/skills)
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- [skillhub.club](https://www.skillhub.club) - 1000+ skills collection
+
+### Option 2: Create Custom Skills
+
+Create a new skill in `.claude/skills/`:
+
+```bash
+mkdir -p .claude/skills/my-skill
+```
+
+Create `SKILL.md`:
+
+```markdown
+---
+name: my-skill
+description: What this skill does and when AI should use it
+---
+
+# My Skill
+
+Instructions for the AI to follow...
+```
+
+See [Creating Skills](/docs/creating-skills) for detailed guidance.
+
+## Documentation
+
+### README.md
+
+Should include:
+- Workflow purpose and target users
+- List of included skills with descriptions
+- Installation command
+- Usage examples
+
+### AGENTS.md
+
+Provides context for AI assistants:
+- Workflow overview
+- Available skills and when to use them
+- Output standards and best practices
+
+## Publishing Your Workflow
+
+1. Fork the [ai-workflow repository](https://github.com/nicepkg/ai-workflow)
+2. Add your workflow to the `workflows/` directory
+3. Update the main README.md with your workflow
+4. Submit a pull request
+
+Your workflow will be installable via:
+```bash
+npx add-skill nicepkg/ai-workflow/workflows/your-workflow
+```

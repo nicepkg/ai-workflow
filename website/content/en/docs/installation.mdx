@@ -1,0 +1,148 @@
+---
+title: Installation
+description: Different ways to install and use AI Workflow
+---
+
+# Installation
+
+There are several ways to use AI Workflow in your projects.
+
+## Method 1: npx add-skill (Recommended)
+
+The easiest way to install skills. No setup required.
+
+### Install a Complete Workflow
+
+```bash
+# Content creators, bloggers, writers
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
+
+# Digital marketers, growth hackers
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow
+
+# YouTubers, video producers
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow
+
+# Stock traders, investors
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow
+
+# Product managers
+npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow
+
+# Presentation creators
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
+```
+
+### Install Individual Skills
+
+```bash
+# List available skills in a workflow
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --list
+
+# Install a specific skill
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-share-analysis
+```
+
+### Installation Options
+
+```bash
+# Install globally (available in all projects)
+npx add-skill <workflow> --global
+
+# Install to specific AI tools only
+npx add-skill <workflow> -a claude-code -a cursor
+
+# Non-interactive mode (for CI/CD)
+npx add-skill <workflow> -y
+
+# Specify installation directory
+npx add-skill <workflow> --path ./my-project
+```
+
+## Method 2: Manual Installation
+
+For advanced users who want more control.
+
+### Clone and Copy
+
+```bash
+# Clone the repository
+git clone https://github.com/nicepkg/ai-workflow.git
+
+# Copy a workflow's skills to your project
+cp -r ai-workflow/workflows/content-creator-workflow/.claude/skills your-project/.claude/
+```
+
+### Create Symlinks for Other AI Tools
+
+```bash
+cd your-project
+
+# Create directories
+mkdir -p .cursor .codex .opencode
+
+# Create symlinks
+ln -s ../.claude/skills .cursor/skills
+ln -s ../.claude/skills .codex/skills
+ln -s ../.claude/skills .opencode/skill
+```
+
+## Directory Structure
+
+After installation, your project will have:
+
+```
+your-project/
+├── .claude/
+│   └── skills/           # Primary skill storage
+│       ├── skill-1/
+│       │   └── SKILL.md
+│       └── skill-2/
+│           └── SKILL.md
+├── .cursor/
+│   └── skills -> ../.claude/skills
+├── .codex/
+│   └── skills -> ../.claude/skills
+└── ... (other AI tool symlinks)
+```
+
+## Global vs Project Installation
+
+| Type | Location | Use Case |
+|:-----|:---------|:---------|
+| Project | `.claude/skills/` | Skills specific to one project |
+| Global | `~/.claude/skills/` | Skills available in all projects |
+
+```bash
+# Project installation (default)
+npx add-skill <workflow>
+
+# Global installation
+npx add-skill <workflow> --global
+```
+
+## Updating Skills
+
+```bash
+# Reinstall to get latest version
+npx add-skill <workflow>
+
+# Or pull latest and copy manually
+cd ai-workflow
+git pull origin main
+```
+
+## Troubleshooting
+
+### Skills not loading?
+
+1. Check if skills are in the correct directory for your AI tool
+2. Restart your AI assistant
+3. Verify the `SKILL.md` files exist
+
+### Permission errors?
+
+```bash
+# Fix permissions on Unix/Mac
+chmod -R 755 .claude/skills
+```

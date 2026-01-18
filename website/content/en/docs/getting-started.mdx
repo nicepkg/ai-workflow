@@ -1,0 +1,68 @@
+---
+title: Getting Started
+description: Learn how to use AI Workflow with your favorite AI coding assistant
+---
+
+# Getting Started
+
+AI Workflow provides pre-configured skill sets for AI coding assistants. This guide will help you get started quickly.
+
+## Prerequisites
+
+- Node.js 18+ installed
+- An AI coding assistant (Claude Code, Cursor, Copilot, etc.)
+
+## Quick Start
+
+### Install a Complete Workflow (Recommended)
+
+```bash
+# Pick your workflow and run ONE command:
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
+
+# That's it! Skills are now active in your AI assistant.
+```
+
+### Available Workflows
+
+| Workflow | For Who | Skills | Install |
+|:---------|:--------|:------:|:--------|
+| Content Creator | Bloggers, Writers, SEO Specialists | 32 | `npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow` |
+| Marketing Pro | Digital Marketers, Growth Hackers, PMMs | 38 | `npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow` |
+| Video Creator | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
+| Stock Trader | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
+| Product Manager | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
+| Talk to Slidev | Keynote Speakers, Tech Presenters, Educators | 18 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
+
+### Install Individual Skills
+
+```bash
+# Install just what you need
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-share-analysis
+
+# List available skills first
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --list
+```
+
+### Advanced Options
+
+```bash
+# Install globally (available in all projects)
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow --global
+
+# Install to specific AI tools only
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow -a claude-code -a cursor
+
+# Non-interactive mode (for CI/CD)
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow -y
+```
+
+## Verify Installation
+
+After installation, the skills should be automatically available in your AI assistant. Try using a skill by mentioning its name or purpose in your conversation.
+
+## Next Steps
+
+- [Installation Options](/docs/installation) - More installation methods
+- [Supported Tools](/docs/supported-tools) - Full list of supported AI tools
+- [Creating Skills](/docs/creating-skills) - Create your own skills
