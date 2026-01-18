@@ -56,6 +56,39 @@ One command. 150+ professional skills. Instant productivity boost.
 
 ---
 
+## 👤 Who Is This For?
+
+<table>
+<tr>
+<td width="50%">
+
+**📝 Content Creators**
+Bloggers, newsletter writers, SEO specialists who want AI that already knows content frameworks, optimization techniques, and publishing best practices.
+
+**📈 Marketers & Growth Hackers**
+Digital marketers, PMMs, and growth teams who need AI pre-loaded with GTM strategies, funnel analysis, campaign templates, and analytics interpretation.
+
+**🎬 Video Creators**
+YouTubers, TikTokers, and video producers who want AI that understands hooks, retention psychology, thumbnail optimization, and platform algorithms.
+
+</td>
+<td width="50%">
+
+**📊 Traders & Investors**
+Stock traders covering US, China A-shares, Hong Kong, and Taiwan markets who need AI with technical analysis, fundamental screening, and multi-market expertise.
+
+**🎯 Product Managers**
+PMs, product owners, and heads of product who want AI fluent in PRDs, user stories, prioritization frameworks (RICE, MoSCoW), and the full product lifecycle.
+
+**🎤 Presenters & Educators**
+Keynote speakers, tech presenters, and educators who need AI that builds structured narratives, professional slides, and compelling visual stories.
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 🎯 Workflows
 
 | Workflow | For Who | Skills | Install |
