@@ -1,0 +1,232 @@
+{
+  "skills": [
+    {
+      "name": "ad-copy-generator",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/ad-copy-generator"
+    },
+    {
+      "name": "analytics-interpretation",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/marketing/analytics-interpretation"
+    },
+    {
+      "name": "buyer-persona-generator",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/buyer-persona-generator"
+    },
+    {
+      "name": "cold-email-sequence-generator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "cold-email-sequence-generator"
+    },
+    {
+      "name": "cold-outreach-generator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "cold-outreach-generator"
+    },
+    {
+      "name": "competitive-ads-extractor",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "competitive-ads-extractor"
+    },
+    {
+      "name": "competitor-price-tracker",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "competitor-price-tracker"
+    },
+    {
+      "name": "content-brief",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/content-creator/content-brief"
+    },
+    {
+      "name": "content-optimizer",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/marketing/content-optimizer"
+    },
+    {
+      "name": "copy",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "copy"
+    },
+    {
+      "name": "email-template-generator",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "email-template-generator"
+    },
+    {
+      "name": "executive-dashboard-generator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "executive-dashboard-generator"
+    },
+    {
+      "name": "funnel-analysis",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/funnel-analysis"
+    },
+    {
+      "name": "Go-to-Market-Planner",
+      "type": "github",
+      "repo": "https://github.com/daffy0208/ai-dev-standards",
+      "path": "skills/Go-to-Market-Planner"
+    },
+    {
+      "name": "keyword-cluster-builder",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/marketing/keyword-cluster-builder"
+    },
+    {
+      "name": "landing-page",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "landing-page"
+    },
+    {
+      "name": "landing-page-copywriter",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "landing-page-copywriter"
+    },
+    {
+      "name": "launch-gtm-execution",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/launch-gtm-execution"
+    },
+    {
+      "name": "lead-research-assistant",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "lead-research-assistant"
+    },
+    {
+      "name": "linkedin-post-optimizer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "linkedin-post-optimizer"
+    },
+    {
+      "name": "marketing",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "marketing"
+    },
+    {
+      "name": "marketing-demand-acquisition",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "marketing-demand-acquisition"
+    },
+    {
+      "name": "marketing-strategy-pmm",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "marketing-strategy-pmm"
+    },
+    {
+      "name": "personalization-at-scale",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "personalization-at-scale"
+    },
+    {
+      "name": "prd-v09-gtm-strategy",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/prd-v09-gtm-strategy"
+    },
+    {
+      "name": "pricing-strategist",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "pricing-strategist"
+    },
+    {
+      "name": "product-analytics",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/product-analytics"
+    },
+    {
+      "name": "qr-code-generator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "qr-code-generator"
+    },
+    {
+      "name": "roi-analyzer",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/roi-analyzer"
+    },
+    {
+      "name": "running-marketing-campaigns",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "running-marketing-campaigns"
+    },
+    {
+      "name": "seo-optimizer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "seo-optimizer"
+    },
+    {
+      "name": "serp-analysis",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/marketing/serp-analysis"
+    },
+    {
+      "name": "skill-navigator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "skill-navigator"
+    },
+    {
+      "name": "social-media-analyzer",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "social-media-analyzer"
+    },
+    {
+      "name": "social-repurposer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "social-repurposer"
+    },
+    {
+      "name": "technical-launch-planner",
+      "type": "github",
+      "repo": "https://github.com/jamesrochabrun/skills",
+      "path": "skills/technical-launch-planner"
+    },
+    {
+      "name": "ui-ux-audit",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "ui-ux-audit"
+    },
+    {
+      "name": "utm-builder",
+      "type": "github",
+      "repo": "https://github.com/synapz-org/marketing-ops-hub",
+      "path": "skills/utm-builder"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "skills": [
+    {
+      "name": "canvas-design",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "skills/canvas-design"
+    },
+    {
+      "name": "capture-triage",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "capture-triage"
+    },
+    {
+      "name": "content-research",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "content-research"
+    },
+    {
+      "name": "content-trend-researcher",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/content-trend-researcher"
+    },
+    {
+      "name": "instagram",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/instagram"
+    },
+    {
+      "name": "media-processing",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "media-processing"
+    },
+    {
+      "name": "n8n-skills",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "n8n-skills"
+    },
+    {
+      "name": "pexels-media",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "pexels-media"
+    },
+    {
+      "name": "posthog-analytics",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "posthog-analytics"
+    },
+    {
+      "name": "serpapi",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "serpapi"
+    },
+    {
+      "name": "short-form-converter",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/short-form-converter"
+    },
+    {
+      "name": "social-repurposer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "social-repurposer"
+    },
+    {
+      "name": "sponsor-pitch-generator",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/sponsor-pitch-generator"
+    },
+    {
+      "name": "srt-translator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "srt-translator"
+    },
+    {
+      "name": "tapestry",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "tapestry"
+    },
+    {
+      "name": "thumbnail-concept-generator",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/thumbnail-concept-generator"
+    },
+    {
+      "name": "transcribe-and-analyze",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "transcribe-and-analyze"
+    },
+    {
+      "name": "video-analytics-interpreter",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/video-analytics-interpreter"
+    },
+    {
+      "name": "video-comparer",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/video-comparer"
+    },
+    {
+      "name": "video-downloader",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/video-downloader"
+    },
+    {
+      "name": "video-hook-generator",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/video-hook-generator"
+    },
+    {
+      "name": "video-script-collaborial",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "video-script-collaborial"
+    },
+    {
+      "name": "video-script-writer",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/video-script-writer"
+    },
+    {
+      "name": "video-title-optimizer",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/video-title-optimizer"
+    },
+    {
+      "name": "video-to-gif",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "video-to-gif"
+    },
+    {
+      "name": "webfluence",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "webfluence"
+    },
+    {
+      "name": "youtube-seo-optimizer",
+      "type": "github",
+      "repo": "https://github.com/m2ai-portfolio/claude-skills",
+      "path": "skills/youtube-seo-optimizer"
+    },
+    {
+      "name": "youtube-to-markdown",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "youtube-to-markdown"
+    },
+    {
+      "name": "youtube-transcript",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/youtube-transcript"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "skills": [
+    {
+      "name": "canvas-design",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "skills/canvas-design"
+    },
+    {
+      "name": "color-palette-extractor",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "color-palette-extractor"
+    },
+    {
+      "name": "font-pairing-suggester",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "font-pairing-suggester"
+    },
+    {
+      "name": "infographic-creation",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "infographic-creation"
+    },
+    {
+      "name": "mermaid-diagrams",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "mermaid-diagrams"
+    },
+    {
+      "name": "mermaid-tools",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "official-anthropic-skills/mermaid-tools"
+    },
+    {
+      "name": "nano-banana-pro",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "nano-banana-pro"
+    },
+    {
+      "name": "pexels-media",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "pexels-media"
+    },
+    {
+      "name": "ppt-creator",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "official-anthropic-skills/ppt-creator"
+    },
+    {
+      "name": "pptx",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "skills/pptx"
+    },
+    {
+      "name": "presentation-builder",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "presentation-builder"
+    },
+    {
+      "name": "presentation-design-enhancer",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "official-anthropic-skills/presentation-design-enhancer"
+    },
+    {
+      "name": "presentation-generator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "presentation-generator"
+    },
+    {
+      "name": "social-repurposer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "social-repurposer"
+    },
+    {
+      "name": "storyline-builder",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "official-anthropic-skills/storyline-builder"
+    },
+    {
+      "name": "theme-factory",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "official-anthropic-skills/theme-factory"
+    },
+    {
+      "name": "transcribe-and-analyze",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "transcribe-and-analyze"
+    },
+    {
+      "name": "youtube-transcript",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/youtube-transcript"
+    }
+  ]
+}

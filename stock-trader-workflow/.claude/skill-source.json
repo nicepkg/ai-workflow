@@ -1,0 +1,178 @@
+{
+  "skills": [
+    {
+      "name": "a-share-analysis",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/a-share-analysis"
+    },
+    {
+      "name": "a-share-screener",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/a-share-screener"
+    },
+    {
+      "name": "akshare",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "akshare"
+    },
+    {
+      "name": "backtest-expert",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/backtest-expert"
+    },
+    {
+      "name": "breadth-chart-analyst",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/breadth-chart-analyst"
+    },
+    {
+      "name": "canslim-screener",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/canslim-screener"
+    },
+    {
+      "name": "china-macro-analyst",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/china-macro-analyst"
+    },
+    {
+      "name": "cross-border-flow-tracker",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/cross-border-flow-tracker"
+    },
+    {
+      "name": "dividend-growth-pullback-screener",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/dividend-growth-pullback-screener"
+    },
+    {
+      "name": "earnings-calendar",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/earnings-calendar"
+    },
+    {
+      "name": "economic-calendar-fetcher",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/economic-calendar-fetcher"
+    },
+    {
+      "name": "hk-stock-analysis",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/hk-stock-analysis"
+    },
+    {
+      "name": "institutional-flow-tracker",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/institutional-flow-tracker"
+    },
+    {
+      "name": "market-environment-analysis",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/market-environment-analysis"
+    },
+    {
+      "name": "market-news-analyst",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/market-news-analyst"
+    },
+    {
+      "name": "options-strategy-advisor",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/options-strategy-advisor"
+    },
+    {
+      "name": "pair-trade-screener",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/pair-trade-screener"
+    },
+    {
+      "name": "portfolio-manager",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/portfolio-manager"
+    },
+    {
+      "name": "scenario-analyzer",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/scenario-analyzer"
+    },
+    {
+      "name": "sector-analyst",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/sector-analyst"
+    },
+    {
+      "name": "shioaji",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "shioaji"
+    },
+    {
+      "name": "stanley-druckenmiller-investment",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/stanley-druckenmiller-investment"
+    },
+    {
+      "name": "stock-screener",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "stock-screener"
+    },
+    {
+      "name": "technical-analyst",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/technical-analyst"
+    },
+    {
+      "name": "us-market-bubble-detector",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/us-market-bubble-detector"
+    },
+    {
+      "name": "us-stock-analysis",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/us-stock-analysis"
+    },
+    {
+      "name": "value-dividend-screener",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/value-dividend-screener"
+    },
+    {
+      "name": "weekly-trade-strategy",
+      "type": "github",
+      "repo": "https://github.com/tradermonty/claude-trading-skills",
+      "path": "skills/weekly-trade-strategy"
+    },
+    {
+      "name": "股票分析",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "股票分析"
+    }
+  ]
+}

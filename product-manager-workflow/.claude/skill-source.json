@@ -1,0 +1,142 @@
+{
+  "skills": [
+    {
+      "name": "agile",
+      "type": "github",
+      "repo": "https://github.com/aj-geddes/useful-ai-prompts",
+      "path": "skills/agile"
+    },
+    {
+      "name": "agile-sprint-planning",
+      "type": "github",
+      "repo": "https://github.com/aj-geddes/useful-ai-prompts",
+      "path": "skills/agile-sprint-planning"
+    },
+    {
+      "name": "analytics",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/analytics"
+    },
+    {
+      "name": "competitive-analysis",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/competitive-analysis"
+    },
+    {
+      "name": "customer-feedback-analyzer",
+      "type": "github",
+      "repo": "https://github.com/daffy0208/ai-dev-standards",
+      "path": "skills/customer-feedback-analyzer"
+    },
+    {
+      "name": "discovery-interviews-surveys",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/discovery-interviews-surveys"
+    },
+    {
+      "name": "feature-planning",
+      "type": "github",
+      "repo": "https://github.com/escarti/agentDevPrompts",
+      "path": "skills/feature-planning"
+    },
+    {
+      "name": "forecast-premortem",
+      "type": "github",
+      "repo": "https://github.com/lyndonkl/claude",
+      "path": "skills/forecast-premortem"
+    },
+    {
+      "name": "launch",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/launch"
+    },
+    {
+      "name": "postmortem",
+      "type": "github",
+      "repo": "https://github.com/lyndonkl/claude",
+      "path": "skills/postmortem"
+    },
+    {
+      "name": "prd-generator",
+      "type": "github",
+      "repo": "https://github.com/jamesrochabrun/skills",
+      "path": "skills/prd-generator"
+    },
+    {
+      "name": "prioritization-effort-impact",
+      "type": "github",
+      "repo": "https://github.com/lyndonkl/claude",
+      "path": "skills/prioritization-effort-impact"
+    },
+    {
+      "name": "requirements",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/requirements"
+    },
+    {
+      "name": "roadmap",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/roadmap"
+    },
+    {
+      "name": "roadmap-backcast",
+      "type": "github",
+      "repo": "https://github.com/lyndonkl/claude",
+      "path": "skills/roadmap-backcast"
+    },
+    {
+      "name": "stakeholders-org-design",
+      "type": "github",
+      "repo": "https://github.com/lyndonkl/claude",
+      "path": "skills/stakeholders-org-design"
+    },
+    {
+      "name": "strategy",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/strategy"
+    },
+    {
+      "name": "technical-launch-planner",
+      "type": "github",
+      "repo": "https://github.com/jamesrochabrun/skills",
+      "path": "skills/technical-launch-planner"
+    },
+    {
+      "name": "user-persona-creation",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/user-persona-creation"
+    },
+    {
+      "name": "user-research",
+      "type": "github",
+      "repo": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager",
+      "path": "skills/user-research"
+    },
+    {
+      "name": "work-intake",
+      "type": "github",
+      "repo": "https://github.com/troykelly/codex-skills",
+      "path": "skills/work-intake"
+    },
+    {
+      "name": "writing-product-specs",
+      "type": "github",
+      "repo": "https://github.com/britt/claude-code-skills",
+      "path": "skills/writing-product-specs"
+    },
+    {
+      "name": "writing-user-stories",
+      "type": "github",
+      "repo": "https://github.com/britt/claude-code-skills",
+      "path": "skills/writing-user-stories"
+    }
+  ]
+}

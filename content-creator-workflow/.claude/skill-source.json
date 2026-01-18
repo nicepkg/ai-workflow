@@ -1,0 +1,190 @@
+{
+  "skills": [
+    {
+      "name": "ai-slop-detector",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "ai-slop-detector"
+    },
+    {
+      "name": "article-extractor",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/article-extractor"
+    },
+    {
+      "name": "astro-cta-injector",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "astro-cta-injector"
+    },
+    {
+      "name": "blog-post-writer",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/content-creator/blog-post-writer"
+    },
+    {
+      "name": "canvas-design",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "skills/canvas-design"
+    },
+    {
+      "name": "competitive-ads-extractor",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "competitive-ads-extractor"
+    },
+    {
+      "name": "content-brief",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/content-creator/content-brief"
+    },
+    {
+      "name": "content-brief-generator",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "content-brief-generator"
+    },
+    {
+      "name": "content-repurposer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "content-repurposer"
+    },
+    {
+      "name": "content-research",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "content-research"
+    },
+    {
+      "name": "content-research-writer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "content-research-writer"
+    },
+    {
+      "name": "content-trend-researcher",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/content-trend-researcher"
+    },
+    {
+      "name": "docx",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "skills/docx"
+    },
+    {
+      "name": "email-subject-line-optimizer",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "email-subject-line-optimizer"
+    },
+    {
+      "name": "fact-checker",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/fact-checker"
+    },
+    {
+      "name": "gsc-assistant",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "gsc-assistant"
+    },
+    {
+      "name": "hook-stack-evaluator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "hook-stack-evaluator"
+    },
+    {
+      "name": "linkedin-announcement-generator",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "linkedin-announcement-generator"
+    },
+    {
+      "name": "nano-banana",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "official-anthropic-skills/nano-banana"
+    },
+    {
+      "name": "newsletter-coach",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "newsletter-coach"
+    },
+    {
+      "name": "pdf",
+      "type": "github",
+      "repo": "https://github.com/anthropics/skills",
+      "path": "skills/pdf"
+    },
+    {
+      "name": "podcast-content-suite",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "podcast-content-suite"
+    },
+    {
+      "name": "pre-publish-post-assistant",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "pre-publish-post-assistant"
+    },
+    {
+      "name": "seo-wordpress-manager",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "seo-wordpress-manager"
+    },
+    {
+      "name": "skill-navigator",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "skill-navigator"
+    },
+    {
+      "name": "social-media",
+      "type": "github",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "path": "skills/content-creator/social-media"
+    },
+    {
+      "name": "social-repurposer",
+      "type": "github",
+      "repo": "https://github.com/gked2121/claude-skills",
+      "path": "social-repurposer"
+    },
+    {
+      "name": "twitter-reader",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/twitter-reader"
+    },
+    {
+      "name": "weak-signal-synthesizer",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "weak-signal-synthesizer"
+    },
+    {
+      "name": "youtube-processor",
+      "type": "github",
+      "repo": "https://github.com/Microck/ordinary-claude-skills",
+      "path": "youtube-processor"
+    },
+    {
+      "name": "youtube-transcript",
+      "type": "github",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/youtube-transcript"
+    }
+  ]
+}
