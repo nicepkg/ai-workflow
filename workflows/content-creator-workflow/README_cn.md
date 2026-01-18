@@ -4,7 +4,7 @@
 
 ### **让你的 AI 变身专业内容策略师**
 
-[← 返回 AI Workflow](../README_cn.md)
+[← 返回 AI Workflow](../../README_cn.md)
 
 简体中文 | [English](./README.md)
 
@@ -25,10 +25,10 @@
 
 ```bash
 # 一键安装全部 32 个技能
-npx add-skill nicepkg/ai-workflow/content-creator-workflow
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
 
 # 或安装单个技能
-npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill blog-post-writer
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow --skill blog-post-writer
 ```
 
 ---
@@ -241,6 +241,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ 返回主项目](../README_cn.md)**
+**[⬆ 返回主项目](../../README_cn.md)**
 
 </div>

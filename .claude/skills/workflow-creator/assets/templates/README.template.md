@@ -4,7 +4,7 @@
 
 ### **{{TAGLINE}}**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -110,6 +110,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>

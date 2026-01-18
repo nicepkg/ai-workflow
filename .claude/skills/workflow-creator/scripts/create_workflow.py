@@ -6,11 +6,11 @@ Usage:
     python create_workflow.py <workflow-name> [--path <output-directory>]
 
 Example:
-    python create_workflow.py media-creator --path ./
-    python create_workflow.py developer-workflow
+    python create_workflow.py media-creator --path ./workflows
+    python create_workflow.py developer-workflow --path ./workflows
 
 Creates:
-    workflow-name/
+    workflows/<workflow-name>/
     ├── README.md
     ├── AGENTS.md
     ├── .claude/
@@ -70,7 +70,7 @@ AI_TOOL_SYMLINKS = [
 ROOT_SYMLINK = ("skills", ".claude/skills")
 
 
-def create_workflow(name: str, output_path: str = ".") -> Path:
+def create_workflow(name: str, output_path: str = "workflows") -> Path:
     """
     Create a new workflow directory with standard structure.
     Supports multiple AI tools via symlinks.
@@ -150,8 +150,8 @@ def main():
     )
     parser.add_argument(
         "--path",
-        default=".",
-        help="Output directory (default: current directory)"
+        default="workflows",
+        help="Output directory (default: workflows)"
     )
 
     args = parser.parse_args()

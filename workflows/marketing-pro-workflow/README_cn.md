@@ -4,7 +4,7 @@
 
 ### **你的 AI 营销团队**
 
-[← 返回 AI Workflow](../README_cn.md)
+[← 返回 AI Workflow](../../README_cn.md)
 
 简体中文 | [English](./README.md)
 
@@ -25,10 +25,10 @@
 
 ```bash
 # 一键安装全部 38 个技能
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow
 
 # 或安装单个技能
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generator
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --skill ad-copy-generator
 ```
 
 ---
@@ -261,6 +261,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ 返回主项目](../README_cn.md)**
+**[⬆ 返回主项目](../../README_cn.md)**
 
 </div>

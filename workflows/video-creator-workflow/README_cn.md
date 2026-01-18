@@ -4,7 +4,7 @@
 
 ### **你的 AI 视频制作团队**
 
-[← 返回 AI Workflow](../README_cn.md)
+[← 返回 AI Workflow](../../README_cn.md)
 
 简体中文 | [English](./README.md)
 
@@ -25,10 +25,10 @@
 
 ```bash
 # 一键安装全部 29 个技能
-npx add-skill nicepkg/ai-workflow/video-creator-workflow
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow
 
 # 或安装单个技能
-npx add-skill nicepkg/ai-workflow/video-creator-workflow --skill video-script-writer
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow --skill video-script-writer
 ```
 
 ---
@@ -209,6 +209,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ 返回主项目](../README_cn.md)**
+**[⬆ 返回主项目](../../README_cn.md)**
 
 </div>

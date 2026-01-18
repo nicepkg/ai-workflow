@@ -44,12 +44,12 @@ One command. 150+ professional skills. Instant productivity boost.
 
 | Workflow | For Who | Skills | Install |
 |:---------|:--------|:------:|:--------|
-| **[Content Creator](./content-creator-workflow/)** | Bloggers, Writers, SEO Specialists | 32 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
-| **[Marketing Pro](./marketing-pro-workflow/)** | Digital Marketers, Growth Hackers, PMMs | 38 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
-| **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
-| **[Stock Trader](./stock-trader-workflow/)** | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
-| **[Product Manager](./product-manager-workflow/)** | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/product-manager-workflow` |
-| **[Talk to Slidev](./talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 18 | `npx add-skill nicepkg/ai-workflow/talk-to-slidev-workflow` |
+| **[Content Creator](./workflows/content-creator-workflow/)** | Bloggers, Writers, SEO Specialists | 32 | `npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow` |
+| **[Marketing Pro](./workflows/marketing-pro-workflow/)** | Digital Marketers, Growth Hackers, PMMs | 38 | `npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow` |
+| **[Video Creator](./workflows/video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
+| **[Stock Trader](./workflows/stock-trader-workflow/)** | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
+| **[Product Manager](./workflows/product-manager-workflow/)** | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
+| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 18 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
 
 <details>
 <summary><b>📦 View All 170+ Skills</b></summary>
@@ -82,7 +82,7 @@ One command. 150+ professional skills. Instant productivity boost.
 
 ```bash
 # Pick your workflow and run ONE command:
-npx add-skill nicepkg/ai-workflow/content-creator-workflow
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
 
 # That's it! Skills are now active in your AI assistant.
 ```
@@ -91,23 +91,23 @@ npx add-skill nicepkg/ai-workflow/content-creator-workflow
 
 ```bash
 # Install just what you need
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-share-analysis
 
 # List available skills first
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --list
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --list
 ```
 
 ### Advanced Options
 
 ```bash
 # Install globally (available in all projects)
-npx add-skill nicepkg/ai-workflow/video-creator-workflow --global
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow --global
 
 # Install to specific AI tools only
-npx add-skill nicepkg/ai-workflow/content-creator-workflow -a claude-code -a cursor
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow -a claude-code -a cursor
 
 # Non-interactive mode (for CI/CD)
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow -y
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow -y
 ```
 
 ---
@@ -169,7 +169,7 @@ The AI will automatically:
 ### Manual Creation
 
 ```
-my-workflow/
+workflows/my-workflow/
 └── .claude/skills/
     └── my-skill/
         └── SKILL.md       # Skill definition

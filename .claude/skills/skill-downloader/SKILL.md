@@ -106,10 +106,10 @@ When used with workflow-creator, download skills to workflow's `.claude/skills/`
 
 ```bash
 # Create workflow first
-python /path/to/workflow-creator/scripts/create_workflow.py my-workflow
+python /path/to/workflow-creator/scripts/create_workflow.py my-workflow --path ./workflows
 
 # Then download skills
-python scripts/download_skill.py https://github.com/anthropics/skills/tree/main/skills/docx --output ./my-workflow/.claude/skills/
+python scripts/download_skill.py https://github.com/anthropics/skills/tree/main/skills/docx --output ./workflows/my-workflow/.claude/skills/
 ```
 
 ## Skill Sources Reference

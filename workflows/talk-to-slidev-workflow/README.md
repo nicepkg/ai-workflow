@@ -4,7 +4,7 @@
 
 ### **Your AI-Powered Keynote Presentation Team**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -25,10 +25,10 @@
 
 ```bash
 # Install all 18 skills with one command
-npx add-skill nicepkg/ai-workflow/talk-to-slidev-workflow
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/talk-to-slidev-workflow --skill ppt-creator
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-creator
 ```
 
 ---
@@ -213,6 +213,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>

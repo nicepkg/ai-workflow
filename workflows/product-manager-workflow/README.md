@@ -4,7 +4,7 @@
 
 ### **Your AI-Powered Product Team**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -25,10 +25,10 @@
 
 ```bash
 # Install all 23 skills with one command
-npx add-skill nicepkg/ai-workflow/product-manager-workflow
+npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/product-manager-workflow --skill prd-generator
+npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow --skill prd-generator
 ```
 
 ---
@@ -204,6 +204,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>

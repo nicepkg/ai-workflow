@@ -42,9 +42,16 @@ def get_project_root() -> Path:
     return Path(__file__).parent.parent
 
 
+def get_workflows_root() -> Path:
+    """Get the workflows root directory."""
+    root = get_project_root()
+    workflows_root = root / "workflows"
+    return workflows_root if workflows_root.exists() else root
+
+
 def get_workflows() -> list[Path]:
     """Get all workflow directories."""
-    root = get_project_root()
+    root = get_workflows_root()
     workflows = []
     for item in root.iterdir():
         if item.is_dir() and item.name.endswith('-workflow'):
@@ -385,7 +392,7 @@ def main():
 
     args = parser.parse_args()
 
-    root = get_project_root()
+    root = get_workflows_root()
 
     # Determine workflows to validate
     if args.workflow:

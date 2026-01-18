@@ -4,7 +4,7 @@
 
 ### **Your AI Video Production Team**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -25,10 +25,10 @@
 
 ```bash
 # Install all 29 skills with one command
-npx add-skill nicepkg/ai-workflow/video-creator-workflow
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/video-creator-workflow --skill video-script-writer
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow --skill video-script-writer
 ```
 
 ---
@@ -208,6 +208,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>

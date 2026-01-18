@@ -4,7 +4,7 @@
 
 ### **Turn Your AI into a Professional Content Strategist**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -25,10 +25,10 @@
 
 ```bash
 # Install all 32 skills with one command
-npx add-skill nicepkg/ai-workflow/content-creator-workflow
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill blog-post-writer
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow --skill blog-post-writer
 ```
 
 ---
@@ -240,6 +240,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>

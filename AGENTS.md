@@ -19,9 +19,10 @@ ai-workflow/
 ├── .claude/skills/        # Shared skills for this project
 │   ├── workflow-creator/  # Create new workflows
 │   └── skill-creator/     # Create new skills
-├── content-creator-workflow/   # Example workflow
-├── marketing-pro-workflow/     # Example workflow
-└── <new-workflow>/             # New workflows created here
+├── workflows/
+│   ├── content-creator-workflow/   # Example workflow
+│   ├── marketing-pro-workflow/     # Example workflow
+│   └── <new-workflow>/             # New workflows created here
 ```
 
 ## Available Skills
@@ -44,7 +45,7 @@ Creates new skills following Anthropic's specification.
 
 When user requests a new workflow:
 
-1. **Create directory** using `workflow-creator/scripts/create_workflow.py`
+1. **Create directory** using `workflow-creator/scripts/create_workflow.py` (default target: `workflows/`)
 2. **Select skills** from `workflow-creator/references/skill-sources.md`
 3. **Download skills** using `workflow-creator/scripts/download_skill.py`
 4. **Generate README.md** for users
@@ -63,7 +64,7 @@ After creating any workflow, ALWAYS update the project README.md:
 
 ### Workflow Directory Structure
 ```
-<name>-workflow/
+workflows/<workflow name>/
 ├── README.md              # User documentation
 ├── AGENTS.md              # AI instructions (concise, <500 lines)
 ├── .claude/

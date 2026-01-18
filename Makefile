@@ -40,7 +40,7 @@ help:
 	@echo "  make update-all"
 	@echo ""
 	@echo "Available workflows:"
-	@ls -d *-workflow 2>/dev/null | sed 's/-workflow//' | sed 's/^/  - /'
+	@ls -d workflows/*-workflow 2>/dev/null | sed 's#workflows/##' | sed 's/-workflow//' | sed 's/^/  - /'
 
 # List all workflows and their skills
 list:

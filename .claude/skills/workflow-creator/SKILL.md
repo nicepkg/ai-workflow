@@ -19,7 +19,7 @@ python scripts/create_workflow.py <workflow-name> --path <output-dir>
 
 Creates (with multi-AI tool support):
 ```
-<workflow-name>-workflow/
+workflows/<workflow-name>-workflow/
 ├── README.md          # User documentation (English)
 ├── README_cn.md       # User documentation (Chinese)
 ├── AGENTS.md          # AI context (auto-loaded)
@@ -61,22 +61,22 @@ Symlinks enable all AI tools to use the same skills from .claude/skills/.
 2. Download each skill using `scripts/download_skill.py`:
 
 ```bash
-python scripts/download_skill.py <repo-url> <skill-path> --output <workflow>/.claude/skills/
+python scripts/download_skill.py <repo-url> <skill-path> --output workflows/<workflow-name>/.claude/skills/
 ```
 
 **Examples:**
 
 ```bash
 # Official Anthropic skills
-python scripts/download_skill.py https://github.com/anthropics/skills skills/docx --output ./media-workflow/.claude/skills/
+python scripts/download_skill.py https://github.com/anthropics/skills skills/docx --output ./workflows/media-workflow/.claude/skills/
 
 # Community skills (root level)
-python scripts/download_skill.py https://github.com/gked2121/claude-skills social-repurposer --output ./media-workflow/.claude/skills/
+python scripts/download_skill.py https://github.com/gked2121/claude-skills social-repurposer --output ./workflows/media-workflow/.claude/skills/
 ```
 
 ### Step 3: Generate README.md (English)
 
-**CRITICAL: Follow the exact format from `marketing-pro-workflow/README.md`**
+**CRITICAL: Follow the exact format from `workflows/marketing-pro-workflow/README.md`**
 
 Required structure:
 ```markdown
@@ -86,7 +86,7 @@ Required structure:
 
 ### **Your AI-Powered [Domain] Team**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -143,7 +143,7 @@ Use `assets/templates/README.template.md` as reference.
 Create Chinese version with:
 - Same structure as English README
 - Professional Chinese terminology
-- Link back to `../README_cn.md`
+- Link back to `../../README_cn.md`
 
 ### Step 5: Generate AGENTS.md
 
@@ -224,13 +224,13 @@ When the above sources lack needed skills:
 
 ```bash
 # From GitHub repository
-python scripts/download_skill.py https://github.com/<owner>/<repo> <skill-path> --output <workflow>/.claude/skills/
+python scripts/download_skill.py https://github.com/<owner>/<repo> <skill-path> --output workflows/<workflow-name>/.claude/skills/
 
 # Example: Download from alirezarezvani
-python scripts/download_skill.py https://github.com/alirezarezvani/claude-skills skills/content-creator --output ./content-creator-workflow/.claude/skills/
+python scripts/download_skill.py https://github.com/alirezarezvani/claude-skills skills/content-creator --output ./workflows/content-creator-workflow/.claude/skills/
 
 # Example: Download from pluginagentmarketplace
-python scripts/download_skill.py https://github.com/pluginagentmarketplace/custom-plugin-product-manager skills/user-research --output ./product-manager-workflow/.claude/skills/
+python scripts/download_skill.py https://github.com/pluginagentmarketplace/custom-plugin-product-manager skills/user-research --output ./workflows/product-manager-workflow/.claude/skills/
 ```
 
 ---

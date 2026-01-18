@@ -4,7 +4,7 @@
 
 ### **Your AI-Powered Marketing Team**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -25,10 +25,10 @@
 
 ```bash
 # Install all 38 skills with one command
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generator
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --skill ad-copy-generator
 ```
 
 ---
@@ -261,6 +261,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>

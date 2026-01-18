@@ -72,7 +72,7 @@ jobs:
         run: |
           echo "Checking workflow structures..."
 
-          for dir in *-workflow; do
+          for dir in workflows/*-workflow; do
             if [ -d "$dir" ]; then
               echo "Checking: $dir"
 

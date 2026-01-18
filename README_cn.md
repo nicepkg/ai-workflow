@@ -44,12 +44,12 @@
 
 | 工作流 | 适合谁 | 技能数 | 一键安装 |
 |:-------|:------|:------:|:---------|
-| **[内容创作者](./content-creator-workflow/README_cn.md)** | 博主、写手、SEO 专家 | 32 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
-| **[营销专家](./marketing-pro-workflow/README_cn.md)** | 数字营销、增长黑客、PMM | 38 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
-| **[视频创作者](./video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
-| **[股票交易员](./stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股/台股） | 29 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
-| **[产品经理](./product-manager-workflow/README_cn.md)** | PM、产品负责人、产品总监 | 23 | `npx add-skill nicepkg/ai-workflow/product-manager-workflow` |
-| **[Talk to Slidev](./talk-to-slidev-workflow/README_cn.md)** | 主题演讲者、技术大会讲者、讲师 | 18 | `npx add-skill nicepkg/ai-workflow/talk-to-slidev-workflow` |
+| **[内容创作者](./workflows/content-creator-workflow/README_cn.md)** | 博主、写手、SEO 专家 | 32 | `npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow` |
+| **[营销专家](./workflows/marketing-pro-workflow/README_cn.md)** | 数字营销、增长黑客、PMM | 38 | `npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow` |
+| **[视频创作者](./workflows/video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
+| **[股票交易员](./workflows/stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股/台股） | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
+| **[产品经理](./workflows/product-manager-workflow/README_cn.md)** | PM、产品负责人、产品总监 | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
+| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/README_cn.md)** | 主题演讲者、技术大会讲者、讲师 | 18 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
 
 <details>
 <summary><b>📦 查看全部 170+ 技能</b></summary>
@@ -82,7 +82,7 @@
 
 ```bash
 # 选择你的工作流，运行一条命令即可：
-npx add-skill nicepkg/ai-workflow/content-creator-workflow
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
 
 # 搞定！技能已在你的 AI 助手中激活。
 ```
@@ -91,23 +91,23 @@ npx add-skill nicepkg/ai-workflow/content-creator-workflow
 
 ```bash
 # 只安装需要的技能
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-share-analysis
 
 # 先看看有哪些技能
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --list
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow --list
 ```
 
 ### 高级选项
 
 ```bash
 # 全局安装（所有项目可用）
-npx add-skill nicepkg/ai-workflow/video-creator-workflow --global
+npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow --global
 
 # 只安装到指定的 AI 工具
-npx add-skill nicepkg/ai-workflow/content-creator-workflow -a claude-code -a cursor
+npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow -a claude-code -a cursor
 
 # 非交互模式（适合 CI/CD）
-npx add-skill nicepkg/ai-workflow/marketing-pro-workflow -y
+npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow -y
 ```
 
 ---
@@ -169,7 +169,7 @@ AI 会自动：
 ### 手动创建
 
 ```
-my-workflow/
+workflows/my-workflow/
 └── .claude/skills/
     └── my-skill/
         └── SKILL.md       # 技能定义文件

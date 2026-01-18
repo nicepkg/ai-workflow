@@ -4,7 +4,7 @@
 
 ### **Your AI Investment Research Team**
 
-[← Back to AI Workflow](../README.md)
+[← Back to AI Workflow](../../README.md)
 
 [简体中文](./README_cn.md) | English
 
@@ -25,10 +25,10 @@
 
 ```bash
 # Install all 29 skills with one command
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/stock-trader-workflow --skill a-share-analysis
+npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-share-analysis
 ```
 
 ---
@@ -240,6 +240,6 @@ MIT © [nicepkg](https://github.com/nicepkg)
 
 <div align="center">
 
-**[⬆ Back to Main Project](../README.md)**
+**[⬆ Back to Main Project](../../README.md)**
 
 </div>
