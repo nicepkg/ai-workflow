@@ -1,0 +1,46 @@
+{
+  "content_path": "./src/content/blog",
+  "file_patterns": ["**/*.astro", "**/*.md", "**/*.mdx"],
+  "cta_types": {
+    "newsletter": {
+      "template": "newsletter.html",
+      "default_placement": "after-paragraph-50%",
+      "keywords": ["tip", "guide", "learn", "strategy", "how to", "tutorial", "method", "approach", "framework", "growth", "improve"],
+      "min_score": 5.0,
+      "data": {
+        "title": "Get More Insights Like This",
+        "description": "Subscribe to my newsletter for weekly tips and strategies.",
+        "button_text": "Subscribe",
+        "form_url": "/api/newsletter"
+      }
+    },
+    "product": {
+      "template": "product.html",
+      "default_placement": "end",
+      "keywords": ["productivity", "task", "todo", "organize", "planning", "goal", "habit", "focus", "time management", "workflow"],
+      "min_score": 6.0,
+      "data": {
+        "title": "Try the App",
+        "description": "Take your productivity to the next level.",
+        "button_text": "Get Started",
+        "product_url": "/app"
+      }
+    }
+  },
+  "scoring": {
+    "keyword_weight": 1.0,
+    "length_weight": 1.0,
+    "title_weight": 1.0,
+    "min_word_count": 300
+  },
+  "output": {
+    "state_file": "./state/cta_injection_progress.json",
+    "backup_dir": "./backups",
+    "report_file": "./reports/cta_injection_report.md"
+  },
+  "options": {
+    "dry_run": true,
+    "skip_existing": true,
+    "create_backups": true
+  }
+}

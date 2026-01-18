@@ -1,0 +1,5 @@
+# YouTube Processor Skill Dependencies
+# Transcript extraction + FastAPI for Vercel deployment
+youtube-transcript-api>=1.0.0
+fastapi
+uvicorn

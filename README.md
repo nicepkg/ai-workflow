@@ -19,7 +19,7 @@
 
 **Stop teaching your AI assistant the same things over and over.**
 
-One command. 73+ professional skills. Instant productivity boost.
+One command. 90+ professional skills. Instant productivity boost.
 
 [Get Started](#-quick-start) · [Browse Workflows](#-workflows) · [Create Your Own](#-create-your-own-workflow)
 
@@ -44,16 +44,16 @@ One command. 73+ professional skills. Instant productivity boost.
 
 | Workflow | For Who | Skills | Install |
 |:---------|:--------|:------:|:--------|
-| **[Content Creator](./content-creator-workflow/)** | Bloggers, Writers, SEO Specialists | 15 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
+| **[Content Creator](./content-creator-workflow/)** | Bloggers, Writers, SEO Specialists | 32 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
 | **[Marketing Pro](./marketing-pro-workflow/)** | Digital Marketers, Growth Hackers, PMMs | 18 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
 | **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 15 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[Stock Trader](./stock-trader-workflow/)** | Traders, Investors (US/CN/HK Markets) | 25 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
 
 <details>
-<summary><b>📦 View All 73+ Skills</b></summary>
+<summary><b>📦 View All 90+ Skills</b></summary>
 
 ### Content Creator Workflow
-`seo-optimizer` `blog-post-writer` `content-repurposer` `headline-generator` `social-media-scheduler` `keyword-researcher` `content-brief-creator` `meta-description-writer` `internal-linking-advisor` `readability-optimizer` `content-calendar-planner` `competitor-content-analyzer` `featured-snippet-optimizer` `content-gap-finder` `evergreen-content-updater`
+`weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
 
 ### Marketing Pro Workflow
 `ad-copy-generator` `buyer-persona-generator` `utm-builder` `competitive-ads-extractor` `lead-research-assistant` `social-media-analyzer` `marketing-strategy-pmm` `email-campaign-creator` `landing-page-optimizer` `ab-test-designer` `funnel-analyzer` `roi-calculator` `brand-voice-guide` `market-research-assistant` `customer-journey-mapper` `pricing-strategy-advisor` `launch-checklist-generator` `growth-experiment-designer`

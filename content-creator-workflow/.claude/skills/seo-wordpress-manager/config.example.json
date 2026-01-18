@@ -1,0 +1,30 @@
+{
+  "wordpress": {
+    "graphql_url": "https://your-site.com/graphql",
+    "username": "your-username",
+    "app_password": "xxxx xxxx xxxx xxxx xxxx xxxx"
+  },
+  "batch": {
+    "size": 10,
+    "delay_seconds": 1,
+    "dry_run": true
+  },
+  "filters": {
+    "post_types": ["post", "page"],
+    "categories": [],
+    "tags": [],
+    "date_after": null,
+    "date_before": null
+  },
+  "output": {
+    "state_file": "./state/seo_update_progress.json",
+    "backup_file": "./state/seo_backup.json",
+    "report_file": "./reports/seo_update_report.md"
+  },
+  "validation": {
+    "max_title_length": 60,
+    "max_description_length": 160,
+    "min_description_length": 120,
+    "require_focus_keyphrase": false
+  }
+}

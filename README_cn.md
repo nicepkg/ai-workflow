@@ -19,7 +19,7 @@
 
 **别再重复教你的 AI 同样的事情了。**
 
-一条命令，73+ 专业技能，效率直接起飞。
+一条命令，90+ 专业技能，效率直接起飞。
 
 [立即开始](#-快速开始) · [浏览工作流](#-工作流一览) · [创建自定义工作流](#-创建你自己的工作流)
 
@@ -44,16 +44,16 @@
 
 | 工作流 | 适合谁 | 技能数 | 一键安装 |
 |:-------|:------|:------:|:---------|
-| **[内容创作者](./content-creator-workflow/README_cn.md)** | 博主、写手、SEO 专家 | 15 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
+| **[内容创作者](./content-creator-workflow/README_cn.md)** | 博主、写手、SEO 专家 | 32 | `npx add-skill nicepkg/ai-workflow/content-creator-workflow` |
 | **[营销专家](./marketing-pro-workflow/README_cn.md)** | 数字营销、增长黑客、PMM | 18 | `npx add-skill nicepkg/ai-workflow/marketing-pro-workflow` |
 | **[视频创作者](./video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 15 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[股票交易员](./stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股） | 25 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
 
 <details>
-<summary><b>📦 查看全部 73+ 技能</b></summary>
+<summary><b>📦 查看全部 90+ 技能</b></summary>
 
 ### 内容创作者工作流
-`seo-optimizer` `blog-post-writer` `content-repurposer` `headline-generator` `social-media-scheduler` `keyword-researcher` `content-brief-creator` `meta-description-writer` `internal-linking-advisor` `readability-optimizer` `content-calendar-planner` `competitor-content-analyzer` `featured-snippet-optimizer` `content-gap-finder` `evergreen-content-updater`
+`weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
 
 ### 营销专家工作流
 `ad-copy-generator` `buyer-persona-generator` `utm-builder` `competitive-ads-extractor` `lead-research-assistant` `social-media-analyzer` `marketing-strategy-pmm` `email-campaign-creator` `landing-page-optimizer` `ab-test-designer` `funnel-analyzer` `roi-calculator` `brand-voice-guide` `market-research-assistant` `customer-journey-mapper` `pricing-strategy-advisor` `launch-checklist-generator` `growth-experiment-designer`
