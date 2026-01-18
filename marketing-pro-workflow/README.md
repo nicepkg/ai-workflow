@@ -45,7 +45,7 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generat
 |:------|:-------------|
 | `marketing` | Full marketing asset suite (persona → copy, social, email, video scripts) |
 | `buyer-persona-generator` | Create detailed buyer personas and ICP |
-| `Go-to-Market Planner` | Complete GTM planning: positioning, channels, messaging, launch |
+| `Go-to-Market-Planner` | Complete GTM planning: positioning, channels, messaging, launch |
 | `prd-v09-gtm-strategy` | PRD-driven GTM strategy as executable launch system |
 | `marketing-strategy-pmm` | Product marketing, positioning, competitive battlecards |
 
@@ -132,7 +132,7 @@ Stage 0: Skill Selection
 Stage 1: Positioning & Audience
 ├── buyer-persona-generator → Create ICP and personas
 ├── marketing → Generate full marketing asset suite
-├── Go-to-Market Planner → Complete GTM planning
+├── Go-to-Market-Planner → Complete GTM planning
 └── prd-v09-gtm-strategy → PRD-driven launch strategy
 
 Stage 2: Pricing & Competition
@@ -184,7 +184,7 @@ Stage 9: Dashboard & Review
 ### Complete GTM Launch
 ```
 1. "Create ICP and 3 buyer personas for [product]"
-2. "Develop positioning using Go-to-Market Planner"
+2. "Develop positioning using Go-to-Market-Planner"
 3. "Create pricing strategy with 3 tiers"
 4. "Generate complete marketing asset suite"
 5. "Plan technical product launch"
@@ -245,7 +245,7 @@ Stage 9: Dashboard & Review
 
 | Goal | Skill Chain |
 |:-----|:------------|
-| **Product Launch** | buyer-persona → Go-to-Market Planner → pricing-strategist → marketing → technical-launch-planner |
+| **Product Launch** | buyer-persona → Go-to-Market-Planner → pricing-strategist → marketing → technical-launch-planner |
 | **Cold Outreach** | lead-research → personalization-at-scale → cold-email-sequence-generator → analytics |
 | **Landing Page** | copy → landing-page → ui-ux-audit → utm-builder |
 | **A/B Testing** | running-marketing-campaigns → funnel-analysis → roi-analyzer |

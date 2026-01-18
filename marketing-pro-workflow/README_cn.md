@@ -45,7 +45,7 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generat
 |:-----|:---------|
 | `marketing` | 完整营销资产套件（画像→文案、社媒、邮件、视频脚本） |
 | `buyer-persona-generator` | 创建详细买家画像和 ICP |
-| `Go-to-Market Planner` | 完整 GTM 规划：定位、渠道、信息、发布 |
+| `Go-to-Market-Planner` | 完整 GTM 规划：定位、渠道、信息、发布 |
 | `prd-v09-gtm-strategy` | PRD 驱动的 GTM 策略执行系统 |
 | `marketing-strategy-pmm` | 产品营销、定位、竞品战卡 |
 
@@ -132,7 +132,7 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generat
 阶段 1: 定位与受众
 ├── buyer-persona-generator → 创建 ICP 和画像
 ├── marketing → 生成完整营销资产套件
-├── Go-to-Market Planner → 完整 GTM 规划
+├── Go-to-Market-Planner → 完整 GTM 规划
 └── prd-v09-gtm-strategy → PRD 驱动的发布策略
 
 阶段 2: 定价与竞争
@@ -184,7 +184,7 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generat
 ### 完整 GTM 发布
 ```
 1. "为 [产品] 创建 ICP 和 3 个买家画像"
-2. "使用 Go-to-Market Planner 开发定位"
+2. "使用 Go-to-Market-Planner 开发定位"
 3. "创建 3 个层级的定价策略"
 4. "生成完整的营销资产套件"
 5. "规划技术产品发布"
@@ -245,7 +245,7 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow --skill ad-copy-generat
 
 | 目标 | 技能链 |
 |:-----|:-------|
-| **产品发布** | buyer-persona → Go-to-Market Planner → pricing-strategist → marketing → technical-launch-planner |
+| **产品发布** | buyer-persona → Go-to-Market-Planner → pricing-strategist → marketing → technical-launch-planner |
 | **冷外联** | lead-research → personalization-at-scale → cold-email-sequence-generator → analytics |
 | **落地页** | copy → landing-page → ui-ux-audit → utm-builder |
 | **A/B 测试** | running-marketing-campaigns → funnel-analysis → roi-analyzer |

@@ -14,7 +14,7 @@ AI execution guide for marketing pro workflow with 38 skills for full-funnel mar
 |-------|---------|
 | marketing | marketing assets, full suite, persona to copy, marketing materials |
 | buyer-persona-generator | buyer persona, ICP, ideal customer, target audience |
-| Go-to-Market Planner | GTM, go-to-market, launch plan, positioning, channels |
+| Go-to-Market-Planner | GTM, go-to-market, launch plan, positioning, channels |
 | prd-v09-gtm-strategy | PRD, product launch, GTM strategy, executable launch |
 | marketing-strategy-pmm | product marketing, PMM, battlecard, competitive positioning |
 
@@ -99,7 +99,7 @@ Stage 0: Skill Selection
 Stage 1: Positioning & Audience
 ├── buyer-persona-generator → Create ICP and personas
 ├── marketing → Generate full marketing asset suite
-├── Go-to-Market Planner → Complete GTM planning
+├── Go-to-Market-Planner → Complete GTM planning
 └── prd-v09-gtm-strategy → PRD-driven launch strategy
 
 Stage 2: Pricing & Competition
@@ -148,7 +148,7 @@ Stage 9: Dashboard & Review
 
 ### Product Launch Pipeline
 ```
-buyer-persona-generator → Go-to-Market Planner → pricing-strategist
+buyer-persona-generator → Go-to-Market-Planner → pricing-strategist
 → marketing → landing-page → technical-launch-planner
 → utm-builder → executive-dashboard-generator
 ```
@@ -189,7 +189,7 @@ executive-dashboard-generator → product-analytics
 ### By Goal Type
 
 **"Launch a product":**
-1. Start with `Go-to-Market Planner`
+1. Start with `Go-to-Market-Planner`
 2. Use `pricing-strategist` for pricing
 3. Generate assets with `marketing`
 4. Plan launch with `technical-launch-planner`
