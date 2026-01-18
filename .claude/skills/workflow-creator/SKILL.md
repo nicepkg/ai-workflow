@@ -24,16 +24,35 @@ Creates (with multi-AI tool support):
 ├── AGENTS.md          # AI context (auto-loaded)
 ├── .claude/
 │   ├── settings.json
-│   └── skills/        # Skills go here
+│   └── skills/        # Skills go here (primary storage)
 ├── .codex/
 │   └── skills -> ../.claude/skills
 ├── .cursor/
 │   └── skills -> ../.claude/skills
-└── .opencode/
-    └── skill -> ../.claude/skills
+├── .opencode/
+│   └── skill -> ../.claude/skills
+├── .agents/
+│   └── skills -> ../.claude/skills
+├── .kilocode/
+│   └── skills -> ../.claude/skills
+├── .roo/
+│   └── skills -> ../.claude/skills
+├── .goose/
+│   └── skills -> ../.claude/skills
+├── .gemini/
+│   └── skills -> ../.claude/skills
+├── .agent/
+│   └── skills -> ../.claude/skills
+├── .github/
+│   └── skills -> ../.claude/skills
+├── skills -> .claude/skills
+├── .factory/
+│   └── skills -> ../.claude/skills
+└── .windsurf/
+    └── skills -> ../.claude/skills
 ```
 
-Symlinks enable Codex, Cursor, and OpenCode to use the same skills.
+Symlinks enable all AI tools to use the same skills from .claude/skills/.
 
 ### Step 2: Select and download skills
 
@@ -114,7 +133,7 @@ After creating a workflow in the ai-workflow project, update the project's root 
 After workflow creation, verify:
 - [ ] `.claude/skills/` contains downloaded skill folders
 - [ ] Each skill folder has `SKILL.md`
-- [ ] Symlinks work (`.codex/skills`, `.cursor/skills`, `.opencode/skill`)
+- [ ] All symlinks work (`.codex/skills`, `.cursor/skills`, `.opencode/skill`, `.agents/skills`, `.kilocode/skills`, `.roo/skills`, `.goose/skills`, `.gemini/skills`, `.agent/skills`, `.github/skills`, `skills`, `.factory/skills`, `.windsurf/skills`)
 - [ ] `README.md` documents all skills with usage examples
 - [ ] `AGENTS.md` provides clear AI instructions (<500 lines)
 - [ ] `settings.json` exists in `.claude/`

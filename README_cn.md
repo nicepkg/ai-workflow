@@ -106,7 +106,7 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow -y
 
 ## 🤖 支持的 AI 工具
 
-开箱即支持 **8+ AI 编程助手**：
+开箱即支持 **14+ AI 编程助手**：
 
 | AI 工具 | 项目级路径 | 全局路径 |
 |:--------|:-----------|:---------|
@@ -118,6 +118,12 @@ npx add-skill nicepkg/ai-workflow/marketing-pro-workflow -y
 | **Amp** | `.agents/skills/` | `~/.config/agents/skills/` |
 | **Roo Code** | `.roo/skills/` | `~/.roo/skills/` |
 | **Kilo Code** | `.kilocode/skills/` | `~/.kilocode/skills/` |
+| **Goose** | `.goose/skills/` | `~/.config/goose/skills/` |
+| **Gemini CLI** | `.gemini/skills/` | `~/.gemini/skills/` |
+| **Antigravity** | `.agent/skills/` | `~/.gemini/antigravity/skills/` |
+| **Clawdbot** | `skills/` | `~/.clawdbot/skills/` |
+| **Droid** | `.factory/skills/` | `~/.factory/skills/` |
+| **Windsurf** | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` |
 
 ---
 

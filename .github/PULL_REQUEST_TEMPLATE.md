@@ -18,7 +18,7 @@ Brief description of changes.
 - [ ] README_cn.md included (Chinese documentation)
 - [ ] AGENTS.md included
 - [ ] At least 10 skills included
-- [ ] Multi-AI tool symlinks created (.codex, .cursor, .opencode)
+- [ ] Multi-AI tool symlinks created (.codex, .cursor, .opencode, .agents, .kilocode, .roo, .goose, .gemini, .agent, .github, skills, .factory, .windsurf)
 
 ### For New Skills
 

@@ -30,7 +30,7 @@ ai-workflow/
 **Trigger**: "create workflow", "new workflow", "set up workflow", "build a xxx-workflow"
 
 Creates complete workflow directories with:
-- Multi-AI tool support (.claude, .codex, .cursor, .opencode)
+- Multi-AI tool support (.claude, .codex, .cursor, .opencode, .agents, .kilocode, .roo, .goose, .gemini, .agent, .github, skills, .factory, .windsurf)
 - Curated skills downloaded from GitHub
 - README.md (user documentation)
 - AGENTS.md (AI instructions)
@@ -68,13 +68,32 @@ After creating any workflow, ALWAYS update the project README.md:
 ├── AGENTS.md              # AI instructions (concise, <500 lines)
 ├── .claude/
 │   ├── settings.json
-│   └── skills/            # Downloaded skills
+│   └── skills/            # Downloaded skills (primary storage)
 ├── .codex/
 │   └── skills -> ../.claude/skills
 ├── .cursor/
 │   └── skills -> ../.claude/skills
-└── .opencode/
-    └── skill -> ../.claude/skills
+├── .opencode/
+│   └── skill -> ../.claude/skills
+├── .agents/
+│   └── skills -> ../.claude/skills
+├── .kilocode/
+│   └── skills -> ../.claude/skills
+├── .roo/
+│   └── skills -> ../.claude/skills
+├── .goose/
+│   └── skills -> ../.claude/skills
+├── .gemini/
+│   └── skills -> ../.claude/skills
+├── .agent/
+│   └── skills -> ../.claude/skills
+├── .github/
+│   └── skills -> ../.claude/skills
+├── skills -> .claude/skills
+├── .factory/
+│   └── skills -> ../.claude/skills
+└── .windsurf/
+    └── skills -> ../.claude/skills
 ```
 
 ### README.md Content
