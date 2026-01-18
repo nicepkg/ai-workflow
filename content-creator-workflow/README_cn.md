@@ -138,6 +138,90 @@ npx add-skill nicepkg/ai-workflow/content-creator-workflow --skill blog-post-wri
 
 ---
 
+## 💡 使用示例
+
+### 爆款博客文章流水线
+```
+1. "找一下 AI 工具领域未来 3 个月的弱信号"
+2. "提取这 5 篇竞品文章的要点：[URLs]"
+3. "为'AI 编程助手对比'创建内容简报"
+4. "根据简报写一篇 2000 字的博客"
+5. "给这 5 个标题选项打分，优化最好的那个"
+6. "去除草稿中的 AI 味"
+7. "运行发布前检查清单"
+8. "生成封面图"
+9. "转换为 Twitter thread + LinkedIn 帖子"
+```
+
+### Newsletter 创作流水线
+```
+1. "帮我从这周的经历中头脑风暴 newsletter 话题"
+2. "把我使用 [工具] 的经历写成 newsletter 草稿"
+3. "优化邮件标题以提高打开率"
+4. "去除 AI 味，让它听起来更个人化"
+5. "创建 3 个 A/B 测试标题变体"
+```
+
+### 研究转内容流水线
+```
+1. "提取这篇文章：https://example.com/article"
+2. "总结这个 YouTube 视频：https://youtube.com/watch?v=xxx"
+3. "对 [主题] 做结构化研究，包含论点和反对观点"
+4. "写一篇带正确引用的研究型文章"
+5. "核查文章中所有声明的事实"
+```
+
+### SEO 内容机器
+```
+1. "为关键词 '[关键词]' 创建 SEO 内容简报"
+2. "写一篇针对目标关键词优化的博客"
+3. "运行发布前 SEO 检查清单"
+4. "发布到 WordPress 并设置正确的 meta 标签"
+5. "在 Google Search Console 追踪收录状态"
+```
+
+### 多平台分发
+```
+1. "把这篇博客转换为 8 种不同格式"
+2. "创建 Twitter thread 版本（10-12 条推文）"
+3. "写一个 LinkedIn 帖子版本"
+4. "生成 Instagram 轮播内容"
+5. "从文章创建播客脚本"
+6. "起草邮件 newsletter 版本"
+```
+
+### 内容更新工作流
+```
+1. "分析 [主题] 的竞品内容"
+2. "找出我现有文章的内容空白"
+3. "用新信息更新文章"
+4. "重新优化标题以提高点击率"
+5. "重新发布并追踪 GSC 收录"
+```
+
+---
+
+## 🔧 前置要求
+
+```bash
+# 部分技能需要
+brew install yt-dlp
+
+# 可选：本地 AI 图片生成
+# nano-banana 需要 GEMINI_API_KEY
+```
+
+| 技能 | 需要 |
+|------|------|
+| `twitter-reader` | `JINA_API_KEY` |
+| `nano-banana` | `GEMINI_API_KEY` |
+| `youtube-processor` | `yt-dlp` 已安装 |
+| `youtube-transcript` | `yt-dlp` 已安装 |
+| `gsc-assistant` | Google Search Console 访问权限 |
+| `seo-wordpress-manager` | WordPress 站点访问权限 |
+
+---
+
 ## 🔗 发布集成
 
 | 平台 | 集成方式 |

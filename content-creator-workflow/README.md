@@ -138,6 +138,90 @@ Stage 8: Visual Assets
 
 ---
 
+## 💡 Example Workflows
+
+### Viral Blog Post Factory
+```
+1. "Find weak signals in AI tools space for next 3 months"
+2. "Extract key points from these 5 competitor articles: [URLs]"
+3. "Create a content brief for 'AI coding assistants comparison'"
+4. "Write a 2000-word blog post based on the brief"
+5. "Score these 5 headline options and improve the best one"
+6. "Remove any AI-sounding phrases from the draft"
+7. "Run the pre-publish checklist"
+8. "Generate a cover image"
+9. "Convert to Twitter thread + LinkedIn post"
+```
+
+### Newsletter Creation Pipeline
+```
+1. "Help me brainstorm newsletter topics from my week"
+2. "Turn my experience with [tool] into a newsletter draft"
+3. "Optimize the email subject line for open rates"
+4. "Remove AI taste and make it sound more personal"
+5. "Create 3 A/B test subject line variations"
+```
+
+### Research-to-Content Pipeline
+```
+1. "Extract this article: https://example.com/article"
+2. "Summarize this YouTube video: https://youtube.com/watch?v=xxx"
+3. "Do structured research on [topic] with arguments and counterpoints"
+4. "Write a research-backed article with proper citations"
+5. "Fact-check all claims in the article"
+```
+
+### SEO Content Machine
+```
+1. "Create an SEO content brief for keyword '[keyword]'"
+2. "Write a blog post optimized for the target keyword"
+3. "Run pre-publish SEO checklist"
+4. "Publish to WordPress with proper meta tags"
+5. "Track indexing status in Google Search Console"
+```
+
+### Multi-Platform Distribution
+```
+1. "Convert this blog post into 8 different formats"
+2. "Create a Twitter thread version (10-12 tweets)"
+3. "Write a LinkedIn post version"
+4. "Generate Instagram carousel content"
+5. "Create a podcast script from the article"
+6. "Draft an email newsletter version"
+```
+
+### Content Refresh Workflow
+```
+1. "Analyze competitor content on [topic]"
+2. "Find content gaps in my existing article"
+3. "Update the article with new information"
+4. "Re-optimize headlines for better CTR"
+5. "Republish and track GSC indexing"
+```
+
+---
+
+## 🔧 Prerequisites
+
+```bash
+# Required for some skills
+brew install yt-dlp
+
+# Optional: For local AI image generation
+# Requires GEMINI_API_KEY for nano-banana
+```
+
+| Skill | Requirement |
+|-------|-------------|
+| `twitter-reader` | `JINA_API_KEY` |
+| `nano-banana` | `GEMINI_API_KEY` |
+| `youtube-processor` | `yt-dlp` installed |
+| `youtube-transcript` | `yt-dlp` installed |
+| `gsc-assistant` | Google Search Console access |
+| `seo-wordpress-manager` | WordPress site access |
+
+---
+
 ## 🔗 Publishing Integration
 
 | Platform | Integration |
