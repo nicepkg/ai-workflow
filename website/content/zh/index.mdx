@@ -1,59 +1,41 @@
 # AI Workflow
 
-**为你的 AI 编程助手赋能预置技能集**
+**你的 AI 很聪明，但每次对话都从零开始。**
 
-不再需要反复教导 AI 同样的事情。一条命令，170+ 专业技能，即刻提升生产力。
-
-## 快速开始
+每次开新对话，你都要重新解释相同的框架、最佳实践和专业标准。**一条命令改变一切。**
 
 ```bash
-# 选择你的工作流，运行一条命令：
 npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
-
-# 完成！技能已在你的 AI 助手中激活。
 ```
 
-## 为什么选择 AI Workflow？
+## 我们解决的痛点
 
-| 之前 | 之后 |
-|------|------|
-| "帮我写一篇博客..." 然后每次都要解释 SEO、格式、语气 | AI 已经知道你的内容策略、SEO 规则和品牌调性 |
-| 手动向 AI 解释股票分析概念 | AI 即刻进行专业的技术和基本面分析 |
-| 反复讲解营销框架和模板 | AI 生成符合品牌调性的文案，并带有正确的 UTM 追踪 |
-| 从笔记中复制粘贴提示词 | 技能根据你的项目自动激活 |
+| 😫 没有 AI Workflow | 🎉 有了 AI Workflow |
+|:--------------------|:--------------------|
+| **内容创作者**：每次都要解释 SEO 基础、H2 结构、meta 描述... | AI 已预装 SEO 最佳实践、内容框架、发布清单 |
+| **营销人员**：教 UTM 参数、AIDA 文案法、漏斗优化... | AI 已配备 GTM 策略、活动模板、分析框架 |
+| **视频创作者**：解释钩子、完播率心理学、封面规则... | AI 已掌握爆款模式、脚本结构、YouTube 优化 |
+| **股票交易员**："MACD 意味着...、RSI 表示...、看 200 日均线..." | AI 已加载技术分析、基本面、多市场专业知识 |
+| **产品经理**：反复解释 PRD 格式、用户故事、优先级... | AI 已掌握 RICE、MoSCoW、JTBD、完整产品周期 |
+| **演讲者**：纠结幻灯片结构、叙事流程... | AI 构建麦肯锡 MECE 叙事，配合 Mermaid 图表 |
 
-**AI Workflow** = 让你的 AI 助手成为特定领域专家的预配置技能集。
+## 6 大工作流，170+ 技能
 
-## 可用工作流
+| 工作流 | 适用人群 | 技能数 |
+|:-------|:---------|:------:|
+| [内容创作者](/zh/workflows/content-creator) | 博主、写手、SEO 专家 | 32 |
+| [营销专家](/zh/workflows/marketing-pro) | 数字营销人、增长黑客 | 38 |
+| [视频创作者](/zh/workflows/video-creator) | YouTuber、TikToker、制作人 | 29 |
+| [股票交易员](/zh/workflows/stock-trader) | 交易员、投资者（美/A/港/台股） | 29 |
+| [产品经理](/zh/workflows/product-manager) | PM、产品负责人 | 23 |
+| [Talk to Slidev](/zh/workflows/talk-to-slidev) | 演讲者、讲师、教育工作者 | 18 |
 
-| 工作流 | 适用人群 | 技能数 | 安装命令 |
-|:-------|:---------|:------:|:---------|
-| [内容创作者](/zh/workflows/content-creator) | 博主、写手、SEO 专家 | 32 | `npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow` |
-| [营销专家](/zh/workflows/marketing-pro) | 数字营销人、增长黑客、PMM | 38 | `npx add-skill nicepkg/ai-workflow/workflows/marketing-pro-workflow` |
-| [视频创作者](/zh/workflows/video-creator) | YouTuber、TikToker、视频制作人 | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
-| [股票交易员](/zh/workflows/stock-trader) | 交易员、投资者（美/中/港/台市场） | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
-| [产品经理](/zh/workflows/product-manager) | PM、产品负责人、产品总监 | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
-| [Talk to Slidev](/zh/workflows/talk-to-slidev) | 演讲者、技术讲师、教育工作者 | 18 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
+## 支持 14+ AI 工具
 
-## 支持的 AI 工具
+Claude Code · Cursor · GitHub Copilot · Codex · OpenCode · Amp · Roo Code · Kilo Code · Goose · Gemini CLI · Antigravity · Clawdbot · Droid · Windsurf
 
-开箱即支持 **14+ AI 编程助手**：
+---
 
-| AI 工具 | 项目路径 | 全局路径 |
-|:--------|:---------|:---------|
-| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
-| Cursor | `.cursor/skills/` | `~/.cursor/skills/` |
-| GitHub Copilot | `.github/skills/` | `~/.copilot/skills/` |
-| Codex | `.codex/skills/` | `~/.codex/skills/` |
-| OpenCode | `.opencode/skill/` | `~/.config/opencode/skill/` |
-| Amp | `.agents/skills/` | `~/.config/agents/skills/` |
-| Roo Code | `.roo/skills/` | `~/.roo/skills/` |
-| Kilo Code | `.kilocode/skills/` | `~/.kilocode/skills/` |
-| Goose | `.goose/skills/` | `~/.config/goose/skills/` |
-| Gemini CLI | `.gemini/skills/` | `~/.gemini/skills/` |
-| Antigravity | `.agent/skills/` | `~/.gemini/antigravity/skills/` |
-| Clawdbot | `skills/` | `~/.clawdbot/skills/` |
-| Droid | `.factory/skills/` | `~/.factory/skills/` |
-| Windsurf | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` |
+**⭐ 如果这个项目帮到你，请在 [GitHub 上给我们 Star](https://github.com/nicepkg/ai-workflow)**
 
-[开始使用](/zh/docs/getting-started) | [在 GitHub 上查看](https://github.com/nicepkg/ai-workflow)
+[开始使用](/zh/docs/getting-started) · [在 GitHub 上查看](https://github.com/nicepkg/ai-workflow)

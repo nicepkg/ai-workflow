@@ -32,7 +32,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <>
       <Layout
         pageMap={pageMap}
-        docsRepositoryBase="https://github.com/nicepkg/ai-workflow/tree/main/website/content"
+        docsRepositoryBase="https://github.com/nicepkg/ai-workflow/tree/main/website"
         editLink="Edit this page on GitHub"
         sidebar={{
           defaultMenuCollapseLevel: 1,
@@ -42,8 +42,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           backToTop: true,
         }}
         feedback={{
-          content: "Question? Give us feedback",
-          labels: "feedback",
+          content: "Question? Give us feedback →",
+          labels: "feedback,documentation",
+          link: "https://github.com/nicepkg/ai-workflow/issues/new?labels=feedback,documentation&template=feedback.md",
         }}
         i18n={[
           { locale: "en", name: "English" },

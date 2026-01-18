@@ -29,14 +29,30 @@ One command. 150+ professional skills. Instant productivity boost.
 
 ## ✨ Why AI Workflow?
 
-| Before 😫 | After 🎉 |
-|-----------|----------|
-| "Write me a blog post..." then explain SEO, formatting, tone every time | AI already knows your content strategy, SEO rules, and brand voice |
-| Manually teaching AI about stock analysis concepts | AI performs professional technical & fundamental analysis instantly |
-| Repeating marketing frameworks and templates | AI generates on-brand copy with proper UTM tracking |
-| Copy-pasting prompts from notes | Skills auto-activate based on your project |
+> **Your AI is smart. But every session starts from zero.**
+>
+> Every time you open a new chat, you re-explain the same frameworks, best practices, and professional standards. That ends today.
 
-**AI Workflow** = Pre-configured skill sets that make your AI assistant an expert in specific domains.
+### The Pain We Solve
+
+| 😫 Without AI Workflow | 🎉 With AI Workflow |
+|:-----------------------|:--------------------|
+| **Content Creator**: "Use H2 for sections, add meta descriptions, include a CTA, optimize for featured snippets..." — explaining SEO basics every single time | AI already loaded with SEO best practices, content frameworks, and publishing checklists |
+| **Marketer**: Teaching UTM structure, AIDA copywriting, funnel stages, conversion optimization... | AI equipped with marketing frameworks: GTM strategy, campaign templates, analytics interpretation |
+| **Video Creator**: Explaining hook formulas, retention psychology, thumbnail rules, algorithm tips... | AI pre-trained on viral content patterns, script structures, and YouTube optimization |
+| **Stock Trader**: "MACD crossover means..., RSI divergence indicates..., check the 200-day MA..." | AI loaded with technical analysis, fundamental screening, and multi-market expertise (US/CN/HK) |
+| **Product Manager**: Re-explaining PRD templates, user story formats, prioritization matrices... | AI knows RICE, MoSCoW, Jobs-to-be-Done, and your entire product development lifecycle |
+| **Presenter**: Figuring out slide structure, narrative flow, visual hierarchy... | AI builds McKinsey-style MECE narratives with Mermaid diagrams and professional themes |
+
+### 170+ Skills, Zero Setup
+
+```
+📚  Industry best practices → Already packaged
+🎯  Professional frameworks → Ready to use
+⚡  One command → Instant expertise
+```
+
+**AI Workflow** = Pre-packaged domain expertise for your AI assistant. Skip the teaching. Start producing.
 
 ---
 
