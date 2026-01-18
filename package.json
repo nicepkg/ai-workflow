@@ -1,0 +1,30 @@
+{
+  "name": "ai-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI Workflow - Pre-configured skill sets for AI coding assistants",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicepkg/ai-workflow.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm --filter ai-workflow-website dev",
+    "build": "pnpm --filter ai-workflow-website build",
+    "start": "pnpm --filter ai-workflow-website start",
+    "lint": "pnpm --filter ai-workflow-website lint",
+    "lint:fix": "pnpm --filter ai-workflow-website lint:fix",
+    "typecheck": "pnpm --filter ai-workflow-website typecheck",
+    "format": "pnpm --filter ai-workflow-website format:write",
+    "format:check": "pnpm --filter ai-workflow-website format:check",
+    "clean": "rm -rf node_modules website/node_modules website/.next",
+    "validate:skills": "python3 scripts/validate_sources.py",
+    "update:skills": "python3 scripts/update_skills.py --all-workflows"
+  },
+  "packageManager": "pnpm@10.21.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
