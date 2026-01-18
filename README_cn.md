@@ -19,7 +19,7 @@
 
 **别再重复教你的 AI 同样的事情了。**
 
-一条命令，150+ 专业技能，效率直接起飞。
+一条命令，170+ 专业技能，效率直接起飞。
 
 [立即开始](#-快速开始) · [浏览工作流](#-工作流一览) · [创建自定义工作流](#-创建你自己的工作流)
 
@@ -49,9 +49,10 @@
 | **[视频创作者](./video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[股票交易员](./stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股/台股） | 29 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
 | **[产品经理](./product-manager-workflow/README_cn.md)** | PM、产品负责人、产品总监 | 23 | `npx add-skill nicepkg/ai-workflow/product-manager-workflow` |
+| **[Talk to Slidev](./talk-to-slidev-workflow/README_cn.md)** | 主题演讲者、技术大会讲者、讲师 | 18 | `npx add-skill nicepkg/ai-workflow/talk-to-slidev-workflow` |
 
 <details>
-<summary><b>📦 查看全部 150+ 技能</b></summary>
+<summary><b>📦 查看全部 170+ 技能</b></summary>
 
 ### 内容创作者工作流
 `weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
@@ -67,6 +68,9 @@
 
 ### 产品经理工作流
 `work-intake` `user-research` `discovery-interviews-surveys` `customer-feedback-analyzer` `user-persona-creation` `competitive-analysis` `prd-generator` `writing-product-specs` `requirements` `writing-user-stories` `prioritization-effort-impact` `roadmap` `roadmap-backcast` `strategy` `stakeholders-org-design` `feature-planning` `agile` `agile-sprint-planning` `launch` `technical-launch-planner` `analytics` `forecast-premortem` `postmortem`
+
+### Talk to Slidev 工作流
+`storyline-builder` `presentation-builder` `ppt-creator` `presentation-generator` `theme-factory` `presentation-design-enhancer` `color-palette-extractor` `font-pairing-suggester` `canvas-design` `pexels-media` `nano-banana-pro` `youtube-transcript` `transcribe-and-analyze` `mermaid-diagrams` `mermaid-tools` `infographic-creation` `pptx` `social-repurposer`
 
 </details>
 

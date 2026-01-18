@@ -49,9 +49,10 @@ One command. 150+ professional skills. Instant productivity boost.
 | **[Video Creator](./video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/video-creator-workflow` |
 | **[Stock Trader](./stock-trader-workflow/)** | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/stock-trader-workflow` |
 | **[Product Manager](./product-manager-workflow/)** | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/product-manager-workflow` |
+| **[Talk to Slidev](./talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 18 | `npx add-skill nicepkg/ai-workflow/talk-to-slidev-workflow` |
 
 <details>
-<summary><b>📦 View All 150+ Skills</b></summary>
+<summary><b>📦 View All 170+ Skills</b></summary>
 
 ### Content Creator Workflow
 `weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
@@ -67,6 +68,9 @@ One command. 150+ professional skills. Instant productivity boost.
 
 ### Product Manager Workflow
 `work-intake` `user-research` `discovery-interviews-surveys` `customer-feedback-analyzer` `user-persona-creation` `competitive-analysis` `prd-generator` `writing-product-specs` `requirements` `writing-user-stories` `prioritization-effort-impact` `roadmap` `roadmap-backcast` `strategy` `stakeholders-org-design` `feature-planning` `agile` `agile-sprint-planning` `launch` `technical-launch-planner` `analytics` `forecast-premortem` `postmortem`
+
+### Talk to Slidev Workflow
+`storyline-builder` `presentation-builder` `ppt-creator` `presentation-generator` `theme-factory` `presentation-design-enhancer` `color-palette-extractor` `font-pairing-suggester` `canvas-design` `pexels-media` `nano-banana-pro` `youtube-transcript` `transcribe-and-analyze` `mermaid-diagrams` `mermaid-tools` `infographic-creation` `pptx` `social-repurposer`
 
 </details>
 
