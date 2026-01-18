@@ -13,6 +13,7 @@
     "dev": "pnpm --filter ai-workflow-website dev",
     "build": "pnpm --filter ai-workflow-website build",
     "start": "pnpm --filter ai-workflow-website start",
+    "start:static": "pnpm --filter ai-workflow-website start:static",
     "lint": "pnpm --filter ai-workflow-website lint",
     "lint:fix": "pnpm --filter ai-workflow-website lint:fix",
     "typecheck": "pnpm --filter ai-workflow-website typecheck",

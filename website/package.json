@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "build": "next build && pnpm postbuild",
     "check": "eslint . && tsc --noEmit",
     "dev": "next dev --turbo",
@@ -14,6 +14,7 @@
     "lint:fix": "eslint . --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "preview": "next build && next start",
     "start": "next start",
+    "start:static": "npx serve@latest out",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
