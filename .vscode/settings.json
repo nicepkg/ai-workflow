@@ -9,7 +9,6 @@
 
   // ESLint settings
   "eslint.useFlatConfig": true,
-  "eslint.experimental.useFlatConfig": true,
   "eslint.format.enable": true,
   "eslint.nodePath": "website/node_modules",
   "eslint.validate": [

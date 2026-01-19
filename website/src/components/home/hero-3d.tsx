@@ -1,6 +1,5 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Sphere,
   MeshDistortMaterial,
@@ -8,6 +7,7 @@ import {
   Stars,
   PerspectiveCamera,
 } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import type * as THREE from "three";
 

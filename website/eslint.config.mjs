@@ -1,96 +1,129 @@
 import { FlatCompat } from "@eslint/eslintrc";
-import next from "@next/eslint-plugin-next";
+import { defineConfig, globalIgnores } from "eslint/config";
+import prettier from "eslint-config-prettier/flat";
 import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginPrettier from "eslint-plugin-prettier";
-import eslintPluginReact from "eslint-plugin-react";
-import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
 export default defineConfig(
+  // Next.js Core Web Vitals config (includes React, React Hooks, and Next.js rules)
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Prettier config (disables conflicting ESLint rules)
+  prettier,
+
+  // Global ignores
+  globalIgnores([
+    // Default Next.js ignores
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    // Additional ignores
+    "public/_pagefind/**",
+    "node_modules/**",
+    ".git/**",
+  ]),
+
+  // Custom rules and plugins
   {
-    ignores: ["**/.next/**", "**/public/_pagefind/**", "**/out/**"],
-  },
-  ...compat.extends(
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "prettier"
-  ),
-  {
+    files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
     plugins: {
       import: eslintPluginImport,
-      react: eslintPluginReact,
-    },
-    rules: {
-      "import/no-anonymous-default-export": "warn",
-      "react/no-unknown-property": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-      "jsx-a11y/alt-text": [
-        "warn",
-        {
-          elements: ["img"],
-          img: ["Image"],
-        },
-      ],
-      "jsx-a11y/aria-props": "warn",
-      "jsx-a11y/aria-proptypes": "warn",
-      "jsx-a11y/aria-unsupported-elements": "warn",
-      "jsx-a11y/role-has-required-aria-props": "warn",
-      "jsx-a11y/role-supports-aria-props": "warn",
-      "react/jsx-no-target-blank": "off",
+      prettier: eslintPluginPrettier,
     },
     settings: {
-      react: {
-        version: "detect",
+      next: {
+        rootDir: import.meta.dirname,
       },
     },
+    rules: {
+      // Import rules
+      "import/no-anonymous-default-export": "warn",
+      "import/order": [
+        "warn",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+          ],
+          "newlines-between": "never",
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+        },
+      ],
+
+      // React rules overrides
+      "react/no-unknown-property": "off", // For Three.js props
+
+      // Prettier
+      "prettier/prettier": "warn",
+    },
   },
+
+  // Additional TypeScript config
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       ...tseslint.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
     ],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
     rules: {
+      // TypeScript rules
       "@typescript-eslint/triple-slash-reference": "off",
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/consistent-type-imports": [
         "warn",
-        { prefer: "type-imports", fixStyle: "inline-type-imports" },
+        {
+          prefer: "type-imports",
+          fixStyle: "inline-type-imports",
+        },
       ],
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
       "@typescript-eslint/require-await": "off",
       "@typescript-eslint/no-misused-promises": [
         "error",
-        { checksVoidReturn: { attributes: false } },
+        {
+          checksVoidReturn: {
+            attributes: false,
+          },
+        },
       ],
       "@typescript-eslint/prefer-nullish-coalescing": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-unnecessary-condition": "warn",
     },
   },
-  {
-    files: ["**/*.{js,jsx,ts,tsx}"],
-    plugins: {
-      prettier: eslintPluginPrettier,
-    },
-    rules: {
-      "prettier/prettier": "warn",
-    },
-  },
+
+  // Linter options
   {
     linterOptions: {
-      reportUnusedDisableDirectives: true,
+      reportUnusedDisableDirectives: "warn",
     },
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-      },
-    },
-  }
+  },
 );
