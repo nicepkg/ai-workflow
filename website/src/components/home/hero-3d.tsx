@@ -23,7 +23,7 @@ function AnimatedSphere() {
   });
 
   return (
-    <Sphere visible args={[1, 64, 64]} scale={2.4} ref={sphereRef}>
+    <Sphere visible args={[1, 64, 64]} scale={2.0} ref={sphereRef}>
       <MeshDistortMaterial
         color="#a78bfa" // Lighter purple (Purple-400)
         attach="material"

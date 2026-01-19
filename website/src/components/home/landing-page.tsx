@@ -1,7 +1,5 @@
 "use client";
 
-import { cn } from "~/lib/utils";
-import { Button } from "~/components/ui/button";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -15,8 +13,10 @@ import {
   Presentation,
   CheckCircle,
 } from "lucide-react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
+import Link from "next/link";
+import { Button } from "~/components/ui/button";
+import { cn } from "~/lib/utils";
 
 const Hero3D = dynamic(() => import("./hero-3d").then((mod) => mod.Hero3D), {
   ssr: false,
@@ -184,7 +184,7 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
   return (
     <div className="relative flex min-h-screen flex-col font-sans">
       {/* Hero Section */}
-      <section className="relative z-10 overflow-hidden pt-24 pb-56 md:pt-32 md:pb-64">
+      <section className="relative z-10 overflow-hidden pt-24 pb-56">
         <Hero3D />
         <div className="relative z-10 container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
@@ -253,7 +253,7 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
       </section>
 
       {/* Comparison Section */}
-      <section className="relative overflow-hidden py-32">
+      <section className="relative overflow-hidden pt-0 pb-24">
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -421,7 +421,7 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-32 text-center">
+      <section className="relative overflow-hidden pt-24 pb-16 text-center">
         <div className="to-primary/5 absolute inset-0 -z-10 bg-gradient-to-b from-transparent" />
         <div className="relative container mx-auto px-4">
           <div className="bg-primary/10 absolute top-1/2 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]" />
