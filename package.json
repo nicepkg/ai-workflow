@@ -23,7 +23,6 @@
     "validate:skills": "python3 scripts/validate_sources.py",
     "update:skills": "python3 scripts/update_skills.py --all-workflows"
   },
-  "packageManager": "pnpm@10.21.0",
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
