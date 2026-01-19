@@ -1,10 +1,27 @@
-'use client'
+"use client";
 
-import { cn } from "~/lib/utils"
-import { Button } from "~/components/ui/button"
-import { motion } from "framer-motion"
-import { ArrowRight, Github, Terminal, Zap, BookOpen, TrendingUp, Video, BarChart2, Presentation, CheckCircle, XCircle } from "lucide-react"
-import Link from "next/link"
+import { cn } from "~/lib/utils";
+import { Button } from "~/components/ui/button";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Github,
+  Terminal,
+  Zap,
+  BookOpen,
+  TrendingUp,
+  Video,
+  BarChart2,
+  Presentation,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Hero3D = dynamic(() => import("./hero-3d").then((mod) => mod.Hero3D), {
+  ssr: false,
+});
 
 const workflows = [
   {
@@ -55,133 +72,176 @@ const workflows = [
     color: "text-yellow-500",
     bg: "bg-yellow-500/10",
   },
-]
+];
 
 const problems = [
   {
     role: { en: "Content Creator", zh: "内容创作者" },
-    pain: { en: "Explaining SEO basics, H2 structure, meta descriptions... every single time", zh: "每次都要解释 SEO 基础、H2 结构、meta 描述..." },
-    gain: { en: "AI pre-loaded with SEO best practices, content frameworks", zh: "AI 已预装 SEO 最佳实践、内容框架" }
+    pain: {
+      en: "Explaining SEO basics, H2 structure, meta descriptions... every single time",
+      zh: "每次都要解释 SEO 基础、H2 结构、meta 描述...",
+    },
+    gain: {
+      en: "AI pre-loaded with SEO best practices, content frameworks",
+      zh: "AI 已预装 SEO 最佳实践、内容框架",
+    },
   },
   {
     role: { en: "Marketer", zh: "营销人员" },
-    pain: { en: "Teaching UTM parameters, AIDA copywriting, funnel optimization...", zh: "教 UTM 参数、AIDA 文案法、漏斗优化..." },
-    gain: { en: "AI equipped with GTM strategy, campaign templates, analytics frameworks", zh: "AI 已配备 GTM 策略、活动模板、分析框架" }
+    pain: {
+      en: "Teaching UTM parameters, AIDA copywriting, funnel optimization...",
+      zh: "教 UTM 参数、AIDA 文案法、漏斗优化...",
+    },
+    gain: {
+      en: "AI equipped with GTM strategy, campaign templates, analytics frameworks",
+      zh: "AI 已配备 GTM 策略、活动模板、分析框架",
+    },
   },
   {
     role: { en: "Stock Trader", zh: "股票交易员" },
-    pain: { en: "MACD means..., RSI indicates..., check the 200-day MA...", zh: "MACD 意味着...、RSI 表示...、看 200 日均线..." },
-    gain: { en: "AI loaded with technical analysis, fundamentals, multi-market expertise", zh: "AI 已加载技术分析、基本面、多市场专业知识" }
+    pain: {
+      en: "MACD means..., RSI indicates..., check the 200-day MA...",
+      zh: "MACD 意味着...、RSI 表示...、看 200 日均线...",
+    },
+    gain: {
+      en: "AI loaded with technical analysis, fundamentals, multi-market expertise",
+      zh: "AI 已加载技术分析、基本面、多市场专业知识",
+    },
   },
-]
+];
 
 type Translation = {
   hero: {
-    title: string
-    subtitle: string
-    desc: string
-    getStarted: string
-    viewGithub: string
-  }
+    title: string;
+    subtitle: string;
+    desc: string;
+    getStarted: string;
+    viewGithub: string;
+  };
   problem: {
-    title: string
-    without: string
-    with: string
-  }
+    title: string;
+    without: string;
+    with: string;
+  };
   workflows: {
-    title: string
-    subtitle: string
-  }
+    title: string;
+    subtitle: string;
+  };
   tools: {
-    title: string
-  }
+    title: string;
+  };
   cta: {
-    title: string
-    desc: string
-    button: string
-  }
-}
+    title: string;
+    desc: string;
+    button: string;
+  };
+};
 
-export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
+export function LandingPage({ lang }: { lang: "en" | "zh" }) {
   const t: Translation = {
     hero: {
-      title: lang === 'en' ? "Supercharge your AI Workflow" : "AI 工作流的究极形态",
-      subtitle: lang === 'en' 
-        ? "Stop repeating yourself. Start with context." 
-        : "告别重复解释。让 AI 真正懂你。",
-      desc: lang === 'en'
-        ? "Every session starts from zero. One command adds professional skills, best practices, and project context to your AI."
-        : "每次对话都从零开始？一条命令，为你的 AI 注入专业技能、最佳实践和项目上下文。",
-      getStarted: lang === 'en' ? "Get Started" : "开始使用",
-      viewGithub: lang === 'en' ? "Star on GitHub" : "Star on GitHub",
+      title:
+        lang === "en" ? "Supercharge your AI Workflow" : "AI 工作流的究极形态",
+      subtitle:
+        lang === "en"
+          ? "Stop repeating yourself. Start with context."
+          : "告别重复解释。让 AI 真正懂你。",
+      desc:
+        lang === "en"
+          ? "Every session starts from zero. One command adds professional skills, best practices, and project context to your AI."
+          : "每次对话都从零开始？一条命令，为你的 AI 注入专业技能、最佳实践和项目上下文。",
+      getStarted: lang === "en" ? "Get Started" : "开始使用",
+      viewGithub: lang === "en" ? "Star on GitHub" : "Star on GitHub",
     },
     problem: {
-      title: lang === 'en' ? "The Problem We Solve" : "我们解决的痛点",
-      without: lang === 'en' ? "Without AI Workflow" : "没有 AI Workflow",
-      with: lang === 'en' ? "With AI Workflow" : "有了 AI Workflow",
+      title: lang === "en" ? "The Problem We Solve" : "我们解决的痛点",
+      without: lang === "en" ? "Without AI Workflow" : "没有 AI Workflow",
+      with: lang === "en" ? "With AI Workflow" : "有了 AI Workflow",
     },
     workflows: {
-      title: lang === 'en' ? "Explore Workflows" : "探索工作流",
-      subtitle: lang === 'en' ? " Specialized skills for every role" : "为每个角色打造的专业技能",
+      title: lang === "en" ? "Explore Workflows" : "探索工作流",
+      subtitle:
+        lang === "en"
+          ? " Specialized skills for every role"
+          : "为每个角色打造的专业技能",
     },
     tools: {
-      title: lang === 'en' ? "Works with your favorite tools" : "支持你喜爱的工具",
+      title:
+        lang === "en" ? "Works with your favorite tools" : "支持你喜爱的工具",
     },
     cta: {
-      title: lang === 'en' ? "Ready to upgrade your AI?" : "准备好升级你的 AI 了吗？",
-      desc: lang === 'en' 
-        ? "Join the community and start building better context."
-        : "加入社区，开始构建更好的上下文。",
-      button: lang === 'en' ? "Get Started Now" : "立即开始",
-    }
-  }
+      title:
+        lang === "en"
+          ? "Ready to upgrade your AI?"
+          : "准备好升级你的 AI 了吗？",
+      desc:
+        lang === "en"
+          ? "Join the community and start building better context."
+          : "加入社区，开始构建更好的上下文。",
+      button: lang === "en" ? "Get Started Now" : "立即开始",
+    },
+  };
 
   return (
-    <div className="flex flex-col min-h-screen font-sans relative">
+    <div className="relative flex min-h-screen flex-col font-sans">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden z-10">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="relative z-10 overflow-hidden pt-24 pb-56 md:pt-32 md:pb-64">
+        <Hero3D />
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-blue-500 animate-gradient-x">
+              <h1 className="mb-8 text-5xl leading-tight font-extrabold tracking-tight md:text-7xl">
+                <span className="from-primary animate-gradient-x bg-gradient-to-r via-purple-500 to-blue-500 bg-clip-text text-transparent">
                   {t.hero.title}
                 </span>
               </h1>
-              <p className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <p className="text-foreground mb-6 text-2xl font-semibold md:text-3xl">
                 {t.hero.subtitle}
               </p>
-              <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-muted-foreground mx-auto mb-12 max-w-2xl text-lg leading-relaxed md:text-xl">
                 {t.hero.desc}
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+              <div className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link href={`/${lang}/docs/getting-started`}>
-                  <Button size="lg" className="rounded-full px-8 h-14 text-lg font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
-                    {t.hero.getStarted} <ArrowRight className="ml-2 w-5 h-5" />
+                  <Button
+                    size="lg"
+                    className="shadow-primary/25 hover:shadow-primary/40 h-14 rounded-full px-8 text-lg font-semibold shadow-lg transition-shadow"
+                  >
+                    {t.hero.getStarted} <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="https://github.com/nicepkg/ai-workflow" target="_blank">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-lg bg-background/50 backdrop-blur-sm hover:bg-muted/50 border-primary/20 hover:border-primary/50">
-                    <Github className="mr-2 w-5 h-5" /> {t.hero.viewGithub}
+                <Link
+                  href="https://github.com/nicepkg/ai-workflow"
+                  target="_blank"
+                >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="bg-background/50 hover:bg-muted/50 border-primary/20 hover:border-primary/50 h-14 rounded-full px-8 text-lg backdrop-blur-sm"
+                  >
+                    <Github className="mr-2 h-5 w-5" /> {t.hero.viewGithub}
                   </Button>
                 </Link>
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="mt-8 mx-auto max-w-3xl"
+                className="mx-auto mt-8 max-w-3xl"
               >
-                <div className="p-1 rounded-2xl bg-gradient-to-r from-transparent via-primary/20 to-transparent">
-                  <div className="bg-card/80 backdrop-blur-md border border-primary/10 rounded-xl p-6 shadow-2xl">
-                    <div className="font-mono text-sm md:text-base text-left overflow-x-auto whitespace-nowrap flex items-center">
+                <div className="via-primary/20 rounded-2xl bg-gradient-to-r from-transparent to-transparent p-1">
+                  <div className="bg-card/80 border-primary/10 rounded-xl border p-6 shadow-2xl backdrop-blur-md">
+                    <div className="flex items-center overflow-x-auto text-left font-mono text-sm whitespace-nowrap md:text-base">
                       <span className="text-primary mr-3 select-none">$</span>
-                      <span className="text-foreground">npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow</span>
+                      <span className="text-foreground">
+                        npx add-skill
+                        nicepkg/ai-workflow/workflows/content-creator-workflow
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -189,58 +249,79 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
             </motion.div>
           </div>
         </div>
-        
+
         {/* Background gradients - Removed old static blobs */}
       </section>
 
       {/* Comparison Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-muted/50 -z-20" />
-        <div className="container mx-auto px-4">
+      <section className="relative overflow-hidden py-32">
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 text-center"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.problem.title}</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl">
+              {t.problem.title}
+            </h2>
           </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
             {problems.map((item, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="bg-background rounded-2xl border border-border/50 shadow-sm p-8 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 relative group"
+                whileHover={{ y: -8 }}
+                className="group relative h-full"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <h3 className="font-bold text-2xl mb-6 text-center">{item.role[lang]}</h3>
-                <div className="space-y-6">
-                  <div className="space-y-2">
-                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider pl-1">{t.problem.without}</div>
-                     <div className="p-4 bg-red-500/5 rounded-xl border border-red-500/10 group-hover:border-red-500/20 transition-colors">
-                      <div className="flex items-start gap-3 text-red-600 dark:text-red-400">
-                        <XCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                        <span className="leading-relaxed">{item.pain[lang]}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-center">
-                    <ArrowRight className="w-6 h-6 text-muted-foreground/30 rotate-90 md:rotate-0" />
+                {/* Card Glow Effect */}
+                <div className="from-primary/30 absolute -inset-0.5 rounded-3xl bg-gradient-to-b to-purple-600/30 opacity-30 blur transition duration-500 group-hover:opacity-100" />
+
+                <div className="bg-card/80 relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 p-8 backdrop-blur-xl dark:border-white/5">
+                  {/* Subtle noise texture or pattern could go here */}
+
+                  <div className="mb-8">
+                    <h3 className="from-foreground to-foreground/70 group-hover:from-primary bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent transition-all duration-300 group-hover:to-purple-500">
+                      {item.role[lang]}
+                    </h3>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider pl-1">{t.problem.with}</div>
-                    <div className="p-4 bg-green-500/5 rounded-xl border border-green-500/10 group-hover:border-green-500/20 transition-colors">
-                      <div className="flex items-start gap-3 text-green-600 dark:text-green-400">
-                        <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                        <span className="leading-relaxed font-medium">{item.gain[lang]}</span>
+                  <div className="flex-1 space-y-6">
+                    {/* The 'Pain' part */}
+                    <div className="border-muted-foreground/20 relative border-l-2 pl-6 transition-colors group-hover:border-red-500/30">
+                      <div className="bg-card border-muted-foreground/30 absolute top-0 -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border-2">
+                        <div className="bg-muted-foreground/50 h-1.5 w-1.5 rounded-full" />
                       </div>
+                      <p className="text-muted-foreground mb-1 text-sm font-medium tracking-wider uppercase">
+                        {t.problem.without}
+                      </p>
+                      <p className="text-muted-foreground/80 text-sm leading-relaxed line-through decoration-red-500/30 decoration-2">
+                        {item.pain[lang]}
+                      </p>
+                    </div>
+
+                    {/* Connector */}
+                    <div className="flex items-center gap-4 opacity-30 transition-opacity duration-500 group-hover:opacity-100">
+                      <div className="via-primary/50 h-px w-full bg-gradient-to-r from-transparent to-transparent" />
+                      <ArrowRight className="text-primary h-4 w-4 shrink-0 rotate-90 md:rotate-0" />
+                      <div className="via-primary/50 h-px w-full bg-gradient-to-r from-transparent to-transparent" />
+                    </div>
+
+                    {/* The 'Gain' part */}
+                    <div className="border-primary/50 relative border-l-2 pl-6">
+                      <div className="bg-primary absolute top-0 -left-[9px] flex h-4 w-4 items-center justify-center rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]">
+                        <CheckCircle className="h-3 w-3 text-white" />
+                      </div>
+                      <p className="text-primary mb-1 text-sm font-medium tracking-wider uppercase">
+                        {t.problem.with}
+                      </p>
+                      <p className="text-foreground leading-relaxed font-medium">
+                        {item.gain[lang]}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -253,29 +334,53 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
       {/* Workflows Grid */}
       <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.workflows.title}</h2>
-            <p className="text-muted-foreground text-xl max-w-2xl mx-auto">{t.workflows.subtitle}</p>
+          <div className="mb-20 text-center">
+            <h2 className="mb-6 text-3xl font-bold md:text-5xl">
+              {t.workflows.title}
+            </h2>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
+              {t.workflows.subtitle}
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {workflows.map((wf, i) => (
-              <Link href={`/${lang}${wf.link}`} key={i} className="block h-full">
+              <Link
+                href={`/${lang}${wf.link}`}
+                key={i}
+                className="block h-full"
+              >
                 <motion.div
                   whileHover={{ scale: 1.02, translateY: -4 }}
-                  className="group h-full p-8 rounded-3xl border border-border/50 bg-gradient-to-b from-card to-background hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden"
+                  className="group border-border/50 from-card to-background hover:shadow-primary/5 relative h-full overflow-hidden rounded-3xl border bg-gradient-to-b p-8 transition-all duration-300 hover:shadow-2xl"
                 >
-                  <div className={cn("absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-10 transition-transform group-hover:scale-110", wf.bg, wf.color)} />
-                  
-                  <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm", wf.bg, wf.color)}>
-                    <wf.icon className="w-7 h-7" />
+                  <div
+                    className={cn(
+                      "absolute top-0 right-0 h-32 w-32 rounded-bl-full opacity-10 transition-transform group-hover:scale-110",
+                      wf.bg,
+                      wf.color,
+                    )}
+                  />
+
+                  <div
+                    className={cn(
+                      "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm",
+                      wf.bg,
+                      wf.color,
+                    )}
+                  >
+                    <wf.icon className="h-7 w-7" />
                   </div>
-                  
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{wf.title[lang]}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg">{wf.desc[lang]}</p>
-                  
-                  <div className="mt-8 flex items-center text-sm font-medium text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
-                    Learn more <ArrowRight className="ml-2 w-4 h-4" />
+
+                  <h3 className="group-hover:text-primary mb-3 text-2xl font-bold transition-colors">
+                    {wf.title[lang]}
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {wf.desc[lang]}
+                  </p>
+
+                  <div className="text-primary mt-8 flex -translate-x-2 items-center text-sm font-medium opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
+                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
                 </motion.div>
               </Link>
@@ -285,37 +390,59 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
       </section>
 
       {/* Tools Section */}
-      <section className="py-24 border-y bg-muted/20">
+      <section className="bg-muted/20 border-y py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-12 opacity-80">{t.tools.title}</h2>
+          <h2 className="mb-12 text-2xl font-bold opacity-80">
+            {t.tools.title}
+          </h2>
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-             {["Claude Code", "Cursor", "GitHub Copilot", "Codex", "OpenCode", "Roo Code", "Windsurf", "Gemini CLI", "Goose"].map((tool) => (
-               <div key={tool} className="flex items-center gap-3 text-lg font-semibold text-muted-foreground hover:text-foreground transition-colors cursor-default">
-                 <div className="p-2 bg-background rounded-lg shadow-sm border">
-                    <Terminal className="w-5 h-5" />
-                 </div>
-                 {tool}
-               </div>
-             ))}
+            {[
+              "Claude Code",
+              "Cursor",
+              "GitHub Copilot",
+              "Codex",
+              "OpenCode",
+              "Roo Code",
+              "Windsurf",
+              "Gemini CLI",
+              "Goose",
+            ].map((tool) => (
+              <div
+                key={tool}
+                className="text-muted-foreground hover:text-foreground flex cursor-default items-center gap-3 text-lg font-semibold transition-colors"
+              >
+                <div className="bg-background rounded-lg border p-2 shadow-sm">
+                  <Terminal className="h-5 w-5" />
+                </div>
+                {tool}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 -z-10" />
-        <div className="container mx-auto px-4 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -z-10" />
-          
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">{t.cta.title}</h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">{t.cta.desc}</p>
+      <section className="relative overflow-hidden py-32 text-center">
+        <div className="to-primary/5 absolute inset-0 -z-10 bg-gradient-to-b from-transparent" />
+        <div className="relative container mx-auto px-4">
+          <div className="bg-primary/10 absolute top-1/2 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]" />
+
+          <h2 className="mb-8 text-4xl font-bold tracking-tight md:text-6xl">
+            {t.cta.title}
+          </h2>
+          <p className="text-muted-foreground mx-auto mb-12 max-w-2xl text-xl leading-relaxed md:text-2xl">
+            {t.cta.desc}
+          </p>
           <Link href={`/${lang}/docs/getting-started`}>
-            <Button size="lg" className="rounded-full px-12 h-16 text-xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all">
+            <Button
+              size="lg"
+              className="shadow-primary/30 hover:shadow-primary/50 h-16 rounded-full px-12 text-xl shadow-2xl transition-all hover:scale-105"
+            >
               {t.cta.button}
             </Button>
           </Link>
         </div>
       </section>
     </div>
-  )
+  );
 }

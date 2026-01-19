@@ -1,15 +1,17 @@
 import { FlatCompat } from "@eslint/eslintrc";
+import eslintPluginPrettier from "eslint-plugin-prettier";
 import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
-export default tseslint.config(
+export default defineConfig(
   {
-    ignores: [".next"],
+    ignores: ["**/.next/**", "**/public/_pagefind/**", "**/out/**"],
   },
-  ...compat.extends("next/core-web-vitals"),
+  ...compat.extends("next/core-web-vitals", "prettier"),
   {
     files: ["**/*.ts", "**/*.tsx"],
     extends: [
@@ -32,6 +34,15 @@ export default tseslint.config(
         { checksVoidReturn: { attributes: false } },
       ],
       "@typescript-eslint/prefer-nullish-coalescing": "off",
+    },
+  },
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      "prettier/prettier": "warn",
     },
   },
   {

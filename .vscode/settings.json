@@ -1,14 +1,16 @@
 {
   // Editor settings
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": true,
     "source.organizeImports": "never"
   },
 
   // ESLint settings
   "eslint.useFlatConfig": true,
+  "eslint.format.enable": true,
+  "eslint.nodePath": "website/node_modules",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -18,10 +20,7 @@
   "eslint.workingDirectories": [
     { "directory": "website", "changeProcessCWD": true }
   ],
-
-  // Prettier settings
-  "prettier.requireConfig": true,
-
+  
   // TypeScript settings
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.tsdk": "website/node_modules/typescript/lib",

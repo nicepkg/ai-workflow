@@ -24,22 +24,22 @@ your-project/
 
 ## Supported Tools
 
-| AI Tool | Project Path | Global Path | Notes |
-|:--------|:-------------|:------------|:------|
-| **Claude Code** | `.claude/skills/` | `~/.claude/skills/` | Primary storage |
-| **Cursor** | `.cursor/skills/` | `~/.cursor/skills/` | Symlink |
-| **GitHub Copilot** | `.github/skills/` | `~/.copilot/skills/` | Symlink |
-| **Codex** | `.codex/skills/` | `~/.codex/skills/` | Symlink |
-| **OpenCode** | `.opencode/skill/` | `~/.config/opencode/skill/` | Symlink (singular) |
-| **Amp** | `.agents/skills/` | `~/.config/agents/skills/` | Symlink |
-| **Roo Code** | `.roo/skills/` | `~/.roo/skills/` | Symlink |
-| **Kilo Code** | `.kilocode/skills/` | `~/.kilocode/skills/` | Symlink |
-| **Goose** | `.goose/skills/` | `~/.config/goose/skills/` | Symlink |
-| **Gemini CLI** | `.gemini/skills/` | `~/.gemini/skills/` | Symlink |
-| **Antigravity** | `.agent/skills/` | `~/.gemini/antigravity/skills/` | Symlink |
-| **Clawdbot** | `skills/` | `~/.clawdbot/skills/` | Root-level symlink |
-| **Droid** | `.factory/skills/` | `~/.factory/skills/` | Symlink |
-| **Windsurf** | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` | Symlink |
+| AI Tool            | Project Path        | Global Path                     | Notes              |
+| :----------------- | :------------------ | :------------------------------ | :----------------- |
+| **Claude Code**    | `.claude/skills/`   | `~/.claude/skills/`             | Primary storage    |
+| **Cursor**         | `.cursor/skills/`   | `~/.cursor/skills/`             | Symlink            |
+| **GitHub Copilot** | `.github/skills/`   | `~/.copilot/skills/`            | Symlink            |
+| **Codex**          | `.codex/skills/`    | `~/.codex/skills/`              | Symlink            |
+| **OpenCode**       | `.opencode/skill/`  | `~/.config/opencode/skill/`     | Symlink (singular) |
+| **Amp**            | `.agents/skills/`   | `~/.config/agents/skills/`      | Symlink            |
+| **Roo Code**       | `.roo/skills/`      | `~/.roo/skills/`                | Symlink            |
+| **Kilo Code**      | `.kilocode/skills/` | `~/.kilocode/skills/`           | Symlink            |
+| **Goose**          | `.goose/skills/`    | `~/.config/goose/skills/`       | Symlink            |
+| **Gemini CLI**     | `.gemini/skills/`   | `~/.gemini/skills/`             | Symlink            |
+| **Antigravity**    | `.agent/skills/`    | `~/.gemini/antigravity/skills/` | Symlink            |
+| **Clawdbot**       | `skills/`           | `~/.clawdbot/skills/`           | Root-level symlink |
+| **Droid**          | `.factory/skills/`  | `~/.factory/skills/`            | Symlink            |
+| **Windsurf**       | `.windsurf/skills/` | `~/.codeium/windsurf/skills/`   | Symlink            |
 
 ## Creating Symlinks
 
@@ -74,16 +74,21 @@ ln -s .claude/skills skills
 ## Tool-Specific Notes
 
 ### OpenCode
+
 OpenCode uses `skill` (singular) instead of `skills`:
+
 ```bash
 ln -s ../.claude/skills .opencode/skill
 ```
 
 ### Clawdbot
+
 Clawdbot looks for skills at the root level:
+
 ```bash
 ln -s .claude/skills skills
 ```
 
 ### GitHub Copilot
+
 GitHub Copilot shares the `.github/` directory with GitHub workflows. The `skills/` subdirectory won't conflict with existing GitHub configurations.

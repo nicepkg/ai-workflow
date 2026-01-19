@@ -11,7 +11,7 @@ export default {
       pagination: false,
       copyPage: false,
       timestamp: false,
-    }
+    },
   },
   docs: {
     title: "文档",

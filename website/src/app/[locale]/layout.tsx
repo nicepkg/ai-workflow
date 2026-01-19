@@ -3,11 +3,7 @@ import { Banner } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { SiteFooter } from "~/components/shared/site-footer";
 
-const logo = (
-  <span style={{ fontWeight: 700 }}>
-    AI Workflow
-  </span>
-);
+const logo = <span style={{ fontWeight: 700 }}>AI Workflow</span>;
 
 type LayoutProps = {
   children: React.ReactNode;

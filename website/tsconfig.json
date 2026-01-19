@@ -41,6 +41,6 @@
     "**/*.js",
     ".next/types/**/*.ts",
     "next.config.mjs"
-  ],
+, "eslint.config.mjs"  ],
     "exclude": ["node_modules", "generated", "public/_pagefind", "out"]
 }

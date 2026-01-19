@@ -24,22 +24,22 @@ your-project/
 
 ## 支持的工具
 
-| AI 工具 | 项目路径 | 全局路径 | 备注 |
-|:--------|:---------|:---------|:-----|
-| **Claude Code** | `.claude/skills/` | `~/.claude/skills/` | 主存储 |
-| **Cursor** | `.cursor/skills/` | `~/.cursor/skills/` | 软链接 |
-| **GitHub Copilot** | `.github/skills/` | `~/.copilot/skills/` | 软链接 |
-| **Codex** | `.codex/skills/` | `~/.codex/skills/` | 软链接 |
-| **OpenCode** | `.opencode/skill/` | `~/.config/opencode/skill/` | 软链接（单数） |
-| **Amp** | `.agents/skills/` | `~/.config/agents/skills/` | 软链接 |
-| **Roo Code** | `.roo/skills/` | `~/.roo/skills/` | 软链接 |
-| **Kilo Code** | `.kilocode/skills/` | `~/.kilocode/skills/` | 软链接 |
-| **Goose** | `.goose/skills/` | `~/.config/goose/skills/` | 软链接 |
-| **Gemini CLI** | `.gemini/skills/` | `~/.gemini/skills/` | 软链接 |
-| **Antigravity** | `.agent/skills/` | `~/.gemini/antigravity/skills/` | 软链接 |
-| **Clawdbot** | `skills/` | `~/.clawdbot/skills/` | 根级软链接 |
-| **Droid** | `.factory/skills/` | `~/.factory/skills/` | 软链接 |
-| **Windsurf** | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` | 软链接 |
+| AI 工具            | 项目路径            | 全局路径                        | 备注           |
+| :----------------- | :------------------ | :------------------------------ | :------------- |
+| **Claude Code**    | `.claude/skills/`   | `~/.claude/skills/`             | 主存储         |
+| **Cursor**         | `.cursor/skills/`   | `~/.cursor/skills/`             | 软链接         |
+| **GitHub Copilot** | `.github/skills/`   | `~/.copilot/skills/`            | 软链接         |
+| **Codex**          | `.codex/skills/`    | `~/.codex/skills/`              | 软链接         |
+| **OpenCode**       | `.opencode/skill/`  | `~/.config/opencode/skill/`     | 软链接（单数） |
+| **Amp**            | `.agents/skills/`   | `~/.config/agents/skills/`      | 软链接         |
+| **Roo Code**       | `.roo/skills/`      | `~/.roo/skills/`                | 软链接         |
+| **Kilo Code**      | `.kilocode/skills/` | `~/.kilocode/skills/`           | 软链接         |
+| **Goose**          | `.goose/skills/`    | `~/.config/goose/skills/`       | 软链接         |
+| **Gemini CLI**     | `.gemini/skills/`   | `~/.gemini/skills/`             | 软链接         |
+| **Antigravity**    | `.agent/skills/`    | `~/.gemini/antigravity/skills/` | 软链接         |
+| **Clawdbot**       | `skills/`           | `~/.clawdbot/skills/`           | 根级软链接     |
+| **Droid**          | `.factory/skills/`  | `~/.factory/skills/`            | 软链接         |
+| **Windsurf**       | `.windsurf/skills/` | `~/.codeium/windsurf/skills/`   | 软链接         |
 
 ## 创建软链接
 
@@ -74,16 +74,21 @@ ln -s .claude/skills skills
 ## 特定工具说明
 
 ### OpenCode
+
 OpenCode 使用 `skill`（单数）而不是 `skills`：
+
 ```bash
 ln -s ../.claude/skills .opencode/skill
 ```
 
 ### Clawdbot
+
 Clawdbot 在根级别查找技能：
+
 ```bash
 ln -s .claude/skills skills
 ```
 
 ### GitHub Copilot
+
 GitHub Copilot 与 GitHub 工作流共享 `.github/` 目录。`skills/` 子目录不会与现有的 GitHub 配置冲突。

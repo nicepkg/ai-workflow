@@ -13,7 +13,7 @@ export default {
       pagination: false,
       copyPage: false,
       timestamp: false,
-    }
+    },
   },
   docs: {
     title: "Documentation",

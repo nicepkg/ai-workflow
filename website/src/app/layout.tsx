@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     default: "AI Workflow",
     template: "%s - AI Workflow",
   },
-  description: "Pre-configured skill sets for AI coding assistants like Claude Code, Cursor, Codex, and more.",
+  description:
+    "Pre-configured skill sets for AI coding assistants like Claude Code, Cursor, Codex, and more.",
   metadataBase: new URL("https://ai-workflow.xiaominglab.com"),
   openGraph: {
     title: "AI Workflow",
@@ -37,9 +38,7 @@ export default async function RootLayout({
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head faviconGlyph="AI" />
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

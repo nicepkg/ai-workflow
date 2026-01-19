@@ -21,6 +21,7 @@ cd ai-workflow
 ### Step 2: Open with AI Coding Assistant
 
 Open the project with any AI tool that supports skills:
+
 - **Claude Code**: `claude` in terminal
 - **Cursor**: Open folder in Cursor
 - **Codex**: `codex` in terminal
@@ -37,6 +38,7 @@ Simply describe what you need:
 ```
 
 The AI will automatically:
+
 1. Create the workflow directory structure
 2. Find and download relevant skills from skill sources
 3. Create custom skills as needed
@@ -110,6 +112,7 @@ ln -s .claude/skills skills
 ### Option 1: Download from Skill Sources
 
 Skills can be sourced from:
+
 - [Anthropic Official Skills](https://github.com/anthropics/skills)
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
@@ -143,6 +146,7 @@ See [Creating Skills](/en/docs/creating-skills) for detailed guidance.
 ### README.md
 
 Should include:
+
 - Workflow purpose and target users
 - List of included skills with descriptions
 - Installation command
@@ -151,6 +155,7 @@ Should include:
 ### AGENTS.md
 
 Provides context for AI assistants:
+
 - Workflow overview
 - Available skills and when to use them
 - Output standards and best practices
@@ -163,6 +168,7 @@ Provides context for AI assistants:
 4. Submit a pull request
 
 Your workflow will be installable via:
+
 ```bash
 npx add-skill nicepkg/ai-workflow/workflows/your-workflow
 ```
