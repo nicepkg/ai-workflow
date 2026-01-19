@@ -1,4 +1,4 @@
-import { Layout, LocaleSwitch, Navbar } from "nextra-theme-docs";
+import { Layout, LocaleSwitch, Navbar, ThemeSwitch } from "nextra-theme-docs";
 import { Banner } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { SiteFooter } from "~/components/shared/site-footer";
@@ -49,6 +49,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             projectLink="https://github.com/nicepkg/ai-workflow"
           >
             <LocaleSwitch className="x:ml-2" />
+            <ThemeSwitch className="x:ml-2" />
           </Navbar>
         }
         footer={<SiteFooter />}

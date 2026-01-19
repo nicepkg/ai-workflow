@@ -65,18 +65,45 @@ const problems = [
   },
   {
     role: { en: "Marketer", zh: "营销人员" },
-    pain: { en: "Teaching UTM parameters, AIDA copywriting...", zh: "教 UTM 参数、AIDA 文案法..." },
-    gain: { en: "AI equipped with GTM strategy, campaign templates", zh: "AI 已配备 GTM 策略、活动模板" }
+    pain: { en: "Teaching UTM parameters, AIDA copywriting, funnel optimization...", zh: "教 UTM 参数、AIDA 文案法、漏斗优化..." },
+    gain: { en: "AI equipped with GTM strategy, campaign templates, analytics frameworks", zh: "AI 已配备 GTM 策略、活动模板、分析框架" }
   },
-    {
-    role: { en: "Developer", zh: "开发者" },
-    pain: { en: "Copy-pasting context, explaining stack...", zh: "复制粘贴上下文，解释技术栈..." },
-    gain: { en: "One command adds full project context & skills", zh: "一条命令添加完整项目上下文和技能" }
+  {
+    role: { en: "Stock Trader", zh: "股票交易员" },
+    pain: { en: "MACD means..., RSI indicates..., check the 200-day MA...", zh: "MACD 意味着...、RSI 表示...、看 200 日均线..." },
+    gain: { en: "AI loaded with technical analysis, fundamentals, multi-market expertise", zh: "AI 已加载技术分析、基本面、多市场专业知识" }
   },
 ]
 
+type Translation = {
+  hero: {
+    title: string
+    subtitle: string
+    desc: string
+    getStarted: string
+    viewGithub: string
+  }
+  problem: {
+    title: string
+    without: string
+    with: string
+  }
+  workflows: {
+    title: string
+    subtitle: string
+  }
+  tools: {
+    title: string
+  }
+  cta: {
+    title: string
+    desc: string
+    button: string
+  }
+}
+
 export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
-  const t = {
+  const t: Translation = {
     hero: {
       title: lang === 'en' ? "Supercharge your AI Workflow" : "AI 工作流的究极形态",
       subtitle: lang === 'en' 
@@ -86,10 +113,10 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
         ? "Every session starts from zero. One command adds professional skills, best practices, and project context to your AI."
         : "每次对话都从零开始？一条命令，为你的 AI 注入专业技能、最佳实践和项目上下文。",
       getStarted: lang === 'en' ? "Get Started" : "开始使用",
-      viewGithub: lang === 'en' ? "View on GitHub" : "GitHub",
+      viewGithub: lang === 'en' ? "Star on GitHub" : "Star on GitHub",
     },
     problem: {
-      title: lang === 'en' ? "The Problem" : "我们解决的痛点",
+      title: lang === 'en' ? "The Problem We Solve" : "我们解决的痛点",
       without: lang === 'en' ? "Without AI Workflow" : "没有 AI Workflow",
       with: lang === 'en' ? "With AI Workflow" : "有了 AI Workflow",
     },
@@ -110,9 +137,9 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-sans relative">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden z-10">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -120,49 +147,66 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 dark:to-purple-400">
-                {t.hero.title}
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-blue-500 animate-gradient-x">
+                  {t.hero.title}
+                </span>
               </h1>
-              <p className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
+              <p className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 {t.hero.subtitle}
               </p>
-              <p className="text-lg text-muted-foreground/80 mb-10 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
                 {t.hero.desc}
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
                 <Link href={`/${lang}/docs/getting-started`}>
-                  <Button size="lg" className="rounded-full px-8 text-lg h-12">
+                  <Button size="lg" className="rounded-full px-8 h-14 text-lg font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
                     {t.hero.getStarted} <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
                 <Link href="https://github.com/nicepkg/ai-workflow" target="_blank">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-12">
+                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-lg bg-background/50 backdrop-blur-sm hover:bg-muted/50 border-primary/20 hover:border-primary/50">
                     <Github className="mr-2 w-5 h-5" /> {t.hero.viewGithub}
                   </Button>
                 </Link>
               </div>
               
-              <div className="mt-12 p-4 rounded-xl bg-muted/50 backdrop-blur-sm border inline-block text-left font-mono text-sm md:text-base">
-                 <span className="text-primary mr-2">$</span>
-                 npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="mt-8 mx-auto max-w-3xl"
+              >
+                <div className="p-1 rounded-2xl bg-gradient-to-r from-transparent via-primary/20 to-transparent">
+                  <div className="bg-card/80 backdrop-blur-md border border-primary/10 rounded-xl p-6 shadow-2xl">
+                    <div className="font-mono text-sm md:text-base text-left overflow-x-auto whitespace-nowrap flex items-center">
+                      <span className="text-primary mr-3 select-none">$</span>
+                      <span className="text-foreground">npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
         
-        {/* Background gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl -z-10 opacity-30 dark:opacity-20 pointer-events-none">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-            <div className="absolute top-10 right-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
-        </div>
+        {/* Background gradients - Removed old static blobs */}
       </section>
 
       {/* Comparison Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-muted/50 -z-20" />
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.problem.title}</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.problem.title}</h2>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {problems.map((item, i) => (
               <motion.div 
                 key={i}
@@ -170,20 +214,33 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-background rounded-xl border shadow-sm p-6 hover:shadow-md transition-shadow"
+                whileHover={{ y: -5 }}
+                className="bg-background rounded-2xl border border-border/50 shadow-sm p-8 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 relative group"
               >
-                <h3 className="font-bold text-xl mb-4 text-center">{item.role[lang]}</h3>
-                <div className="space-y-4">
-                  <div className="p-3 bg-red-500/5 rounded-lg border border-red-500/10">
-                    <div className="flex items-start gap-2 text-red-600 dark:text-red-400 text-sm">
-                      <XCircle className="w-5 h-5 shrink-0" />
-                      <span>{item.pain[lang]}</span>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <h3 className="font-bold text-2xl mb-6 text-center">{item.role[lang]}</h3>
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider pl-1">{t.problem.without}</div>
+                     <div className="p-4 bg-red-500/5 rounded-xl border border-red-500/10 group-hover:border-red-500/20 transition-colors">
+                      <div className="flex items-start gap-3 text-red-600 dark:text-red-400">
+                        <XCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{item.pain[lang]}</span>
+                      </div>
                     </div>
                   </div>
-                  <div className="p-3 bg-green-500/5 rounded-lg border border-green-500/10">
-                    <div className="flex items-start gap-2 text-green-600 dark:text-green-400 text-sm">
-                      <CheckCircle className="w-5 h-5 shrink-0" />
-                      <span>{item.gain[lang]}</span>
+                  
+                  <div className="flex justify-center">
+                    <ArrowRight className="w-6 h-6 text-muted-foreground/30 rotate-90 md:rotate-0" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider pl-1">{t.problem.with}</div>
+                    <div className="p-4 bg-green-500/5 rounded-xl border border-green-500/10 group-hover:border-green-500/20 transition-colors">
+                      <div className="flex items-start gap-3 text-green-600 dark:text-green-400">
+                        <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                        <span className="leading-relaxed font-medium">{item.gain[lang]}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -194,25 +251,32 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
       </section>
 
       {/* Workflows Grid */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.workflows.title}</h2>
-            <p className="text-muted-foreground text-lg">{t.workflows.subtitle}</p>
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.workflows.title}</h2>
+            <p className="text-muted-foreground text-xl max-w-2xl mx-auto">{t.workflows.subtitle}</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {workflows.map((wf, i) => (
-              <Link href={`/${lang}${wf.link}`} key={i}>
+              <Link href={`/${lang}${wf.link}`} key={i} className="block h-full">
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="group h-full p-6 rounded-2xl border bg-card hover:border-primary/50 transition-colors"
+                  whileHover={{ scale: 1.02, translateY: -4 }}
+                  className="group h-full p-8 rounded-3xl border border-border/50 bg-gradient-to-b from-card to-background hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden"
                 >
-                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", wf.bg, wf.color)}>
-                    <wf.icon className="w-6 h-6" />
+                  <div className={cn("absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-10 transition-transform group-hover:scale-110", wf.bg, wf.color)} />
+                  
+                  <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm", wf.bg, wf.color)}>
+                    <wf.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{wf.title[lang]}</h3>
-                  <p className="text-muted-foreground">{wf.desc[lang]}</p>
+                  
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{wf.title[lang]}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-lg">{wf.desc[lang]}</p>
+                  
+                  <div className="mt-8 flex items-center text-sm font-medium text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                    Learn more <ArrowRight className="ml-2 w-4 h-4" />
+                  </div>
                 </motion.div>
               </Link>
             ))}
@@ -221,26 +285,32 @@ export function LandingPage({ lang }: { lang: 'en' | 'zh' }) {
       </section>
 
       {/* Tools Section */}
-      <section className="py-20 bg-muted/30 border-y">
+      <section className="py-24 border-y bg-muted/20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-10">{t.tools.title}</h2>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-muted-foreground font-medium">
-             {["Claude Code", "Cursor", "GitHub Copilot", "Codex", "OpenCode", "Roo Code", "Windsurf"].map((tool) => (
-               <span key={tool} className="flex items-center gap-2">
-                 <Terminal className="w-4 h-4" /> {tool}
-               </span>
+          <h2 className="text-2xl font-bold mb-12 opacity-80">{t.tools.title}</h2>
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+             {["Claude Code", "Cursor", "GitHub Copilot", "Codex", "OpenCode", "Roo Code", "Windsurf", "Gemini CLI", "Goose"].map((tool) => (
+               <div key={tool} className="flex items-center gap-3 text-lg font-semibold text-muted-foreground hover:text-foreground transition-colors cursor-default">
+                 <div className="p-2 bg-background rounded-lg shadow-sm border">
+                    <Terminal className="w-5 h-5" />
+                 </div>
+                 {tool}
+               </div>
              ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.cta.title}</h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">{t.cta.desc}</p>
+      <section className="py-32 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 -z-10" />
+        <div className="container mx-auto px-4 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -z-10" />
+          
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">{t.cta.title}</h2>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">{t.cta.desc}</p>
           <Link href={`/${lang}/docs/getting-started`}>
-            <Button size="lg" className="rounded-full px-10 h-14 text-lg shadow-lg shadow-primary/20">
+            <Button size="lg" className="rounded-full px-12 h-16 text-xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all">
               {t.cta.button}
             </Button>
           </Link>

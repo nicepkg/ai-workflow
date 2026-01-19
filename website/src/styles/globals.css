@@ -142,3 +142,24 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+@keyframes gradient-xy {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-gradient-xy {
+  background-size: 200% 200%;
+  animation: gradient-xy 6s ease infinite;
+}
+
+.nextra-sidebar-footer {
+  display: none !important;
+}
