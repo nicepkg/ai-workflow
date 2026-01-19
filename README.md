@@ -19,7 +19,7 @@
 
 **Stop teaching your AI assistant the same things over and over.**
 
-One command. 150+ professional skills. Instant productivity boost.
+One command. 170+ professional skills. Instant productivity boost.
 
 [Get Started](#-quick-start) · [Browse Workflows](#-workflows) · [Create Your Own](#-create-your-own-workflow)
 
