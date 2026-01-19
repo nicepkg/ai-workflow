@@ -1,19 +1,18 @@
 ---
 title: 内容创作者工作流
-description: 为博主、作家和内容创作者预配置的技能集合
+description: 将你的 AI 变成专业内容策略师，包含 32 个预配置技能
 ---
 
 # 内容创作者工作流
 
-为内容创作者、博主和作家设计的 32 个精选技能集合。
+将你的 AI 变成专业内容策略师，为博主、作家和内容创作者提供 32 个预配置技能。
 
 ## 目标用户
 
-- 博主和文章作者
-- 技术文档作者
-- SEO 专家
-- 电子报发布者
-- 社交媒体内容创作者
+- **博主与作家** - 规模化内容生产
+- **SEO 专家** - 优化搜索排名
+- **内容营销人** - 建立品牌权威
+- **个人品牌建设者** - 扩大受众群体
 
 ## 安装
 
@@ -21,17 +20,197 @@ description: 为博主、作家和内容创作者预配置的技能集合
 npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow
 ```
 
-## 包含的技能
+## 包含的技能（32 个）
 
-`weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
+### 1. 趋势发现与选题研究
 
-## 核心能力
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `weak-signal-synthesizer` | 跨平台弱信号检测，3-6 个月趋势预测 |
+| `content-trend-researcher` | 追踪 10+ 平台热门话题 |
+| `competitive-ads-extractor` | 提取分析竞争对手广告创意与信息 |
+| `twitter-reader` | 通过 Jina API 获取 Twitter/X 内容 |
 
-- **内容研究** - 趋势分析、竞争研究、主题构思
-- **写作辅助** - 博客文章、电子报、社交媒体内容
-- **SEO 优化** - WordPress SEO、Google Search Console 集成
-- **内容复用** - 跨平台内容转换
-- **质量保证** - 事实核查、AI 内容检测
+### 2. 研究与内容采集
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `article-extractor` | 从 URL 提取干净的文章内容 |
+| `youtube-processor` | YouTube 视频转文字稿和 Markdown 笔记 |
+| `youtube-transcript` | 提取 YouTube 视频字幕 |
+| `content-research` | 结构化研究：论点、证据、反论点 |
+
+### 3. 内容规划与简报
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `content-brief-generator` | 生成包含受众、角度、证据的全面内容简报 |
+| `content-brief` | SEO 内容规划简报 |
+| `skill-navigator` | 推荐实现目标应使用的技能 |
+
+### 4. 写作与内容创作
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `blog-post-writer` | 将笔记转化为精美博客文章 |
+| `content-research-writer` | 研究+写作伙伴，带引用 |
+| `newsletter-coach` | 将经历转化为电子报草稿 |
+| `fact-checker` | 用信息源验证事实声明 |
+
+### 5. 钩子与病毒式优化
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `hook-stack-evaluator` | 评分并优化标题和钩子的病毒传播力 |
+| `email-subject-line-optimizer` | A/B 测试邮件主题行并预测打开率 |
+| `ai-slop-detector` | 移除 AI 味道的措辞，确保真实声音 |
+
+### 6. 多平台分发
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `content-repurposer` | 将内容转换为 8+ 种格式（幻灯片、脚本、社交等） |
+| `social-repurposer` | 博客 → Twitter 线程，文章 → LinkedIn 帖子 |
+| `social-media` | 为 X/LinkedIn/IG/FB 生成帖子、线程、日历 |
+| `linkedin-announcement-generator` | 专业的 LinkedIn 里程碑公告 |
+| `podcast-content-suite` | 创建播客内容营销套件 |
+
+### 7. SEO 与发布
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `pre-publish-post-assistant` | 发布前检查清单（结构、CTA、链接、格式） |
+| `seo-wordpress-manager` | WordPress SEO 与发布工作流 |
+| `gsc-assistant` | Google Search Console 索引与追踪 |
+| `astro-cta-injector` | 自动向 Astro 站点内容注入 CTA |
+
+### 8. 视觉与文档工具
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `nano-banana` | AI 图片生成（Gemini） |
+| `canvas-design` | AI 视觉设计，PNG/PDF 导出 |
+| `docx` | Word 文档创建/编辑 |
+| `pdf` | PDF 处理和生成 |
+
+## 完整内容流水线（8 阶段）
+
+```
+阶段 1：趋势发现
+  → "找出 AI/科技领域下个季度的弱信号"
+  → "分析竞争对手内容策略"
+
+阶段 2：研究
+  → "从这篇文章提取关键点：[URL]"
+  → "总结这个 YouTube 视频：[URL]"
+
+阶段 3：内容规划
+  → "为 [主题] 创建内容简报"
+  → "写病毒式推文应该用什么技能？"
+
+阶段 4：写作
+  → "根据我的研究笔记写一篇博客"
+  → "将我的 [主题] 经历写成电子报草稿"
+
+阶段 5：病毒式优化
+  → "评分并改进这 5 个标题选项"
+  → "从草稿中移除 AI 味道的措辞"
+
+阶段 6：分发
+  → "将这篇文章转换为 Twitter 线程 + LinkedIn 帖子"
+  → "为这个里程碑创建 LinkedIn 公告"
+
+阶段 7：SEO 与发布
+  → "对这篇文章运行发布前检查清单"
+  → "检查我的 GSC 索引状态"
+
+阶段 8：视觉素材
+  → "为这篇文章生成封面图"
+  → "导出为 Word 文档"
+```
+
+## 示例工作流
+
+### 病毒式博客工厂
+
+```
+1. "找出 AI 工具领域未来 3 个月的弱信号"
+2. "从这 5 篇竞争对手文章中提取关键点：[URLs]"
+3. "为 'AI 编程助手对比' 创建内容简报"
+4. "根据简报写一篇 2000 字的博客文章"
+5. "评分这 5 个标题选项并改进最好的那个"
+6. "从草稿中移除任何 AI 味道的措辞"
+7. "运行发布前检查清单"
+8. "生成封面图"
+9. "转换为 Twitter 线程 + LinkedIn 帖子"
+```
+
+### 电子报创作流水线
+
+```
+1. "帮我从这周的经历中头脑风暴电子报主题"
+2. "将我使用 [工具] 的经历写成电子报草稿"
+3. "优化邮件主题行以提高打开率"
+4. "移除 AI 味道，让它听起来更个人化"
+5. "创建 3 个 A/B 测试主题行变体"
+```
+
+### 研究到内容流水线
+
+```
+1. "提取这篇文章：https://example.com/article"
+2. "总结这个 YouTube 视频：https://youtube.com/watch?v=xxx"
+3. "对 [主题] 做结构化研究，包含论点和反论点"
+4. "写一篇有适当引用的研究支持文章"
+5. "对文章中的所有声明进行事实核查"
+```
+
+### SEO 内容机器
+
+```
+1. "为关键词 '[关键词]' 创建 SEO 内容简报"
+2. "写一篇针对目标关键词优化的博客文章"
+3. "运行发布前 SEO 检查清单"
+4. "使用正确的 meta 标签发布到 WordPress"
+5. "在 Google Search Console 中追踪索引状态"
+```
+
+### 多平台分发
+
+```
+1. "将这篇博客转换为 8 种不同格式"
+2. "创建 Twitter 线程版本（10-12 条推文）"
+3. "写一个 LinkedIn 帖子版本"
+4. "生成 Instagram 轮播内容"
+5. "从文章创建播客脚本"
+6. "起草邮件电子报版本"
+```
+
+## 前置要求
+
+| 技能 | 要求 |
+|-------|-------------|
+| `twitter-reader` | `JINA_API_KEY` |
+| `nano-banana` | `GEMINI_API_KEY` |
+| `youtube-processor` | 安装 `yt-dlp` |
+| `youtube-transcript` | 安装 `yt-dlp` |
+| `gsc-assistant` | Google Search Console 访问权限 |
+| `seo-wordpress-manager` | WordPress 站点访问权限 |
+
+```bash
+# 部分技能需要
+brew install yt-dlp
+```
+
+## 发布集成
+
+| 平台 | 集成方式 |
+|:---------|:------------|
+| WordPress | seo-wordpress-manager 技能 |
+| Medium | mcp-medium（API token） |
+| Notion | mcp-notion |
+| GitHub Pages | gh CLI（内置） |
+| Astro 站点 | astro-cta-injector 技能 |
 
 ## 高级选项
 

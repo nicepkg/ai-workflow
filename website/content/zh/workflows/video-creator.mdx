@@ -1,19 +1,18 @@
 ---
 title: 视频创作者工作流
-description: 为视频制作人和内容创作者预配置的技能集合
+description: 你的 AI 视频制作团队，包含 29 个预配置技能
 ---
 
 # 视频创作者工作流
 
-为视频制作人、YouTube 创作者和多媒体内容团队提供的 29 个专业技能集合。
+你的 AI 视频制作团队，为 YouTuber、TikToker 和视频制作人提供 29 个预配置技能。
 
 ## 目标用户
 
-- YouTube 创作者
-- TikTok 内容创作者
-- 视频制作人
-- 播客主持人
-- 直播内容创作者
+- **YouTuber** - 长视频内容创作者
+- **TikToker** - 短视频病毒内容
+- **视频剪辑师** - 专业制作人员
+- **直播主** - 内容复用
 
 ## 安装
 
@@ -21,17 +20,175 @@ description: 为视频制作人和内容创作者预配置的技能集合
 npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow
 ```
 
-## 包含的技能
+## 包含的技能（29 个）
 
-`serpapi` `content-trend-researcher` `content-research` `capture-triage` `youtube-transcript` `youtube-to-markdown` `transcribe-and-analyze` `video-downloader` `tapestry` `video-script-writer` `video-script-collaborial` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `canvas-design` `pexels-media` `media-processing` `video-to-gif` `youtube-seo-optimizer` `short-form-converter` `social-repurposer` `srt-translator` `instagram` `video-analytics-interpreter` `posthog-analytics` `webfluence` `sponsor-pitch-generator` `video-comparer` `n8n-skills`
+### 1. 趋势发现与选题研究
 
-## 核心能力
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `serpapi` | 搜索 Google/YouTube 趋势，生成选题池 |
+| `content-trend-researcher` | 追踪 10+ 平台热门话题 |
+| `content-research` | 跨平台研究，带引用 |
+| `capture-triage` | 将捕获的想法分类为可执行任务 |
 
-- **研究** - 趋势分析、内容研究、竞争对手分析
-- **制作** - 脚本撰写、缩略图概念、视频钩子
-- **优化** - YouTube SEO、标题优化、数据分析
-- **复用** - 短视频转换、社交媒体适配
-- **变现** - 赞助商推荐、数据分析解读
+### 2. 竞品分析与素材收集
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `youtube-transcript` | 提取视频字幕用于分析 |
+| `youtube-to-markdown` | YouTube 视频转摘要 + 字幕 |
+| `transcribe-and-analyze` | 使用 WhisperKit 本地转录 |
+| `video-downloader` | 下载视频用于参考/剪辑 |
+| `tapestry` | 自动检测内容类型并路由到正确技能 |
+
+### 3. 脚本与口语优化
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `video-script-writer` | 编写完整视频脚本，带结构 |
+| `video-script-collaborial` | 让脚本听起来自然、口语化 |
+| `video-hook-generator` | 生成病毒式开场钩子（前 3 秒） |
+
+### 4. 标题与缩略图
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `video-title-optimizer` | 优化标题以提高点击率和 SEO |
+| `thumbnail-concept-generator` | 创建缩略图概念和简报 |
+| `canvas-design` | AI 视觉设计，用于缩略图 |
+
+### 5. B-Roll 与媒体处理
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `pexels-media` | 从 Pexels 获取免版权图片/视频 |
+| `media-processing` | FFmpeg 批处理：剪切、合并、水印 |
+| `video-to-gif` | 将视频片段转换为高质量 GIF |
+
+### 6. SEO 与分发
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `youtube-seo-optimizer` | 优化描述、标签、章节 |
+| `short-form-converter` | 长视频转 Shorts/TikTok |
+| `social-repurposer` | 跨平台内容适配 |
+| `srt-translator` | 翻译字幕以覆盖全球 |
+| `instagram` | 通过 Graph API 直接发布到 Instagram |
+
+### 7. 数据分析与增长
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `video-analytics-interpreter` | 解读 YouTube/TikTok 数据 |
+| `posthog-analytics` | 产品分析和增长仪表盘 |
+| `webfluence` | 构建内容系统让观众上瘾 |
+
+### 8. 变现与自动化
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `sponsor-pitch-generator` | 创建赞助商推介和媒体资料包 |
+| `video-comparer` | 比较视频质量用于制作 |
+| `n8n-skills` | 使用 n8n 进行工作流自动化 |
+
+## 工业级视频流水线
+
+```
+阶段 1：趋势雷达
+├── serpapi → 每日关键词监控（20+ 关键词）
+├── content-trend-researcher → 跨平台热门话题
+└── capture-triage → 将想法分类为可执行任务
+
+阶段 2：竞品研究
+├── youtube-transcript → 分析竞品视频
+├── youtube-to-markdown → 批处理 50+ 竞品视频
+└── transcribe-and-analyze → 转录你自己的录音
+
+阶段 3：脚本撰写
+├── video-script-writer → 完整脚本带结构
+├── video-script-collaborial → 让它听起来自然
+└── video-hook-generator → 搞定前 3 秒
+
+阶段 4：制作
+├── pexels-media → 自动获取 B-roll 素材
+├── media-processing → 批量剪辑、剪切、水印
+└── video-to-gif → 创建推广 GIF
+
+阶段 5：优化
+├── video-title-optimizer → CTR 优化标题
+├── thumbnail-concept-generator → 缩略图概念
+└── youtube-seo-optimizer → 标签、描述、章节
+
+阶段 6：分发
+├── short-form-converter → 长视频 → Shorts/TikTok
+├── social-repurposer → 跨平台版本
+├── instagram → 直接发布到 IG
+└── srt-translator → 多语言字幕
+
+阶段 7：增长循环
+├── video-analytics-interpreter → 绩效分析
+├── posthog-analytics → 转化追踪
+└── webfluence → 构建内容护城河
+```
+
+## 示例工作流
+
+### 病毒视频工厂
+
+```
+1. "搜索 [领域] 本周的热门话题"
+2. "下载并分析 Top 5 竞品视频"
+3. "写一个带病毒钩子的脚本"
+4. "让脚本听起来更自然"
+5. "为 [场景] 找 B-roll 素材"
+6. "创建 3 个标题选项和缩略图概念"
+7. "发布到 Instagram"
+```
+
+### 短视频批量生产
+
+```
+1. "转录我的长视频"
+2. "找出 5 个适合做短视频的病毒时刻"
+3. "为每个片段创建钩子"
+4. "转换为竖屏格式"
+5. "生成推广用 GIF"
+```
+
+### 内容复用
+
+```
+1. "从 YouTube 视频提取字幕"
+2. "转换为博客文章 + Twitter 线程"
+3. "将字幕翻译成西班牙语、日语"
+4. "创建 Instagram 轮播版本"
+```
+
+## 平台支持
+
+| 平台 | 功能 |
+|:---------|:---------|
+| YouTube 长视频 | 脚本、SEO、缩略图、数据分析、章节 |
+| YouTube Shorts | 钩子、标题、竖屏转换 |
+| TikTok | 钩子、热门音乐、字幕 |
+| Instagram Reels | 直接发布、视觉优化 |
+
+## 前置要求
+
+```bash
+# 媒体技能需要
+brew install yt-dlp ffmpeg
+
+# 可选：本地转录
+pip install whisperkit
+```
+
+| 技能 | 要求 |
+|-------|-------------|
+| `serpapi` | `SERPAPI_KEY` |
+| `instagram` | Instagram Graph API token |
+| `pexels-media` | `PEXELS_API_KEY` |
+| `posthog-analytics` | PostHog 项目 key |
 
 ## 高级选项
 

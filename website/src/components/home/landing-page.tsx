@@ -187,7 +187,7 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
   };
 
   return (
-    <div className="relative flex min-h-screen flex-col font-sans">
+    <div className="homepage relative flex min-h-screen flex-col font-sans">
       {/* Hero Section */}
       <section className="relative z-10 overflow-hidden pt-24 pb-56">
         <Hero3D />

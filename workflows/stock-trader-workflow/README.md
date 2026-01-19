@@ -108,35 +108,35 @@ npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow --skill a-shar
 ## 🔄 Professional Trading Pipeline
 
 ```
-Stage 1: Pre-Market Research (盘前研判)
+Stage 1: Pre-Market Research
 ├── economic-calendar-fetcher → Upcoming economic events
 ├── earnings-calendar → Earnings releases this week
 ├── market-environment-analysis → Market conditions
 └── china-macro-analyst → Macro outlook
 
-Stage 2: Stock Screening (选股扫描)
+Stage 2: Stock Screening
 ├── stock-screener → Initial broad filtering
 ├── a-share-screener → A-share specific criteria
 ├── canslim-screener → Growth stock identification
 └── value-dividend-screener → Value stock identification
 
-Stage 3: Deep Analysis (深度分析)
+Stage 3: Deep Analysis
 ├── us-stock-analysis / a-share-analysis → Fundamental analysis
 ├── technical-analyst → Chart patterns & levels
 ├── institutional-flow-tracker → Smart money tracking
 └── cross-border-flow-tracker → Capital flow confirmation
 
-Stage 4: Risk Assessment (风险评估)
+Stage 4: Risk Assessment
 ├── scenario-analyzer → Bull/bear/base cases
 ├── us-market-bubble-detector → Bubble risk check
 ├── options-strategy-advisor → Hedging strategies
 └── portfolio-manager → Position sizing
 
-Stage 5: Execution (下单执行)
+Stage 5: Execution
 ├── shioaji → Taiwan market orders
 └── weekly-trade-strategy → Actionable trading plan
 
-Stage 6: Post-Market Review (盘后复盘)
+Stage 6: Post-Market Review
 ├── market-news-analyst → News impact review
 ├── breadth-chart-analyst → Market breadth analysis
 └── portfolio-manager → Performance tracking
@@ -165,19 +165,19 @@ Stage 6: Post-Market Review (盘后复盘)
 
 ### A-Share Value Investing
 ```
-1. "帮我筛选低PE高ROE的A股"
-2. "分析贵州茅台基本面"
-3. "北向资金最近的流向趋势"
-4. "给我一个价值投资组合建议"
-5. "本周交易计划是什么"
+1. "Screen A-shares with low PE and high ROE"
+2. "Analyze Kweichow Moutai fundamentals"
+3. "What's the recent northbound capital flow trend?"
+4. "Give me a value investing portfolio recommendation"
+5. "What's the trading plan for this week?"
 ```
 
 ### Hong Kong Arbitrage
 ```
-1. "分析腾讯港股"
-2. "比亚迪AH溢价分析"
-3. "南向资金流向港股哪些板块"
-4. "给我AH溢价套利机会"
+1. "Analyze Tencent HK stock"
+2. "BYD AH premium analysis"
+3. "Which HK sectors are southbound funds flowing into?"
+4. "Give me AH premium arbitrage opportunities"
 ```
 
 ### Macro-Driven Trading
@@ -222,9 +222,9 @@ pip install shioaji
 | Market | Sources |
 |:-------|:--------|
 | US | Yahoo Finance, MarketWatch, Seeking Alpha, Bloomberg, TradingView |
-| A-Shares | 东方财富, 同花顺, 雪球, 巨潮资讯, AKShare |
-| Hong Kong | 港交所, 阿斯达克 |
-| Taiwan | Shioaji API, 台湾证交所 |
+| A-Shares | East Money, Tonghuashun, Xueqiu, CNINFO, AKShare |
+| Hong Kong | HKEX, AASTOCKS |
+| Taiwan | Shioaji API, TWSE |
 
 ---
 

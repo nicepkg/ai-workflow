@@ -187,3 +187,7 @@
 .nextra-sidebar-footer {
   display: none !important;
 }
+
+article:has(> #nextra-skip-nav):has(.homepage) {
+  padding: 0;
+}

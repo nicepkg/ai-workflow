@@ -1,19 +1,18 @@
 ---
 title: 股票交易员工作流
-description: 为金融分析师和交易员预配置的技能集合
+description: 你的 AI 投研团队，包含 29 个预配置技能
 ---
 
 # 股票交易员工作流
 
-为金融分析师、交易员和投资研究员提供的 29 个专业技能集合，覆盖美股、A股、港股和台股市场。
+你的 AI 投研团队，为股票交易员、价值投资者和投资组合经理提供 29 个预配置技能，覆盖美股、A股、港股和台股市场。
 
 ## 目标用户
 
-- 股票交易员
-- 金融分析师
-- 投资研究员
-- 投资组合经理
-- 量化分析师
+- **股票交易员** - 日内交易与波段交易
+- **价值投资者** - 长期基本面投资
+- **量化分析师** - 数据驱动策略
+- **投资组合经理** - 配置与风控
 
 ## 安装
 
@@ -21,28 +20,205 @@ description: 为金融分析师和交易员预配置的技能集合
 npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow
 ```
 
-## 包含的技能
+## 多市场覆盖
 
-`akshare` `股票分析` `stock-screener` `shioaji` `us-stock-analysis` `a-share-analysis` `hk-stock-analysis` `technical-analyst` `china-macro-analyst` `cross-border-flow-tracker` `a-share-screener` `portfolio-manager` `earnings-calendar` `market-news-analyst` `canslim-screener` `value-dividend-screener` `sector-analyst` `options-strategy-advisor` `backtest-expert` `scenario-analyzer` `institutional-flow-tracker` `market-environment-analysis` `breadth-chart-analyst` `pair-trade-screener` `dividend-growth-pullback-screener` `economic-calendar-fetcher` `weekly-trade-strategy` `us-market-bubble-detector` `stanley-druckenmiller-investment`
+| 市场 | 技能数 | 功能 |
+|:-------|:------:|:---------|
+| 美股 | 10 | 基本面、技术面、期权、泡沫检测 |
+| A股 | 9 | T+1、涨跌停、北向资金、AKShare 数据 |
+| 港股 | 4 | AH 溢价、互联互通 |
+| 台股 | 1 | Shioaji 交易 API |
 
-## 核心能力
+## 包含的技能（29 个）
 
-- **市场分析** - 美股、A股、港股分析
-- **技术分析** - 图表形态、技术指标、广度分析
-- **基本面分析** - CANSLIM、价值投资、股息筛选
-- **投资组合管理** - 资产配置、回测、情景分析
-- **市场情报** - 新闻分析、机构资金流向、宏观分析
+### 1. 市场数据与基础
 
-## 支持的市场
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `akshare` | 中国市场数据基础（A股、期货、基金） |
+| `股票分析` | A/港股分析，带技术指标 |
 
-- **美股市场** - NYSE、NASDAQ
-- **中国 A 股** - 上海、深圳
-- **香港** - 港交所
-- **台湾** - 台湾证券交易所
+### 2. 市场分析
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `us-stock-analysis` | 美股基本面与技术面分析 |
+| `a-share-analysis` | A股分析，包含 T+1、涨跌停 |
+| `hk-stock-analysis` | 港股分析，包含 AH 溢价 |
+| `technical-analyst` | 周线图分析，带情景假设 |
+| `market-environment-analysis` | 整体市场环境评估 |
+| `breadth-chart-analyst` | 市场广度和内部指标 |
+
+### 3. 资金流向追踪
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `cross-border-flow-tracker` | 北向/南向资金追踪 |
+| `institutional-flow-tracker` | 机构资金流向 |
+
+### 4. 股票筛选
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `stock-screener` | 通用多条件股票筛选 |
+| `a-share-screener` | A股专用筛选 |
+| `canslim-screener` | CANSLIM 成长股筛选 |
+| `value-dividend-screener` | 价值 + 股息策略 |
+| `dividend-growth-pullback-screener` | 回调中的股息股 |
+| `pair-trade-screener` | 配对交易机会 |
+
+### 5. 行业与宏观分析
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `sector-analyst` | 行业轮动分析 |
+| `china-macro-analyst` | 中国宏观数据与政策 |
+| `economic-calendar-fetcher` | 经济事件日历 |
+| `earnings-calendar` | 财报发布追踪 |
+| `market-news-analyst` | 新闻影响分析 |
+
+### 6. 投资组合与风险管理
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `portfolio-manager` | 配置与再平衡 |
+| `options-strategy-advisor` | 期权策略 |
+| `backtest-expert` | 策略回测 |
+| `scenario-analyzer` | 投资情景分析 |
+
+### 7. 策略与交易
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `weekly-trade-strategy` | 周交易计划生成 |
+| `stanley-druckenmiller-investment` | 宏观驱动投资方法 |
+| `us-market-bubble-detector` | 泡沫风险评估 |
+| `shioaji` | 台湾市场交易 API 集成 |
+
+## 专业交易流水线
+
+```
+阶段 1：盘前研判
+├── economic-calendar-fetcher → 即将到来的经济事件
+├── earnings-calendar → 本周财报发布
+├── market-environment-analysis → 市场环境
+└── china-macro-analyst → 宏观展望
+
+阶段 2：选股扫描
+├── stock-screener → 初步广泛筛选
+├── a-share-screener → A股专用条件
+├── canslim-screener → 成长股识别
+└── value-dividend-screener → 价值股识别
+
+阶段 3：深度分析
+├── us-stock-analysis / a-share-analysis → 基本面分析
+├── technical-analyst → 图表形态与关键位
+├── institutional-flow-tracker → 聪明钱追踪
+└── cross-border-flow-tracker → 资金流向确认
+
+阶段 4：风险评估
+├── scenario-analyzer → 牛市/熊市/基准情景
+├── us-market-bubble-detector → 泡沫风险检查
+├── options-strategy-advisor → 对冲策略
+└── portfolio-manager → 仓位控制
+
+阶段 5：下单执行
+├── shioaji → 台湾市场下单
+└── weekly-trade-strategy → 可执行交易计划
+
+阶段 6：盘后复盘
+├── market-news-analyst → 新闻影响回顾
+├── breadth-chart-analyst → 市场广度分析
+└── portfolio-manager → 绩效追踪
+```
+
+## 示例工作流
+
+### 盘前准备
+
+```
+1. "本周有哪些经济事件？"
+2. "有重大财报发布要关注吗？"
+3. "当前市场环境怎么样？"
+4. "分析北向资金流向趋势"
+```
+
+### 成长股发现（美股）
+
+```
+1. "运行美股 CANSLIM 筛选"
+2. "分析 NVDA 基本面和技术面"
+3. "NVDA 的机构持仓情况如何？"
+4. "NVDA 是否处于泡沫风险水平？"
+5. "为 NVDA 创建周交易计划"
+```
+
+### A股价值投资
+
+```
+1. "帮我筛选低PE高ROE的A股"
+2. "分析贵州茅台基本面"
+3. "北向资金最近的流向趋势"
+4. "给我一个价值投资组合建议"
+5. "本周交易计划是什么"
+```
+
+### 港股套利
+
+```
+1. "分析腾讯港股"
+2. "比亚迪AH溢价分析"
+3. "南向资金流向港股哪些板块"
+4. "给我AH溢价套利机会"
+```
+
+### 宏观驱动交易
+
+```
+1. "分析当前宏观环境"
+2. "哪些行业受益于降息？"
+3. "运行德鲁肯米勒风格的宏观分析"
+4. "经济衰退的情景分析是什么？"
+```
+
+### 风险管理
+
+```
+1. "分析我的投资组合风险敞口"
+2. "什么期权策略可以对冲我的持仓？"
+3. "用历史数据回测这个策略"
+4. "运行市场下跌 20% 的情景分析"
+```
+
+## 前置要求
+
+| 技能 | 要求 |
+|-------|-------------|
+| `akshare` | Python + AKShare 库 |
+| `shioaji` | Shioaji API 凭证（台湾市场） |
+| `股票分析` | 网络搜索访问 |
+| `stock-screener` | 网络搜索访问 |
+
+```bash
+# akshare 技能需要
+pip install akshare
+
+# shioaji 技能需要（台湾市场）
+pip install shioaji
+```
+
+## 数据来源
+
+| 市场 | 来源 |
+|:-------|:--------|
+| 美股 | Yahoo Finance、MarketWatch、Seeking Alpha、Bloomberg、TradingView |
+| A股 | 东方财富、同花顺、雪球、巨潮资讯、AKShare |
+| 港股 | 港交所、阿斯达克 |
+| 台股 | Shioaji API、台湾证交所 |
 
 ## 免责声明
 
-本工作流仅提供研究和分析工具，不构成投资建议。在做出投资决策前，请务必咨询合格的金融专业人士。
+本工作流**仅供信息和教育目的**。不构成投资建议。股市投资有风险，请务必自行研究。
 
 ## 高级选项
 

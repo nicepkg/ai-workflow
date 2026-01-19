@@ -1,18 +1,18 @@
 ---
 title: 产品经理工作流
-description: 为产品经理和产品负责人预配置的技能集合
+description: 你的 AI 产品团队，包含 23 个预配置技能
 ---
 
 # 产品经理工作流
 
-为产品经理、产品负责人和产品领导者设计的 23 个专业技能集合。
+你的 AI 产品团队，为产品经理、产品负责人和产品领导者提供 23 个预配置技能。
 
 ## 目标用户
 
-- 产品经理
-- 产品负责人
-- 产品总监 / VP
-- 技术项目经理
+- **产品经理** - 全生命周期产品管理
+- **产品负责人** - 敏捷交付和需求管理
+- **产品总监 / VP** - 策略和组合规划
+- **技术项目经理** - 跨职能执行
 
 ## 安装
 
@@ -20,45 +20,175 @@ description: 为产品经理和产品负责人预配置的技能集合
 npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow
 ```
 
-## 包含的技能
+## 包含的技能（23 个）
 
-`work-intake` `user-research` `discovery-interviews-surveys` `customer-feedback-analyzer` `user-persona-creation` `competitive-analysis` `prd-generator` `writing-product-specs` `requirements` `writing-user-stories` `prioritization-effort-impact` `roadmap` `roadmap-backcast` `strategy` `stakeholders-org-design` `feature-planning` `agile` `agile-sprint-planning` `launch` `technical-launch-planner` `analytics` `forecast-premortem` `postmortem`
+### 0. 需求收集与分类
 
-## 核心能力
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `work-intake` | 将任何请求转化为可追踪的工作项，带范围、目标、约束 |
 
-### 需求收集与分类
+### 1. 发现与研究
 
-- **work-intake** - 将任何请求转化为可追踪的工作项
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `user-research` | 用户访谈、调研、问题验证方法 |
+| `discovery-interviews-surveys` | 发现阶段访谈和调研设计 |
+| `customer-feedback-analyzer` | 多渠道反馈分析 → 模式提取 → 优先级排序 |
+| `user-persona-creation` | 基于研究创建详细用户画像 |
+| `competitive-analysis` | 市场和竞争对手分析框架 |
 
-### 发现与研究
+### 2. 定义与规格
 
-- **user-research** - 用户访谈、调研、问题验证
-- **customer-feedback-analyzer** - 多渠道反馈分析
-- **user-persona-creation** - 创建详细的用户画像
-- **competitive-analysis** - 市场和竞争对手分析
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `prd-generator` | 生成行业标准格式的结构化 PRD |
+| `writing-product-specs` | 带上下文、需求、成功指标、边界的功能规格 |
+| `requirements` | 需求收集、验收标准、范围控制 |
+| `writing-user-stories` | 标准格式用户故事，带验收标准 |
 
-### 定义与规格
+### 3. 优先级与规划
 
-- **prd-generator** - 生成结构化的 PRD
-- **writing-product-specs** - 带上下文和需求的功能规格
-- **writing-user-stories** - 标准格式的用户故事
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `prioritization-effort-impact` | 投入-影响 2x2 矩阵，快速优先级排序（速赢 / 大赌注） |
+| `roadmap` | 路线图规划，带时间线和资源分配 |
+| `roadmap-backcast` | 从目标结果回溯到里程碑的规划 |
+| `strategy` | 产品策略、OKR、愿景对齐 |
+| `stakeholders-org-design` | 利益相关者映射和组织对齐 |
 
-### 优先级与规划
+### 4. 交付与执行
 
-- **prioritization-effort-impact** - 投入-影响 2x2 矩阵
-- **roadmap** - 时间线和资源分配
-- **strategy** - 产品策略和 OKR
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `feature-planning` | 实施计划，带任务、依赖、验证步骤 |
+| `agile` | 敏捷方法论、冲刺规划、速度追踪 |
+| `agile-sprint-planning` | 带故事点和产能的冲刺规划 |
 
-### 交付与执行
+### 5. 发布与上线
 
-- **feature-planning** - 实施计划
-- **agile** - 冲刺计划和速度追踪
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `launch` | 产品发布协调和检查清单 |
+| `technical-launch-planner` | 技术发布规划：时间线、资产、GA/beta 检查清单 |
 
-### 发布与复盘
+### 6. 指标与回顾
 
-- **launch** - 产品发布协调
-- **analytics** - 产品分析和 KPI
-- **postmortem** - 发布后复盘和经验总结
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `analytics` | 产品分析、KPI、数据驱动决策 |
+| `forecast-premortem` | 发布前风险分析和缓解规划 |
+| `postmortem` | 发布后回顾和经验总结 |
+
+## 完整 PM 流水线（7 阶段）
+
+```
+阶段 0：需求收集
+└── work-intake → 将任何请求结构化为可追踪的工作项
+
+阶段 1：发现
+├── user-research → 计划和执行用户访谈
+├── discovery-interviews-surveys → 设计访谈指南和调研
+├── customer-feedback-analyzer → 分析现有反馈数据
+├── user-persona-creation → 将发现综合为用户画像
+└── competitive-analysis → 了解市场格局
+
+阶段 2：定义
+├── prd-generator → 创建全面的 PRD
+├── writing-product-specs → 编写详细功能规格
+├── requirements → 定义验收标准
+└── writing-user-stories → 拆解为用户故事
+
+阶段 3：优先级排序
+├── prioritization-effort-impact → 速赢 vs 大赌注分析
+├── roadmap → 时间线和资源规划
+├── roadmap-backcast → 从目标倒推
+├── strategy → OKR 对齐和愿景
+└── stakeholders-org-design → 利益相关者买单
+
+阶段 4：交付
+├── feature-planning → 实施规划
+├── agile → 冲刺方法论
+└── agile-sprint-planning → 产能规划
+
+阶段 5：发布
+├── forecast-premortem → 发布前风险分析
+├── technical-launch-planner → 技术检查清单
+└── launch → 发布协调
+
+阶段 6：回顾
+├── analytics → 指标追踪
+└── postmortem → 经验总结
+```
+
+## 示例工作流
+
+### 新产品计划
+
+```
+1. "我有一个用户数据导出的新功能请求，运行 work-intake"
+2. "规划用户研究来验证这个需求"
+3. "分析关于数据导出的客户反馈"
+4. "为数据导出功能生成 PRD"
+5. "使用投入-影响矩阵与当前待办对比优先级"
+6. "创建实施计划"
+```
+
+### 季度规划
+
+```
+1. "回顾我们的产品策略和 OKR"
+2. "分析竞争对手格局"
+3. "使用投入-影响矩阵确定 Q2 计划优先级"
+4. "创建带里程碑的季度路线图"
+5. "获得利益相关者对路线图的认同"
+```
+
+### 冲刺启动
+
+```
+1. "将这个 Epic 拆解为带验收标准的用户故事"
+2. "规划冲刺产能和速度"
+3. "为优先故事创建实施计划"
+```
+
+### 产品发布
+
+```
+1. "运行发布风险的事前分析"
+2. "创建技术发布检查清单"
+3. "协调发布活动"
+4. "为成功指标设置数据追踪"
+```
+
+### 发布后回顾
+
+```
+1. "分析发布指标与成功标准对比"
+2. "对发布进行复盘"
+3. "提取经验教训和行动项"
+```
+
+### 待办梳理
+
+```
+1. "回顾和排序功能请求优先级"
+2. "为优先项编写用户故事"
+3. "定义验收标准"
+4. "为冲刺规划估算工作量"
+```
+
+## 技能组合
+
+| 目标 | 技能链 |
+|:-----|:------------|
+| **新功能** | work-intake → user-research → prd-generator → prioritization-effort-impact → feature-planning |
+| **季度规划** | strategy → competitive-analysis → roadmap-backcast → roadmap → stakeholders-org-design |
+| **冲刺规划** | writing-user-stories → requirements → agile-sprint-planning |
+| **产品发布** | forecast-premortem → technical-launch-planner → launch → analytics |
+| **发现** | user-research → customer-feedback-analyzer → user-persona-creation |
+| **文档** | prd-generator → writing-product-specs → writing-user-stories → requirements |
+| **周回顾** | analytics → postmortem → prioritization-effort-impact |
 
 ## 高级选项
 
