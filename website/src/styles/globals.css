@@ -165,12 +165,22 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
   width: max-content;
 }
 
-.animate-marquee:hover {
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee:hover, .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
 

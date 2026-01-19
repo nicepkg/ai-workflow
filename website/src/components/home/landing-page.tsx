@@ -11,6 +11,7 @@ import {
   BarChart2,
   Presentation,
   CheckCircle,
+  XCircle,
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -257,13 +258,13 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
       </section>
 
       {/* Comparison Section */}
-      <section className="relative overflow-hidden pt-0 pb-24">
+      <section className="relative overflow-hidden pt-0 pb-32">
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-20 text-center"
+            className="mb-24 text-center"
           >
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl">
               {t.problem.title}
@@ -278,51 +279,49 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -5 }}
                 className="group relative h-full"
               >
-                {/* Card Glow Effect */}
-                <div className="from-primary/30 absolute -inset-0.5 rounded-3xl bg-gradient-to-b to-purple-600/30 opacity-30 blur transition duration-500 group-hover:opacity-100" />
-
-                <div className="bg-card/80 relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 p-8 backdrop-blur-xl dark:border-white/5">
-                  {/* Subtle noise texture or pattern could go here */}
-
-                  <div className="mb-8">
-                    <h3 className="from-foreground to-foreground/70 group-hover:from-primary bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent transition-all duration-300 group-hover:to-purple-500">
+                {/* Card Container */}
+                <div className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white/80 shadow-2xl shadow-zinc-200/50 backdrop-blur-xl transition-all duration-500 hover:border-primary/20 hover:shadow-primary/5 dark:border-white/10 dark:bg-zinc-900/60 dark:shadow-black/50">
+                  {/* Header: Role */}
+                  <div className="px-8 pt-8 pb-4 text-center">
+                    <h3 className="bg-gradient-to-br from-zinc-900 to-zinc-600 bg-clip-text text-2xl font-bold text-transparent transition-all duration-300 group-hover:from-primary group-hover:to-purple-600 dark:from-white dark:to-zinc-400">
                       {item.role[lang]}
                     </h3>
                   </div>
 
-                  <div className="flex-1 space-y-6">
-                    {/* The 'Pain' part */}
-                    <div className="border-muted-foreground/20 relative border-l-2 pl-6 transition-colors group-hover:border-red-500/30">
-                      <div className="bg-card border-muted-foreground/30 absolute top-0 -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border-2">
-                        <div className="bg-muted-foreground/50 h-1.5 w-1.5 rounded-full" />
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-4">
+                    {/* The 'Pain' State */}
+                    <div className="relative flex-1 rounded-2xl bg-zinc-50 p-6 transition-colors group-hover:bg-red-50/50 dark:bg-white/5 dark:group-hover:bg-red-950/20">
+                      <div className="mb-3 flex items-center justify-between">
+                        <span className="text-xs font-bold tracking-widest text-zinc-400 uppercase">
+                          BEFORE
+                        </span>
+                        <XCircle className="h-5 w-5 text-zinc-300 transition-colors group-hover:text-red-400 dark:text-zinc-600" />
                       </div>
-                      <p className="text-muted-foreground mb-1 text-sm font-medium tracking-wider uppercase">
-                        {t.problem.without}
-                      </p>
-                      <p className="text-muted-foreground/80 text-sm leading-relaxed line-through decoration-red-500/30 decoration-2">
+                      <p className="font-mono text-sm leading-relaxed text-zinc-500 transition-all decoration-red-400/50 group-hover:text-zinc-400 group-hover:line-through dark:text-zinc-400">
                         {item.pain[lang]}
                       </p>
                     </div>
 
-                    {/* Connector */}
-                    <div className="flex items-center gap-4 opacity-30 transition-opacity duration-500 group-hover:opacity-100">
-                      <div className="via-primary/50 h-px w-full bg-gradient-to-r from-transparent to-transparent" />
-                      <ArrowRight className="text-primary h-4 w-4 shrink-0 rotate-90 md:rotate-0" />
-                      <div className="via-primary/50 h-px w-full bg-gradient-to-r from-transparent to-transparent" />
+                    {/* The Transformation Node */}
+                    <div className="relative z-10 -my-5 flex justify-center">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:border-primary/20 group-hover:shadow-primary/20 dark:border-zinc-800 dark:bg-zinc-900">
+                        <Zap className="h-5 w-5 text-zinc-300 transition-colors group-hover:fill-primary group-hover:text-primary dark:text-zinc-600" />
+                      </div>
                     </div>
 
-                    {/* The 'Gain' part */}
-                    <div className="border-primary/50 relative border-l-2 pl-6">
-                      <div className="bg-primary absolute top-0 -left-[9px] flex h-4 w-4 items-center justify-center rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]">
-                        <CheckCircle className="h-3 w-3 text-white" />
+                    {/* The 'Gain' State */}
+                    <div className="relative flex-1 rounded-2xl bg-gradient-to-b from-blue-50/50 to-purple-50/50 p-6 pt-8 transition-colors group-hover:from-blue-50/80 group-hover:to-purple-50/80 dark:from-blue-900/10 dark:to-purple-900/10">
+                      <div className="mb-3 flex items-center justify-between">
+                        <span className="text-xs font-bold tracking-widest text-primary/80 uppercase">
+                          AFTER
+                        </span>
+                        <CheckCircle className="h-5 w-5 text-primary" />
                       </div>
-                      <p className="text-primary mb-1 text-sm font-medium tracking-wider uppercase">
-                        {t.problem.with}
-                      </p>
-                      <p className="text-foreground leading-relaxed font-medium">
+                      <p className="text-base font-semibold leading-relaxed text-zinc-800 dark:text-zinc-100">
                         {item.gain[lang]}
                       </p>
                     </div>
@@ -335,55 +334,70 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
       </section>
 
       {/* Workflows Grid */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="mb-20 text-center">
+      <section className="relative py-32">
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="mb-24 text-center">
             <h2 className="mb-6 text-3xl font-bold md:text-5xl">
               {t.workflows.title}
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
+            <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
               {t.workflows.subtitle}
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {workflows.map((wf, i) => (
               <Link
                 href={`/${lang}${wf.link}`}
                 key={i}
-                className="block h-full"
+                className="group block h-full"
               >
                 <motion.div
-                  whileHover={{ scale: 1.02, translateY: -4 }}
-                  className="group border-border/50 from-card to-background hover:shadow-primary/5 relative h-full overflow-hidden rounded-3xl border bg-gradient-to-b p-8 transition-all duration-300 hover:shadow-2xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  viewport={{ once: true }}
+                  className="relative h-full overflow-hidden rounded-[2rem] border border-border/50 bg-background/50 p-1 transition-all duration-500 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5"
                 >
-                  <div
-                    className={cn(
-                      "absolute top-0 right-0 h-32 w-32 rounded-bl-full opacity-10 transition-transform group-hover:scale-110",
-                      wf.bg,
-                      wf.color,
-                    )}
-                  />
+                  <div className="relative flex h-full flex-col overflow-hidden rounded-[1.8rem] bg-card/50 p-8 backdrop-blur-xl transition-colors duration-500 group-hover:bg-card/80">
+                    {/* Background Glow */}
+                    <div
+                      className={cn(
+                        "absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-0 blur-[80px] transition-all duration-700 group-hover:opacity-20",
+                        wf.bg.replace("/10", ""), // Remove opacity modifier if present to get pure color
+                        wf.color.replace("text-", "bg-"), // Convert text color class to bg color class
+                      )}
+                    />
 
-                  <div
-                    className={cn(
-                      "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm",
-                      wf.bg,
-                      wf.color,
-                    )}
-                  >
-                    <wf.icon className="h-7 w-7" />
-                  </div>
+                    {/* Icon Box */}
+                    <div className="mb-8 flex items-start justify-between">
+                      <div
+                        className={cn(
+                          "flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3",
+                          wf.bg,
+                          wf.color,
+                        )}
+                      >
+                        <wf.icon className="h-8 w-8" />
+                      </div>
 
-                  <h3 className="group-hover:text-primary mb-3 text-2xl font-bold transition-colors">
-                    {wf.title[lang]}
-                  </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    {wf.desc[lang]}
-                  </p>
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border/50 bg-background/50 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:shadow-sm">
+                        <ArrowRight className="h-4 w-4 -rotate-45 text-foreground transition-transform duration-300 group-hover:rotate-0" />
+                      </div>
+                    </div>
 
-                  <div className="text-primary mt-8 flex -translate-x-2 items-center text-sm font-medium opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
-                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-1 flex-col">
+                      <h3 className="mb-3 text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                        {wf.title[lang]}
+                      </h3>
+                      <p className="flex-1 text-lg leading-relaxed text-muted-foreground/80 transition-colors group-hover:text-muted-foreground">
+                        {wf.desc[lang]}
+                      </p>
+                    </div>
+
+                    {/* Bottom Decoration */}
+                    <div className="mt-8 h-1 w-12 rounded-full bg-border transition-all duration-500 group-hover:w-full group-hover:bg-primary/20" />
                   </div>
                 </motion.div>
               </Link>
@@ -393,33 +407,74 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
       </section>
 
       {/* Tools Section */}
-      <section className="bg-muted/20 border-y py-24 overflow-hidden">
-        <div className="container mx-auto px-4 text-center mb-12">
-          <h2 className="text-2xl font-bold opacity-80">{t.tools.title}</h2>
+      <section className="relative overflow-hidden border-y bg-muted/20 pt-24 pb-20">
+        <div className="absolute inset-0 z-0 opacity-30">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         </div>
 
-        <div className="relative w-full">
-          {/* Gradient Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <h2 className="mb-6 text-3xl font-bold md:text-5xl">
+            {t.tools.title}
+          </h2>
+          <p className="mx-auto mb-16 max-w-2xl text-xl text-muted-foreground">
+            {lang === "en"
+              ? "Seamlessly integrates with the AI coding assistants you already use."
+              : "与你现有的 AI 编程助手无缝集成，即插即用。"}
+          </p>
+        </div>
 
-          <div className="flex w-full overflow-hidden mask-gradient-x">
-            <div className="flex animate-marquee gap-8 py-4">
-              {[...toolLabels, ...toolLabels].map((toolLabel, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 px-6 py-3 bg-background/60 backdrop-blur-sm border rounded-full shadow-sm hover:shadow-md hover:border-primary/30 transition-all cursor-default group"
-                >
-                  <AiToolIcon
-                    label={toolLabel}
-                    size={24}
-                    className="group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <span className="font-semibold text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
-                    {toolLabelNameMap[toolLabel]}
-                  </span>
-                </div>
-              ))}
+        <div className="relative flex w-full flex-col gap-8">
+          {/* Gradient Masks */}
+          <div className="absolute top-0 bottom-0 left-0 z-20 w-32 bg-gradient-to-r from-background to-transparent" />
+          <div className="absolute top-0 right-0 bottom-0 z-20 w-32 bg-gradient-to-l from-background to-transparent" />
+
+          {/* First Row - Scrolling Left */}
+          <div className="flex w-full overflow-hidden">
+            <div className="flex animate-marquee items-center gap-6 pt-2 pb-6">
+              {[...toolLabels, ...toolLabels.reverse()]
+                .slice(0, 14)
+                .map((toolLabel, i) => (
+                  <div
+                    key={`row1-${i}`}
+                    className="group flex w-[240px] cursor-default items-center gap-4 rounded-2xl border border-white/5 bg-background/40 p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-background/80 hover:shadow-xl hover:shadow-primary/10"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-background shadow-inner">
+                      <AiToolIcon
+                        label={toolLabel}
+                        size={28}
+                        className="text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-foreground"
+                      />
+                    </div>
+                    <span className="text-lg font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
+                      {toolLabelNameMap[toolLabel]}
+                    </span>
+                  </div>
+                ))}
+            </div>
+          </div>
+
+          {/* Second Row - Scrolling Right */}
+          <div className="flex w-full overflow-hidden">
+            <div className="flex animate-marquee-reverse items-center gap-6 pt-2 pb-6">
+              {[...toolLabels, ...toolLabels]
+                .slice(7, 21)
+                .map((toolLabel, i) => (
+                  <div
+                    key={`row2-${i}`}
+                    className="group flex w-[240px] cursor-default items-center gap-4 rounded-2xl border border-white/5 bg-background/40 p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-background/80 hover:shadow-xl hover:shadow-primary/10"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-background shadow-inner">
+                      <AiToolIcon
+                        label={toolLabel}
+                        size={28}
+                        className="text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-foreground"
+                      />
+                    </div>
+                    <span className="text-lg font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
+                      {toolLabelNameMap[toolLabel]}
+                    </span>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
