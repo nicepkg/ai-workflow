@@ -144,17 +144,6 @@ export default defineConfig(
     },
   },
 
-  // MDX files
-  {
-    files: ["**/*.mdx"],
-    plugins: {
-      prettier: eslintPluginPrettier,
-    },
-    rules: {
-      "prettier/prettier": "warn",
-    },
-  },
-
   // Linter options
   {
     linterOptions: {
