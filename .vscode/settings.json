@@ -8,6 +8,7 @@
   },
 
   // ESLint settings
+  "eslint.enable": true,
   "eslint.useFlatConfig": true,
   "eslint.format.enable": true,
   "eslint.nodePath": "website/node_modules",
@@ -15,10 +16,24 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "mdx"
   ],
   "eslint.workingDirectories": [
     { "directory": "website", "changeProcessCWD": true }
+  ],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "mdx"
   ],
   
   // TypeScript settings
@@ -53,10 +68,7 @@
     "**/__pycache__": true
   },
 
-  // Python settings
-  "python.analysis.typeCheckingMode": "basic",
-
-  // JSON settings
+  // JSON settings (use Prettier for root, ESLint for website)
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -82,5 +94,8 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "on"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

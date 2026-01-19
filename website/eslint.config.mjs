@@ -120,6 +120,41 @@ export default defineConfig(
     },
   },
 
+  // JSON and JSONC files
+  {
+    files: ["**/*.{json,jsonc}"],
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      "@typescript-eslint/no-unused-expressions": "off",
+      "no-unused-expressions": "off",
+      "prettier/prettier": "warn",
+    },
+  },
+
+  // Markdown files
+  {
+    files: ["**/*.md"],
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      "prettier/prettier": "warn",
+    },
+  },
+
+  // MDX files
+  {
+    files: ["**/*.mdx"],
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      "prettier/prettier": "warn",
+    },
+  },
+
   // Linter options
   {
     linterOptions: {

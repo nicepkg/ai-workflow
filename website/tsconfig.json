@@ -34,13 +34,16 @@
     }
   },
   "include": [
+    "src/types/svg.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.js",
+    "**/*.d.ts",
     ".next/types/**/*.ts",
-    "next.config.mjs"
-, "eslint.config.mjs"  ],
-    "exclude": ["node_modules", "generated", "public/_pagefind", "out"]
+    "next.config.mjs",
+    "eslint.config.mjs"
+  ],
+  "exclude": ["node_modules", "generated", "public/_pagefind", "out"]
 }

@@ -77,6 +77,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
     "@next/eslint-plugin-next": "^15.4.10",
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.0.9",
     "@types/react": "^19.2.8",

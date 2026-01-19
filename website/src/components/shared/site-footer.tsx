@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { GitHubIcon, BilibiliIcon, DouyinIcon, XIcon } from "./social-icons";
 import { cn } from "~/lib/utils";
+import { GitHubIcon, BilibiliIcon, DouyinIcon, XIcon } from "./social-icons";
 
 const socialLinks = [
   {
