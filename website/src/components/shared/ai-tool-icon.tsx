@@ -15,7 +15,7 @@ import OpenCodeIcon from "../../../public/icons/opencode.svg";
 import RooCodeIcon from "../../../public/icons/roo-code.svg";
 import WindsurfIcon from "../../../public/icons/windsurf.svg";
 
-const toolIconMap = {
+const toolLabelIconMap = {
   // Claude Code
   "claude-code": ClaudeCodeIcon,
   // Cursor
@@ -44,19 +44,23 @@ const toolIconMap = {
   droid: DroidIcon,
   // Windsurf
   windsurf: WindsurfIcon,
-} as const;
+} as const satisfies Record<
+  string,
+  React.ComponentType<SVGProps<SVGSVGElement>>
+>;
 
-export type AiToolName = keyof typeof toolIconMap;
+export type AiToolLabel = keyof typeof toolLabelIconMap;
+export const toolLabels = Object.keys(toolLabelIconMap) as AiToolLabel[];
 
 type AiToolIconProps = {
-  name: AiToolName;
+  label: AiToolLabel;
   size?: number;
   className?: string;
   title?: string;
   decorative?: boolean;
 } & Omit<SVGProps<SVGSVGElement>, "name" | "width" | "height">;
 
-export const toolLabels: Record<AiToolName, string> = {
+export const toolLabelNameMap: Record<AiToolLabel, string> = {
   "claude-code": "Claude Code",
   cursor: "Cursor",
   "github-copilot": "GitHub Copilot",
@@ -74,15 +78,15 @@ export const toolLabels: Record<AiToolName, string> = {
 };
 
 export function AiToolIcon({
-  name,
+  label,
   size = 24,
   className,
   title,
   decorative = false,
   ...props
 }: AiToolIconProps) {
-  const Icon = toolIconMap[name];
-  const label = title ?? toolLabels[name];
+  const Icon = toolLabelIconMap[label];
+  const name = title ?? toolLabelNameMap[label];
 
   return (
     <Icon
@@ -90,7 +94,7 @@ export function AiToolIcon({
       height={size}
       className={cn("shrink-0 text-foreground", className)}
       role="img"
-      aria-label={decorative ? undefined : label}
+      aria-label={decorative ? undefined : name}
       aria-hidden={decorative || undefined}
       {...props}
     />

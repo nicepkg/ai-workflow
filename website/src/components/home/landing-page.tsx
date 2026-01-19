@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Github,
-  Terminal,
   Zap,
   BookOpen,
   TrendingUp,
@@ -15,6 +14,11 @@ import {
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import {
+  AiToolIcon,
+  toolLabelNameMap,
+  toolLabels,
+} from "~/components/shared/ai-tool-icon";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
@@ -389,33 +393,34 @@ export function LandingPage({ lang }: { lang: "en" | "zh" }) {
       </section>
 
       {/* Tools Section */}
-      <section className="bg-muted/20 border-y py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-12 text-2xl font-bold opacity-80">
-            {t.tools.title}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            {[
-              "Claude Code",
-              "Cursor",
-              "GitHub Copilot",
-              "Codex",
-              "OpenCode",
-              "Roo Code",
-              "Windsurf",
-              "Gemini CLI",
-              "Goose",
-            ].map((tool) => (
-              <div
-                key={tool}
-                className="text-muted-foreground hover:text-foreground flex cursor-default items-center gap-3 text-lg font-semibold transition-colors"
-              >
-                <div className="bg-background rounded-lg border p-2 shadow-sm">
-                  <Terminal className="h-5 w-5" />
+      <section className="bg-muted/20 border-y py-24 overflow-hidden">
+        <div className="container mx-auto px-4 text-center mb-12">
+          <h2 className="text-2xl font-bold opacity-80">{t.tools.title}</h2>
+        </div>
+
+        <div className="relative w-full">
+          {/* Gradient Masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+
+          <div className="flex w-full overflow-hidden mask-gradient-x">
+            <div className="flex animate-marquee gap-8 py-4">
+              {[...toolLabels, ...toolLabels].map((toolLabel, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 px-6 py-3 bg-background/60 backdrop-blur-sm border rounded-full shadow-sm hover:shadow-md hover:border-primary/30 transition-all cursor-default group"
+                >
+                  <AiToolIcon
+                    label={toolLabel}
+                    size={24}
+                    className="group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <span className="font-semibold text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
+                    {toolLabelNameMap[toolLabel]}
+                  </span>
                 </div>
-                {tool}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
