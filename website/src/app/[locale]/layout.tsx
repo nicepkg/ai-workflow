@@ -1,8 +1,8 @@
-import { Layout, LocaleSwitch, Navbar, ThemeSwitch } from "nextra-theme-docs";
 import { Banner } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
-import { SiteFooter } from "~/components/shared/site-footer";
+import { Layout, LocaleSwitch, Navbar, ThemeSwitch } from "nextra-theme-docs";
 import { Logo } from "~/components/shared/logo";
+import { SiteFooter } from "~/components/shared/site-footer";
 
 type LayoutProps = {
   children: React.ReactNode;

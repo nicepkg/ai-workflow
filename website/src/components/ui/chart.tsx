@@ -2,13 +2,12 @@
 
 import * as React from "react";
 import * as RechartsPrimitive from "recharts";
+import type { Payload as RechartsLegendPayload } from "recharts/types/component/DefaultLegendContent";
 import type {
   NameType,
   Payload as RechartsTooltipPayload,
   ValueType,
 } from "recharts/types/component/DefaultTooltipContent";
-import type { Payload as RechartsLegendPayload } from "recharts/types/component/DefaultLegendContent";
-
 import { cn } from "~/lib/utils";
 
 // Format: { THEME_NAME: CSS_SELECTOR }
