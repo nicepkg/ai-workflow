@@ -1,0 +1,24 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="256" height="256" fill="none" />
+
+  <!-- The W Wave (Thicker for favicon visibility) -->
+  <path
+    d="M48,112l40,64l40-64l40,64l40-64"
+    fill="none"
+    stroke="url(#logo-gradient)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+  />
+  
+  <!-- Start/End Dots -->
+  <circle cx="48" cy="112" r="24" fill="url(#logo-gradient)" />
+  <circle cx="208" cy="112" r="24" fill="url(#logo-gradient)" />
+</svg>

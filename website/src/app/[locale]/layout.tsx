@@ -2,8 +2,7 @@ import { Layout, LocaleSwitch, Navbar, ThemeSwitch } from "nextra-theme-docs";
 import { Banner } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { SiteFooter } from "~/components/shared/site-footer";
-
-const logo = <span style={{ fontWeight: 700 }}>AI Workflow</span>;
+import { Logo } from "~/components/shared/logo";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -40,7 +39,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         ]}
         navbar={
           <Navbar
-            logo={logo}
+            logo={<Logo height={32} width={32} />}
             logoLink={`/${locale}`}
             projectLink="https://github.com/nicepkg/ai-workflow"
           >

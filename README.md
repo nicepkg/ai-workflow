@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="website/public/icon.svg" width="120" height="120" />
+
 # 🚀 AI Workflow
 
 ### **Supercharge Your AI Coding Assistant with Pre-built Skill Collections**

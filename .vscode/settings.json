@@ -3,12 +3,13 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
 
   // ESLint settings
   "eslint.useFlatConfig": true,
+  "eslint.experimental.useFlatConfig": true,
   "eslint.format.enable": true,
   "eslint.nodePath": "website/node_modules",
   "eslint.validate": [
@@ -62,6 +63,20 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // JS/TS formatting
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
 
   // Markdown settings

@@ -37,7 +37,9 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
-      <Head faviconGlyph="AI" />
+      <Head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+      </Head>
       <body>{children}</body>
     </html>
   );

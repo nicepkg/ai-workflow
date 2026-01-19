@@ -14,7 +14,6 @@ import {
   BarChart2,
   Presentation,
   CheckCircle,
-  XCircle,
 } from "lucide-react";
 import Link from "next/link";
 import dynamic from "next/dynamic";

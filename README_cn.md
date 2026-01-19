@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="website/public/icon.svg" width="120" height="120" />
+
 # 🚀 AI Workflow
 
 ### **一条命令，让你的 AI 编程助手秒变各领域专家**
