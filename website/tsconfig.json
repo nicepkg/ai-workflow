@@ -42,5 +42,5 @@
     ".next/types/**/*.ts",
     "next.config.mjs"
   ],
-  "exclude": ["node_modules", "generated"]
+    "exclude": ["node_modules", "generated", "public/_pagefind", "out"]
 }

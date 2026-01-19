@@ -1,19 +1,11 @@
-import { Footer, Layout, LocaleSwitch, Navbar } from "nextra-theme-docs";
+import { Layout, LocaleSwitch, Navbar } from "nextra-theme-docs";
 import { Banner } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
+import { SiteFooter } from "~/components/shared/site-footer";
 
 const logo = (
   <span style={{ fontWeight: 700 }}>
     AI Workflow
-  </span>
-);
-
-const footerContent = (
-  <span>
-    MIT {new Date().getFullYear()} &copy;{" "}
-    <a href="https://github.com/nicepkg/ai-workflow" target="_blank" rel="noopener noreferrer">
-      AI Workflow
-    </a>
   </span>
 );
 
@@ -59,7 +51,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             <LocaleSwitch className="x:ml-2" />
           </Navbar>
         }
-        footer={<Footer>{footerContent}</Footer>}
+        footer={<SiteFooter />}
         banner={
           <Banner storageKey="ai-workflow-banner">
             <span>
