@@ -1,0 +1,65 @@
+# .claudeignore - Files Claude should not read or modify
+# Syntax is the same as .gitignore
+
+# === Secrets and Credentials ===
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.keystore
+*.jks
+credentials*.json
+service-account*.json
+*secret*
+secrets/
+
+# === Cloud Configurations ===
+.aws/
+.gcp/
+.azure/
+kubeconfig*
+
+# === Large Generated Files ===
+dist/
+build/
+.next/
+.nuxt/
+coverage/
+*.min.js
+*.bundle.js
+*.map
+
+# === Dependencies (already ignored by default) ===
+# node_modules/
+# vendor/
+# __pycache__/
+
+# === Binary and Media Files ===
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.pdf
+*.zip
+*.tar.gz
+*.mp4
+*.mp3
+
+# === Database Files ===
+*.sql
+*.db
+*.sqlite
+*.dump
+
+# === IDE Configs with Potential Secrets ===
+.idea/
+.vscode/settings.json
+
+# === Logs ===
+*.log
+logs/
+
+# === Project-Specific ===
+# Add your project-specific patterns below

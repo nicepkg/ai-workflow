@@ -11,7 +11,7 @@
 #   W = workflow name (e.g., content-creator, marketing-pro)
 #   S = skill name (e.g., docx, canvas-design)
 
-.PHONY: help list update-skill update-workflow update-all dry-run clean validate validate-fast
+.PHONY: help list update-skill update-workflow update-all dry-run clean validate validate-fast crawl-claude-docs merge-claude-docs
 
 PYTHON := python3
 SCRIPTS_DIR := scripts
@@ -134,3 +134,30 @@ validate-json:
 clean:
 	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 	@echo "Cleaned __pycache__ directories"
+
+# Crawl Claude Code documentation
+crawl-claude-docs:
+	@echo "Crawling Claude Code documentation..."
+	@cd claude-code-docs && uv run --with requests --with beautifulsoup4 --with markdownify python crawl_docs.py
+
+# Merge Claude Code docs into single file for LLMs
+merge-claude-docs:
+	@echo "Merging Claude Code documentation..."
+	@cd claude-code-docs && { \
+		echo "# Claude Code Documentation"; \
+		echo ""; \
+		echo "Source: https://code.claude.com/docs"; \
+		echo "Generated: $$(date -u +%Y-%m-%dT%H:%M:%SZ)"; \
+		echo ""; \
+		echo "---"; \
+		echo ""; \
+		for f in docs/*.md; do \
+			[ -f "$$f" ] && [ "$$(basename $$f)" != "INDEX.md" ] && { \
+				cat "$$f"; \
+				echo ""; \
+				echo "---"; \
+				echo ""; \
+			}; \
+		done; \
+	} > claude-code-llms.txt
+	@echo "Created claude-code-docs/claude-code-llms.txt"

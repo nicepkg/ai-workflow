@@ -1,0 +1,751 @@
+---
+source: https://code.claude.com/docs/en/skills
+title: Agent Skills
+---
+
+A Skill is a markdown file that teaches Claude how to do something specific, such as reviewing PRs using your team’s standards or generating commit messages in your preferred format. When you ask Claude something that matches a Skill’s purpose, Claude automatically applies it.
+Skills can also bundle scripts in any language. This means Claude can run Python, Node.js, Bash, or any other scripts you include, giving it capabilities far beyond what’s possible in a single prompt. For example, generate interactive visualizations, query databases, process files, call APIs, or produce reports in any format. See [Generate visual output](#generate-visual-output) for an example Skill that uses a Python script to create an interactive codebase visualization.
+This guide covers creating Skills, configuring them with metadata and scripts, and sharing them with your team or organization.
+
+## [​](#create-your-first-skill) Create your first Skill
+
+This example creates a personal Skill that teaches Claude to explain code using visual diagrams and analogies. Unlike Claude’s default explanations, this Skill ensures every explanation includes an ASCII diagram and a real-world analogy.
+
+1
+
+Check available Skills
+
+Before creating a Skill, see what Skills Claude already has access to:
+
+```bash
+What Skills are available?
+```
+
+Claude will list any Skills currently loaded. You may see none, or you may see Skills from plugins or your organization.
+
+2
+
+Create the Skill directory
+
+Create a directory for the Skill in your personal Skills folder. Personal Skills are available across all your projects. (You can also create [project Skills](#where-skills-live) in `.claude/skills/` to share with your team.)
+
+```bash
+mkdir -p ~/.claude/skills/explaining-code
+```
+
+3
+
+Write SKILL.md
+
+Every Skill needs a `SKILL.md` file. The file starts with YAML metadata between `---` markers and must include a `name` and `description`, followed by Markdown instructions that Claude follows when the Skill is active.The `description` is especially important, because Claude uses it to decide when to apply the Skill.Create `~/.claude/skills/explaining-code/SKILL.md`:
+
+```bash
+---
+name: explaining-code
+description: Explains code with visual diagrams and analogies. Use when explaining how code works, teaching about a codebase, or when the user asks "how does this work?"
+---
+
+When explaining code, always include:
+
+1. **Start with an analogy**: Compare the code to something from everyday life
+2. **Draw a diagram**: Use ASCII art to show the flow, structure, or relationships
+3. **Walk through the code**: Explain step-by-step what happens
+4. **Highlight a gotcha**: What's a common mistake or misconception?
+
+Keep explanations conversational. For complex concepts, use multiple analogies.
+```
+
+4
+
+Load and verify the Skill
+
+Skills are automatically loaded when created or modified. Verify the Skill appears in the list:
+
+```bash
+What Skills are available?
+```
+
+You should see `explaining-code` in the list with its description.
+
+5
+
+Test the Skill
+
+Open any file in your project and ask Claude a question that matches the Skill’s description:
+
+```bash
+How does this code work?
+```
+
+Claude should ask to use the `explaining-code` Skill, then include an analogy and ASCII diagram in its explanation. If the Skill doesn’t trigger, try rephrasing to include more keywords from the description, like “explain how this works.”
+
+The rest of this guide covers how Skills work, configuration options, and troubleshooting.
+
+## [​](#how-skills-work) How Skills work
+
+Skills are **model-invoked**: Claude decides which Skills to use based on your request. You don’t need to explicitly call a Skill. Claude automatically applies relevant Skills when your request matches their description.
+When you send a request, Claude follows these steps to find and use relevant Skills:
+
+1
+
+Discovery
+
+At startup, Claude loads only the name and description of each available Skill. This keeps startup fast while giving Claude enough context to know when each Skill might be relevant.
+
+2
+
+Activation
+
+When your request matches a Skill’s description, Claude asks to use the Skill. You’ll see a confirmation prompt before the full `SKILL.md` is loaded into context. Since Claude reads these descriptions to find relevant Skills, [write descriptions](#skill-not-triggering) that include keywords users would naturally say.
+
+3
+
+Execution
+
+Claude follows the Skill’s instructions, loading referenced files or running bundled scripts as needed.
+
+### [​](#where-skills-live) Where Skills live
+
+Where you store a Skill determines who can use it:
+
+| Location | Path | Applies to |
+| --- | --- | --- |
+| Enterprise | See [managed settings](/docs/en/iam#managed-settings) | All users in your organization |
+| Personal | `~/.claude/skills/` | You, across all projects |
+| Project | `.claude/skills/` | Anyone working in this repository |
+| Plugin | Bundled with [plugins](/docs/en/plugins) | Anyone with the plugin installed |
+
+If two Skills have the same name, the higher row wins: managed overrides personal, personal overrides project, and project overrides plugin.
+
+#### [​](#automatic-discovery-from-nested-directories) Automatic discovery from nested directories
+
+When you work with files in subdirectories, Claude Code automatically discovers Skills from nested `.claude/skills/` directories. For example, if you’re editing a file in `packages/frontend/`, Claude Code also looks for Skills in `packages/frontend/.claude/skills/`. This supports monorepo setups where packages have their own Skills.
+
+### [​](#when-to-use-skills-versus-other-options) When to use Skills versus other options
+
+Claude Code offers several ways to customize behavior. The key difference: **Skills are triggered automatically by Claude** based on your request, while slash commands require you to type `/command` explicitly.
+
+| Use this | When you want to… | When it runs |
+| --- | --- | --- |
+| **Skills** | Give Claude specialized knowledge (e.g., “review PRs using our standards”) | Claude chooses when relevant |
+| **[Slash commands](/docs/en/slash-commands)** | Create reusable prompts (e.g., `/deploy staging`) | You type `/command` to run it |
+| **[CLAUDE.md](/docs/en/memory)** | Set project-wide instructions (e.g., “use TypeScript strict mode”) | Loaded into every conversation |
+| **[Subagents](/docs/en/sub-agents)** | Delegate tasks to a separate context with its own tools | Claude delegates, or you invoke explicitly |
+| **[Hooks](/docs/en/hooks)** | Run scripts on events (e.g., lint on file save) | Fires on specific tool events |
+| **[MCP servers](/docs/en/mcp)** | Connect Claude to external tools and data sources | Claude calls MCP tools as needed |
+
+**Skills vs. subagents**: Skills add knowledge to the current conversation. Subagents run in a separate context with their own tools. Use Skills for guidance and standards; use subagents when you need isolation or different tool access.
+**Skills vs. MCP**: Skills tell Claude *how* to use tools; MCP *provides* the tools. For example, an MCP server connects Claude to your database, while a Skill teaches Claude your data model and query patterns.
+
+For a deep dive into the architecture and real-world applications of Agent Skills, read [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills).
+
+## [​](#configure-skills) Configure Skills
+
+This section covers Skill file structure, supporting files, tool restrictions, and distribution options.
+
+### [​](#write-skill-md) Write SKILL.md
+
+The `SKILL.md` file is the only required file in a Skill. It has two parts: YAML metadata (the section between `---` markers) at the top, and Markdown instructions that tell Claude how to use the Skill:
+
+```bash
+---
+name: your-skill-name
+description: Brief description of what this Skill does and when to use it
+---
+
+# Your Skill Name
+
+## Instructions
+Provide clear, step-by-step guidance for Claude.
+
+## Examples
+Show concrete examples of using this Skill.
+```
+
+#### [​](#available-metadata-fields) Available metadata fields
+
+You can use the following fields in the YAML frontmatter:
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `name` | Yes | Skill name. Must use lowercase letters, numbers, and hyphens only (max 64 characters). Should match the directory name. |
+| `description` | Yes | What the Skill does and when to use it (max 1024 characters). Claude uses this to decide when to apply the Skill. |
+| `allowed-tools` | No | Tools Claude can use without asking permission when this Skill is active. Supports comma-separated values or YAML-style lists. See [Restrict tool access](#restrict-tool-access-with-allowed-tools). |
+| `model` | No | [Model](https://docs.claude.com/en/docs/about-claude/models/overview) to use when this Skill is active (e.g., `claude-sonnet-4-20250514`). Defaults to the conversation’s model. |
+| `context` | No | Set to `fork` to run the Skill in a forked sub-agent context with its own conversation history. |
+| `agent` | No | Specify which [agent type](/docs/en/sub-agents#built-in-subagents) to use when `context: fork` is set (e.g., `Explore`, `Plan`, `general-purpose`, or a custom agent name from `.claude/agents/`). Defaults to `general-purpose` if not specified. Only applicable when combined with `context: fork`. |
+| `hooks` | No | Define hooks scoped to this Skill’s lifecycle. Supports `PreToolUse`, `PostToolUse`, and `Stop` events. |
+| `user-invocable` | No | Controls whether the Skill appears in the slash command menu. Does not affect the [`Skill` tool](/docs/en/slash-commands#skill-tool) or automatic discovery. Defaults to `true`. See [Control Skill visibility](#control-skill-visibility). |
+
+#### [​](#available-string-substitutions) Available string substitutions
+
+Skills support string substitution for dynamic values in the Skill content:
+
+| Variable | Description |
+| --- | --- |
+| `$ARGUMENTS` | All arguments passed when invoking the Skill. If `$ARGUMENTS` is not present in the content, arguments are appended as `ARGUMENTS: <value>`. |
+| `${CLAUDE_SESSION_ID}` | The current session ID. Useful for logging, creating session-specific files, or correlating Skill output with sessions. |
+
+**Example using substitutions:**
+
+```bash
+---
+name: session-logger
+description: Log activity for this session
+---
+
+Log the following to logs/${CLAUDE_SESSION_ID}.log:
+
+$ARGUMENTS
+```
+
+See the [best practices guide](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices) for complete authoring guidance including validation rules.
+
+### [​](#update-or-delete-a-skill) Update or delete a Skill
+
+To update a Skill, edit its `SKILL.md` file directly. To remove a Skill, delete its directory. Changes take effect immediately.
+
+### [​](#add-supporting-files-with-progressive-disclosure) Add supporting files with progressive disclosure
+
+Skills share Claude’s context window with conversation history, other Skills, and your request. To keep context focused, use **progressive disclosure**: put essential information in `SKILL.md` and detailed reference material in separate files that Claude reads only when needed.
+This approach lets you bundle comprehensive documentation, examples, and scripts without consuming context upfront. Claude loads additional files only when the task requires them.
+
+Keep `SKILL.md` under 500 lines for optimal performance. If your content exceeds this, split detailed reference material into separate files.
+
+#### [​](#example:-multi-file-skill-structure) Example: multi-file Skill structure
+
+Claude discovers supporting files through links in your `SKILL.md`. The following example shows a Skill with detailed documentation in separate files and utility scripts that Claude can execute without reading:
+
+```bash
+my-skill/
+├── SKILL.md (required - overview and navigation)
+├── reference.md (detailed API docs - loaded when needed)
+├── examples.md (usage examples - loaded when needed)
+└── scripts/
+    └── helper.py (utility script - executed, not loaded)
+```
+
+The `SKILL.md` file references these supporting files so Claude knows they exist:
+
+```bash
+## Overview
+
+[Essential instructions here]
+
+## Additional resources
+
+- For complete API details, see [reference.md](reference.md)
+- For usage examples, see [examples.md](examples.md)
+
+## Utility scripts
+
+To validate input files, run the helper script. It checks for required fields and returns any validation errors:
+```bash
+python scripts/helper.py input.txt
+```
+```
+
+Keep references one level deep. Link directly from `SKILL.md` to reference files. Deeply nested references (file A links to file B which links to file C) may result in Claude partially reading files.
+
+**Bundle utility scripts for zero-context execution.** Scripts in your Skill directory can be executed without loading their contents into context. Claude runs the script and only the output consumes tokens. This is useful for:
+
+- Complex validation logic that would be verbose to describe in prose
+- Data processing that’s more reliable as tested code than generated code
+- Operations that benefit from consistency across uses
+
+In `SKILL.md`, tell Claude to run the script rather than read it:
+
+```bash
+Run the validation script to check the form:
+python scripts/validate_form.py input.pdf
+```
+
+For complete guidance on structuring Skills, see the [best practices guide](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices#progressive-disclosure-patterns).
+
+### [​](#restrict-tool-access-with-allowed-tools) Restrict tool access with allowed-tools
+
+Use the `allowed-tools` frontmatter field to limit which tools Claude can use when a Skill is active. You can specify tools as a comma-separated string or a YAML list:
+
+```bash
+---
+name: reading-files-safely
+description: Read files without making changes. Use when you need read-only file access.
+allowed-tools: Read, Grep, Glob
+---
+```
+
+Or use YAML-style lists for better readability:
+
+```bash
+---
+name: reading-files-safely
+description: Read files without making changes. Use when you need read-only file access.
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+---
+```
+
+When this Skill is active, Claude can only use the specified tools (Read, Grep, Glob) without needing to ask for permission. This is useful for:
+
+- Read-only Skills that shouldn’t modify files
+- Skills with limited scope: for example, only data analysis, no file writing
+- Security-sensitive workflows where you want to restrict capabilities
+
+If `allowed-tools` is omitted, the Skill doesn’t restrict tools. Claude uses its standard permission model and may ask you to approve tool usage.
+
+`allowed-tools` is only supported for Skills in Claude Code.
+
+### [​](#run-skills-in-a-forked-context) Run Skills in a forked context
+
+Use `context: fork` to run a Skill in an isolated sub-agent context with its own conversation history. This is useful for Skills that perform complex multi-step operations without cluttering the main conversation:
+
+```bash
+---
+name: code-analysis
+description: Analyze code quality and generate detailed reports
+context: fork
+---
+```
+
+### [​](#define-hooks-for-skills) Define hooks for Skills
+
+Skills can define hooks that run during the Skill’s lifecycle. Use the `hooks` field to specify `PreToolUse`, `PostToolUse`, or `Stop` handlers:
+
+```bash
+---
+name: secure-operations
+description: Perform operations with additional security checks
+hooks:
+  PreToolUse:
+    - matcher: "Bash"
+      hooks:
+        - type: command
+          command: "./scripts/security-check.sh $TOOL_INPUT"
+          once: true
+---
+```
+
+The `once: true` option runs the hook only once per session. After the first successful execution, the hook is removed.
+Hooks defined in a Skill are scoped to that Skill’s execution and are automatically cleaned up when the Skill finishes.
+See [Hooks](/docs/en/hooks) for the complete hook configuration format.
+
+### [​](#control-skill-visibility) Control Skill visibility
+
+Skills can be invoked in three ways:
+
+1. **Manual invocation**: You type `/skill-name` in the prompt
+2. **Programmatic invocation**: Claude calls it via the [`Skill` tool](/docs/en/slash-commands#skill-tool)
+3. **Automatic discovery**: Claude reads the Skill’s description and loads it when relevant to the conversation
+
+The `user-invocable` field controls only manual invocation. When set to `false`, the Skill is hidden from the slash command menu but Claude can still invoke it programmatically or discover it automatically.
+To block programmatic invocation via the `Skill` tool, use `disable-model-invocation: true` instead.
+
+#### [​](#when-to-use-each-setting) When to use each setting
+
+| Setting | Slash menu | `Skill` tool | Auto-discovery | Use case |
+| --- | --- | --- | --- | --- |
+| `user-invocable: true` (default) | Visible | Allowed | Yes | Skills you want users to invoke directly |
+| `user-invocable: false` | Hidden | Allowed | Yes | Skills that Claude can use but users shouldn’t invoke manually |
+| `disable-model-invocation: true` | Visible | Blocked | Yes | Skills you want users to invoke but not Claude programmatically |
+
+#### [​](#example:-model-only-skill) Example: model-only Skill
+
+Set `user-invocable: false` to hide a Skill from the slash menu while still allowing Claude to invoke it programmatically:
+
+```bash
+---
+name: internal-review-standards
+description: Apply internal code review standards when reviewing pull requests
+user-invocable: false
+---
+```
+
+With this setting, users won’t see the Skill in the `/` menu, but Claude can still invoke it via the `Skill` tool or discover it automatically based on context.
+
+### [​](#skills-and-subagents) Skills and subagents
+
+There are two ways Skills and subagents can work together:
+
+#### [​](#give-a-subagent-access-to-skills) Give a subagent access to Skills
+
+[Subagents](/docs/en/sub-agents) do not automatically inherit Skills from the main conversation. To give a custom subagent access to specific Skills, list them in the subagent’s `skills` field:
+
+```bash
+# .claude/agents/code-reviewer.md
+---
+name: code-reviewer
+description: Review code for quality and best practices
+skills: pr-review, security-check
+---
+```
+
+The full content of each listed Skill is injected into the subagent’s context at startup, not just made available for invocation. If the `skills` field is omitted, no Skills are loaded for that subagent.
+
+Built-in agents (Explore, Plan, general-purpose) do not have access to your Skills. Only custom subagents you define in `.claude/agents/` with an explicit `skills` field can use Skills.
+
+#### [​](#run-a-skill-in-a-subagent-context) Run a Skill in a subagent context
+
+Use `context: fork` and `agent` to run a Skill in a forked subagent with its own separate context. See [Run Skills in a forked context](#run-skills-in-a-forked-context) for details.
+
+### [​](#distribute-skills) Distribute Skills
+
+You can share Skills in several ways:
+
+- **Project Skills**: Commit `.claude/skills/` to version control. Anyone who clones the repository gets the Skills.
+- **Plugins**: To share Skills across multiple repositories, create a `skills/` directory in your [plugin](/docs/en/plugins) with Skill folders containing `SKILL.md` files. Distribute through a [plugin marketplace](/docs/en/plugin-marketplaces).
+- **Managed**: Administrators can deploy Skills organization-wide through [managed settings](/docs/en/iam#managed-settings). See [Where Skills live](#where-skills-live) for managed Skill paths.
+
+## [​](#examples) Examples
+
+These examples show common Skill patterns, from minimal single-file Skills to multi-file Skills with supporting documentation and scripts.
+
+### [​](#simple-skill-single-file) Simple Skill (single file)
+
+A minimal Skill needs only a `SKILL.md` file with frontmatter and instructions. This example helps Claude generate commit messages by examining staged changes:
+
+```bash
+commit-helper/
+└── SKILL.md
+```
+
+```bash
+---
+name: generating-commit-messages
+description: Generates clear commit messages from git diffs. Use when writing commit messages or reviewing staged changes.
+---
+
+# Generating Commit Messages
+
+## Instructions
+
+1. Run `git diff --staged` to see changes
+2. I'll suggest a commit message with:
+   - Summary under 50 characters
+   - Detailed description
+   - Affected components
+
+## Best practices
+
+- Use present tense
+- Explain what and why, not how
+```
+
+### [​](#use-multiple-files) Use multiple files
+
+For complex Skills, use progressive disclosure to keep the main `SKILL.md` focused while providing detailed documentation in supporting files. This PDF processing Skill includes reference docs, utility scripts, and uses `allowed-tools` to restrict Claude to specific tools:
+
+```bash
+pdf-processing/
+├── SKILL.md              # Overview and quick start
+├── FORMS.md              # Form field mappings and filling instructions
+├── REFERENCE.md          # API details for pypdf and pdfplumber
+└── scripts/
+    ├── fill_form.py      # Utility to populate form fields
+    └── validate.py       # Checks PDFs for required fields
+```
+
+**`SKILL.md`**:
+
+```bash
+---
+name: pdf-processing
+description: Extract text, fill forms, merge PDFs. Use when working with PDF files, forms, or document extraction. Requires pypdf and pdfplumber packages.
+allowed-tools: Read, Bash(python:*)
+---
+
+# PDF Processing
+
+## Quick start
+
+Extract text:
+```python
+import pdfplumber
+with pdfplumber.open("doc.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+```
+
+For form filling, see [FORMS.md](FORMS.md).
+For detailed API reference, see [REFERENCE.md](REFERENCE.md).
+
+## Requirements
+
+Packages must be installed in your environment:
+```bash
+pip install pypdf pdfplumber
+```
+```
+
+If your Skill requires external packages, list them in the description. Packages must be installed in your environment before Claude can use them.
+
+### [​](#generate-visual-output) Generate visual output
+
+Skills can bundle and run scripts in any language, giving Claude capabilities beyond what’s possible in a single prompt. One powerful pattern is generating visual output: interactive HTML files that open in your browser for exploring data, debugging, or creating reports.
+This example creates a codebase explorer: an interactive tree view where you can expand and collapse directories, see file sizes at a glance, and identify file types by color.
+Create the Skill directory:
+
+```bash
+mkdir -p ~/.claude/skills/codebase-visualizer/scripts
+```
+
+Create `~/.claude/skills/codebase-visualizer/SKILL.md`. The description tells Claude when to activate this Skill, and the instructions tell Claude to run the bundled script:
+
+```bash
+---
+name: codebase-visualizer
+description: Generate an interactive collapsible tree visualization of your codebase. Use when exploring a new repo, understanding project structure, or identifying large files.
+allowed-tools: Bash(python:*)
+---
+
+# Codebase Visualizer
+
+Generate an interactive HTML tree view that shows your project's file structure with collapsible directories.
+
+## Usage
+
+Run the visualization script from your project root:
+
+```bash
+python ~/.claude/skills/codebase-visualizer/scripts/visualize.py .
+```
+
+This creates `codebase-map.html` in the current directory and opens it in your default browser.
+
+## What the visualization shows
+
+- **Collapsible directories**: Click folders to expand/collapse
+- **File sizes**: Displayed next to each file
+- **Colors**: Different colors for different file types
+- **Directory totals**: Shows aggregate size of each folder
+```
+
+Create `~/.claude/skills/codebase-visualizer/scripts/visualize.py`. This script scans a directory tree and generates a self-contained HTML file with:
+
+- A **summary sidebar** showing file count, directory count, total size, and number of file types
+- A **bar chart** breaking down the codebase by file type (top 8 by size)
+- A **collapsible tree** where you can expand and collapse directories, with color-coded file type indicators
+
+The script requires Python but uses only built-in libraries, so there are no packages to install:
+
+```bash
+#!/usr/bin/env python3
+"""Generate an interactive collapsible tree visualization of a codebase."""
+
+import json
+import sys
+import webbrowser
+from pathlib import Path
+from collections import Counter
+
+IGNORE = {'.git', 'node_modules', '__pycache__', '.venv', 'venv', 'dist', 'build'}
+
+def scan(path: Path, stats: dict) -> dict:
+    result = {"name": path.name, "children": [], "size": 0}
+    try:
+        for item in sorted(path.iterdir()):
+            if item.name in IGNORE or item.name.startswith('.'):
+                continue
+            if item.is_file():
+                size = item.stat().st_size
+                ext = item.suffix.lower() or '(no ext)'
+                result["children"].append({"name": item.name, "size": size, "ext": ext})
+                result["size"] += size
+                stats["files"] += 1
+                stats["extensions"][ext] += 1
+                stats["ext_sizes"][ext] += size
+            elif item.is_dir():
+                stats["dirs"] += 1
+                child = scan(item, stats)
+                if child["children"]:
+                    result["children"].append(child)
+                    result["size"] += child["size"]
+    except PermissionError:
+        pass
+    return result
+
+def generate_html(data: dict, stats: dict, output: Path) -> None:
+    ext_sizes = stats["ext_sizes"]
+    total_size = sum(ext_sizes.values()) or 1
+    sorted_exts = sorted(ext_sizes.items(), key=lambda x: -x[1])[:8]
+    colors = {
+        '.js': '#f7df1e', '.ts': '#3178c6', '.py': '#3776ab', '.go': '#00add8',
+        '.rs': '#dea584', '.rb': '#cc342d', '.css': '#264de4', '.html': '#e34c26',
+        '.json': '#6b7280', '.md': '#083fa1', '.yaml': '#cb171e', '.yml': '#cb171e',
+        '.mdx': '#083fa1', '.tsx': '#3178c6', '.jsx': '#61dafb', '.sh': '#4eaa25',
+    }
+    lang_bars = "".join(
+        f'<div class="bar-row"><span class="bar-label">{ext}</span>'
+        f'<div class="bar" style="width:{(size/total_size)*100}%;background:{colors.get(ext,"#6b7280")}"></div>'
+        f'<span class="bar-pct">{(size/total_size)*100:.1f}%</span></div>'
+        for ext, size in sorted_exts
+    )
+    def fmt(b):
+        if b < 1024: return f"{b} B"
+        if b < 1048576: return f"{b/1024:.1f} KB"
+        return f"{b/1048576:.1f} MB"
+
+    html = f'''<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8"><title>Codebase Explorer</title>
+  <style>
+    body {{ font: 14px/1.5 system-ui, sans-serif; margin: 0; background: #1a1a2e; color: #eee; }}
+    .container {{ display: flex; height: 100vh; }}
+    .sidebar {{ width: 280px; background: #252542; padding: 20px; border-right: 1px solid #3d3d5c; overflow-y: auto; flex-shrink: 0; }}
+    .main {{ flex: 1; padding: 20px; overflow-y: auto; }}
+    h1 {{ margin: 0 0 10px 0; font-size: 18px; }}
+    h2 {{ margin: 20px 0 10px 0; font-size: 14px; color: #888; text-transform: uppercase; }}
+    .stat {{ display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #3d3d5c; }}
+    .stat-value {{ font-weight: bold; }}
+    .bar-row {{ display: flex; align-items: center; margin: 6px 0; }}
+    .bar-label {{ width: 55px; font-size: 12px; color: #aaa; }}
+    .bar {{ height: 18px; border-radius: 3px; }}
+    .bar-pct {{ margin-left: 8px; font-size: 12px; color: #666; }}
+    .tree {{ list-style: none; padding-left: 20px; }}
+    details {{ cursor: pointer; }}
+    summary {{ padding: 4px 8px; border-radius: 4px; }}
+    summary:hover {{ background: #2d2d44; }}
+    .folder {{ color: #ffd700; }}
+    .file {{ display: flex; align-items: center; padding: 4px 8px; border-radius: 4px; }}
+    .file:hover {{ background: #2d2d44; }}
+    .size {{ color: #888; margin-left: auto; font-size: 12px; }}
+    .dot {{ width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }}
+  </style>
+</head><body>
+  <div class="container">
+    <div class="sidebar">
+      <h1>📊 Summary</h1>
+      <div class="stat"><span>Files</span><span class="stat-value">{stats["files"]:,}</span></div>
+      <div class="stat"><span>Directories</span><span class="stat-value">{stats["dirs"]:,}</span></div>
+      <div class="stat"><span>Total size</span><span class="stat-value">{fmt(data["size"])}</span></div>
+      <div class="stat"><span>File types</span><span class="stat-value">{len(stats["extensions"])}</span></div>
+      <h2>By file type</h2>
+      {lang_bars}
+    </div>
+    <div class="main">
+      <h1>📁 {data["name"]}</h1>
+      <ul class="tree" id="root"></ul>
+    </div>
+  </div>
+  <script>
+    const data = {json.dumps(data)};
+    const colors = {json.dumps(colors)};
+    function fmt(b) {{ if (b < 1024) return b + ' B'; if (b < 1048576) return (b/1024).toFixed(1) + ' KB'; return (b/1048576).toFixed(1) + ' MB'; }}
+    function render(node, parent) {{
+      if (node.children) {{
+        const det = document.createElement('details');
+        det.open = parent === document.getElementById('root');
+        det.innerHTML = `<summary><span class="folder">📁 ${{node.name}}</span><span class="size">${{fmt(node.size)}}</span></summary>`;
+        const ul = document.createElement('ul'); ul.className = 'tree';
+        node.children.sort((a,b) => (b.children?1:0)-(a.children?1:0) || a.name.localeCompare(b.name));
+        node.children.forEach(c => render(c, ul));
+        det.appendChild(ul);
+        const li = document.createElement('li'); li.appendChild(det); parent.appendChild(li);
+      }} else {{
+        const li = document.createElement('li'); li.className = 'file';
+        li.innerHTML = `<span class="dot" style="background:${{colors[node.ext]||'#6b7280'}}"></span>${{node.name}}<span class="size">${{fmt(node.size)}}</span>`;
+        parent.appendChild(li);
+      }}
+    }}
+    data.children.forEach(c => render(c, document.getElementById('root')));
+  </script>
+</body></html>'''
+    output.write_text(html)
+
+if __name__ == '__main__':
+    target = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
+    stats = {"files": 0, "dirs": 0, "extensions": Counter(), "ext_sizes": Counter()}
+    data = scan(target, stats)
+    out = Path('codebase-map.html')
+    generate_html(data, stats, out)
+    print(f'Generated {out.absolute()}')
+    webbrowser.open(f'file://{out.absolute()}')
+```
+
+To test, open Claude Code in any project and ask “Visualize this codebase.” Claude runs the script, generates `codebase-map.html`, and opens it in your browser.
+This pattern works for any visual output: dependency graphs, test coverage reports, API documentation, or database schema visualizations. The bundled script does the heavy lifting while Claude handles orchestration.
+
+## [​](#troubleshooting) Troubleshooting
+
+### [​](#view-and-test-skills) View and test Skills
+
+To see which Skills Claude has access to, ask Claude a question like “What Skills are available?” Claude loads all available Skill names and descriptions into the context window when a conversation starts, so it can list the Skills it currently has access to.
+To test a specific Skill, ask Claude to do a task that matches the Skill’s description. For example, if your Skill has the description “Reviews pull requests for code quality”, ask Claude to “Review the changes in my current branch.” Claude automatically uses the Skill when the request matches its description.
+
+### [​](#skill-not-triggering) Skill not triggering
+
+The description field is how Claude decides whether to use your Skill. Vague descriptions like “Helps with documents” don’t give Claude enough information to match your Skill to relevant requests.
+A good description answers two questions:
+
+1. **What does this Skill do?** List the specific capabilities.
+2. **When should Claude use it?** Include trigger terms users would mention.
+
+```bash
+description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
+```
+
+This description works because it names specific actions (extract, fill, merge) and includes keywords users would say (PDF, forms, document extraction).
+
+### [​](#skill-doesn’t-load) Skill doesn’t load
+
+**Check the file path.** Skills must be in the correct directory with the exact filename `SKILL.md` (case-sensitive):
+
+| Type | Path |
+| --- | --- |
+| Personal | `~/.claude/skills/my-skill/SKILL.md` |
+| Project | `.claude/skills/my-skill/SKILL.md` |
+| Enterprise | See [Where Skills live](#where-skills-live) for platform-specific paths |
+| Plugin | `skills/my-skill/SKILL.md` inside the plugin directory |
+
+**Check the YAML syntax.** Invalid YAML in the frontmatter prevents the Skill from loading. The frontmatter must start with `---` on line 1 (no blank lines before it), end with `---` before the Markdown content, and use spaces for indentation (not tabs).
+**Run debug mode.** Use `claude --debug` to see Skill loading errors.
+
+### [​](#skill-has-errors) Skill has errors
+
+**Check dependencies are installed.** If your Skill uses external packages, they must be installed in your environment before Claude can use them.
+**Check script permissions.** Scripts need execute permissions: `chmod +x scripts/*.py`
+**Check file paths.** Use forward slashes (Unix style) in all paths. Use `scripts/helper.py`, not `scripts\helper.py`.
+
+### [​](#multiple-skills-conflict) Multiple Skills conflict
+
+If Claude uses the wrong Skill or seems confused between similar Skills, the descriptions are probably too similar. Make each description distinct by using specific trigger terms.
+For example, instead of two Skills with “data analysis” in both descriptions, differentiate them: one for “sales data in Excel files and CRM exports” and another for “log files and system metrics”. The more specific your trigger terms, the easier it is for Claude to match the right Skill to your request.
+
+### [​](#plugin-skills-not-appearing) Plugin Skills not appearing
+
+**Symptom**: You installed a plugin from a marketplace, but its Skills don’t appear when you ask Claude “What Skills are available?”
+**Solution**: Clear the plugin cache and reinstall:
+
+```bash
+rm -rf ~/.claude/plugins/cache
+```
+
+Then restart Claude Code and reinstall the plugin:
+
+```bash
+/plugin install plugin-name@marketplace-name
+```
+
+This forces Claude Code to re-download and re-register the plugin’s Skills.
+**If Skills still don’t appear**, verify the plugin’s directory structure is correct. Skills must be in a `skills/` directory at the plugin root:
+
+```bash
+my-plugin/
+├── .claude-plugin/
+│   └── plugin.json
+└── skills/
+    └── my-skill/
+        └── SKILL.md
+```
+
+## [​](#next-steps) Next steps
+
+[## Authoring best practices
+
+Write Skills that Claude can use effectively](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices)[## Agent Skills overview
+
+Learn how Skills work across Claude products](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)[## Use Skills in the Agent SDK
+
+Use Skills programmatically with TypeScript and Python](https://docs.claude.com/en/docs/agent-sdk/skills)[## Get started with Agent Skills
+
+Create your first Skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/quickstart)

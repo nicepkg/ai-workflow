@@ -1,0 +1,76 @@
+# {{PROJECT_NAME}}
+
+## Quick Reference
+
+| Command | Purpose |
+|---------|---------|
+| Build | `{{BUILD_CMD}}` |
+| Test | `{{TEST_CMD}}` |
+| Lint | `{{LINT_CMD}}` |
+| Format | `{{FORMAT_CMD}}` |
+| Dev | `{{DEV_CMD}}` |
+
+## Code Style
+
+### Naming Conventions
+{{NAMING_CONVENTIONS}}
+
+### File Organization
+{{FILE_ORGANIZATION}}
+
+### Import Order
+{{IMPORT_ORDER}}
+
+## Architecture
+
+### Project Structure
+```
+{{DIRECTORY_STRUCTURE}}
+```
+
+### Core Patterns
+{{ARCHITECTURE_PATTERNS}}
+
+### Data Flow
+{{DATA_FLOW}}
+
+## Testing
+
+### Test Organization
+{{TEST_ORGANIZATION}}
+
+### Running Tests
+{{TEST_COMMANDS}}
+
+## Git Workflow
+
+- Branch naming: `{{BRANCH_PATTERN}}`
+- Commit format: `{{COMMIT_FORMAT}}`
+- PR process: {{PR_PROCESS}}
+
+## Environment
+
+### Required Variables
+{{ENV_VARS}}
+
+### Local Setup
+{{SETUP_STEPS}}
+
+---
+
+## Additional Resources
+
+{{#IF_RULES}}
+See `.claude/rules/` for module-specific guidelines:
+{{RULES_LIST}}
+{{/IF_RULES}}
+
+{{#IF_SKILLS}}
+See `.claude/skills/` for specialized knowledge:
+{{SKILLS_LIST}}
+{{/IF_SKILLS}}
+
+{{#IF_COMMANDS}}
+Custom commands available:
+{{COMMANDS_LIST}}
+{{/IF_COMMANDS}}
