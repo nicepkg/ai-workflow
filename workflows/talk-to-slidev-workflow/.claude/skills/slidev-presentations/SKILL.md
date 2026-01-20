@@ -7,6 +7,13 @@ description: Creates Slidev markdown presentations for developers. Activates for
 
 Generate professional, browser-based presentations using [Slidev](https://sli.dev/) - the presentation framework for developers.
 
+## Official LLM Documentation
+
+For complete API reference or advanced features, fetch the official LLM-optimized documentation:
+```
+https://sli.dev/llms-full.txt
+```
+
 ## When to Use This Skill
 
 Activate when the user requests:

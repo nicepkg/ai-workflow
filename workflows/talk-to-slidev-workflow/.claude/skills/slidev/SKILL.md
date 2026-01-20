@@ -19,6 +19,13 @@ Use this skill when:
 - Exporting presentations to PDF, PPTX, or PNG
 - Setting up Slidev projects
 
+## Official LLM Documentation
+
+For complete API reference, advanced features, or edge cases not covered here, fetch the official LLM-optimized documentation:
+```
+https://sli.dev/llms-full.txt
+```
+
 ## Quick Start
 
 ### Installation and Setup
