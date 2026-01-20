@@ -22,6 +22,7 @@ node_modules
 # Build outputs
 .next
 out
+.out
 dist
 build
 _pagefind
