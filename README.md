@@ -100,30 +100,7 @@ Keynote speakers, tech presenters, and educators who need AI that builds structu
 | **[Video Creator](./workflows/video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
 | **[Stock Trader](./workflows/stock-trader-workflow/)** | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
 | **[Product Manager](./workflows/product-manager-workflow/)** | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
-| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 18 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
-
-<details>
-<summary><b>📦 View All 170+ Skills</b></summary>
-
-### Content Creator Workflow
-`weak-signal-synthesizer` `content-trend-researcher` `competitive-ads-extractor` `twitter-reader` `article-extractor` `youtube-processor` `youtube-transcript` `content-research` `content-brief-generator` `content-brief` `skill-navigator` `blog-post-writer` `content-research-writer` `newsletter-coach` `fact-checker` `hook-stack-evaluator` `email-subject-line-optimizer` `ai-slop-detector` `content-repurposer` `social-repurposer` `social-media` `linkedin-announcement-generator` `podcast-content-suite` `pre-publish-post-assistant` `seo-wordpress-manager` `gsc-assistant` `astro-cta-injector` `nano-banana` `canvas-design` `docx` `pdf`
-
-### Marketing Pro Workflow
-`skill-navigator` `marketing` `buyer-persona-generator` `Go-to-Market-Planner` `prd-v09-gtm-strategy` `marketing-strategy-pmm` `pricing-strategist` `competitor-price-tracker` `competitive-ads-extractor` `copy` `ad-copy-generator` `content-optimizer` `content-brief` `landing-page` `landing-page-copywriter` `ui-ux-audit` `running-marketing-campaigns` `utm-builder` `qr-code-generator` `email-template-generator` `cold-email-sequence-generator` `cold-outreach-generator` `personalization-at-scale` `lead-research-assistant` `funnel-analysis` `analytics-interpretation` `technical-launch-planner` `launch-gtm-execution` `executive-dashboard-generator` `product-analytics` `roi-analyzer` `social-media-analyzer` `marketing-demand-acquisition` `seo-optimizer` `serp-analysis` `keyword-cluster-builder` `linkedin-post-optimizer` `social-repurposer`
-
-### Video Creator Workflow
-`serpapi` `content-trend-researcher` `content-research` `capture-triage` `youtube-transcript` `youtube-to-markdown` `transcribe-and-analyze` `video-downloader` `tapestry` `video-script-writer` `video-script-collaborial` `video-hook-generator` `video-title-optimizer` `thumbnail-concept-generator` `canvas-design` `pexels-media` `media-processing` `video-to-gif` `youtube-seo-optimizer` `short-form-converter` `social-repurposer` `srt-translator` `instagram` `video-analytics-interpreter` `posthog-analytics` `webfluence` `sponsor-pitch-generator` `video-comparer` `n8n-skills`
-
-### Stock Trader Workflow
-`akshare` `股票分析` `stock-screener` `shioaji` `us-stock-analysis` `a-share-analysis` `hk-stock-analysis` `technical-analyst` `china-macro-analyst` `cross-border-flow-tracker` `a-share-screener` `portfolio-manager` `earnings-calendar` `market-news-analyst` `canslim-screener` `value-dividend-screener` `sector-analyst` `options-strategy-advisor` `backtest-expert` `scenario-analyzer` `institutional-flow-tracker` `market-environment-analysis` `breadth-chart-analyst` `pair-trade-screener` `dividend-growth-pullback-screener` `economic-calendar-fetcher` `weekly-trade-strategy` `us-market-bubble-detector` `stanley-druckenmiller-investment`
-
-### Product Manager Workflow
-`work-intake` `user-research` `discovery-interviews-surveys` `customer-feedback-analyzer` `user-persona-creation` `competitive-analysis` `prd-generator` `writing-product-specs` `requirements` `writing-user-stories` `prioritization-effort-impact` `roadmap` `roadmap-backcast` `strategy` `stakeholders-org-design` `feature-planning` `agile` `agile-sprint-planning` `launch` `technical-launch-planner` `analytics` `forecast-premortem` `postmortem`
-
-### Talk to Slidev Workflow
-`storyline-builder` `presentation-builder` `ppt-creator` `presentation-generator` `theme-factory` `presentation-design-enhancer` `color-palette-extractor` `font-pairing-suggester` `canvas-design` `pexels-media` `nano-banana-pro` `youtube-transcript` `transcribe-and-analyze` `mermaid-diagrams` `mermaid-tools` `infographic-creation` `pptx` `social-repurposer`
-
-</details>
+| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 20 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
 
 ---
 

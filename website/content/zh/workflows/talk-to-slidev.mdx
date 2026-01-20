@@ -1,11 +1,11 @@
 ---
 title: Talk to Slidev 工作流
-description: 你的 AI 主题演讲团队，包含 18 个预配置技能
+description: 你的 AI 主题演讲团队，包含 20 个预配置技能
 ---
 
 # Talk to Slidev 工作流
 
-你的 AI 主题演讲团队，为创建精美的 Slidev 演示文稿提供 18 个预配置技能。
+你的 AI 主题演讲团队，为创建精美的 Slidev 演示文稿提供 20 个预配置技能。
 
 ## 目标用户
 
@@ -20,7 +20,7 @@ description: 你的 AI 主题演讲团队，包含 18 个预配置技能
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 ```
 
-## 包含的技能（18 个）
+## 包含的技能（20 个）
 
 ### 0. 创意到叙事结构
 
@@ -70,6 +70,13 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 | `pptx` | 需要时导出为 PowerPoint 格式 |
 | `social-repurposer` | 将幻灯片复用到社交媒体（LinkedIn、Twitter） |
 
+### 6. Slidev 框架参考
+
+| 技能 | 功能描述 |
+|:------|:-------------|
+| `slidev` | Slidev 框架完整指南：语法、布局、组件、动画、主题、导出 |
+| `slidev-presentations` | 计划优先的演示工作流，支持 `/slidev:plan`、`/slidev:from-plan`、`/slidev:new` 命令 |
+
 ## 完整流水线（6 阶段）
 
 ```
@@ -81,7 +88,8 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 └── presentation-builder → 详细演示大纲
 
 阶段 2：Slidev 生成
-├── 使用 Slidev markdown 语法编写 slides.md
+├── slidev-presentations → 计划优先工作流 (/slidev:plan → /slidev:from-plan)
+├── slidev → 框架参考：语法、布局、动画
 ├── theme-factory → 应用统一视觉主题
 └── presentation-design-enhancer → 可视化文字密集的幻灯片
 

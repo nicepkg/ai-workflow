@@ -24,7 +24,7 @@
 ## ⚡ 快速安装
 
 ```bash
-# 一键安装全部 18 个技能
+# 一键安装全部 20 个技能
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 
 # 或安装单个技能
@@ -33,7 +33,7 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 
 ---
 
-## 📦 包含技能 (18个)
+## 📦 包含技能 (20个)
 
 ### 0️⃣ 主意到叙事结构
 | 技能 | 功能描述 |
@@ -77,6 +77,12 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 | `pptx` | 需要时导出为 PowerPoint 格式 |
 | `social-repurposer` | 把幻灯片转换为社媒内容（LinkedIn、Twitter） |
 
+### 6️⃣ Slidev 框架参考
+| 技能 | 功能描述 |
+|:-----|:---------|
+| `slidev` | Slidev 框架完整指南：语法、布局、组件、动画、主题、导出 |
+| `slidev-presentations` | 计划优先的演示工作流，支持 `/slidev:plan`、`/slidev:from-plan`、`/slidev:new` 命令 |
+
 ---
 
 ## 🔄 完整流水线（6阶段）
@@ -90,7 +96,8 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 └── presentation-builder → 详细演示大纲
 
 阶段 2: Slidev 生成
-├── 用 Slidev markdown 语法写 slides.md
+├── slidev-presentations → 计划优先工作流 (/slidev:plan → /slidev:from-plan)
+├── slidev → 框架参考：语法、布局、动画
 ├── theme-factory → 应用统一视觉主题
 └── presentation-design-enhancer → 把文字页视觉化
 

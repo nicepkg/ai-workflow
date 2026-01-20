@@ -24,7 +24,7 @@
 ## ⚡ Quick Install
 
 ```bash
-# Install all 18 skills with one command
+# Install all 20 skills with one command
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 
 # Or install specific skills
@@ -33,7 +33,7 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 
 ---
 
-## 📦 Skills Included (18)
+## 📦 Skills Included (20)
 
 ### 0️⃣ Idea to Narrative Structure
 | Skill | What It Does |
@@ -77,6 +77,12 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 | `pptx` | Export to PowerPoint format when needed |
 | `social-repurposer` | Repurpose slides for social media (LinkedIn, Twitter) |
 
+### 6️⃣ Slidev Framework Reference
+| Skill | What It Does |
+|:------|:-------------|
+| `slidev` | Comprehensive Slidev framework guide: syntax, layouts, components, animations, theming, exporting |
+| `slidev-presentations` | Plan-first presentation workflow with `/slidev:plan`, `/slidev:from-plan`, `/slidev:new` commands |
+
 ---
 
 ## 🔄 Complete Pipeline (6 Stages)
@@ -90,7 +96,8 @@ Stage 1: Script Generation
 └── presentation-builder → Detailed presentation outline
 
 Stage 2: Slidev Generation
-├── Write slides.md with Slidev markdown syntax
+├── slidev-presentations → Plan-first workflow (/slidev:plan → /slidev:from-plan)
+├── slidev → Framework reference for syntax, layouts, animations
 ├── theme-factory → Apply consistent visual theme
 └── presentation-design-enhancer → Visualize text-heavy slides
 

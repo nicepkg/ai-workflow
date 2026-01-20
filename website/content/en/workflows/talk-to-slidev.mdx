@@ -1,11 +1,11 @@
 ---
 title: Talk to Slidev Workflow
-description: Your AI-powered keynote presentation team with 18 pre-configured skills
+description: Your AI-powered keynote presentation team with 20 pre-configured skills
 ---
 
 # Talk to Slidev Workflow
 
-Your AI-powered keynote presentation team with 18 pre-configured skills for creating beautiful Slidev presentations.
+Your AI-powered keynote presentation team with 20 pre-configured skills for creating beautiful Slidev presentations.
 
 ## Target Users
 
@@ -20,7 +20,7 @@ Your AI-powered keynote presentation team with 18 pre-configured skills for crea
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 ```
 
-## Skills Included (18)
+## Skills Included (20)
 
 ### 0. Idea to Narrative Structure
 
@@ -70,6 +70,13 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 | `pptx` | Export to PowerPoint format when needed |
 | `social-repurposer` | Repurpose slides for social media (LinkedIn, Twitter) |
 
+### 6. Slidev Framework Reference
+
+| Skill | What It Does |
+|:------|:-------------|
+| `slidev` | Comprehensive Slidev framework guide: syntax, layouts, components, animations, theming, exporting |
+| `slidev-presentations` | Plan-first presentation workflow with `/slidev:plan`, `/slidev:from-plan`, `/slidev:new` commands |
+
 ## Complete Pipeline (6 Stages)
 
 ```
@@ -81,7 +88,8 @@ Stage 1: Script Generation
 └── presentation-builder → Detailed presentation outline
 
 Stage 2: Slidev Generation
-├── Write slides.md with Slidev markdown syntax
+├── slidev-presentations → Plan-first workflow (/slidev:plan → /slidev:from-plan)
+├── slidev → Framework reference for syntax, layouts, animations
 ├── theme-factory → Apply consistent visual theme
 └── presentation-design-enhancer → Visualize text-heavy slides
 

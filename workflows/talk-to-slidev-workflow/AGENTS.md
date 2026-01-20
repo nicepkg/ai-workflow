@@ -19,25 +19,29 @@ Idea → Narrative → Script → Slidev → Visuals → Diagrams → Export
 - **ppt-creator**: Complete speech script with speaker notes
 - **presentation-generator**: HTML deck generation
 
-### Stage 2: Visual Design
+### Stage 2: Slidev Generation
+- **slidev-presentations**: Plan-first workflow with `/slidev:plan`, `/slidev:from-plan`, `/slidev:new` commands
+- **slidev**: Comprehensive framework reference for syntax, layouts, components, animations, theming
+
+### Stage 3: Visual Design
 - **theme-factory**: Theme selection (colors, fonts, style)
 - **presentation-design-enhancer**: Transform bullets into visual slides
 - **color-palette-extractor**: Extract color schemes from images
 - **font-pairing-suggester**: Professional font combinations
 - **canvas-design**: Visual asset creation
 
-### Stage 3: Media Assets
+### Stage 4: Media Assets
 - **pexels-media**: Royalty-free images and videos
 - **nano-banana-pro**: AI-generated illustrations and infographics
 - **youtube-transcript**: Extract content from YouTube
 - **transcribe-and-analyze**: Audio/video transcription
 
-### Stage 4: Diagrams
+### Stage 5: Diagrams
 - **mermaid-diagrams**: Flowcharts, architecture, timelines
 - **mermaid-tools**: Mermaid validation and enhancement
 - **infographic-creation**: Text to infographic conversion
 
-### Stage 5: Export
+### Stage 6: Export
 - **pptx**: PowerPoint export
 - **social-repurposer**: Social media content conversion
 
@@ -54,9 +58,10 @@ Idea → Narrative → Script → Slidev → Visuals → Diagrams → Export
 3. Add timing cues and transition notes
 
 ### When generating Slidev markdown
-1. Use proper Slidev frontmatter syntax
-2. Apply `theme-factory` for consistent theming
-3. Use `presentation-design-enhancer` for visual layouts
+1. Use `slidev-presentations` for plan-first workflow (`/slidev:plan` → `/slidev:from-plan`)
+2. Reference `slidev` skill for syntax, layouts, components, animations
+3. Apply `theme-factory` for consistent theming
+4. Use `presentation-design-enhancer` for visual layouts
 
 ### When user needs diagrams
 1. Use `mermaid-diagrams` for technical diagrams
@@ -72,19 +77,19 @@ Idea → Narrative → Script → Slidev → Visuals → Diagrams → Export
 
 ### Full Keynote Creation
 ```
-storyline-builder → ppt-creator → theme-factory →
-presentation-design-enhancer → mermaid-diagrams → pexels-media
+storyline-builder → ppt-creator → slidev-presentations →
+slidev → theme-factory → mermaid-diagrams → pexels-media
 ```
 
 ### Tech Conference Talk
 ```
-storyline-builder → ppt-creator → mermaid-diagrams →
-mermaid-tools → canvas-design
+storyline-builder → ppt-creator → slidev-presentations →
+slidev → mermaid-diagrams → mermaid-tools
 ```
 
 ### Quick Pitch Deck
 ```
-presentation-builder → ppt-creator →
+presentation-builder → ppt-creator → slidev-presentations →
 infographic-creation → pptx
 ```
 
