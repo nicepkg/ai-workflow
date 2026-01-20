@@ -100,7 +100,7 @@ Keynote speakers, tech presenters, and educators who need AI that builds structu
 | **[Video Creator](./workflows/video-creator-workflow/)** | YouTubers, TikTokers, Video Producers | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
 | **[Stock Trader](./workflows/stock-trader-workflow/)** | Traders, Investors (US/CN/HK/TW Markets) | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
 | **[Product Manager](./workflows/product-manager-workflow/)** | PMs, Product Owners, Head of Product | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
-| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 20 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
+| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/)** | Keynote Speakers, Tech Presenters, Educators | 19 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
 
 ---
 

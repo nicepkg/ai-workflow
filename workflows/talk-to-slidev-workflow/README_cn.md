@@ -24,16 +24,16 @@
 ## ⚡ 快速安装
 
 ```bash
-# 一键安装全部 20 个技能
+# 一键安装全部 19 个技能
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 
 # 或安装单个技能
-npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-creator
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill slidev-presentations
 ```
 
 ---
 
-## 📦 包含技能 (20个)
+## 📦 包含技能 (19个)
 
 ### 0️⃣ 主意到叙事结构
 | 技能 | 功能描述 |
@@ -44,7 +44,6 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 ### 1️⃣ 演讲稿 & Speaker Notes
 | 技能 | 功能描述 |
 |:-----|:---------|
-| `ppt-creator` | 完整演讲稿、讲者备注、故事节拍 |
 | `presentation-generator` | HTML deck 生成、备用导出格式 |
 
 ### 2️⃣ 视觉主题 & 设计
@@ -92,7 +91,6 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 └── storyline-builder → MECE 叙事结构和幻灯片标题
 
 阶段 1: 讲稿生成
-├── ppt-creator → 完整演讲稿和讲者备注
 └── presentation-builder → 详细演示大纲
 
 阶段 2: Slidev 生成
@@ -162,10 +160,10 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 
 | 目标 | 技能链 |
 |:-----|:-------|
-| **完整主题演讲** | storyline-builder → ppt-creator → theme-factory → presentation-design-enhancer → mermaid-diagrams → pexels-media |
-| **技术演讲** | storyline-builder → ppt-creator → mermaid-diagrams → mermaid-tools → canvas-design |
-| **Pitch Deck** | presentation-builder → ppt-creator → infographic-creation → nano-banana-pro → pptx |
-| **视频转幻灯片** | youtube-transcript → storyline-builder → ppt-creator → presentation-design-enhancer |
+| **完整主题演讲** | storyline-builder → slidev-presentations → theme-factory → presentation-design-enhancer → mermaid-diagrams → pexels-media |
+| **技术演讲** | storyline-builder → slidev-presentations → mermaid-diagrams → mermaid-tools → canvas-design |
+| **Pitch Deck** | presentation-builder → slidev-presentations → infographic-creation → nano-banana-pro → pptx |
+| **视频转幻灯片** | youtube-transcript → storyline-builder → slidev-presentations → presentation-design-enhancer |
 | **视觉设计** | theme-factory → color-palette-extractor → font-pairing-suggester → canvas-design |
 | **社媒片段** | presentation-generator → social-repurposer |
 

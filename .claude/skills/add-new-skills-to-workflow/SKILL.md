@@ -37,12 +37,26 @@ Read the downloaded `SKILL.md` to understand:
 - What category it belongs to
 - How it fits into the workflow pipeline
 
-### Step 3: Update Documentation
+### Step 3: Update skill-source.json
+
+Add the new skill entry to `workflows/<name>/.claude/skill-source.json`:
+
+```json
+{
+  "skill-name": {
+    "source": "https://github.com/user/repo",
+    "path": "path/to/skill"
+  }
+}
+```
+
+### Step 4: Update Documentation
 
 Update these files (all that exist for the workflow):
 
 | File | Updates Required |
 |------|------------------|
+| `workflows/<name>/.claude/skill-source.json` | Add new skill source entry |
 | `workflows/<name>/README.md` | Skill count, skill table, pipeline |
 | `workflows/<name>/README_cn.md` | Same as above (Chinese) |
 | `workflows/<name>/AGENTS.md` | Available skills list, recommended sequences |
@@ -86,7 +100,10 @@ python .claude/skills/skill-downloader/scripts/download_from_github.py https://g
 
 **Step 2:** Read downloaded skills to understand their purpose
 
-**Step 3:** Update all 7 files:
+**Step 3:** Update skill-source.json with new skill entries
+
+**Step 4:** Update all 8 files:
+- Update skill-source.json with source info
 - Update skill count
 - Add new category with skill table
 - Update pipeline to reference new skills

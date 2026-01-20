@@ -100,7 +100,7 @@ PM、产品负责人、产品总监——想要精通 PRD、用户故事、优�
 | **[视频创作者](./workflows/video-creator-workflow/README_cn.md)** | YouTuber、抖音/TikTok博主 | 29 | `npx add-skill nicepkg/ai-workflow/workflows/video-creator-workflow` |
 | **[股票交易员](./workflows/stock-trader-workflow/README_cn.md)** | 交易员、投资者（美股/A股/港股/台股） | 29 | `npx add-skill nicepkg/ai-workflow/workflows/stock-trader-workflow` |
 | **[产品经理](./workflows/product-manager-workflow/README_cn.md)** | PM、产品负责人、产品总监 | 23 | `npx add-skill nicepkg/ai-workflow/workflows/product-manager-workflow` |
-| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/README_cn.md)** | 主题演讲者、技术大会讲者、讲师 | 20 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
+| **[Talk to Slidev](./workflows/talk-to-slidev-workflow/README_cn.md)** | 主题演讲者、技术大会讲者、讲师 | 19 | `npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow` |
 
 ---
 

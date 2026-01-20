@@ -49,12 +49,6 @@
       "path": "pexels-media"
     },
     {
-      "name": "ppt-creator",
-      "type": "github",
-      "repo": "https://github.com/anthropics/skills",
-      "path": "official-anthropic-skills/ppt-creator"
-    },
-    {
       "name": "pptx",
       "type": "github",
       "repo": "https://github.com/anthropics/skills",
@@ -77,6 +71,18 @@
       "type": "github",
       "repo": "https://github.com/Microck/ordinary-claude-skills",
       "path": "presentation-generator"
+    },
+    {
+      "name": "slidev",
+      "type": "github",
+      "repo": "https://github.com/XIYO/zheon",
+      "path": ".claude/skills/slidev"
+    },
+    {
+      "name": "slidev-presentations",
+      "type": "github",
+      "repo": "https://github.com/clearfunction/cf-devtools",
+      "path": "skills/slidev-presentations"
     },
     {
       "name": "social-repurposer",

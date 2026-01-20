@@ -24,16 +24,16 @@
 ## ⚡ Quick Install
 
 ```bash
-# Install all 20 skills with one command
+# Install all 19 skills with one command
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 
 # Or install specific skills
-npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-creator
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill slidev-presentations
 ```
 
 ---
 
-## 📦 Skills Included (20)
+## 📦 Skills Included (19)
 
 ### 0️⃣ Idea to Narrative Structure
 | Skill | What It Does |
@@ -44,7 +44,6 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-
 ### 1️⃣ Script & Speaker Notes
 | Skill | What It Does |
 |:------|:-------------|
-| `ppt-creator` | Complete speech script, speaker notes, storytelling beats |
 | `presentation-generator` | HTML deck generation, backup export formats |
 
 ### 2️⃣ Visual Theme & Design
@@ -92,7 +91,6 @@ Stage 0: Idea Input
 └── storyline-builder → MECE narrative structure with slide titles
 
 Stage 1: Script Generation
-├── ppt-creator → Complete speech with speaker notes
 └── presentation-builder → Detailed presentation outline
 
 Stage 2: Slidev Generation
@@ -162,10 +160,10 @@ Stage 5: Export & Share
 
 | Goal | Skill Chain |
 |:-----|:------------|
-| **Full Keynote** | storyline-builder → ppt-creator → theme-factory → presentation-design-enhancer → mermaid-diagrams → pexels-media |
-| **Tech Talk** | storyline-builder → ppt-creator → mermaid-diagrams → mermaid-tools → canvas-design |
-| **Pitch Deck** | presentation-builder → ppt-creator → infographic-creation → nano-banana-pro → pptx |
-| **Video to Slides** | youtube-transcript → storyline-builder → ppt-creator → presentation-design-enhancer |
+| **Full Keynote** | storyline-builder → slidev-presentations → theme-factory → presentation-design-enhancer → mermaid-diagrams → pexels-media |
+| **Tech Talk** | storyline-builder → slidev-presentations → mermaid-diagrams → mermaid-tools → canvas-design |
+| **Pitch Deck** | presentation-builder → slidev-presentations → infographic-creation → nano-banana-pro → pptx |
+| **Video to Slides** | youtube-transcript → storyline-builder → slidev-presentations → presentation-design-enhancer |
 | **Visual Design** | theme-factory → color-palette-extractor → font-pairing-suggester → canvas-design |
 | **Social Snippets** | presentation-generator → social-repurposer |
 

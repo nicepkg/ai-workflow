@@ -1,11 +1,11 @@
 ---
 title: Talk to Slidev Workflow
-description: Your AI-powered keynote presentation team with 20 pre-configured skills
+description: Your AI-powered keynote presentation team with 19 pre-configured skills
 ---
 
 # Talk to Slidev Workflow
 
-Your AI-powered keynote presentation team with 20 pre-configured skills for creating beautiful Slidev presentations.
+Your AI-powered keynote presentation team with 19 pre-configured skills for creating beautiful Slidev presentations.
 
 ## Target Users
 
@@ -20,7 +20,7 @@ Your AI-powered keynote presentation team with 20 pre-configured skills for crea
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 ```
 
-## Skills Included (20)
+## Skills Included (19)
 
 ### 0. Idea to Narrative Structure
 
@@ -33,7 +33,6 @@ npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow
 
 | Skill | What It Does |
 |:------|:-------------|
-| `ppt-creator` | Complete speech script, speaker notes, storytelling beats |
 | `presentation-generator` | HTML deck generation, backup export formats |
 
 ### 2. Visual Theme & Design
@@ -84,7 +83,6 @@ Stage 0: Idea Input
 └── storyline-builder → MECE narrative structure with slide titles
 
 Stage 1: Script Generation
-├── ppt-creator → Complete speech with speaker notes
 └── presentation-builder → Detailed presentation outline
 
 Stage 2: Slidev Generation
@@ -154,10 +152,10 @@ Stage 5: Export & Share
 
 | Goal | Skill Chain |
 |:-----|:------------|
-| **Full Keynote** | storyline-builder → ppt-creator → theme-factory → presentation-design-enhancer → mermaid-diagrams → pexels-media |
-| **Tech Talk** | storyline-builder → ppt-creator → mermaid-diagrams → mermaid-tools → canvas-design |
-| **Pitch Deck** | presentation-builder → ppt-creator → infographic-creation → nano-banana-pro → pptx |
-| **Video to Slides** | youtube-transcript → storyline-builder → ppt-creator → presentation-design-enhancer |
+| **Full Keynote** | storyline-builder → slidev-presentations → theme-factory → presentation-design-enhancer → mermaid-diagrams → pexels-media |
+| **Tech Talk** | storyline-builder → slidev-presentations → mermaid-diagrams → mermaid-tools → canvas-design |
+| **Pitch Deck** | presentation-builder → slidev-presentations → infographic-creation → nano-banana-pro → pptx |
+| **Video to Slides** | youtube-transcript → storyline-builder → slidev-presentations → presentation-design-enhancer |
 | **Visual Design** | theme-factory → color-palette-extractor → font-pairing-suggester → canvas-design |
 | **Social Snippets** | presentation-generator → social-repurposer |
 
@@ -212,7 +210,7 @@ def world():
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --global
 
 # Install specific skill
-npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill ppt-creator
+npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --skill slidev-presentations
 
 # List all skills
 npx add-skill nicepkg/ai-workflow/workflows/talk-to-slidev-workflow --list

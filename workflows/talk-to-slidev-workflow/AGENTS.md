@@ -16,7 +16,6 @@ Idea → Narrative → Script → Slidev → Visuals → Diagrams → Export
 - **presentation-builder**: General presentation outline with visual cues
 
 ### Stage 1: Script & Notes
-- **ppt-creator**: Complete speech script with speaker notes
 - **presentation-generator**: HTML deck generation
 
 ### Stage 2: Slidev Generation
@@ -50,12 +49,7 @@ Idea → Narrative → Script → Slidev → Visuals → Diagrams → Export
 ### When user has an idea/topic
 1. Use `storyline-builder` to create MECE narrative structure
 2. Output slide titles, key transitions, and story beats
-3. Suggest `ppt-creator` for detailed script
-
-### When user needs a complete script
-1. Use `ppt-creator` to generate full speech
-2. Include speaker notes for each slide
-3. Add timing cues and transition notes
+3. Use `slidev-presentations` for plan-first workflow
 
 ### When generating Slidev markdown
 1. Use `slidev-presentations` for plan-first workflow (`/slidev:plan` → `/slidev:from-plan`)
@@ -77,19 +71,19 @@ Idea → Narrative → Script → Slidev → Visuals → Diagrams → Export
 
 ### Full Keynote Creation
 ```
-storyline-builder → ppt-creator → slidev-presentations →
-slidev → theme-factory → mermaid-diagrams → pexels-media
+storyline-builder → slidev-presentations → slidev →
+theme-factory → mermaid-diagrams → pexels-media
 ```
 
 ### Tech Conference Talk
 ```
-storyline-builder → ppt-creator → slidev-presentations →
-slidev → mermaid-diagrams → mermaid-tools
+storyline-builder → slidev-presentations → slidev →
+mermaid-diagrams → mermaid-tools
 ```
 
 ### Quick Pitch Deck
 ```
-presentation-builder → ppt-creator → slidev-presentations →
+presentation-builder → slidev-presentations →
 infographic-creation → pptx
 ```
 
