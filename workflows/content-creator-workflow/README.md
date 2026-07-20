@@ -42,6 +42,7 @@ npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow --skill blo
 | `content-trend-researcher` | Track hot topics across 10+ platforms |
 | `competitive-ads-extractor` | Extract and analyze competitor ad creatives & messaging |
 | `twitter-reader` | Fetch Twitter/X content via Jina API |
+| `xquik-social-research` | Research public X posts, profiles, threads, followers, & trends |
 
 ### 2️⃣ Research & Content Ingestion
 | Skill | What It Does |
@@ -214,11 +215,15 @@ brew install yt-dlp
 | Skill | Requirement |
 |-------|-------------|
 | `twitter-reader` | `JINA_API_KEY` |
+| `xquik-social-research` | `XQUIK_API_KEY` |
 | `nano-banana` | `GEMINI_API_KEY` |
 | `youtube-processor` | `yt-dlp` installed |
 | `youtube-transcript` | `yt-dlp` installed |
 | `gsc-assistant` | Google Search Console access |
 | `seo-wordpress-manager` | WordPress site access |
+
+Xquik is an independent third-party service. Not affiliated with X Corp.
+"Twitter" and "X" are trademarks of X Corp.
 
 ---
 

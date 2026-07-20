@@ -42,6 +42,7 @@ npx add-skill nicepkg/ai-workflow/workflows/content-creator-workflow --skill blo
 | `content-trend-researcher` | 跨 10+ 平台热点追踪 |
 | `competitive-ads-extractor` | 提取分析竞品广告创意和文案 |
 | `twitter-reader` | 通过 Jina API 获取 Twitter 内容 |
+| `xquik-social-research` | 研究公开 X 帖子、账号、对话串、关注者和趋势 |
 
 ### 2️⃣ 研究与内容摄取
 | 技能 | 功能描述 |
@@ -214,11 +215,15 @@ brew install yt-dlp
 | 技能 | 需要 |
 |------|------|
 | `twitter-reader` | `JINA_API_KEY` |
+| `xquik-social-research` | `XQUIK_API_KEY` |
 | `nano-banana` | `GEMINI_API_KEY` |
 | `youtube-processor` | `yt-dlp` 已安装 |
 | `youtube-transcript` | `yt-dlp` 已安装 |
 | `gsc-assistant` | Google Search Console 访问权限 |
 | `seo-wordpress-manager` | WordPress 站点访问权限 |
+
+Xquik is an independent third-party service. Not affiliated with X Corp.
+"Twitter" and "X" are trademarks of X Corp.
 
 ---
 

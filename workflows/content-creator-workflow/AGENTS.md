@@ -11,6 +11,7 @@ AI execution guide for content creator workflow with 32 skills across 8 stages.
 | content-trend-researcher | trending topics, hot topics, what's popular, content trends |
 | competitive-ads-extractor | competitor ads, ad library, competitor messaging, ad analysis |
 | twitter-reader | twitter, tweet, X post, fetch tweet |
+| xquik-social-research | public X research, tweet search, profile timeline, thread, followers, trends |
 
 ### 2. Research & Content Ingestion
 | Skill | Trigger |
@@ -171,6 +172,7 @@ Some skills require API keys or tools:
 | Skill | Requirement |
 |-------|-------------|
 | twitter-reader | `JINA_API_KEY` |
+| xquik-social-research | `XQUIK_API_KEY` |
 | nano-banana | `GEMINI_API_KEY` |
 | youtube-processor | `yt-dlp` installed |
 | youtube-transcript | `yt-dlp` installed |
