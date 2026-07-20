@@ -34,7 +34,7 @@
       "name": "competitive-ads-extractor",
       "type": "github",
       "repo": "https://github.com/Microck/ordinary-claude-skills",
-      "path": "competitive-ads-extractor"
+      "path": "skills_all/competitive-ads-extractor"
     },
     {
       "name": "content-brief",
@@ -148,7 +148,7 @@
       "name": "skill-navigator",
       "type": "github",
       "repo": "https://github.com/Microck/ordinary-claude-skills",
-      "path": "skill-navigator"
+      "path": "skills_all/skill-navigator"
     },
     {
       "name": "social-media",
@@ -173,6 +173,12 @@
       "type": "github",
       "repo": "https://github.com/Microck/ordinary-claude-skills",
       "path": "weak-signal-synthesizer"
+    },
+    {
+      "name": "xquik-social-research",
+      "type": "github",
+      "repo": "https://github.com/Xquik-dev/x-twitter-scraper",
+      "path": "skills/xquik-social-research"
     },
     {
       "name": "youtube-processor",
